@@ -9,6 +9,12 @@ on:
       fps:
         description: "fps al clipului"
         default: "25"
+      space:
+        description: "own (Space-ul propriu) sau owner/name"
+        default: "own"
+      target:
+        description: "1920x1080 sau 1280x720 (doar Space-ul propriu)"
+        default: "1920x1080"
 
 permissions:
   contents: write
@@ -22,11 +28,11 @@ jobs:
       - uses: actions/setup-python@v6
         with:
           python-version: "3.11"
-      - run: pip install -q gradio_client && sudo apt-get install -y -q ffmpeg >/dev/null
+      - run: pip install -q gradio_client huggingface_hub && sudo apt-get install -y -q ffmpeg >/dev/null
       - name: Restore
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
-        run: python scripts/seedvr2_clip.py "${{ inputs.clip }}" "${{ inputs.fps }}"
+        run: python scripts/seedvr2_clip.py "${{ inputs.clip }}" "${{ inputs.fps }}" "${{ inputs.space }}" "${{ inputs.target }}"
       - name: Probe
         if: always()
         run: for f in out/*.mp4; do ffprobe -v error -count_frames -show_entries stream=width,height,r_frame_rate,nb_read_frames -of csv=p=0 "$f"; done || true

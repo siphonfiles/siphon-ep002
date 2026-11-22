@@ -34,7 +34,7 @@ jobs:
           find /tmp/space -type f | wc -l; du -sh /tmp/space
       - name: Deploy + wait for build (stage only)
         env:
-          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+          HF_TOKEN: ${{ secrets.HF_WRITE_TOKEN || secrets.HF_TOKEN }}
         run: |
           python - <<'PY'
           import os, sys, time, requests
