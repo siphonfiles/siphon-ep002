@@ -5,10 +5,10 @@
 
 **Subject:** the Bitget exchange theft (24 September 2026, UTC). About $388M left Bitget's hot and warm wallets in under three hours. Bitget says no private key was compromised: the attacker got in through third-party *security* products, reached the wallet system and made Bitget's own signing service approve forged withdrawals.
 **Angle:** the way in was a tool bought to keep intruders out. The exchange that once rescued Bybit was robbed the same way, and its stolen money later helped investigators name who robbed Binance.
-**Status:** DRAFT v2, written 2026-11-22, after a second fact check on primary sources (see "Changes from v1" at the end). Proprietarul must check it before rendering (rule 10).
+**Status:** DRAFT v3, written 2026-11-22. Same verified facts as v2, rebuilt for suspense after the research in `research/suspense-storytelling.md` (see "Changes from v2" at the end). Proprietarul must check it before rendering (rule 10).
 **Target length:** just over 10 minutes (rule 13).
-**Thomas on screen:** about 1:10 in 4 segments (intro, bridge, the loan, close); more can be added later with lip re-sync on VO lines, as in ep. 001.
-**Length:** 1,540 spoken words (automatic count, cards and cues excluded; v1 had 1,554) → about 10:30–10:45 with the countdown cards, pauses, music beats and end card.
+**Thomas on screen:** about 1:15 in 4 segments (intro, bridge, the loan, close); more can be added later with lip re-sync on VO lines, as in ep. 001.
+**Length:** 1,577 spoken words (automatic count, cards and cues excluded; v2 had 1,540), Thomas 209 words → about 10:40–11:00 with the countdown cards, pauses, music beats and end card.
 
 Notation (same as ep. 001):
 - `[THOMAS]` = Thomas on camera. `[VO]` = voice over b-roll. `[VIS]` = on screen. `[CARD]` = quote shown as text, never voiced as the real person. `[S#]` = source.
@@ -21,13 +21,17 @@ Notation (same as ep. 001):
 - **The employee whose identity was used is not a suspect.** Bitget's CEO said internal collusion was initially excluded [S15]. The script says so.
 - **Mandiant and SlowMist reports are preliminary** [S3][S4]. Where they disagree (when the intrusion began, when the first alert fired), the script says so.
 - Deductions from one analysis (DFNS) are worded "according to one analysis" [S8].
+- **Second person ("if you had money on Bitget…") is used only for what a customer actually saw:** withdrawals blocked at 19:05, back by 2 October [S2]. No invented people, no invented scenes.
 
-**Structure:**
-- Teaser with cut-off lines, all paid off later.
-- Result first, then how.
-- **T-minus countdown** to 18:31 UTC on 24 September.
-- Designed peak: **"seven transfers in fifteen seconds… five in nine seconds"**. Designed ending: the alarm rang, the doors were closed for customers, and the machine kept signing.
-- Information gap of the "WHO?" act closed by the Binance link.
+**Structure (v3, after `research/suspense-storytelling.md`):**
+- Shape: "man in a hole" with a sting. Bitget the rescuer → robbed → covers its customers (rise) → but the money keeps moving and the thief has no official name (sting).
+- First line = a small concrete image (a test transfer at 02:31 in Asia). The big number comes after.
+- Knowledge gap: from 31 August *we* know someone is inside; Bitget doesn't. The T-minus acts remind the viewer of it.
+- Every section ends on a new problem or a question ("but" / "so"), never on a conclusion.
+- Planted before the peak, paid after: the fingerprint in the test transfers; the 40,000 ETH loan.
+- Designed peak: **"seven transfers in fifteen seconds… five in nine seconds"**, seen from the side of a locked-out customer. Second race at ~6:20: the alarm rang, and the machine kept signing.
+- Designed ending: back to the opening test transfer; customers whole, the money still moving, no government name.
+- Proposed YouTube chapters (scenes/questions): The test · How an exchange pays you · Someone inside · A borrowed name · 18:31 · Locked out · Why didn't it stop? · The tell · Where did it go? · Who? · The loan · Afterwards.
 
 ---
 
@@ -35,8 +39,13 @@ Notation (same as ep. 001):
 
 `[MUSIC: full]` About 13 dB under the voice. Bass hit on every cut-off line. Fade over 5 s after the last line.
 
+`[VIS]` Black. One line of a block explorer types itself out: **93 TRX · 18:31:xx UTC**.
+
 `[VO]`
-They didn't steal a single key. They didn't break the blockchain. They walked in through the one thing that was supposed to stop them.
+Half past two in the morning, in Asia. A tiny transfer leaves the crypto exchange Bitget. Nobody looks at it.
+
+`[VO]`
+Less than three hours later, about 388 million dollars is gone. And Bitget says not a single key was stolen.
 
 `[CARD]` **"Nobody stole a key."** — DFNS analysis [S8]
 
@@ -52,14 +61,26 @@ And the first sign that someone was inside? It's in the logs. Dated twenty-four 
 
 ---
 
-## 0:30 — THE RESULT
+## 0:35 — THE RESCUER
 
 `[MUSIC: out]`
 
 `[VO]`
-On the 24th of September 2026, about 388 million dollars left the crypto exchange Bitget. [S2]
-It came out of hot and warm wallets — the ones that pay customers every day. The cold wallets weren't touched. [S2]
-At the time, it was the biggest crypto theft of the year. [S29]
+To understand why this one hurts, go back nineteen months.
+February 2025. The exchange Bybit has just lost one and a half billion dollars. The FBI blames North Korea. [S31]
+Customers are rushing to pull their money out. [S28]
+
+`[VO]`
+That same day, a rival sends help. Bitget lends Bybit 40,000 ether to keep its withdrawals running. No interest. No collateral. [S27][S28]
+
+`[VIS]` Two towers at night; one dark, one lit. A line of light runs from the lit tower to the dark one: **40,000 ETH · 21 FEB 2025**.
+
+`[VO]`
+Remember that loan. It comes back at the end.
+
+`[VO]`
+On the 24th of September 2026, the exchange that came to help became the one robbed. [S2]
+At the time, the biggest crypto theft of the year. [S29]
 
 `[VIS]` Big number card: **$388M** · "24 SEP 2026 · BITGET" · source [S2].
 
@@ -71,10 +92,10 @@ You make the exchange sign it for you.
 
 ---
 
-## 1:05 — HOW AN EXCHANGE PAYS YOU
+## 1:35 — HOW AN EXCHANGE PAYS YOU
 
 `[VO]`
-An exchange keeps most of its money in cold wallets — offline, slow, hard to reach.
+An exchange keeps most of its money in cold wallets — offline, slow, hard to reach. Those weren't touched. [S2]
 Warm wallets hold a reserve. Hot wallets pay your withdrawals automatically, around the clock. [S8]
 
 `[VIS]` Three vaults stacked like a building: COLD (dark, sealed) · WARM · HOT (lit, doors swinging). Arrows show money moving up from cold to hot.
@@ -85,40 +106,43 @@ Without that signature, nothing leaves.
 With it, anything does.
 
 `[VO]`
-Remember that. The attacker never needed the signature's secret. Only the machine that uses it.
+So the attacker never needed the secret behind the signature.
+They needed to get close to the machine that uses it.
+And for that, they needed a way in that nobody would watch.
 
 ---
 
-## 1:50 — T-MINUS 24 DAYS
+## 2:15 — T-MINUS 24 DAYS
 
 `[CARD]` **T-MINUS 24 DAYS** — bass hit, 1 s silence.
 
 `[VO]`
 The 31st of August. That's the earliest malicious activity investigators found in the logs. [S4][S7]
-It wasn't inside the wallets. It was inside a security product — one of two third-party tools running in Bitget's systems. [S3][S4]
+Not inside the wallets. Inside a security product — one of two third-party tools Bitget ran to protect its systems. [S3][S4]
 
 `[VIS]` Illustration: a security appliance in a dark server room, one small red light that shouldn't be there.
 
 `[VO]`
-The investigators call them simply Product A and Product B. The vendor hasn't been named. There's no public vulnerability number. [S8]
+The investigators call them Product A and Product B. The vendor hasn't been named. [S8]
 On Product A, a flaw nobody had found yet — a zero-day — let the attacker run a hidden script. [S4]
+The script found a database password, sitting in plain text. [S4][S8]
+A spare key taped under the doormat — except the doormat was inside the security office.
 
 `[VO]`
-The script read a database password. It was sitting in plain text, in an environment variable. [S4][S8]
-Think of it as a spare key taped under the doormat — except the doormat was inside the security office.
+From here on, we know someone is inside.
+Bitget doesn't. [S4][S7]
 
 `[VO]`
-The same hidden script turned up on a second machine on the 23rd of September. And on a third, the night of the theft. [S4][S7]
+One caveat. Mandiant dates the attacker's privileged access only to the 24th of September. The two reports haven't been reconciled. [S3][S7]
 
 `[VO]`
-One caveat. Mandiant dates the attacker's privileged access to the 24th of September. SlowMist's logs go back to the 31st of August. The two reports haven't been reconciled. [S3][S7]
-
-`[VO]`
-Either way, for more than three weeks, nothing happened that anyone noticed.
+But a hidden script on a guard's machine can't move money.
+To get near the wallets, they needed something else.
+A name. A real one.
 
 ---
 
-## 2:50 — THE BRIDGE
+## 3:15 — THE BRIDGE
 
 `[THOMAS]`
 Let me stop here for a second.
@@ -128,46 +152,50 @@ They're already standing in every corridor.
 
 ---
 
-## 3:10 — T-MINUS 2 HOURS 24 MINUTES
+## 3:35 — T-MINUS 2 HOURS 24 MINUTES
 
 `[CARD]` **T-MINUS 2 HOURS 24 MINUTES** · 24 SEP · 16:07 UTC — bass hit.
 
 `[VO]`
+The same script had spread. A second machine on the 23rd of September. A third, the night of the theft. [S4][S7]
 At 16:07 UTC, someone logged into Product B's management platform. [S4][S7]
-They used the identity of a real Bitget employee. Bitget says the credentials were stolen through the zero-day. [S15]
-And it says it has ruled out, for now, anyone on the inside. [S15]
+With the identity of a real Bitget employee. [S15]
 
 `[VO]`
-They tried three command injections. Then they submitted code through a web execution endpoint. [S4][S7]
-Mandiant found a web shell on appliance B, and a command-and-control channel back to the attacker. [S3]
+That person wasn't there. Bitget says the credentials were stolen through the zero-day, and that it has ruled out, for now, anyone on the inside. [S15]
 
-`[VIS]` Corridor animation: a door labelled "B" opens, a thin amber line runs down a corridor to a door labelled "WALLET JOB SERVER".
+`[VIS]` Corridor animation: a door labelled "B" opens with a staff badge, a thin amber line runs down a corridor to a door labelled "WALLET JOB SERVER".
 
 `[VO]`
-From there, they moved sideways. To the production wallet job server — the machine that builds withdrawal transactions. [S3]
-They installed malicious packages on it. [S3]
+Mandiant found a web shell on appliance B, and a channel back to the attacker. [S3]
+From there, they moved sideways, to the production wallet job server — the machine that builds withdrawal transactions. And installed malicious packages on it. [S3]
+
+`[VO]`
+Now they were standing next to the money.
+But every withdrawal still had to get past one more thing. Risk control.
 
 ---
 
-## 4:05 — T-MINUS 42 MINUTES
+## 4:25 — T-MINUS 42 MINUTES
 
 `[CARD]` **T-MINUS 42 MINUTES** · 17:49 UTC — bass hit.
 
 `[VO]`
-At 17:49, a tool started on the wallet host. [S7]
-SlowMist later recovered it from deleted files. [S4][S7]
-It forged the risk-control results. It built withdrawal requests. And it pushed them into Bitget's normal withdrawal process. [S4][S7]
+At 17:49, a tool started on the wallet host. SlowMist later recovered it from deleted files. [S4][S7]
+It didn't fight risk control. It forged its answers. [S4][S7]
+Then it built withdrawal requests, and pushed them into Bitget's normal withdrawal process. [S4][S7]
+
+`[VIS]` A form with three boxes: "AML ✓", "LIMIT ✓", "RISK ✓", ticked by an invisible hand. A stamp hovers over it, not yet down.
 
 `[VO]`
-That's the whole trick.
 According to one analysis, the system simply took the requester's word that the checks had passed. [S8]
-And the signer signed. [S7]
-
-`[VIS]` A form with three boxes: "AML ✓", "LIMIT ✓", "RISK ✓", ticked by an invisible hand. A stamp comes down: SIGNED.
+On paper, that was enough.
+There was only one way to find out if it worked in practice.
+Try it.
 
 ---
 
-## 4:50 — T-MINUS ZERO: 18:31
+## 5:05 — 18:31
 
 `[CARD]` **18:31 UTC** — bass hit. In Asia it's half past two in the morning. [S3]
 
@@ -177,15 +205,20 @@ And the signer signed. [S7]
 18:31. Two tiny transfers. 93 TRX. Then 0.84 ETH. [S6]
 Tests. Bitget's CEO says they were below the risk threshold, so no alert went off. [S15]
 
-`[VO]`
-Then, nothing. For almost half an hour.
+`[VIS]` The stamp comes down: SIGNED.
 
 `[VO]`
+And there was something odd about these transfers. Something that could have given them away. Hold on to it.
+
+`[VO]`
+Then, nothing. For almost half an hour.
 18:58. 34.75 million USDT leaves in one transfer. [S6]
+Still no alarm.
+So they stopped testing.
 
 ---
 
-## 5:30 — THE PEAK
+## 5:45 — LOCKED OUT
 
 `[MUSIC: full]` (vault_run piece or a new one)
 
@@ -196,10 +229,10 @@ Then, nothing. For almost half an hour.
 
 `[VO]`
 19:03. One more small test, from a different wallet. [S6][S8]
-Two minutes later, the alarm.
+19:05. Bitget's reconciliation finally flags the gap. [S2]
 
 `[VO]`
-19:05. Bitget's reconciliation finally flags the gap. Risk control blocks withdrawals for every customer on the platform. [S2]
+If you had money on Bitget at that moment, this is what you saw: your withdrawal stopped. Risk control had blocked withdrawals for every customer on the platform. [S2]
 19:14. Highest-level emergency. [S2]
 
 `[MUSIC: out]` — 1 s silence.
@@ -213,135 +246,123 @@ About 203 million dollars. [S6]
 The customers had been locked out eleven minutes earlier.
 The attacker hadn't.
 
-`[VO]`
-According to one analysis, nothing stood between a request and a signature on the warm wallets. No second person. No list of allowed destinations. [S8]
-
 ---
 
-## 6:15 — WHY IT DIDN'T STOP
+## 6:30 — WHY DIDN'T IT STOP?
 
 `[VO]`
 Blocking customer withdrawals was the wrong switch. The forged requests weren't customer withdrawals.
-The signing service kept running for 2 hours and 39 minutes after the first alert. [S2][S8]
-Two separate estimates put the money that left after the alarm at about 238 million dollars. More than half. [S7][S20]
+According to one analysis, on the warm wallets nothing stood between a request and a signature. No second person. No list of allowed destinations. [S8]
+So the signing service kept running. For 2 hours and 39 minutes after the first alert. [S2][S8]
+
+`[VIS]` Split screen: left, a customer's app with a grey "Withdrawals suspended" banner; right, the SIGNED stamp coming down again and again.
 
 `[VO]`
-At 20:40, Bitget started moving funds into cold storage. At that point, it still couldn't rule out that keys had been taken. [S2][S7]
+Two separate estimates put the money that left after the alarm at about 238 million dollars. More than half of the theft. [S7][S20]
+
+`[VO]`
+At 20:40, Bitget started moving funds into cold storage — still not sure whether keys had been taken. [S2][S7]
 The last traced transfer left at 21:23. [S6]
-Then the attacker tried to rewrite withdrawal records directly in the database. Two fake Bitcoin orders returned errors. [S4][S7]
+Then the attacker tried to rewrite withdrawal records directly in the database. Covering tracks, or going for more — the reports don't say. Two fake Bitcoin orders returned errors. [S4][S7]
 At 21:44, Bitget shut down the withdrawal services, signing included. [S2]
-
-`[VO]`
-The next morning, Bitget found the root cause. That afternoon, it reported the theft to law enforcement. [S2]
-It brought in Mandiant, part of Google Cloud, and the blockchain security firm SlowMist. [S5]
-And it put up a bounty: 5 percent of anything frozen or recovered, for whoever helps. [S2]
 
 `[VIS]` A clock face: 18:31 → 21:23. Text: **2 h 52 min**.
 
+`[VO]`
+The next morning, Bitget found the root cause and reported the theft to law enforcement. [S2]
+And when investigators went back to those first test transfers, the odd detail was right there.
+
 ---
 
-## 7:10 — THE FINGERPRINT NOBODY WATCHED
+## 7:30 — THE TELL
 
 `[VO]`
-There was a tell, hiding in plain sight.
 Every Ethereum transfer sets a fuel limit — gas. Bitget's normal customer payouts used about 63 thousand.
 The attacker's transfers used exactly 100 thousand, or 200 thousand. [S6]
-In the eight days before the theft, those wallets sent 35,678 transactions. Not one customer payout did that. [S6]
+In the eight days before, those wallets sent 35,678 transactions. Not one customer payout did that. [S6]
 
 `[VO]`
-On Zcash, it was even louder. Each of the two stolen transfers pulled together about a thousand separate pieces of coin. Before that, the wallet's largest transaction had used 54. [S7]
+On Zcash, it was even louder. Each stolen transfer pulled together about a thousand pieces of coin. The wallet's biggest transaction before that had used 54. [S7]
+The forged commands were deleted after each transfer. [S8][S16]
+The fingerprints weren't. Nobody was watching for them.
 
 `[VO]`
-And the forged commands were deleted after each transfer. [S8][S16]
+Now the thief had 388 million dollars. And a new problem: how to keep it.
 
 ---
 
-## 7:40 — WHERE THE MONEY WENT
+## 8:10 — WHERE DID IT GO?
 
 `[VO]`
-The stablecoins went first, because stablecoins can be frozen.
-All 34.75 million USDT was swapped for ETH within 20 minutes. [S7]
-The XRP — about two fifths of the haul — went to Bitcoin through THORChain. [S6]
-Part of the Zcash disappeared into a private pool, where it can't be followed. [S6]
+The stablecoins went first, because stablecoins can be frozen. All the USDT was swapped for ETH within 20 minutes. [S7]
+The XRP went to Bitcoin through THORChain. Part of the Zcash disappeared into a private pool, where it can't be followed. [S6]
 
 `[VIS]` Flow map: ETH parked in eight holding wallets, six with exactly 10,000 ETH each [S7]; XRP → THORChain → BTC; ZEC → private pool.
 
 `[VO]`
 Bitget asked THORChain to block the addresses. THORChain declined, citing its permissionless design. [S7]
-In the end, about 1.1 million dollars was frozen. Less than 0.3 percent. [S7][S9]
+In the end, less than 0.3 percent was frozen. [S7][S9]
 
 `[VO]`
-Then, this month, the Bitcoin started moving again.
-In eleven days, about 161 million dollars left the wallets labelled as the Bitget hacker — most of it through CoinJoin, which mixes many people's coins into one transaction. [S21][S22]
-By the 16th of November, those wallets held about 35 bitcoin. [S21]
+In November, the Bitcoin started moving again. About 161 million dollars in eleven days, most of it through CoinJoin, which mixes many people's coins into one transaction. [S21][S22]
 
 `[VO]`
 And the people moving it weren't hiding very well.
-ZachXBT says the launderers asked for customer support in the public Discord and Telegram chats of the services they were using. Failed swaps. Missing payouts. [S23][S30]
-He says they were Chinese money launderers, working for the attackers. [S23]
-
-`[CARD]` Bitget's CEO said she was not expecting to recover much. — CNBC [S9] *(paraphrase on screen, not a quote)*
+ZachXBT says the launderers asked for customer support in the public chats of the services they were using. Failed swaps. Missing payouts. [S23][S30]
+He says one of them had handled stolen money before. From the Kelp DAO exploit in April. [S23]
 
 ---
 
-## 8:35 — WHO?
+## 9:00 — WHO?
 
 `[VO]`
-So who did this?
+So who was behind it?
 On the night of the hack, Bitget's CEO, Gracy Chen, said some IP addresses matched VPN services used by a North Korean group. [S19]
 
 `[CARD]` **"The pattern looks very much like what the North Korean team did before."** — Gracy Chen, X livestream [S19]
 
 `[VO]`
-Four days later, she was more careful. What she'd shared, she said, was based on preliminary indicators. [S13]
+Four days later, she was more careful. That, she said, was based on preliminary indicators. [S13]
+Chainalysis, Elliptic and TRM Labs all lean the same way. [S10][S11][S12]
 
 `[VO]`
-The blockchain analytics firms lean the same way. Chainalysis links the theft to actors associated with North Korea. Elliptic calls it highly likely. TRM Labs calls it likely. [S10][S11][S12]
-Elliptic says Bitget pushed the suspected North Korean thefts of 2026 past one billion dollars. [S11]
-And ZachXBT says one of those launderers also handled money from the Kelp DAO exploit in April. [S23]
-
-`[VO]`
-Then came Binance.
-Five weeks after Bitget, Binance lost more than six billion dollars.
-And Chainalysis watched the stolen Binance money meet the Bitget money on the blockchain. In real time. [S24]
+Then, five weeks later, Binance lost more than six billion dollars.
+And Chainalysis watched the stolen Binance money meet the Bitget money on the blockchain. [S24]
 ZachXBT says both arrived, through THORChain, at the same address. [S26]
+Two days after the Binance theft, the FBI named the thieves: North Korea's TraderTraitor. [S17][S25]
 
 `[VO]`
-Two days after the Binance theft, the FBI named the thieves: North Korea's TraderTraitor. [S17][S25]
-For Bitget itself, no government has said a word. [S8]
-And Mandiant's report names no one at all. [S3]
+For Bitget, no government has said a word. And Mandiant's report names no one at all. [S3][S8]
+Which brings us back to that loan.
 
 ---
 
-## 9:35 — THE LOAN
+## 9:55 — THE LOAN
 
 `[THOMAS]`
-There's one more detail.
-In February 2025, Bybit lost one and a half billion dollars. The FBI blamed North Korea.
-The same day, Bitget lent Bybit 40,000 ether to keep its withdrawals running. No interest. No collateral. [S27][S28]
-Nineteen months later, the money was leaving Bitget. And the analysts point the same way.
+In February 2025, when Bybit was robbed, Bitget sent 40,000 ether the same day. No interest. No collateral.
+The FBI blamed that theft on North Korea.
+Nineteen months later, the money was leaving Bitget.
+No government has named anyone. But the analysts point the same way.
 
 ---
 
-## 10:00 — CLOSE
+## 10:20 — AFTERWARDS
 
 `[MUSIC: memory piano, low]`
 
 `[VO]`
-Customers didn't lose money. Bitget says it covered the loss from its protection fund. [S2][S16]
-That fund is the reason this story isn't about ruined customers. The loss landed on the company.
-It has been rebuilt to just over 300 million dollars. Still less than before the theft. [S2][S16]
+If you had money on Bitget, you didn't lose it. Bitget says it covered the loss from its own protection fund. [S2][S16]
+Every withdrawal was back by the 2nd of October. [S2]
+The fund has been rebuilt to just over 300 million dollars. Still less than before. [S2][S16]
 
 `[VO]`
-Every withdrawal was back by the 2nd of October. The vulnerability is fixed, and the vendor's feature is switched off. [S2][S16]
-Critical operations at Bitget now need more than one approval. [S2]
-In other words, a request on its own should no longer be enough.
-And it says it is reviewing how it chooses third-party security products. [S2]
-The vendor still hasn't been named. [S16]
+The vulnerability is fixed. Critical operations now need more than one approval. [S2][S16]
+And Bitget says it is reviewing how it picks its security vendors. The vendor still hasn't been named. [S2][S16]
 
 `[THOMAS]`
-Bitget bought tools to guard the door.
-For at least twenty-four days, someone else may have been holding them.
+It started with a transfer of 93 TRX, at half past two in the morning. Nobody looked at it.
+Bitget bought tools to guard the door. For weeks, someone else may have been holding them.
 And when the alarm finally rang, the exchange locked out its customers — and left the signing machine running.
 I'm Thomas Archer. This was Siphon Files.
 
@@ -383,6 +404,9 @@ I'm Thomas Archer. This was Siphon Files.
 - [S30] The Crypto Times, *ZachXBT Exposes 5 Launderers Moving $387.5M Bitget Hack Funds*, 28 Sep 2026 (help requests over failed XRP-to-Bitcoin swaps and missing payouts): https://www.cryptotimes.io/2026/09/28/zachxbt-exposes-5-launderers-moving-387-5m-bitget-hack-funds-for-north-korea/
 
 ---
+- [S31] FBI, PSA *North Korea Responsible for $1.5 Billion Bybit Hack*, 26 Feb 2025: https://www.ic3.gov/PSA/2025/PSA250226
+
+---
 
 ## Notes for proprietarul's check
 
@@ -399,6 +423,24 @@ I'm Thomas Archer. This was Siphon Files.
 - **To re-check before rendering:** any government attribution for Bitget, vendor name or CVE published after 22 Nov; the final Mandiant/SlowMist reports; Arkham's latest balance.
 
 ---
+- **Second person (v3):** "If you had money on Bitget…" only describes what customers saw (withdrawals blocked at 19:05, back by 2 Oct, loss covered by the fund) [S2][S16].
+- **"Covering tracks, or going for more — the reports don't say"**: honest about intent; the reports only record the database attempt and the errors [S4][S7].
+
+---
+
+## Changes from v2 (22 Nov 2026, after `research/suspense-storytelling.md`)
+
+No new facts except [S31] (FBI on Bybit). Same editorial line.
+1. **Opening:** first line is the 93 TRX test at 02:31 in Asia (small concrete image), the $388M comes second; the ending returns to it.
+2. **Protagonist:** Bitget as the rescuer — the 40,000 ETH loan to Bybit moved from 9:35 to 0:35 ("THE RESCUER"), with a planted "it comes back at the end"; the Thomas segment "The loan" is now the payoff.
+3. **Customer point of view** at 19:05 and in the close ("If you had money on Bitget…"), facts only.
+4. **Knowledge gap:** "From here on, we know someone is inside. Bitget doesn't."
+5. **Every section ends on a "but"/"so"** (a new problem or question) instead of a conclusion; transitions rewritten (16:07, 17:49, 18:31, 19:05, money, who).
+6. **Fingerprint planted before the peak** ("something odd about these transfers… hold on to it") and paid after ("THE TELL").
+7. **Second race** at ~6:30 retitled "WHY DIDN'T IT STOP?", with a split screen customer app vs signing stamp.
+8. **Fewer numbers** in "WHERE DID IT GO?" (removed the 34.75M repeat, "two fifths", 1.1M, "35 bitcoin left"; 35 BTC stays in the notes).
+9. Removed from the voice (still true, kept in sources): the 5% bounty, Mandiant/SlowMist hired, Elliptic's "past $1 billion", the Bybit loan details in the WHO act.
+10. Proposed YouTube chapters named as scenes/questions.
 
 ## Changes from v1 (22 Nov 2026)
 
