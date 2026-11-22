@@ -7,6 +7,10 @@ on:
       jobs:
         description: "Joburi separate prin virgulă (ex. presenter/clips/inputs/thomas_k7_1.json,...)"
         required: true
+      dest:
+        description: "Folder for the finished clips"
+        default: "presenter/clips"
+        required: false
 
 permissions:
   contents: write
@@ -38,7 +42,7 @@ jobs:
             echo "=== $j"
             rm -rf out
             python scripts/longcat_clip.py "$j" out || { echo "FAILED at $j - stopping"; exit 1; }
-            mkdir -p presenter/clips && cp out/* presenter/clips/
-            git add presenter/clips && git commit -qm "Thomas clip: $(ls out/*.mp4 | xargs -n1 basename)"
+            D="${{ inputs.dest }}"; mkdir -p "$D" && cp out/* "$D/"
+            git add "$D" && git commit -qm "Thomas clip: $(ls out/*.mp4 | xargs -n1 basename)"
             git pull --rebase -q && git push -q
           done

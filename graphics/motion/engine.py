@@ -33,6 +33,23 @@ HEAD = "Lato"            # headline face (Black / Bold weights via fontconfig)
 MONO = "Noto Sans Mono"  # data, labels, timestamps
 SERIF = "Lora"           # quotes
 
+# --- per-episode theme ----------------------------------------------------------
+# SIPHON_THEME=ep002 (Bitget, "night shift in the security office"): petrol-slate background with a
+# faint surveillance grid and a slow scan line, signal-cyan accent instead of amber, cool white type,
+# IBM Plex Sans Condensed / JetBrains Mono / IBM Plex Serif (all OFL, apt: fonts-ibm-plex,
+# fonts-jetbrains-mono). Scene code keeps using the names below (AMBER = "the accent").
+THEME = os.environ.get("SIPHON_THEME", "")
+if THEME == "ep002":
+    BG = (0x0E / 255, 0x1A / 255, 0x1D / 255)
+    AMBER = (0x3E / 255, 0xE0 / 255, 0xD0 / 255)
+    INK = (0xE4 / 255, 0xEF / 255, 0xEE / 255)
+    GREY = (0x7C / 255, 0x93 / 255, 0x96 / 255)
+    DIM = (0x1E / 255, 0x30 / 255, 0x33 / 255)
+    RED = (0xFF / 255, 0x4D / 255, 0x5E / 255)
+    HEAD = "IBM Plex Sans Condensed"
+    MONO = "JetBrains Mono"
+    SERIF = "IBM Plex Serif"
+
 
 # --- easing ------------------------------------------------------------------
 def clamp(x, a=0.0, b=1.0):
@@ -196,6 +213,39 @@ def finish(ctx, frame_idx):
     ctx.restore()
 
 
+def backdrop(ctx, t):
+    """ep002 backdrop: faint 60 px surveillance grid, brighter every 5th line, a soft scan band drifting
+    down every ~9 s and four thin corner marks (like a monitor in the security office)."""
+    ctx.save()
+    ctx.set_line_width(1)
+    for k, x in enumerate(range(0, W + 1, 60)):
+        ctx.set_source_rgba(AMBER[0], AMBER[1], AMBER[2], 0.06 if k % 5 == 0 else 0.025)
+        ctx.move_to(x + 0.5, 0)
+        ctx.line_to(x + 0.5, H)
+        ctx.stroke()
+    for k, y in enumerate(range(0, H + 1, 60)):
+        ctx.set_source_rgba(AMBER[0], AMBER[1], AMBER[2], 0.06 if k % 5 == 0 else 0.025)
+        ctx.move_to(0, y + 0.5)
+        ctx.line_to(W, y + 0.5)
+        ctx.stroke()
+    y = (t / 9.0 % 1.0) * (H + 300) - 150
+    g = cairo.LinearGradient(0, y - 150, 0, y + 150)
+    g.add_color_stop_rgba(0, AMBER[0], AMBER[1], AMBER[2], 0)
+    g.add_color_stop_rgba(0.5, AMBER[0], AMBER[1], AMBER[2], 0.035)
+    g.add_color_stop_rgba(1, AMBER[0], AMBER[1], AMBER[2], 0)
+    ctx.set_source(g)
+    ctx.rectangle(0, y - 150, W, 300)
+    ctx.fill()
+    ctx.set_source_rgba(AMBER[0], AMBER[1], AMBER[2], 0.35)
+    ctx.set_line_width(2)
+    for cx, cy, dx, dy in ((40, 40, 1, 1), (W - 40, 40, -1, 1), (40, H - 40, 1, -1), (W - 40, H - 40, -1, -1)):
+        ctx.move_to(cx, cy + dy * 36)
+        ctx.line_to(cx, cy)
+        ctx.line_to(cx + dx * 36, cy)
+        ctx.stroke()
+    ctx.restore()
+
+
 # --- rendering ---------------------------------------------------------------
 _TIMELINE = None
 
@@ -208,6 +258,8 @@ def _render_frame(i):
     ctx.scale(SCALE, SCALE)
     rgba(ctx, BG)
     ctx.paint()
+    if THEME == "ep002":
+        backdrop(ctx, t)
     for start, end, fn, params in _TIMELINE:
         if start <= t < end:
             ctx.save()
