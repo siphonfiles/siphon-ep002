@@ -24,6 +24,8 @@ Poziționarea completă, pilonii de conținut, structura hook-ului și monetizar
 
 ## 1c. Unde e totul (hartă, 22 nov 2026) — citește asta prima dată într-un chat nou
 
+Rezumatul complet al episodului 001 (unelte, Thomas, animare, sunet, randare, DaVinci, YouTube, lecții): **`HANDOFF-ep001.md`**.
+
 Organizația GitHub: **`siphonfiles`** (toate repo-urile private). Repo-ul vechi personal nu se mai folosește (se șterge).
 
 | Ce | Unde |
