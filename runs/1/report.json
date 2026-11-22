@@ -1,0 +1,20 @@
+{
+  "load_seconds": 19.1,
+  "cpu_threads": 2,
+  "clips": [
+    {
+      "clip": 1,
+      "audio_seconds": 19.4,
+      "gen_seconds": 26.8,
+      "real_time_factor": 1.38
+    },
+    {
+      "clip": 2,
+      "audio_seconds": 13.2,
+      "gen_seconds": 15.6,
+      "real_time_factor": 1.18
+    }
+  ],
+  "avg_real_time_factor": 1.3,
+  "est_cpu_minutes_per_12min_episode": 15.6
+}
