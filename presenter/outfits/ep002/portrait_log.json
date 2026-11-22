@@ -1,0 +1,23 @@
+[
+  {
+    "outfit": "black_turtleneck",
+    "prompt_sentence": "He wears only a plain black fine-knit merino turtleneck, completely unadorned smooth fabric.",
+    "seed": 596067,
+    "seconds": 9.5,
+    "file": "presenter/outfits/ep002/portrait_black_turtleneck_896x1152.png"
+  },
+  {
+    "outfit": "navy_shirt",
+    "prompt_sentence": "He wears only a plain dark navy cotton shirt with a soft open collar and matching fabric-covered buttons, completely unadorned smooth fabric.",
+    "seed": 596067,
+    "seconds": 6.4,
+    "file": "presenter/outfits/ep002/portrait_navy_shirt_896x1152.png"
+  },
+  {
+    "outfit": "slate_henley",
+    "prompt_sentence": "He wears only a plain dark slate blue long-sleeved cotton crew-neck top, completely unadorned smooth fabric.",
+    "seed": 596067,
+    "seconds": 6.3,
+    "file": "presenter/outfits/ep002/portrait_slate_henley_896x1152.png"
+  }
+]
