@@ -39,4 +39,4 @@ jobs:
           git fetch --depth 1 origin renders || true
           if git rev-parse --verify -q origin/renders; then git switch -c renders origin/renders; else git switch --orphan renders; fi
           D="seedvr2/run-${GITHUB_RUN_NUMBER}"; mkdir -p "$D" && cp /tmp/pub/* "$D/" || true
-          git add seedvr2 && git commit -m "seedvr2 ${GITHUB_RUN_NUMBER}" && git push origin renders
+          git add seedvr2 && (git diff --cached --quiet || (git commit -m "seedvr2 ${GITHUB_RUN_NUMBER}" && git push origin renders))
