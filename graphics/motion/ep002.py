@@ -19,7 +19,9 @@ import scenes as S  # noqa: E402
 import scenes_ep002 as E  # noqa: E402
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
-THOMAS_REF = os.path.join(ROOT, "presenter", "reference", "thomas_ref_v1_centered_1920x1080.png")
+THOMAS_REF = os.path.join(ROOT, "presenter", "reference", "thomas_ref_ep002_1920x1080.png")   # ep. 002 outfit
+if not os.path.exists(THOMAS_REF):
+    THOMAS_REF = os.path.join(ROOT, "presenter", "reference", "thomas_ref_v1_centered_1920x1080.png")
 S.ILL_DIR = os.path.join(ROOT, "illustrations", "ep002", "img")
 CLIPS = os.path.join(ROOT, "presenter", "clips", "frames")
 CLIP_PLAN = os.path.join(ROOT, "presenter", "clips", "inputs", "ep002_clip_plan.json")
