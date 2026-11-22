@@ -1,0 +1,55 @@
+name: voice-test (ZONOS3-Mini on CPU)
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - scripts/voice_test.py
+      - .github/workflows/voice-test.yml
+
+permissions:
+  contents: write
+
+jobs:
+  tts:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.11"
+      - name: Cache Hugging Face models
+        uses: actions/cache@v5
+        with:
+          path: ~/.cache/huggingface
+          key: hf-zonos3-mini-v1
+      - name: Install
+        run: |
+          pip install --index-url https://download.pytorch.org/whl/cpu torch
+          pip install "transformers>=4.57" soundfile numpy
+      - name: Generate test clips
+        run: python scripts/voice_test.py
+      - name: Summary
+        if: always()
+        run: |
+          echo '## ZONOS3-Mini CPU test' >> "$GITHUB_STEP_SUMMARY"
+          echo '```json' >> "$GITHUB_STEP_SUMMARY"
+          cat out/report.json >> "$GITHUB_STEP_SUMMARY" || true
+          echo '```' >> "$GITHUB_STEP_SUMMARY"
+      - uses: actions/upload-artifact@v5
+        if: always()
+        with:
+          name: voice-test
+          path: out/
+          retention-days: 14
+      - name: Publish clips to voice-tests branch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898+github-actions[bot]@users.noreply.github.com"
+          mkdir -p /tmp/pub && cp out/* /tmp/pub/
+          git fetch --depth 1 origin voice-tests || true
+          if git rev-parse --verify -q origin/voice-tests; then git switch -c voice-tests origin/voice-tests; else git switch --orphan voice-tests; fi
+          mkdir -p "runs/${GITHUB_RUN_NUMBER}" && cp /tmp/pub/* "runs/${GITHUB_RUN_NUMBER}/"
+          git add runs && git commit -m "voice-test run ${GITHUB_RUN_NUMBER}" && git push origin voice-tests

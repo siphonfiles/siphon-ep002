@@ -1,0 +1,31 @@
+name: kaggle probe
+# Diagnostic: pushes a tiny kernel that only prints "alive" every 10 s for 3 min (GPU on or off).
+on:
+  workflow_dispatch:
+    inputs:
+      gpu:
+        default: "false"
+jobs:
+  push:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install --quiet --upgrade "kaggle>=1.8" six
+      - name: Push probe kernel
+        env:
+          KAGGLE_API_TOKEN: ${{ secrets.KAGGLE_API_TOKEN }}
+        run: |
+          mkdir -p kn && cp kaggle/probe/run.py kn/run.py
+          cat > kn/kernel-metadata.json <<J
+          {"id": "${{ secrets.KAGGLE_USERNAME }}/siphon-probe", "title": "siphon-probe", "code_file": "run.py", "language": "python",
+           "kernel_type": "script", "is_private": true, "enable_gpu": ${{ inputs.gpu }}, "enable_internet": true,
+           "dataset_sources": [], "competition_sources": [], "kernel_sources": []}
+          J
+          kaggle kernels push -p kn
+          for i in 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24; do sleep 15; echo "t=$((i*15))s $(kaggle kernels status ${{ secrets.KAGGLE_USERNAME }}/siphon-probe 2>&1)"; done
+          kaggle kernels output ${{ secrets.KAGGLE_USERNAME }}/siphon-probe -p out -o || true
+          cat out/*.log 2>/dev/null | python3 -c "import sys,json; d=json.load(sys.stdin); print(''.join(x.get('data','') for x in d))" || true

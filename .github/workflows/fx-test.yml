@@ -1,0 +1,34 @@
+name: fx test (short render, 1080p)
+
+on:
+  workflow_dispatch:
+    inputs:
+      script:
+        description: "Script din graphics/motion (ex. fx_test.py)"
+        default: "fx_test.py"
+        required: true
+
+permissions:
+  contents: write
+
+jobs:
+  render:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v5
+      - name: Tools
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq python3-cairo python3-numpy python3-pil ffmpeg fonts-lato fontconfig > /dev/null
+          mkdir -p ~/.local/share/fonts && cp fonts/*.ttf ~/.local/share/fonts/ && fc-cache -f > /dev/null
+      - name: Render
+        run: cd graphics/motion && SIPHON_SCALE=1 /usr/bin/python3 ${{ inputs.script }} ../../fx_test.mp4 && ffmpeg -v error -y -i ../../fx_test.mp4 -c:v libx264 -crf 23 -preset veryfast -pix_fmt yuv420p ../../fx_small.mp4 && mv ../../fx_small.mp4 ../../fx_test.mp4
+      - name: Publish to renders branch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898+github-actions[bot]@users.noreply.github.com"
+          cp fx_test.mp4 /tmp/
+          git fetch --depth 1 origin renders && git switch -c renders origin/renders
+          mkdir -p fx && cp /tmp/fx_test.mp4 "fx/fx_test_${GITHUB_RUN_NUMBER}.mp4"
+          git add fx && git commit -m "fx test ${GITHUB_RUN_NUMBER}" && git push origin renders

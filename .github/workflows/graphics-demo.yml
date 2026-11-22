@@ -1,0 +1,54 @@
+name: graphics-demo (HyperFrames)
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - graphics/demo-ronin/**
+      - .github/workflows/graphics-demo.yml
+
+permissions:
+  contents: write
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: "22"
+      - name: Install ffmpeg
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
+      - name: Render
+        working-directory: graphics/demo-ronin
+        run: |
+          npx -y hyperframes --version || true
+          npx -y hyperframes render --help || true
+          START=$(date +%s)
+          npx -y hyperframes render
+          echo "RENDER_SECONDS=$(( $(date +%s) - START ))" >> "$GITHUB_ENV"
+          find . -name '*.mp4' -newer index.html -print
+      - name: Collect
+        run: |
+          mkdir -p out
+          f=$(find graphics/demo-ronin -name '*.mp4' | head -1)
+          cp "$f" out/demo-ronin.mp4
+          ffprobe -v error -show_entries format=duration:stream=width,height,r_frame_rate -of default=nw=1 out/demo-ronin.mp4 | tee out/probe.txt
+          echo "render_seconds=${RENDER_SECONDS}" >> out/probe.txt
+          echo "## HyperFrames demo" >> "$GITHUB_STEP_SUMMARY"; cat out/probe.txt >> "$GITHUB_STEP_SUMMARY"
+      - uses: actions/upload-artifact@v5
+        with:
+          name: demo-ronin
+          path: out/
+      - name: Publish to renders branch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898+github-actions[bot]@users.noreply.github.com"
+          cp -r out /tmp/pub
+          git fetch --depth 1 origin renders || true
+          if git rev-parse --verify -q origin/renders; then git switch -c renders origin/renders; else git switch --orphan renders; fi
+          mkdir -p "demo/${GITHUB_RUN_NUMBER}" && cp /tmp/pub/* "demo/${GITHUB_RUN_NUMBER}/"
+          git add demo && git commit -m "graphics demo run ${GITHUB_RUN_NUMBER}" && git push origin renders
