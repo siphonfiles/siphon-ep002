@@ -23,7 +23,7 @@ t = time.time()
 if space.startswith("ByteDance-Seed/"):
     res = c.predict(video_path=handle_file(src), seed=666, fps_out=fps, api_name="/generation_loop")
 else:
-    res = c.predict(video=handle_file(src), target=target, chunk_frames=0, seed=0, api_name="/restore_video")
+    res = c.predict(video={"video": handle_file(src)}, target=target, chunk_frames=0, seed=0, api_name="/restore_video")
 sec = round(time.time() - t, 1)
 print("seconds:", sec, flush=True)
 name = os.path.splitext(os.path.basename(src))[0]
