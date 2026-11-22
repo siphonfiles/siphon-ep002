@@ -1,0 +1,25 @@
+{
+  "_note": "Ep. 002 (Bitget), 20 illustrations, 22 Nov 2026. People only seen from behind / in silhouette, described positively (Z-Image: negations activate the concept). No text, no logos, no exact counts. Riskiest images first.",
+  "images": [
+    {"id": "b14_launderer_laptop", "seed": 2001, "prompt": "A person seen from behind, sitting at a cluttered desk in a dark rented room, only the back of the head and the shoulders visible as a dark silhouette, facing an open laptop whose cold screen glow outlines the shoulders, takeaway cups and tangled cables on the desk, a curtained window behind the laptop."},
+    {"id": "b11_phone_nightstand", "seed": 2002, "prompt": "A smartphone lying on a wooden nightstand in a dark bedroom at night, its screen lit with a plain grey glow casting light on the wood, a rumpled bed and a dark window softly out of focus in the background."},
+    {"id": "b07_badge_lanyard", "seed": 2003, "prompt": "A plain blank plastic staff card on a black lanyard, lying back side up on an empty office desk under a warm desk lamp, the card completely plain and smooth, a dark office softly out of focus behind it."},
+    {"id": "b01_empty_trading_office", "seed": 2004, "prompt": "An empty open-plan trading office high in a tower at night, rows of dark desks and chairs, a single monitor still lit at the far end of the room, glittering city lights of an Asian metropolis through floor-to-ceiling windows."},
+    {"id": "b02_two_towers", "seed": 2005, "prompt": "Two tall glass office towers side by side against a deep night sky, the left tower completely dark, the right tower fully lit floor by floor in warm light, seen from street level looking up, light haze between them."},
+    {"id": "b03_lifebuoy_dock", "seed": 2006, "prompt": "A classic ring lifebuoy hanging on a wooden post at the end of an empty dock at night, lit by a single warm lamp, calm dark water and fog behind it."},
+    {"id": "b04_security_appliance", "seed": 2007, "prompt": "A sleek rack-mounted network security appliance in a dark server room, rows of servers fading into the background, one single small red indicator light glowing on the appliance, cold blue ambient light."},
+    {"id": "b05_key_under_mat", "seed": 2008, "prompt": "A worn brass key taped to the underside of a rubber doormat that is lifted at one corner, on the floor of a small security guard booth, CCTV monitors glowing softly in the background."},
+    {"id": "b06_empty_guard_booth", "seed": 2009, "prompt": "An empty security guard booth at night, a wall of glowing CCTV monitors showing grey empty corridors, an empty swivel chair turned slightly away from the desk, a cold cup of coffee on the desk."},
+    {"id": "b08_corridor_door", "seed": 2010, "prompt": "A long dark office corridor lined with identical closed doors, one door near the end standing slightly ajar with warm amber light spilling out onto the floor."},
+    {"id": "b09_stamp_form", "seed": 2011, "prompt": "A heavy old rubber stamp held in mid-air just above a blank sheet of paper on a dark wooden desk, lit by a single warm desk lamp, the paper plain and empty."},
+    {"id": "b10_empty_trading_floor", "seed": 2012, "prompt": "A vast empty trading floor at night, long rows of desks with multiple screens glowing dim blue, every chair empty, quiet and still, light haze in the air."},
+    {"id": "b12_alarm_control_room", "seed": 2013, "prompt": "A dark operations control room, wall of large screens, a single red rotating alarm beacon on the ceiling casting red light across the empty desks."},
+    {"id": "b13_fingerprint_glass", "seed": 2014, "prompt": "A single fingerprint dusted with fine powder on a pane of dark glass, caught in the narrow beam of a flashlight, extreme close-up, everything else in darkness."},
+    {"id": "b15_investigation_wall", "seed": 2015, "prompt": "An investigation wall in a dark room, a large plain world map with pins and red thread connecting distant points, blank index cards, lit by a single warm lamp from the side."},
+    {"id": "b16_river_split", "seed": 2016, "prompt": "A wide dark river at night seen from above, splitting into many smaller streams that spread out and disappear into mist, faint moonlight on the water."},
+    {"id": "b17_coin_sinking", "seed": 2017, "prompt": "A single gold coin sinking slowly into deep dark water, a few small bubbles, the surface faint above, fading into black below."},
+    {"id": "b18_open_barrier", "seed": 2018, "prompt": "An unmanned border checkpoint at night, the boom barrier raised and left open, an empty lit booth, a straight empty road continuing into fog."},
+    {"id": "b19_vault_half_full", "seed": 2019, "prompt": "Inside a bank vault, metal shelves with neat stacks of gold bars on the lower shelves and empty upper shelves, lit by a warm overhead light, the heavy round vault door open at the side."},
+    {"id": "b20_two_locks_door", "seed": 2020, "prompt": "A heavy steel door with two separate keyholes one above the other, a key inserted in each lock, close-up, warm side light on brushed metal."}
+  ]
+}
