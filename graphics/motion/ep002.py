@@ -127,7 +127,7 @@ def build(tl):
     h0 = nxt(hits, e("t1") - .01)
     c0 = next(C)
     add(h0, c0, S.black)
-    add(c0, s("t2"), E.explorer_line, cols=["TRX", "93 TRX", "24 SEP 2026", "18:31 UTC", "→ attacker"],
+    add(c0, s("t2"), E.explorer_line, cols=["93 TRX", "24 SEP 2026", "18:31 UTC", "→ attacker wallet"],
         source="[S6]", cut=True)
     add(s("t2"), nxt(hits, e("t2") - .01), S.kinetic,
         line="Less than three hours later, about $388 million is gone. Not a single key was stolen.",

@@ -32,11 +32,14 @@ def explorer_line(ctx, t, d, cols, label="ON-CHAIN · ILLUSTRATIVE LAYOUT", sour
     s = "   ".join(cols)
     n = int(len(s) * clamp(t / max(d * 0.55, 0.01)))
     shown = s[:n]
-    text(ctx, shown, 200, 560, INK, a, face=MONO, size=56, bold=False)
+    size = 56
+    while size > 30 and text_width(ctx, s, MONO, size, False) > W - 440:
+        size -= 2
+    text(ctx, shown, 200, 560, INK, a, face=MONO, size=size, bold=False)
     if int(t * 2.2) % 2 == 0 or n < len(s):
-        w = text_width(ctx, shown, MONO, 56, False)
+        w = text_width(ctx, shown, MONO, size, False)
         rgba(ctx, AMBER, a)
-        ctx.rectangle(206 + w, 515, 26, 54)
+        ctx.rectangle(206 + w, 560 - size * 0.8, size * 0.46, size * 0.95)
         ctx.fill()
     rgba(ctx, DIM, a)
     ctx.rectangle(200, 610, W - 400, 2)
@@ -65,6 +68,7 @@ def wallet_tiers(ctx, t, d, source=None):
             x0, y0 = 1250, y + 60
             rgba(ctx, COLD, a * q)
             ctx.set_line_width(7)
+            ctx.new_path()
             ctx.arc(x0 + 30, y0 + 20, 22, math.pi, 2 * math.pi)
             ctx.stroke()
             rrect(ctx, x0, y0 + 20, 60, 52, 6)
