@@ -13,10 +13,12 @@ BASE = ("Photorealistic studio portrait photograph of a man in his late thirties
         "slightly darker toward the edges, nothing else in frame. Shot on an 85mm lens, shallow depth of field, natural skin texture and pores, "
         "neutral colour grade, documentary news presenter portrait.")
 ORIGINAL = "He wears a plain dark charcoal crew-neck sweater, no pattern, no logo."
+# Proprietarul (01:01): no accessories, no labels on the clothes. Described positively (Z-Image: negations
+# activate the negated concept): bare plain fabric, nothing worn but the garment.
 OUTFITS = {
-    "navy_shirt": "He wears a plain dark navy cotton shirt with a soft open collar, the top button undone, no tie, no pattern, no logo.",
-    "black_turtleneck": "He wears a plain black fine-knit merino turtleneck, no pattern, no logo.",
-    "blazer_tee": "He wears a charcoal wool blazer over a plain black crew-neck t-shirt, no pattern, no logo.",
+    "black_turtleneck": "He wears only a plain black fine-knit merino turtleneck, completely unadorned smooth fabric, bare neck line, nothing else worn.",
+    "navy_shirt": "He wears only a plain dark navy cotton shirt with a soft open collar and matching fabric-covered buttons, completely unadorned smooth fabric, nothing else worn.",
+    "slate_henley": "He wears only a plain dark slate blue long-sleeved cotton crew-neck top, completely unadorned smooth fabric, nothing else worn.",
 }
 assert ORIGINAL in BASE.replace("{OUTFIT}", ORIGINAL)
 z = Client("Tongyi-MAI/Z-Image-Turbo", token=os.environ["HF_TOKEN"])
