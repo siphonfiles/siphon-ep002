@@ -12,6 +12,11 @@ PLATE = "presenter/set_candidates/plate_20251120.png"
 PROMPT = ("Place the man from image 1 into the office from image 2. He sits in the chair behind the desk, upper body visible from the waist up, "
           "positioned slightly left of centre, facing the camera and looking straight into the lens with a calm, composed expression. "
           "Both forearms rest on the desk and his hands lie still and relaxed on the desk surface, near the case folder, fingers natural. "
+          "On the desk, objects from this case (Bitget: a crypto exchange robbed through hacked security equipment): a closed manila case folder "
+          "under his hands, a plain blank white staff ID badge on a dark lanyard lying to his left, a small matte black network security "
+          "appliance box with a single small red status light, and a printed sheet covered in rows of tiny blurred numbers with two lines "
+          "highlighted in amber. All surfaces are plain and unbranded, every printed character too small and blurred to read. "
+          "Keep the warm brass desk lamp on the right exactly where it is. "
           f"Keep his face, hair, short stubble and his clothing exactly as in image 1: {outfit} "
           "Soft even frontal light on his face, warm amber lamp light on the desk, background softly out of focus. Photorealistic, 16:9.")
 q = Client("Qwen/Qwen-Image-Edit-2511", token=os.environ["HF_TOKEN"])
