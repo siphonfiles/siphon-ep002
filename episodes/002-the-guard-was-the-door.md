@@ -23,7 +23,12 @@ Notation (same as ep. 001):
 
 ---
 
-## Title and thumbnail options (to choose)
+## Title and thumbnail — DECIDED (22 Nov 2026)
+
+**Title: Inside the $388M Bitget Hack** · thumbnail text: **NO KEY WAS STOLEN** (chosen by proprietarul; reasoning in `research/title-psychology.md`).
+Before publishing: run YouTube **Test & Compare** with (A) this title + "NO KEY WAS STOLEN", (B) "They Stole $388,000,000 Without a Single Key" + "THE GUARD LET THEM IN", (C) "The Exchange That Froze Its Customers, Not the Thief" + "$388M. NO KEY." See CLAUDE.md section 9.
+
+## Earlier title options (v1, superseded)
 
 1. **Inside the Bitget Hack: $388 Million Out, Not a Single Key Stolen** (recommended: it matches the first 30 seconds exactly)
 2. The Bitget Hack: The Intruder Who Waited 24 Days
