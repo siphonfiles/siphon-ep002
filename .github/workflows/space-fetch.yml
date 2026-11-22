@@ -1,0 +1,57 @@
+name: space fetch (read-only, no GPU)
+
+on:
+  workflow_dispatch:
+    inputs:
+      space:
+        description: "Space de copiat (cod, fără greutăți mari)"
+        default: "Upsampler/seedvr2-3b"
+      dest:
+        description: "Folder în repo"
+        default: "spaces/seedvr2-video/upstream"
+
+permissions:
+  contents: write
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.11"
+      - run: pip install -q "huggingface_hub>=0.34"
+      - name: Download
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+        run: |
+          python - <<'PY'
+          import os, shutil
+          from huggingface_hub import snapshot_download, hf_hub_download
+          dest = "${{ inputs.dest }}"
+          shutil.rmtree(dest, ignore_errors=True)
+          snapshot_download("${{ inputs.space }}", repo_type="space", local_dir=dest,
+                            ignore_patterns=["*.safetensors","*.pth","*.pt","*.bin","*.ckpt","*.png","*.jpg","*.jpeg","*.mp4","*.webp","*.gif"])
+          shutil.rmtree(os.path.join(dest, ".cache"), ignore_errors=True)
+          ref = "spaces/seedvr2-video/reference"
+          os.makedirs(ref, exist_ok=True)
+          for f in ["app.py", "requirements.txt", "README.md"]:
+              try:
+                  p = hf_hub_download("ByteDance-Seed/SeedVR2-3B", f, repo_type="space")
+                  shutil.copy(p, os.path.join(ref, "bytedance_" + f))
+              except Exception as e:
+                  print("skip", f, e)
+          for root, _, files in os.walk(dest):
+              for f in files:
+                  p = os.path.join(root, f)
+                  if os.path.getsize(p) > 5_000_000:
+                      print("removing large", p); os.remove(p)
+          PY
+          du -sh spaces/seedvr2-video/*; find spaces/seedvr2-video -type f | wc -l
+      - name: Commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898+github-actions[bot]@users.noreply.github.com"
+          git add spaces && (git diff --cached --quiet || (git commit -m "space fetch ${{ inputs.space }}" && git push))
