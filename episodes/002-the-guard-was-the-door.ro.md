@@ -1,6 +1,8 @@
-# Episodul 002: Paznicul era ușa (traducere în română, pentru verificare)
+# Episodul 002: Paznicul era ușa (traducere în română, pentru verificare) · DRAFT v2
 
-Originalul, în engleză, e în `002-the-guard-was-the-door.md`, cu sursele [S#] și notele editoriale. Aici e doar textul vorbit și cartoanele, ca să-l poți verifica ușor. Thomas = în cadru, VO = vocea peste imagini.
+Originalul, în engleză, e în `002-the-guard-was-the-door.md`, cu sursele [S#], notele editoriale și lista schimbărilor față de v1. Aici sunt doar textul vorbit și cartoanele, ca să le poți verifica ușor. Thomas = în cadru, VO = vocea peste imagini.
+
+**Titlul (ales):** Inside the $388M Bitget Hack · **Thumbnail:** NO KEY WAS STOLEN · înainte de publicare: Test & Compare cu 3 variante.
 
 ---
 
@@ -12,80 +14,92 @@ Originalul, în engleză, e în `002-the-guard-was-the-door.md`, cu sursele [S#]
 *(negru, bas, titlul: SIPHON FILES · THE GUARD WAS THE DOOR)*
 
 ## 0:30 · Rezultatul
-**VO:** Pe 24 septembrie 2026, 387 de milioane și jumătate de dolari au ieșit de pe exchange-ul crypto Bitget. Au plecat din portofelele hot și warm, cele care plătesc clienții în fiecare zi. Portofelele cold n-au fost atinse.
-**Thomas:** Sunt Thomas Archer, naratorul AI al Siphon Files. Fiecare afirmație din episod are o sursă, toate sunt în descriere. Partea ciudată: firma de investigații a Bitget, Mandiant, n-a găsit nicio dovadă că ar fi fost compromisă vreo cheie privată. Deci cum furi 387 de milioane fără chei? Pui exchange-ul să semneze în locul tău.
+**VO:** Pe 24 septembrie 2026, aproximativ 388 de milioane de dolari au ieșit de pe exchange-ul crypto Bitget. Au plecat din portofelele hot și warm, cele care plătesc clienții în fiecare zi. Portofelele cold n-au fost atinse. La momentul acela, era cel mai mare furt crypto al anului.
+**Thomas:** Sunt Thomas Archer, naratorul AI al Siphon Files. Fiecare afirmație din episod are o sursă, toate sunt în descriere. Partea ciudată: Bitget spune că nu a fost compromisă nicio cheie privată. Deci cum furi 388 de milioane de dolari fără chei? Pui exchange-ul să semneze în locul tău.
 
 ## 1:05 · Cum te plătește un exchange
-**VO:** Ca să înțelegi cum, trebuie să știi unde își ține un exchange banii. Cei mai mulți stau în portofele cold: offline, lente, greu de atins. Apoi sunt portofelele warm, care țin rezerva ce reumple nivelul următor. Și portofelele hot, care plătesc retragerile automat, non-stop.
-**VO:** Când apeși „withdraw”, cererea intră într-un circuit. Verificările de risc se uită la ea. Apoi un serviciu de semnare pune pe ea o semnătură criptografică, și banii pleacă. Semnătura e tot ce contează. Fără ea, nu pleacă nimic. Cu ea, pleacă orice.
+**VO:** Un exchange își ține cei mai mulți bani în portofele cold: offline, lente, greu de atins. Portofelele warm țin o rezervă. Portofelele hot plătesc retragerile automat, non-stop.
+**VO:** Când apeși „withdraw”, cererea intră într-un circuit. Verificările de risc se uită la ea. Apoi un serviciu de semnare pune pe ea o semnătură criptografică, și banii pleacă. Fără semnătura asta, nu pleacă nimic. Cu ea, pleacă orice.
 **VO:** Ține minte asta. Atacatorul n-a avut nevoie de secretul semnăturii. Doar de mașina care o folosește.
 
-## 2:00 · Cu 24 de zile înainte
+## 1:50 · Cu 24 de zile înainte
 **Carton:** T-MINUS 24 DAYS
-**VO:** 31 august. E cea mai veche activitate malițioasă găsită de anchetatori în loguri. Nu era în portofele. Era într-un produs de securitate, unul dintre cele două unelte ale altor firme care rulau în mediul de producție al Bitget.
-**VO:** Anchetatorii le spun simplu Produsul A și Produsul B. Producătorul n-a fost numit. Nu există un număr public de vulnerabilitate. Pe Produsul A, o breșă pe care n-o știa nimeni, un zero-day, l-a lăsat pe atacator să ruleze un script ascuns.
-**VO:** Zero-day înseamnă exact asta: cei care fac produsul au avut zero zile s-o repare, pentru că nu știu că există. Scriptul a citit o parolă de bază de date. Stătea în clar, într-o variabilă de mediu.
-**VO:** Gândește-te la o cheie de rezervă lipită sub preș, doar că preșul era în biroul pazei. Cu parola aceea, scriptul s-a conectat direct la baza de date.
-**VO:** Aceeași activitate a apărut pe a doua mașină pe 23 septembrie, și pe a treia pe 25.
-**VO:** O precizare: Mandiant datează accesul privilegiat al atacatorului pe 24 septembrie. Logurile SlowMist merg înapoi până la 31 august. Cele două rapoarte nu au fost încă puse de acord.
+**VO:** 31 august. E cea mai veche activitate malițioasă găsită de anchetatori în loguri. Nu era în portofele. Era într-un produs de securitate, unul dintre cele două unelte ale altor firme care rulau în sistemele Bitget.
+**VO:** Anchetatorii le spun simplu Produsul A și Produsul B. Producătorul n-a fost numit. Nu există un număr public de vulnerabilitate. Pe Produsul A, o breșă pe care n-o descoperise nimeni încă, un zero-day, l-a lăsat pe atacator să ruleze un script ascuns.
+**VO:** Scriptul a citit o parolă de bază de date. Stătea în clar, într-o variabilă de mediu. Gândește-te la o cheie de rezervă lipită sub preș, doar că preșul era în biroul pazei.
+**VO:** Același script ascuns a apărut pe a doua mașină pe 23 septembrie. Și pe a treia, în noaptea furtului.
+**VO:** O precizare: Mandiant datează accesul privilegiat al atacatorului pe 24 septembrie. Logurile SlowMist merg înapoi până la 31 august. Cele două rapoarte nu au fost puse de acord.
+**VO:** Oricum ar fi, timp de mai bine de trei săptămâni nu s-a întâmplat nimic din ce să observe cineva.
 
-## 3:05 · Puntea
+## 2:50 · Puntea
 **Thomas:** Să mă opresc o secundă. Firmele cumpără produse de securitate ca să supravegheze ușile. Le dau acces adânc, pentru că doar așa văd totul. Ceea ce înseamnă că, dacă cineva preia paznicul, nu mai are nevoie să spargă vreo ușă. E deja pe fiecare hol.
 
-## 3:25 · Cu 2 ore și 24 de minute înainte
+## 3:10 · Cu 2 ore și 24 de minute înainte
 **Carton:** T-MINUS 2 HOURS 24 MINUTES · 24 SEP · 16:07 UTC
-**VO:** La 16:07 UTC, cineva s-a logat în consola Produsului B.
-**VO:** Produsul B e descris ca o platformă de management, genul de unealtă cu care administratorii rulează sarcini pe multe mașini. Au folosit identitatea unui angajat real al Bitget. Cum au obținut-o e încă sub investigație.
-**VO:** Au încercat trei injecții de comenzi. Apoi au trimis cod printr-un punct de execuție web. Mandiant a găsit ce a urmat: un web shell și un canal de comandă și control înapoi spre atacator.
+**VO:** La 16:07 UTC, cineva s-a logat în platforma de management a Produsului B. A folosit identitatea unui angajat real al Bitget. Bitget spune că datele de logare au fost furate prin același zero-day. Și spune că, deocamdată, a exclus pe oricine din interior.
+**VO:** Au încercat trei injecții de comenzi. Apoi au trimis cod printr-un punct de execuție web. Mandiant a găsit un web shell pe dispozitivul B și un canal de comandă și control înapoi spre atacator.
 **VO:** De acolo s-au mutat lateral, pe serverul de producție care construiește tranzacțiile de retragere. Au instalat pe el pachete malițioase.
 
-## 4:25 · Cu 42 de minute înainte
+## 4:05 · Cu 42 de minute înainte
 **Carton:** T-MINUS 42 MINUTES · 17:49 UTC
-**VO:** La 17:49, o unealtă a pornit pe serverul portofelelor. SlowMist a recuperat-o mai târziu din fișiere șterse. Făcea trei lucruri: falsifica rezultatele verificărilor de risc, construia cereri de retragere și le împingea în procesul normal de retragere al Bitget.
-**VO:** Asta e tot trucul. Verificările de risc erau raportate de cel care făcea cererea. Deci unealta spunea pur și simplu că verificările au trecut, verificări care nu rulaseră niciodată. Iar semnatarul a semnat. A produs semnături valide fără să verifice cine cere de fapt.
+**VO:** La 17:49, pe serverul portofelelor a pornit o unealtă. SlowMist a recuperat-o mai târziu din fișiere șterse. A falsificat rezultatele verificărilor de risc. A construit cereri de retragere. Și le-a împins în fluxul normal de retrageri al Bitget.
+**VO:** Asta e tot trucul. Potrivit unei analize, sistemul pur și simplu l-a crezut pe cuvânt pe cel care trimitea cererea că verificările trecuseră. Și semnatarul a semnat.
 
-## 5:15 · Ora zero: 18:31
-**Carton:** 18:31 UTC — în Asia e două și jumătate noaptea.
-**VO:** 18:31. Două transferuri minuscule: 93 TRX, apoi 0,84 ETH. Teste. Destul de mici cât să rămână sub pragurile de alertă. Și nicio alarmă nu a sunat.
+## 4:50 · Ora zero: 18:31
+**Carton:** 18:31 UTC · În Asia e două și jumătate noaptea.
+**VO:** 18:31. Două transferuri minuscule. 93 TRX. Apoi 0,84 ETH. Teste. CEO-ul Bitget spune că erau sub pragul de risc, așa că nu s-a declanșat nicio alertă.
 **VO:** Apoi, nimic. Aproape o jumătate de oră.
-**VO:** 18:58. 34,75 milioane USDT pleacă într-un singur transfer.
+**VO:** 18:58. 34,75 milioane de USDT pleacă într-un singur transfer.
 
-## 5:55 · Vârful
+## 5:30 · Vârful
 **VO:** 19:01. Șapte transferuri. Cinci blockchain-uri. Cincisprezece secunde.
-**VO:** 19:05. Reconcilierea Bitget observă în sfârșit diferența. Controlul de risc blochează retragerile pentru toți clienții platformei. 19:14: urgență de cel mai înalt nivel.
-*(liniște 1 s)*
-**VO:** 19:16. Cinci transferuri. Cinci blockchain-uri. Nouă secunde. Aproximativ 203 milioane de dolari, mai ales din portofelele warm.
-**VO:** Clienții fuseseră blocați cu unsprezece minute înainte. Atacatorul, nu.
-**VO:** De ce portofelele warm? Pentru că acolo stă rezerva mai mare, cea care reumple portofelele hot. Două portofele pe care Bitquery le consideră warm au trimis aproximativ 55% din tot ce s-a furat. Și pe acel nivel nu exista niciun pas de aprobare în plus între cerere și semnătură. Nicio a doua persoană. Nicio listă de destinații permise. Pe fiecare blockchain de tip Ethereum, banii au mers la o singură adresă nouă.
+**VO:** 19:03. Încă un test mic, dintr-un alt portofel. Două minute mai târziu, alarma.
+**VO:** 19:05. Reconcilierea Bitget observă în sfârșit diferența. Controlul de risc blochează retragerile pentru toți clienții platformei. 19:14. Urgență de cel mai înalt nivel.
+**VO:** 19:16. Cinci transferuri. Cinci blockchain-uri. Nouă secunde. Aproximativ 203 milioane de dolari.
+**VO:** Clienții fuseseră blocați cu unsprezece minute înainte. Atacatorul nu.
+**VO:** Potrivit unei analize, nimic nu stătea între o cerere și o semnătură la portofelele warm. Niciun al doilea om. Nicio listă de destinații permise.
 
-## 6:50 · De ce nu s-a oprit
-**VO:** Blocarea retragerilor clienților a fost butonul greșit. Cererile falsificate nu erau retrageri de clienți. Serviciul de semnare a continuat să meargă 2 ore și 39 de minute după prima alertă. După o estimare, aproximativ 60% din bani au plecat după ce alarma sunase deja.
-**VO:** La 20:40, Bitget a început să mute fondurile în portofelele cold. În acel moment încă nu putea exclude că fuseseră furate chei. Ultimul transfer urmărit a plecat la 21:23. După 21:22, atacatorul a încercat să rescrie înregistrările de retragere direct în baza de date. Două comenzi false de Bitcoin au dat eroare. La 21:44, Bitget a oprit serviciile de retragere, inclusiv semnarea.
-**VO:** A doua zi dimineață, la 08:43, Bitget spune că a găsit cauza. La 13:42 a raportat furtul autorităților. A anunțat o recompensă de recuperare: 5% din orice se recuperează sau se îngheață, pentru cine ajută. Și a adus două echipe din afară: Mandiant, parte din Google Cloud, și firma de securitate blockchain SlowMist.
+## 6:15 · De ce nu s-a oprit
+**VO:** Blocarea retragerilor clienților a fost întrerupătorul greșit. Cererile falsificate nu erau retrageri de clienți. Serviciul de semnare a mers încă 2 ore și 39 de minute după prima alertă. Două estimări separate pun banii plecați după alarmă la aproximativ 238 de milioane de dolari. Mai mult de jumătate.
+**VO:** La 20:40, Bitget a început să mute fondurile în cold storage. În acel moment încă nu putea exclude că fuseseră luate chei. Ultimul transfer urmărit a plecat la 21:23. Apoi atacatorul a încercat să rescrie direct în baza de date înregistrările retragerilor. Două comenzi false de Bitcoin au dat erori. La 21:44, Bitget a oprit serviciile de retragere, inclusiv semnarea.
+**VO:** A doua zi dimineață, Bitget a găsit cauza. În aceeași după-amiază a raportat furtul la autorități. A adus Mandiant, parte din Google Cloud, și firma de securitate blockchain SlowMist. Și a oferit o recompensă: 5 la sută din orice sumă înghețată sau recuperată, pentru cine ajută.
 
-## 7:45 · Amprenta pe care n-o urmărea nimeni
-**VO:** Exista un semn, la vedere. Fiecare transfer pe blockchain fixează o limită de „combustibil”, gas. Plățile normale către clienți ale Bitget foloseau cam 63 de mii. Transferurile atacatorului foloseau exact 100 de mii sau 200 de mii. Din 35.678 de tranzacții din săptămâna aceea, nicio altă tranzacție nu făcea asta.
-**VO:** Și fiecare comandă falsificată era ștearsă după fiecare transfer.
+## 7:10 · Amprenta pe care n-a urmărit-o nimeni
+**VO:** Exista un semn, la vedere. Fiecare transfer pe Ethereum își fixează o limită de „combustibil”, gazul. Plățile normale ale Bitget către clienți foloseau cam 63 de mii. Transferurile atacatorului foloseau exact 100 de mii sau 200 de mii. În cele opt zile dinaintea furtului, acele portofele au trimis 35.678 de tranzacții. Nicio plată către clienți n-a făcut așa.
+**VO:** Pe Zcash a fost și mai vizibil. Fiecare dintre cele două transferuri furate a adunat aproape o mie de bucăți separate de monedă. Până atunci, cea mai mare tranzacție a portofelului folosise 54.
+**VO:** Și comenzile falsificate au fost șterse după fiecare transfer.
 
-## 8:15 · Unde s-au dus banii
-**VO:** Stablecoin-urile au plecat primele, pentru că stablecoin-urile pot fi înghețate. Toți cei 34,75 milioane USDT au fost schimbați pe ETH în 20 de minute. XRP-ul, peste 40% din pradă, a fost mutat în Bitcoin prin THORChain. O parte din Zcash a intrat într-un fond privat, unde nu mai poate fi urmărit.
-**VO:** ETH-ul a fost parcat în opt portofele. Șase dintre ele aveau exact câte 10.000 ETH. În câteva zile, cea mai mare parte a început să se miște: în THORChain pentru Bitcoin și prin alte punți spre alte blockchain-uri. BNB și TRX au fost transformate în Bitcoin într-o zi.
-**VO:** Bitget a cerut THORChain să blocheze adresele. THORChain a refuzat, invocând faptul că e o rețea fără permisiuni.
-**VO:** În final, au fost înghețate aproximativ 1,1 milioane de dolari. Sub 0,3%.
-**Carton (parafrază):** CEO-ul Bitget a spus că nu se așteaptă să recupereze mare lucru. — CNBC
+## 7:40 · Unde au ajuns banii
+**VO:** Stablecoin-urile au plecat primele, pentru că stablecoin-urile pot fi înghețate. Toți cei 34,75 milioane de USDT au fost schimbați în ETH în 20 de minute. XRP-ul, cam două cincimi din pradă, a ajuns în Bitcoin prin THORChain. O parte din Zcash a dispărut într-un fond privat, unde nu mai poate fi urmărită.
+**Pe ecran:** ETH parcat în opt portofele, șase cu exact 10.000 ETH fiecare.
+**VO:** Bitget a cerut THORChain să blocheze adresele. THORChain a refuzat, invocând faptul că e deschis tuturor, fără permisiuni. În final, au fost înghețați aproximativ 1,1 milioane de dolari. Sub 0,3 la sută.
+**VO:** Apoi, luna asta, Bitcoin-ul a început să se miște din nou. În unsprezece zile, aproximativ 161 de milioane de dolari au plecat din portofelele etichetate drept ale hackerului Bitget, cei mai mulți prin CoinJoin, o metodă care amestecă monedele mai multor oameni într-o singură tranzacție. Pe 16 noiembrie, acele portofele mai aveau cam 35 de bitcoini.
+**VO:** Și cei care mutau banii nu se ascundeau prea bine. ZachXBT spune că spălătorii au cerut ajutor la serviciul clienți în chaturile publice de Discord și Telegram ale serviciilor pe care le foloseau. Schimburi eșuate. Plăți lipsă. El spune că erau spălători de bani chinezi, care lucrau pentru atacatori.
+**Carton:** CEO-ul Bitget a spus că nu se așteaptă să recupereze mare lucru. — CNBC *(parafrază pe ecran, nu citat)*
 
-## 8:55 · Cine?
-**VO:** Deci cine a făcut asta? În noaptea atacului, CEO-ul Bitget, Gracy Chen, a spus că tiparul seamănă cu ce face Coreea de Nord. A invocat adrese IP care se potrivesc cu servicii VPN folosite înainte de un grup nord-coreean.
+## 8:35 · Cine?
+**VO:** Deci cine a făcut asta? În noaptea atacului, CEO-ul Bitget, Gracy Chen, a spus că niște adrese IP se potriveau cu servicii VPN folosite de un grup nord-coreean.
 **Carton:** „The pattern looks very much like what the North Korean team did before.” („Tiparul seamănă foarte mult cu ce a făcut echipa nord-coreeană înainte.”) — Gracy Chen, livestream pe X
-**VO:** Patru zile mai târziu a fost mai prudentă. Ce spusese, a explicat ea, se baza pe indicii preliminare.
-**VO:** Firmele de analiză blockchain înclină în aceeași direcție. Chainalysis leagă furtul de actori asociați cu Coreea de Nord. Elliptic spune că e foarte probabil. TRM Labs spune că e probabil. O parte din spălare a trecut prin portofele care mutaseră înainte bani furați de la Bybit.
-**VO:** Investigatorul ZachXBT a raportat că unul dintre cei care au spălat banii mutase și fonduri din atacul asupra Kelp DAO din aprilie. Kelp, Drift, Bitget: trei furturi mari în mai puțin de șase luni, toate înclinând în aceeași direcție în rapoartele analiștilor.
-**VO:** Dar niciun guvern nu a atribuit atacul asupra Bitget. Iar raportul Mandiant nu face nicio atribuire.
+**VO:** Patru zile mai târziu, a fost mai prudentă. Ce spusese, a explicat, se baza pe indicii preliminare.
+**VO:** Firmele de analiză blockchain înclină în aceeași direcție. Chainalysis leagă furtul de actori asociați cu Coreea de Nord. Elliptic spune că e foarte probabil. TRM Labs spune că e probabil. Elliptic spune că Bitget a împins furturile nord-coreene suspectate din 2026 peste un miliard de dolari. Iar ZachXBT spune că unul dintre acei spălători a mutat și bani din exploit-ul Kelp DAO din aprilie.
+**VO:** Apoi a venit Binance. La cinci săptămâni după Bitget, Binance a pierdut peste șase miliarde de dolari. Iar Chainalysis a văzut banii furați de la Binance întâlnindu-se pe blockchain cu banii de la Bitget. În timp real. ZachXBT spune că ambii au ajuns, prin THORChain, la aceeași adresă.
+**VO:** La două zile după furtul de la Binance, FBI a numit hoții: grupul nord-coreean TraderTraitor. Pentru Bitget însă, niciun guvern n-a spus nimic. Iar raportul Mandiant nu numește pe nimeni.
 
-## 9:35 · Tiparul
-**Thomas:** Iată ce putem spune. În 2025, Bybit a pierdut un miliard și jumătate de dolari. FBI a dat vina pe Coreea de Nord. Iar metoda pornea de la aceeași idee: nu furi cheia, ci schimbi ce crede semnatarul că semnează. La o lună după Bitget, Binance a pierdut peste șase miliarde. FBI a numit grupul nord-coreean TraderTraitor în câteva zile. Pentru Bitget, confirmarea asta n-a venit.
+## 9:35 · Împrumutul
+**Thomas:** Mai e un detaliu. În februarie 2025, Bybit a pierdut un miliard și jumătate de dolari. FBI a dat vina pe Coreea de Nord. În aceeași zi, Bitget i-a împrumutat lui Bybit 40.000 de ether, ca să-i țină retragerile în funcțiune. Fără dobândă. Fără garanții. Nouăsprezece luni mai târziu, banii plecau de la Bitget. Iar analiștii arată în aceeași direcție.
 
 ## 10:00 · Final
-**VO:** Clienții n-au pierdut bani. Bitget a acoperit pierderea din fondul său de protecție. Fondul ăsta e motivul pentru care povestea nu e despre clienți ruinați. Pierderea a căzut pe firmă, nu pe oamenii care aveau bani pe exchange. Retragerile de Bitcoin s-au redeschis pe 28 septembrie. Totul a revenit până pe 2 octombrie. Vulnerabilitatea e reparată, iar funcția producătorului e oprită.
-**VO:** Bitget spune că a restrâns accesul intern, a adăugat verificare independentă pentru retrageri și a întărit monitorizarea activității neobișnuite. Operațiunile critice cer acum mai multe aprobări. Cu alte cuvinte, o cerere singură n-ar mai trebui să fie de ajuns. Producătorul tot n-a fost numit.
-**Thomas:** Bitget a cumpărat unelte ca să-i păzească ușa. Timp de cel puțin douăzeci și patru de zile, le ținea altcineva în mână. Și când alarma a sunat în sfârșit, exchange-ul și-a blocat clienții, dar a lăsat mașina de semnat să meargă. Sunt Thomas Archer. Ați urmărit Siphon Files.
+**VO:** Clienții n-au pierdut bani. Bitget spune că a acoperit pierderea din fondul de protecție. Fondul ăsta e motivul pentru care povestea nu e despre clienți ruinați. Pierderea a căzut pe companie. Fondul a fost refăcut la puțin peste 300 de milioane de dolari. Tot mai puțin decât înainte de furt.
+**VO:** Toate retragerile au revenit până pe 2 octombrie. Vulnerabilitatea e reparată, iar funcția furnizorului e oprită. Operațiunile critice la Bitget cer acum mai mult de o aprobare. Cu alte cuvinte, o cerere singură n-ar mai trebui să fie de ajuns. Și spune că revizuiește modul în care își alege produsele de securitate de la alte firme. Furnizorul tot n-a fost numit.
+**Thomas:** Bitget a cumpărat unelte ca să păzească ușa. Timp de cel puțin douăzeci și patru de zile, s-ar putea ca altcineva să le fi ținut în mână. Iar când alarma a sunat în sfârșit, exchange-ul și-a blocat clienții și a lăsat mașina de semnat să meargă. Sunt Thomas Archer. Acesta a fost Siphon Files.
+
+---
+
+## Ce s-a schimbat față de v1 (pe scurt)
+1. „Mandiant n-a găsit dovezi că s-a compromis vreo cheie” → **„Bitget spune că nu a fost compromisă nicio cheie”**. În raport, Mandiant notează doar că Bitget n-a observat așa ceva.
+2. Suma vorbită: 387,5 → **„aproximativ 388 de milioane”**, cifra finală Bitget, aceeași cu titlul.
+3. Scoase cifra „55% din portofelele warm” și „mai ales din warm”: împărțirea hot/warm nu e în datele Bitquery.
+4. Adăugat: angajatul nu e suspect, iar datele de logare au fost furate prin zero-day (CEO-ul, la AMA).
+5. Adăugate: legătura cu Binance, împrumutul către Bybit, urma CoinJoin din noiembrie, spălătorii care cer ajutor în chaturi publice, amprenta de pe Zcash, testul de la 19:03.
+6. Formulate ca analiză sau ca afirmație a sursei: deducțiile DFNS și legătura cu Kelp DAO („ZachXBT spune”).
+7. Finalul: „altcineva le ținea” → **„s-ar putea ca altcineva să le fi ținut”**, pentru că Mandiant datează accesul mai târziu decât SlowMist.
