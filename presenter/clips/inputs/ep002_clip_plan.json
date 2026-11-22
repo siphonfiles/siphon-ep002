@@ -1,0 +1,37 @@
+{
+ "clips": [
+  {
+   "name": "thomas_e2_i1_720p",
+   "first": "i1",
+   "last": "i1",
+   "lead": 0.3,
+   "camera": "M",
+   "tail": 0.35
+  },
+  {
+   "name": "thomas_e2_i3_720p",
+   "first": "i3",
+   "last": "i3",
+   "lead": 0.3,
+   "camera": "M",
+   "tail": 0.35
+  },
+  {
+   "name": "thomas_e2_z4_720p",
+   "first": "z4",
+   "last": "z4",
+   "lead": 0.3,
+   "camera": "M",
+   "tail": 0.35
+  },
+  {
+   "name": "thomas_e2_i4_720p",
+   "first": "i4",
+   "last": "i4",
+   "lead": 0.3,
+   "camera": "C",
+   "tail": 0.35
+  }
+ ],
+ "note": "Order = generation order (most important first). 720p, DBCache faster, seed 42."
+}
