@@ -1,0 +1,29 @@
+# Exact pins harvested from the running Space (PINDUMP, per hf-spaces/README.md
+# step 2). Frozen because an unpinned dep already cost us a working Space once:
+# torchao drifted to 0.18.0 on the ltx-2-5 Space and broke ZeroGPU's weight
+# packing on code that had been verified working.
+#
+# gradio and spaces are deliberately absent: the platform pins them, and a
+# competing pin here breaks resolution or the ZeroGPU runtime.
+#
+# torch is pinned to what the runtime actually installed. Upstream pinned
+# torch==2.4.0, which ZeroGPU does not support (2.8.0+ only) and which was the
+# root cause of the upstream Space being broken.
+torch==2.11.0
+torchvision==0.26.0
+diffusers==0.39.0
+transformers==5.15.0
+accelerate==1.14.0
+safetensors==0.8.0
+huggingface_hub==1.16.1
+sentencepiece==0.2.2
+omegaconf==2.3.1
+einops==0.8.2
+rotary-embedding-torch==0.9.1
+opencv-python-headless==5.0.0.93
+imageio==2.37.4
+imageio-ffmpeg==0.6.0
+Pillow==11.3.0
+numpy==2.2.6
+scipy==1.15.3
+tqdm==4.70.0
