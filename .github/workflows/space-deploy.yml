@@ -1,0 +1,89 @@
+name: space deploy (no GPU calls)
+
+on:
+  workflow_dispatch:
+    inputs:
+      name:
+        description: "Numele Space-ului (în contul tokenului)"
+        default: "siphon-seedvr2-video"
+      folder:
+        description: "Folderul din repo"
+        default: "spaces/seedvr2-video"
+      wait_minutes:
+        description: "Cât așteaptă build-ul (doar citește starea)"
+        default: "25"
+
+permissions:
+  contents: read
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.11"
+      - run: pip install -q "huggingface_hub>=0.34" requests
+      - name: Assemble
+        run: |
+          F="${{ inputs.folder }}"; rm -rf /tmp/space && mkdir -p /tmp/space
+          rsync -a --exclude app.py --exclude upsampler_theme.py --exclude README.md --exclude .gitattributes "$F/upstream/" /tmp/space/
+          cp -r "$F/overlay/." /tmp/space/
+          find /tmp/space -type f | wc -l; du -sh /tmp/space
+      - name: Deploy + wait for build (stage only)
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+        run: |
+          python - <<'PY'
+          import os, sys, time, requests
+          from huggingface_hub import HfApi
+          api = HfApi(token=os.environ["HF_TOKEN"])
+          me = api.whoami()
+          user = me["name"]
+          print(f"::add-mask::{user}", flush=True)
+          role = (me.get("auth", {}).get("accessToken", {}) or {}).get("role")
+          print("token role:", role, flush=True)
+          repo = f"{user}/${{ inputs.name }}"
+          try:
+              api.create_repo(repo, repo_type="space", space_sdk="gradio", private=True, exist_ok=True,
+                              space_hardware="zero-a10g")
+          except Exception as e:
+              print("CREATE FAILED:", type(e).__name__, str(e)[:400].replace(user, "***"))
+              print("=> tokenul HF_TOKEN nu are drept de scriere sau contul nu poate crea Space ZeroGPU privat.")
+              sys.exit(1)
+          try:
+              api.request_space_hardware(repo, "zero-a10g")
+          except Exception as e:
+              print("hardware request:", type(e).__name__, str(e)[:300].replace(user, "***"))
+          api.upload_folder(repo_id=repo, repo_type="space", folder_path="/tmp/space",
+                            commit_message="deploy from siphon-ep002")
+          print("uploaded", flush=True)
+          deadline = time.time() + 60 * int("${{ inputs.wait_minutes }}")
+          last = None
+          while time.time() < deadline:
+              rt = api.get_space_runtime(repo)
+              st = rt.stage
+              if st != last:
+                  print(time.strftime("%H:%M:%S"), "stage:", st, "hardware:", rt.hardware, flush=True); last = st
+              if st in ("RUNNING", "BUILD_ERROR", "RUNTIME_ERROR", "CONFIG_ERROR", "NO_APP_FILE"):
+                  break
+              time.sleep(20)
+          if last != "RUNNING":
+              for kind in ("build", "run"):
+                  try:
+                      r = requests.get(f"https://huggingface.co/api/spaces/{repo}/logs/{kind}",
+                                       headers={"Authorization": f"Bearer {os.environ['HF_TOKEN']}"}, stream=True, timeout=30)
+                      lines = []
+                      t0 = time.time()
+                      for ln in r.iter_lines():
+                          if ln: lines.append(ln.decode("utf-8", "ignore"))
+                          if time.time() - t0 > 20: break
+                      print(f"---- {kind} log (last 80) ----")
+                      for ln in lines[-80:]: print(ln.replace(user, "***"))
+                  except Exception as e:
+                      print(kind, "log error", e)
+              sys.exit(1)
+          print("SPACE RUNNING (no inference was called)")
+          PY
