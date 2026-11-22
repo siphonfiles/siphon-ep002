@@ -12,7 +12,7 @@ Generate pe 22 nov 2026 cu Z-Image-Turbo (`illustrations.yml`, run #1, joburi î
 | b06_empty_guard_booth | „We know, Bitget doesn't” | bună |
 | b07_badge_lanyard | A borrowed name | bună (card gol) |
 | b08_corridor_door | Pe holuri spre wallet job server | bună |
-| b09_stamp_form | Risk control / SIGNED | de refăcut: mâna se termină în aer; decupajul a scos lampa (respins), ștergerea antebrațului pe CPU arată fals |
+| b09_stamp_form | Risk control / SIGNED | bună: refăcută (run-2, seed 2112, ~14 s): formular tipărit cu text neclar și semnătură, braț în mânecă închisă intrând din dreapta, lampa în cadru. Varianta a (seed 2111, fără semnătură vizibilă) pe `renders` |
 | b10_empty_trading_floor | 18:31 | bună |
 | b11_phone_nightstand | Locked out (clientul) | bună |
 | b12_alarm_control_room | Alarma de la 19:05 | bună |
