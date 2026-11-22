@@ -1,0 +1,42 @@
+name: seedvr2 (video restore)
+
+on:
+  workflow_dispatch:
+    inputs:
+      clip:
+        description: "mp4 (max 121 cadre)"
+        required: true
+      fps:
+        description: "fps al clipului"
+        default: "25"
+
+permissions:
+  contents: write
+
+jobs:
+  restore:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.11"
+      - run: pip install -q gradio_client && sudo apt-get install -y -q ffmpeg >/dev/null
+      - name: Restore
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+        run: python scripts/seedvr2_clip.py "${{ inputs.clip }}" "${{ inputs.fps }}"
+      - name: Probe
+        if: always()
+        run: for f in out/*.mp4; do ffprobe -v error -count_frames -show_entries stream=width,height,r_frame_rate,nb_read_frames -of csv=p=0 "$f"; done || true
+      - name: Publish to renders branch
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898+github-actions[bot]@users.noreply.github.com"
+          mkdir -p out && cp -r out /tmp/pub
+          git fetch --depth 1 origin renders || true
+          if git rev-parse --verify -q origin/renders; then git switch -c renders origin/renders; else git switch --orphan renders; fi
+          D="seedvr2/run-${GITHUB_RUN_NUMBER}"; mkdir -p "$D" && cp /tmp/pub/* "$D/" || true
+          git add seedvr2 && git commit -m "seedvr2 ${GITHUB_RUN_NUMBER}" && git push origin renders
