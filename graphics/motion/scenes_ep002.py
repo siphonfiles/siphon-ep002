@@ -501,9 +501,9 @@ def path_to_money(ctx, t, d, t_server=4.0, t_vault=12.0, t_barrier=15.0, source=
     _node(ctx, 560, 670, "WALLET JOB SERVER", "builds withdrawal transactions", a * prog(t, t_server, 0.4), None, 440)
     v = ease_out(prog(t, t_vault, 0.9))
     if v > 0:
-        _wire(ctx, (1000, 670), (1290, 600), ease_out(prog(t, t_vault, 0.7)), AMBER, a)
-        draw_cut(ctx, "b19_vault_half_full", 1560, 560, 520 + 20 * v, a * v)
-        text(ctx, "NEXT TO THE MONEY", 1560, 250, AMBER, a * v, align="center", face=MONO, size=30, tracking=6)
+        _wire(ctx, (1000, 670), (1250, 600), ease_out(prog(t, t_vault, 0.7)), AMBER, a)
+        draw_cut(ctx, "b19_vault_half_full", 1500, 560, 450 + 20 * v, a * v)
+        text(ctx, "NEXT TO THE MONEY", 1500, 270, AMBER, a * v, align="center", face=MONO, size=30, tracking=6)
     b = ease_out(prog(t, t_barrier, 0.45))
     if b > 0:
         bx = 1150
@@ -585,7 +585,8 @@ def loan_towers(ctx, t, d, mode="loan", source=None):
             if 0 < u < 1:
                 x = bt[0] + (lt[0] - bt[0]) * u
                 y = bt[1] + (lt[1] - bt[1]) * u - 90 * math.sin(math.pi * u)
-                _glow(ctx, x, y, 22, AMBER, a * 0.8)
+                _glow(ctx, x, y, 46, AMBER, a * 0.55)
+                _glow(ctx, x, y, 12, (1, 1, 1), a * 0.9)
         text(ctx, "40,000 ETH · 21 FEB 2025", W / 2, 150, AMBER, a * prog(t, 1.4, 0.5), align="center", face=MONO,
              size=40, tracking=4)
         text(ctx, "No interest. No collateral.", W / 2, 210, GREY, a * prog(t, 2.4, 0.5), align="center", face=MONO,
@@ -595,9 +596,10 @@ def loan_towers(ctx, t, d, mode="loan", source=None):
             u = ((t * 0.45 + j / 18) % 1) * prog(t, 0.8, 0.6)
             x = bt[0] + (W + 60 - bt[0]) * u
             y = bt[1] + 40 * math.sin(j * 1.7) * u
-            _glow(ctx, x, y, 20, RED, a * 0.8 * math.sin(math.pi * u))
-        text(ctx, "19 MONTHS LATER", W / 2, 150, RED, a * prog(t, 0.6, 0.5), align="center", face=MONO, size=40,
+            _glow(ctx, x, y, 44, RED, a * 0.6 * math.sin(math.pi * u))
+            _glow(ctx, x, y, 11, (1, 0.85, 0.85), a * 0.9 * math.sin(math.pi * u))
+        text(ctx, "19 MONTHS LATER", W / 2, 150, RED, a * prog(t, 0.3, 0.4), align="center", face=MONO, size=40,
              tracking=6)
-        text(ctx, "The money was leaving Bitget.", W / 2, 215, INK, a * prog(t, 1.0, 0.5), align="center", size=52)
+        text(ctx, "The money was leaving Bitget.", W / 2, 215, INK, a * prog(t, 0.6, 0.4), align="center", size=52)
     if source:
         source_tag(ctx, source, a)
