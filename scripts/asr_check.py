@@ -44,5 +44,5 @@ for k in sorted(texts, key=key):
     rows.append(f"| {k} | {flag} {score:.2f} | {'; '.join(diffs)} | {heard} |")
     print(k, flag, diffs, flush=True)
 lowtxt = "\n".join(f"| {k} | {', '.join(l)} |" for k, l in LOW if l)
-open(out, "w").write(f"# ASR check ep001 ({MODEL})\n\n| line | result | differences (script → heard) | heard |\n|---|---|---|---|\n" + "\n".join(rows)
+open(out, "w").write(f"# ASR check ({MODEL})\n\n| line | result | differences (script → heard) | heard |\n|---|---|---|---|\n" + "\n".join(rows)
                      + f"\n\n{bad} lines to look at\n\n## Words heard with low confidence (p < {LOWP})\n\n| line | words |\n|---|---|\n" + lowtxt + "\n")
