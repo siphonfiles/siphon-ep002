@@ -162,7 +162,7 @@ def build(tl):
     add(c0, s("t2"), E.explorer_line, cols=["93 TRX", "24 SEP 2026", "18:31 UTC", "→ attacker wallet"],
         source="[S6]", cut=True)
     add(s("t2"), nxt(hits, e("t2") - .01), S.kinetic,
-        line="Less than three hours later, about $388 million is gone. Not a single key was stolen.",
+        line="Less than three hours later, about $388 million is gone. Bitget says no key was stolen.",
         highlight=("$388", "key"), source="[S2]")
     h1 = nxt(hits, e("t2") - .01)
     c1 = next(C)
@@ -285,7 +285,7 @@ def build(tl):
     add(c9, s("e1"), S.countdown, label="18:31 UTC", sub="02:31 IN ASIA")
     add(s("e1"), s("e2"), E.explorer_line, cols=["18:31", "93 TRX", "· then ·", "0.84 ETH"],
         label="THE TEST TRANSFERS", source="[S6]", cut=False)
-    add(s("e2"), s("e3"), E.risk_form, stamp_at=0.6, label="below the risk threshold · no alert", source="[S15]")
+    add(s("e2"), s("e3"), E.risk_form, stamp_at=0.6, label="below the risk threshold · no alert (CEO)", source="[S15]")
     IL(s("e3"), s("e4"), "b13_fingerprint_glass", "in", kicker="HOLD ON TO THIS",
        line="Something odd about these transfers.",
        glows=[dict(kind="flicker", x=620, y=310, r=220, color=(0.95, 0.95, 1.0), base=0.30)])
