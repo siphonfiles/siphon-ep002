@@ -116,6 +116,15 @@ def _off(fn, off):
     return g
 
 
+_IMG = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..", "illustrations", "ep002", "img")
+
+
+def pick(new, old):
+    """New Kaggle illustration if it (and its depth map) is in the repo, otherwise the old one."""
+    ok = all(os.path.exists(os.path.join(_IMG, f)) for f in (f"{new}.jpg", f"{new}_depth.png"))
+    return new if ok else old
+
+
 def build(tl):
     ev = tl["events"]
     v = {e["id"]: (e["t"], e["t"] + e["dur"]) for e in ev if e["kind"] == "voice"}
@@ -231,12 +240,12 @@ def build(tl):
     add(nxt(hits, e("a7") - .01) + 1.0, s("a9"), S.explainer, name="ONE CAVEAT",
         lines=[(0.5, "SlowMist: first activity 31 August"), (1.6, "Mandiant: privileged access dated 24 September"),
                (3.0, "The two reports haven't been reconciled")], source="[S3][S7]")
-    IL(s("a9"), s("a10"), "b06_empty_guard_booth", "out")
+    IL(s("a9"), s("a10"), pick("b21_two_appliances", "b06_empty_guard_booth"), "out")
     add(s("a10"), nxt(hits, e("a10") - .01) + .5, S.statement, line="A name. A real one.")
 
     # ---------------- BRIDGE (Thomas) ----------------
     hb = nxt(hits, e("a10") - .01) + .5
-    IL(hb, s("d2"), "b06_empty_guard_booth", "right", line="Let me stop here for a second.",
+    IL(hb, s("d2"), pick("b23_server_cable", "b06_empty_guard_booth"), "right", line="Let me stop here for a second.",
        glows=[dict(kind="flicker", x=730, y=100, r=300, color=WARM, base=0.30)])
     IL(s("d2"), s("d3"), "b04_security_appliance", "left", kicker="SECURITY PRODUCTS",
        line="Deep access. They see everything.", warm=False,
@@ -285,7 +294,7 @@ def build(tl):
        glows=[dict(kind="flicker", x=950, y=70, r=260, color=WARM, base=0.25)])
     add(s("e5"), s("e6"), S.big_number, value=34.75, prefix="", suffix="M USDT", decimals=2, count_for=1.0,
         caption="18:58 UTC · one transfer", source="[S6]")
-    IL(s("e6"), nxt(cards, e("e7")), "b12_alarm_control_room", "out", kicker="STILL NO ALARM", warm=False,
+    IL(s("e6"), nxt(cards, e("e7")), pick("b28_guard_monitors", "b12_alarm_control_room"), "out", kicker="STILL NO ALARM", warm=False,
        glows=[dict(kind="pulse", x=930, y=106, r=160, color=(0.4, 0.1, 0.1), min=0.02, max=0.08, hz=0.3)])
 
     # ---------------- LOCKED OUT ----------------
@@ -298,7 +307,10 @@ def build(tl):
        glows=[dict(kind="pulse", x=930, y=106, r=320, color=REDL, min=0.15, max=0.85, hz=1.6),
               dict(kind="beam", poly=[(900, 180), (1000, 180), (1120, 660), (760, 660)], color=(1.0, 0.35, 0.25), base=0.16)])
     add(s("f4"), s("f5"), E.locked_phone_split, note="If you had money on Bitget", source="[S2]")
-    add(s("f5"), s("f6"), S.explainer, name="19:14 UTC", lines=[(0.4, "Highest-level emergency")], source="[S2]")
+    if pick("b24_crisis_room", "") == "b24_crisis_room":
+        IL(s("f5"), s("f6"), "b24_crisis_room", "in", kicker="19:14 UTC", line="Highest-level emergency.", warm=False, source="[S2]")
+    else:
+        add(s("f5"), s("f6"), S.explainer, name="19:14 UTC", lines=[(0.4, "Highest-level emergency")], source="[S2]")
     add(s("f6"), s("f9"), E.burst, clock="19:16", n=5, chains=5, seconds=9, red=True,
         caption="≈ $203 million", source="[S6]")
     add(s("f9"), nxt(hits, e("f10") - .01) + .6, E.locked_phone_split, source="[S2][S8]")
@@ -316,7 +328,7 @@ def build(tl):
         source="[S2][S8]")
     add(s("g4"), s("g5"), S.big_number, value=238_000_000, suffix="", prefix="~$", caption="left after the alarm · two estimates",
         count_for=1.2, source="[S7][S20]")
-    IL(s("g5"), s("g7"), "b19_vault_half_full", "out", kicker="20:40 UTC",
+    IL(s("g5"), s("g7"), pick("b25_vault_closing", "b19_vault_half_full"), "out", kicker="20:40 UTC",
        line="Funds move to cold storage. Last traced transfer: 21:23.", source="[S2][S6][S7]",
        glows=[dict(kind="flicker", x=790, y=90, r=320, color=WARM, base=0.35)])
     add(s("g7"), s("g8"), S.explainer, name="AFTER 21:23",
@@ -324,7 +336,7 @@ def build(tl):
                (4.0, "Covering tracks, or going for more? The reports don't say.")], source="[S4][S7]")
     add(s("g8"), s("g9"), E.clock_span, marks=[(0.19, "19:05", "alarm"), (0.97, "21:23", "last transfer")],
         source="[S2][S6]")
-    IL(s("g9"), nxt(cards, e("g10")), "b13_fingerprint_glass", "in", kicker="THE NEXT MORNING",
+    IL(s("g9"), nxt(cards, e("g10")), pick("b22_recovered_drive", "b13_fingerprint_glass"), "in", kicker="THE NEXT MORNING",
        line="Root cause found. Reported to law enforcement.", source="[S2]",
        glows=[dict(kind="flicker", x=620, y=310, r=220, color=(0.95, 0.95, 1.0), base=0.30)])
 
@@ -334,8 +346,12 @@ def build(tl):
     add(s("h1"), s("h3"), E.gas_bars, source="[S6]")
     add(s("h3"), s("h4"), S.big_number, value=35678, prefix="", suffix=" transactions", count_for=1.0,
         caption="in the 8 days before · not one customer payout used those limits", source="[S6]")
-    add(s("h4"), s("h5"), S.explainer, name="ZCASH",
-        lines=[(0.6, "~1,000 inputs per stolen transfer"), (2.4, "previous maximum for that wallet: 54")], source="[S7]")
+    if pick("b27_coin_crowd", "") == "b27_coin_crowd":
+        IL(s("h4"), s("h5"), "b27_coin_crowd", "in", kicker="ZCASH · ~1,000 INPUTS PER TRANSFER",
+           line="The wallet's previous maximum: 54.", source="[S7]")
+    else:
+        add(s("h4"), s("h5"), S.explainer, name="ZCASH",
+            lines=[(0.6, "~1,000 inputs per stolen transfer"), (2.4, "previous maximum for that wallet: 54")], source="[S7]")
     IL(s("h5"), nxt(hits, e("h6") - .01) + .5, "b13_fingerprint_glass", "in", kicker="COMMANDS DELETED",
        line="The fingerprints weren't.", source="[S8][S16]",
        glows=[dict(kind="flicker", x=620, y=310, r=240, color=(0.95, 0.95, 1.0), base=0.35)])
@@ -376,7 +392,12 @@ def build(tl):
         source="[S10][S11][S12][S13]")
     add(s("x5"), s("x6"), S.big_number, value=6_300_000_000, caption="Binance · ~5 weeks later", count_for=1.2,
         source="[S17][S25]")
-    add(s("x6"), s("x8"), E.flow_split, title="ON-CHAIN", rows=[
+    x6b = s("x6")
+    if pick("b26_rivers_meet", "") == "b26_rivers_meet":
+        IL(s("x6"), s("x7"), "b26_rivers_meet", "in", kicker="CHAINALYSIS",
+           line="The Binance money met the Bitget money on-chain.", source="[S24]")
+        x6b = s("x7")
+    add(x6b, s("x8"), E.flow_split, title="ON-CHAIN", rows=[
         ("BINANCE $", "same address", "via THORChain (ZachXBT)"),
         ("BITGET $", "same address", "commingled (Chainalysis)")], source="[S24][S26]")
     add(s("x8"), s("x9"), S.explainer, name="FBI · 31 OCT 2026",
