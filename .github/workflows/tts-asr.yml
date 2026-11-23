@@ -1,0 +1,65 @@
+name: tts + asr (voice candidates checked by two models, CPU)
+on:
+  workflow_dispatch:
+    inputs:
+      lines:
+        default: sound/ep002/ep002_fix2_lines.json
+      name:
+        default: ep002-fix2
+      timing_ids:
+        description: "ids from voice-tests lines/ep002-v3 to add, with word timings (large-v3)"
+        default: "i1,z4"
+permissions:
+  contents: write
+jobs:
+  go:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.11"
+      - uses: actions/cache@v5
+        with:
+          path: ~/.cache/huggingface
+          key: hf-zonos3-mini-v1
+      - run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg > /dev/null
+          pip install -q --index-url https://download.pytorch.org/whl/cpu torch
+          pip install -q "transformers>=4.57" soundfile numpy faster-whisper
+      - name: Generate
+        run: python scripts/tts_lines.py "${{ inputs.lines }}" out
+      - name: ASR inputs
+        run: |
+          git fetch --depth 1 origin voice-tests
+          mkdir -p asr
+          for k in $(echo "${{ inputs.timing_ids }}" | tr ',' ' '); do git show FETCH_HEAD:lines/ep002-v3/$k.wav > out/orig_$k.wav; done
+          for f in out/*.wav; do ffmpeg -v error -y -i $f -ac 1 -ar 16000 asr/$(basename ${f%.wav}).flac; done
+          python3 - <<'PY'
+          import json
+          L={x["id"]:x["text"] for x in json.load(open("sound/ep002/ep002_lines.json"))}
+          t={x["id"]:x["check"] for x in json.load(open("${{ inputs.lines }}"))}
+          for k in "${{ inputs.timing_ids }}".split(","):
+              if k: t["orig_"+k]=L[k]
+          json.dump(t,open("asr/texts.json","w"),indent=1)
+          PY
+      - name: ASR medium.en
+        env: {ASR_MODEL: medium.en}
+        run: python scripts/asr_check.py asr out/asr_medium.en.md
+      - name: ASR large-v3
+        env: {ASR_MODEL: large-v3}
+        run: python scripts/asr_check.py asr out/asr_large-v3.md
+      - name: Word timings
+        env: {ASR_MODEL: large-v3}
+        run: |
+          ids=$(echo "${{ inputs.timing_ids }}" | sed 's/[^,]*/orig_&/g')
+          ASR_IDS=$ids python scripts/asr_check.py asr /tmp/t.md | tee out/word_timings.txt
+      - name: Publish
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898+github-actions[bot]@users.noreply.github.com"
+          mkdir -p /tmp/pub && cp out/* /tmp/pub/
+          git switch -c voice-tests FETCH_HEAD
+          mkdir -p "lines/${{ inputs.name }}" && cp /tmp/pub/* "lines/${{ inputs.name }}/"
+          git add lines && git commit -m "tts+asr ${{ inputs.name }} (run ${GITHUB_RUN_NUMBER})" && (git push origin HEAD:voice-tests || (git pull --rebase origin voice-tests && git push origin HEAD:voice-tests))
