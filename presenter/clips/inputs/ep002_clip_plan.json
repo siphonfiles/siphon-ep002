@@ -31,6 +31,30 @@
    "lead": 0.3,
    "camera": "C",
    "tail": 0.35
+  },
+  {
+   "name": "thomas_e2_i2_720p",
+   "first": "i2",
+   "last": "i2",
+   "lead": 0.3,
+   "camera": "C",
+   "tail": 0.35
+  },
+  {
+   "name": "thomas_e2_d3_720p",
+   "first": "d3",
+   "last": "d3",
+   "lead": 0.3,
+   "camera": "M",
+   "tail": 0.35
+  },
+  {
+   "name": "thomas_e2_z2_720p",
+   "first": "z2",
+   "last": "z2",
+   "lead": 0.3,
+   "camera": "M",
+   "tail": 0.35
   }
  ],
  "note": "Order = generation order (most important first). 720p, DBCache faster, seed 42."
