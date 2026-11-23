@@ -9,7 +9,7 @@ permissions:
 jobs:
   gen:
     runs-on: ubuntu-latest
-    timeout-minutes: 120
+    timeout-minutes: 300
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -23,14 +23,17 @@ jobs:
           $P torch torchaudio --index-url https://download.pytorch.org/whl/cpu
           python -c "import torch,torchaudio;print(f'torch=={torch.__version__}');print(f'torchaudio=={torchaudio.__version__}')" > constraints.txt; cat constraints.txt
           # every later install keeps the CPU torch (no CUDA wheels, they filled the disk)
-          $P -c constraints.txt --extra-index-url https://download.pytorch.org/whl/cpu stable-audio-tools einops pytorch_lightning torchmetrics k-diffusion alias-free-torch vector-quantize-pytorch x-transformers local-attention ema-pytorch einops-exts safetensors sentencepiece "transformers<5" auraloss encodec prefigure
+          $P -c constraints.txt --extra-index-url https://download.pytorch.org/whl/cpu stable-audio-tools einops pytorch_lightning torchmetrics k-diffusion alias-free-torch vector-quantize-pytorch x-transformers local-attention ema-pytorch einops-exts safetensors sentencepiece "transformers<5" auraloss encodec prefigure soundfile
           $P -c constraints.txt "numpy<2" && $P --force-reinstall --no-deps "PyWavelets==1.6.0"
           df -h /
       - name: Generate
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
+        timeout-minutes: 240
+        continue-on-error: true
         run: python scripts/sfx_gen.py "${{ inputs.jobs }}" sfx_out
       - name: Listening file + mp3s
+        if: always()
         run: |
           D=sound/ep002/sfx/candidates; mkdir -p $D; : > list.txt
           ffmpeg -v error -y -f lavfi -i anullsrc=r=44100:cl=stereo -t 0.8 gap.wav
