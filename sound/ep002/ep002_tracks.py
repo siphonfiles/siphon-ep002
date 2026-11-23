@@ -282,3 +282,30 @@ if __name__ == "__main__":
         path = os.path.join(OUT, f"{name}.wav")
         wavfile.write(path, SR, (st * 32767).astype(np.int16))
         print("wrote", path, round(len(st) / SR, 1), "s")
+
+
+def withdrawal_rush_v2(seconds=20, toms=False):
+    """Owner (23 nov 2026): keep only what plays in the first 3 s of withdrawal_rush
+    (octave bass + kick/snap/hats), no siren synth, no riser; ~20 s long.
+    toms=True adds the drum fill every 4th bar (still only drums + bass)."""
+    bpm = 132
+    s16 = 60 / bpm / 4
+    bar = 16 * s16
+    drums, bass = buf(seconds), buf(seconds)
+    roots = [40, 40, 36, 38]
+    kicks = (0, 3, 6, 10, 11)
+    bars = int(seconds / bar) + 1
+    for b in range(bars):
+        t0 = b * bar
+        root = roots[(b // 2) % 4]
+        for i in range(16):
+            place(bass, 0.45 * bass_note(root + (12 if i % 2 else 0), s16 * 0.85, cutoff=900, decay=0.07), t0 + i * s16)
+            place(drums, 0.16 * hat(accent=1.0 if i % 2 == 0 else 0.45), t0 + i * s16)
+        for i in kicks:
+            place(drums, 0.85 * kick(), t0 + i * s16)
+        for i in (4, 12):
+            place(drums, 0.55 * snap(), t0 + i * s16)
+        if toms and b % 4 == 3:
+            for k, i in enumerate((8, 10, 12, 13, 14, 15)):
+                place(drums, 0.45 * tom(150 - 14 * k), t0 + i * s16)
+    return finish_st(pan(drums + bass, 0), seconds, fade=3.0)
