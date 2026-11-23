@@ -115,7 +115,7 @@ def pipeline(ctx, t, d, steps=("REQUEST", "RISK CHECKS", "SIGNING SERVICE", "MON
         for j, ln in enumerate(wrap(ctx, s, 260, MONO, 32)):
             text(ctx, ln, x, y - 5 + j * 40, INK if reached else GREY, a * q, align="center", face=MONO, size=32)
         if forged and s.startswith("RISK") and reached:
-            text(ctx, "✓ ✓ ✓  (forged)", x, y + 130, RED, a, align="center", face=MONO, size=30, bold=False)
+            text(ctx, "✓ ✓ ✓ (forged)", x, y + 130, RED, a, align="center", face=MONO, size=30, bold=False)
         if s.startswith("SIGNING") and reached:
             text(ctx, "SIGNED", x, y - 110, AMBER, a, align="center", face=MONO, size=34, tracking=6)
     rgba(ctx, AMBER, a)
