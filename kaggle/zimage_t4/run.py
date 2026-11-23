@@ -1,7 +1,6 @@
 """Siphon Files: Z-Image-Turbo (Apache-2.0) illustrations on a Kaggle T4, same settings as the HF Space
 (2048x1152, 8 DiT steps, shift 3, fixed seeds, same style suffix). No dataset: jobs are embedded below.
-fp16 first (T4 has no native bf16); if the result has NaN/inf or is flat, the transformer is reloaded
-in bf16 and the image is redone. Output: /kaggle/working/<id>.png + run_log.json."""
+bf16 (emulated on T4; fp16 overflowed to NaN in run 1). A flat/NaN image is logged as an error. Output: /kaggle/working/<id>.png + run_log.json."""
 import json, os, subprocess, sys, time, traceback
 T0 = time.time(); LOG = []
 def log(*a):
@@ -24,7 +23,7 @@ try:
         p.scheduler = FlowMatchEulerDiscreteScheduler.from_config(p.scheduler.config, shift=3.0)
         p.enable_model_cpu_offload(); p.vae.enable_tiling()
         return p
-    dtype = torch.float16; pipe = load(dtype); log("loaded", dtype)
+    dtype = torch.bfloat16; pipe = load(dtype)  # run 1: fp16 gave NaN (black image) at 78 s/image; reloading inside the script got OOM-killed (RAM); log("loaded", dtype)
     for j in JOBS["images"]:
         for attempt in range(2):
             t = time.time()
