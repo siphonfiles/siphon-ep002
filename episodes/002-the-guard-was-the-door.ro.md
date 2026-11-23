@@ -150,7 +150,7 @@ Originalul, în engleză, e în `002-the-guard-was-the-door.md`, cu sursele [S#]
 
 **CARTON:** „The pattern looks very much like what the North Korean team did before.” („Tiparul seamănă foarte mult cu ce a făcut echipa nord-coreeană înainte.”) — Gracy Chen, transmisiune live pe X
 
-**VO:** Patru zile mai târziu, a fost mai prudentă. Asta, a spus ea, se baza pe indicii preliminare. Chainalysis, Elliptic și TRM Labs înclină toate în aceeași direcție.
+**VO:** Patru zile mai târziu, a fost mai prudentă. Asta, a spus ea, se baza pe indicii preliminare. Analiștii de la Chainalysis, Elliptic și TRM Labs înclină toți în aceeași direcție.
 
 **VO:** Apoi, cinci săptămâni mai târziu, Binance a pierdut peste șase miliarde de dolari. Iar Chainalysis a văzut banii furați de la Binance întâlnindu-se pe blockchain cu banii de la Bitget. ZachXBT spune că amândouă au ajuns, prin THORChain, la aceeași adresă. La două zile după furtul de la Binance, FBI i-a numit pe hoți: TraderTraitor, din Coreea de Nord.
 

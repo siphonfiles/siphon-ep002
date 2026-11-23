@@ -323,7 +323,7 @@ On the night of the hack, Bitget's CEO, Gracy Chen, said some IP addresses match
 
 `[VO]`
 Four days later, she was more careful. That, she said, was based on preliminary indicators. [S13]
-Chainalysis, Elliptic and TRM Labs all lean the same way. [S10][S11][S12]
+The analysts at Chainalysis, Elliptic and TRM Labs all lean the same way. [S10][S11][S12]
 
 `[VO]`
 Then, five weeks later, Binance lost more than six billion dollars.

@@ -10,7 +10,7 @@ for f in os.listdir(L("ep002-v3")):
     if f.endswith(".wav"): shutil.copy(os.path.join(L("ep002-v3"), f), os.path.join(out, f))
 FIX1 = {"a8": 2, "b3": 2, "g8": 2, "h1": 2, "l1": 2, "l4": 2, "r2": 2}          # ASR round 1
 FIX2 = {"t3": "h6", "c3": "h7", "x6": "h7", "g5": "s9"}                           # ASR round 2 (23 Nov evening)
-FIX3 = {}                                                                         # x4 rephrase, filled in after round 3
+FIX3 = {"x4": "s2"}                                                                         # x4 rephrase, filled in after round 3
 for k, s in FIX1.items(): shutil.copy(os.path.join(L("ep002-fix1"), f"{k}_s{s}.wav"), os.path.join(out, f"{k}.wav"))
 for k, v in FIX2.items(): shutil.copy(os.path.join(L("ep002-fix2"), f"{k}_{v}.wav"), os.path.join(out, f"{k}.wav"))
 for k, v in FIX3.items(): shutil.copy(os.path.join(L("ep002-fix3"), f"{k}_{v}.wav"), os.path.join(out, f"{k}.wav"))
