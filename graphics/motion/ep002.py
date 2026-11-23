@@ -180,7 +180,7 @@ def build(tl):
     IL(s("r1"), e("r1") + .35, "b02_two_towers", "up", kicker="BYBIT · 21 FEB 2025",
        line="~$1.5 billion stolen. The FBI blames North Korea.", source="[S31][S28]",
        fog=dict(density=0.22, color=(0.45, 0.50, 0.58), speed=10, far=0.45))
-    add(e("r1") + .35, s("r3"), E.loan_line, source="[S27][S28]")
+    add(e("r1") + .35, s("r3"), E.loan_towers, mode="loan", source="[S27][S28]")
     IL(s("r3"), s("r4"), "b03_lifebuoy_dock", "in", statement="Remember that loan.",
        glows=[dict(kind="flicker", x=790, y=216, r=300, color=WARM, base=0.38)],
        fog=dict(density=0.30, color=(0.45, 0.52, 0.60), speed=12, floor=0.45))
@@ -223,7 +223,8 @@ def build(tl):
                (frac("a4", 0.2) - s("a3"), "Product A: a zero-day → a hidden script")], source="[S4][S8]")
     add(s("a5"), s("a6"), E.explorer_line, cols=["db_password=", "********", "(plain text)"],
         label="FOUND BY THE SCRIPT · ILLUSTRATIVE", source="[S4][S8]", cut=False)
-    IL(s("a6"), s("a7"), "b05_key_under_mat", "in", statement="A spare key under the doormat — inside the security office.")
+    add(s("a6"), s("a7"), E.key_appliance, statement="A spare key under the doormat — inside the security office.",
+        source="[S4][S8]")
     IL(s("a7"), nxt(hits, e("a7") - .01) + 1.0, "b06_empty_guard_booth", "in", kicker="FROM HERE ON",
        line="We know someone is inside. Bitget doesn't.",
        glows=[dict(kind="flicker", x=730, y=100, r=300, color=WARM, base=0.30)])
@@ -250,18 +251,12 @@ def build(tl):
     add(s("b1"), s("b2"), S.timeline, points=[("31 AUG", "machine 1"), ("23 SEP", "machine 2"),
                                               ("24 SEP", "machine 3 · night of the theft")],
         title="THE SCRIPT SPREADS", source="[S4][S7]")
-    IL(s("b2"), s("b4"), "b07_badge_lanyard", "in", kicker="16:07 UTC · PRODUCT B",
-       line="Logged in with a real employee's identity.", source="[S4][S7][S15]",
-       glows=[dict(kind="flicker", x=1210, y=156, r=320, color=WARM, base=0.30)])
+    add(s("b2"), s("b4"), E.borrowed_badge, clone_at=s("b3") - s("b2") + 0.3, source="[S4][S7][S15]")
     add(s("b4"), s("b5"), S.explainer, name="THE EMPLOYEE",
         lines=[(0.6, "Wasn't there"), (1.8, "Credentials stolen via the zero-day"),
                (3.4, "Insider collusion ruled out, for now (Bitget)")], source="[S15]")
-    IL(s("b5"), s("b7"), "b08_corridor_door", "left", kicker="WEB SHELL ON APPLIANCE B",
-       line="→ the production wallet job server", source="[S3]",
-       glows=[dict(kind="flicker", x=780, y=516, r=340, color=WARM, base=0.28)])
-    IL(s("b7"), nxt(hits, e("b8") - .01), "b19_vault_half_full", "in", kicker="NEXT TO THE MONEY",
-       line="One more thing in the way: risk control.",
-       glows=[dict(kind="flicker", x=790, y=90, r=320, color=WARM, base=0.35)])
+    add(s("b5"), nxt(hits, e("b8") - .01), E.path_to_money, t_server=s("b6") - s("b5"), t_vault=s("b7") - s("b5"),
+        t_barrier=s("b8") - s("b5") + 0.4, source="[S3][S4]")
 
     # ---------------- T-MINUS 42 MINUTES ----------------
     c8 = next(C)
@@ -302,19 +297,17 @@ def build(tl):
        warm=False, source="[S2]",
        glows=[dict(kind="pulse", x=930, y=106, r=320, color=REDL, min=0.15, max=0.85, hz=1.6),
               dict(kind="beam", poly=[(900, 180), (1000, 180), (1120, 660), (760, 660)], color=(1.0, 0.35, 0.25), base=0.16)])
-    IL(s("f4"), s("f5"), "b11_phone_nightstand", "in", kicker="IF YOU HAD MONEY ON BITGET",
-       line="Withdrawals blocked for every customer.", warm=False, source="[S2]",
-       glows=[dict(kind="pulse", x=920, y=696, r=260, color=COOL, min=0.05, max=0.30, hz=0.6)])
+    add(s("f4"), s("f5"), E.locked_phone_split, note="If you had money on Bitget", source="[S2]")
     add(s("f5"), s("f6"), S.explainer, name="19:14 UTC", lines=[(0.4, "Highest-level emergency")], source="[S2]")
     add(s("f6"), s("f9"), E.burst, clock="19:16", n=5, chains=5, seconds=9, red=True,
         caption="≈ $203 million", source="[S6]")
-    add(s("f9"), nxt(hits, e("f10") - .01) + .6, E.split_locked, source="[S2][S8]")
+    add(s("f9"), nxt(hits, e("f10") - .01) + .6, E.locked_phone_split, source="[S2][S8]")
 
     # ---------------- WHY DIDN'T IT STOP? ----------------
     c11 = next(C)
     add(nxt(hits, e("f10") - .01) + .6, c11, S.black)
     add(c11, s("g1"), E.chapter, title="Why didn't it stop?", kicker="THE WRONG SWITCH")
-    add(s("g1"), s("g2"), E.split_locked, source="[S2][S8]")
+    add(s("g1"), s("g2"), E.locked_phone_split, source="[S2][S8]")
     add(s("g2"), s("g3"), E.pipeline, steps=("FORGED REQUEST", "SECOND PERSON?", "ALLOW-LIST?", "SIGNATURE"),
         forged=False, title="WARM WALLETS · ACCORDING TO ONE ANALYSIS", source="[S8]")
     add(s("g3"), nxt(cards, e("g3")), S.statement, line="The signing service kept running.")
@@ -392,9 +385,9 @@ def build(tl):
         lines=[(0.6, "No government statement"), (1.8, "Mandiant names no one")], source="[S3][S8]")
 
     # ---------------- THE LOAN (Thomas) ----------------
-    add(e("x10") + .5, s("l3"), E.loan_line, source="[S27][S28]")
+    add(e("x10") + .5, s("l3"), E.loan_towers, mode="loan", source="[S27][S28]")
     add(s("l3"), s("l4"), S.explainer, name="FBI · FEB 2025", lines=[(0.5, "Bybit: North Korea")], source="[S31]")
-    IL(s("l4"), s("l5"), "b02_two_towers", "down", kicker="19 MONTHS LATER", line="The money was leaving Bitget.")
+    add(s("l4"), s("l5"), E.loan_towers, mode="leaving", source="[S2][S6]")
     add(s("l5"), nxt(cards, e("l5")), S.statement, line="No government has named anyone. The analysts point the same way.")
 
     # ---------------- AFTERWARDS ----------------
@@ -414,7 +407,7 @@ def build(tl):
        line="Nobody looked at it.", glows=[dict(kind="flicker", x=1150, y=470, r=220, color=WARM, base=0.30)])
     IL(s("z2"), s("z3"), "b06_empty_guard_booth", "in", statement="Someone else may have been holding the guard.",
        glows=[dict(kind="flicker", x=730, y=100, r=300, color=WARM, base=0.30)])
-    add(s("z3"), s("z4"), E.split_locked, source="[S2]")
+    add(s("z3"), s("z4"), E.locked_phone_split, source="[S2]")
     add(s("z4"), e("z4") + .6, S.statement, line="This was Siphon Files.", color=S.GREY)
     add(e("z4") + .6, total, S.end_card)
     T = [x for x in T if x is not None]

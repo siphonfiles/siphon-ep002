@@ -363,3 +363,241 @@ def big_text(ctx, t, d, value, caption="", source=None):
              bold=False)
     if source:
         source_tag(ctx, source, a)
+
+
+# ---------------- cutout scenes (BiRefNet, MIT) — objects cut from the ep. 002 illustrations ----------------
+import os as _os
+_CUT_DIR = _os.path.join(_os.path.dirname(_os.path.abspath(__file__)), "..", "..", "illustrations", "ep002", "cutouts")
+_CUTS = {}
+
+
+def _cut(name):
+    if name not in _CUTS:
+        _CUTS[name] = cairo.ImageSurface.create_from_png(_os.path.join(_CUT_DIR, f"c_{name}.png"))
+    return _CUTS[name]
+
+
+def draw_cut(ctx, name, cx, cy, h, a=1.0, rot=0.0, shadow=True, tint=None, tint_a=1.0):
+    """Paint a cutout centred on (cx, cy), scaled to height h. Returns (x0, y0, w, h) of its box (no rotation).
+    shadow: soft drop shadow (stacked offset masks). tint: paint the silhouette in this colour instead."""
+    s = _cut(name)
+    k = h / s.get_height()
+    w = s.get_width() * k
+    if a <= 0:
+        return cx - w / 2, cy - h / 2, w, h
+    ctx.save()
+    ctx.translate(cx, cy)
+    ctx.rotate(rot)
+    ctx.scale(k, k)
+    x0, y0 = -s.get_width() / 2, -s.get_height() / 2
+    if shadow and tint is None:
+        for i in range(6):
+            off = (10 + i * 7) / k
+            ctx.set_source_rgba(0, 0, 0, 0.085 * a)
+            ctx.mask_surface(s, x0 + off * 0.6, y0 + off)
+    if tint is not None:
+        ctx.set_source_rgba(tint[0], tint[1], tint[2], a * tint_a)
+        ctx.mask_surface(s, x0, y0)
+    else:
+        ctx.set_source_surface(s, x0, y0)
+        ctx.get_source().set_filter(cairo.FILTER_GOOD)
+        ctx.paint_with_alpha(a)
+    ctx.restore()
+    return cx - w / 2, cy - h / 2, w, h
+
+
+def _glow(ctx, x, y, r, col, a):
+    g = cairo.RadialGradient(x, y, 0, x, y, r)
+    g.add_color_stop_rgba(0, col[0], col[1], col[2], a)
+    g.add_color_stop_rgba(1, col[0], col[1], col[2], 0)
+    ctx.set_source(g)
+    ctx.arc(x, y, r, 0, 2 * math.pi)
+    ctx.fill()
+
+
+def _wire(ctx, p0, p1, k, col, a, w=4):
+    """A line drawing itself from p0 to p1 (k in 0..1) with a bright head."""
+    if k <= 0 or a <= 0:
+        return
+    x = p0[0] + (p1[0] - p0[0]) * k
+    y = p0[1] + (p1[1] - p0[1]) * k
+    rgba(ctx, col, a * 0.9)
+    ctx.set_line_width(w)
+    ctx.move_to(*p0)
+    ctx.line_to(x, y)
+    ctx.stroke()
+    _glow(ctx, x, y, 18, col, a * 0.6)
+    rgba(ctx, col, a)
+    ctx.arc(x, y, 7, 0, 2 * math.pi)
+    ctx.fill()
+
+
+def _node(ctx, x, y, label, sub, q, col=None, wid=470):
+    """A system box (label + one line) fading in with q."""
+    if q <= 0:
+        return
+    col = col or AMBER
+    _panel(ctx, x, y - 52, wid, 104, q, 10)
+    rgba(ctx, col, q)
+    ctx.rectangle(x, y - 52, 8, 104)
+    ctx.fill()
+    text(ctx, label, x + 32, y - 6, col if col == RED else INK, q, face=MONO, size=34)
+    if sub:
+        text(ctx, sub, x + 32, y + 32, GREY, q, face=MONO, size=24, bold=False)
+
+
+def key_appliance(ctx, t, d, statement, kicker="PRODUCT A", source=None):
+    """The guard's own machine; a key slides out from under it and lights up (the plain-text password)."""
+    a = fade_io(t, d)
+    p = ease_out(prog(t, 0, 0.8))
+    k = ease_in_out(prog(t, 0.9, 1.2))
+    kx = 960 + 70 * (1 - k) + 300 * k
+    if k > 0.05:
+        _glow(ctx, kx, 600, 170, AMBER, a * 0.35 * prog(t, 1.6, 0.6) * (0.75 + 0.25 * math.sin(t * 3)))
+    draw_cut(ctx, "b05_key_under_mat", kx, 600, 92, a * clamp(k * 3), rot=-0.06)
+    draw_cut(ctx, "b04_security_appliance", 900, 470 + 24 * (1 - p), 330, a * p)
+    text(ctx, kicker, 900, 250, AMBER, a * prog(t, 0.4, 0.4), align="center", face=MONO, size=30, bold=False, tracking=8)
+    lines = wrap(ctx, statement, 1500, HEAD, 58)
+    for i, ln in enumerate(lines):
+        text(ctx, ln, W / 2, 860 + i * 72, INK, a * prog(t, 1.4, 0.5), align="center", size=58)
+    if source:
+        source_tag(ctx, source, a)
+
+
+def borrowed_badge(ctx, t, d, clone_at=2.0, source=None):
+    """A real employee's badge; at clone_at a cyan copy peels off and goes to Product B, the original dims."""
+    a = fade_io(t, d)
+    p = ease_out(prog(t, 0, 0.9))
+    c = ease_in_out(prog(t, clone_at, 1.4))
+    sway = 0.03 * math.sin(t * 0.9)
+    draw_cut(ctx, "b07_badge_lanyard", 500 - 160 * (1 - p), 450, 820, a * p * (1 - 0.55 * c), rot=sway + 0.08 * (1 - p))
+    if c > 0:
+        cx, cy = 500 + (1140 - 500) * c, 450 + (740 - 450) * c
+        h = 820 - 560 * c
+        draw_cut(ctx, "b07_badge_lanyard", cx, cy, h, a * (0.25 + 0.5 * (1 - c)), rot=sway, tint=AMBER, shadow=False)
+    text(ctx, "16:07 UTC · PRODUCT B", 960, 300, AMBER, a * prog(t, 0.5, 0.4), face=MONO, size=32, tracking=4)
+    text(ctx, "A borrowed name", 960, 390, INK, a * prog(t, 0.8, 0.5), size=84)
+    text(ctx, "a real Bitget employee's identity", 960, 455, GREY, a * prog(t, clone_at - 0.2, 0.5), face=MONO,
+         size=30, bold=False)
+    _node(ctx, 1260, 740, "PRODUCT B", "management platform", a * prog(t, clone_at + 0.9, 0.5))
+    if source:
+        source_tag(ctx, source, a)
+
+
+def path_to_money(ctx, t, d, t_server=4.0, t_vault=12.0, t_barrier=15.0, source=None):
+    """Appliance B -> web shell -> wallet job server -> the vault; then risk control drops in between."""
+    a = fade_io(t, d)
+    p = ease_out(prog(t, 0, 0.8))
+    x0, y0, w, h = draw_cut(ctx, "b04_security_appliance", 300, 560 + 20 * (1 - p), 230, a * p)
+    led = prog(t, 0.8, 0.3) * (0.7 + 0.3 * math.sin(t * 7))
+    lx, ly = x0 + w * 0.828, y0 + h * 0.565
+    _glow(ctx, lx, ly, 60, RED, a * led * 0.6)
+    _glow(ctx, lx, ly, 14, RED, a * led)
+    text(ctx, "APPLIANCE B", 300, 400, AMBER, a * prog(t, 0.3, 0.4), align="center", face=MONO, size=28, bold=False,
+         tracking=6)
+    _wire(ctx, (x0 + w + 16, ly), (560, 330), ease_out(prog(t, 1.0, 0.6)), RED, a)
+    _node(ctx, 560, 330, "WEB SHELL", "a channel back to the attacker", a * prog(t, 1.4, 0.4), RED, 440)
+    _wire(ctx, (780, 382), (780, 618), ease_out(prog(t, t_server - 0.3, 0.6)), AMBER, a)
+    _node(ctx, 560, 670, "WALLET JOB SERVER", "builds withdrawal transactions", a * prog(t, t_server, 0.4), None, 440)
+    v = ease_out(prog(t, t_vault, 0.9))
+    if v > 0:
+        _wire(ctx, (1000, 670), (1290, 600), ease_out(prog(t, t_vault, 0.7)), AMBER, a)
+        draw_cut(ctx, "b19_vault_half_full", 1560, 560, 520 + 20 * v, a * v)
+        text(ctx, "NEXT TO THE MONEY", 1560, 250, AMBER, a * v, align="center", face=MONO, size=30, tracking=6)
+    b = ease_out(prog(t, t_barrier, 0.45))
+    if b > 0:
+        bx = 1150
+        rgba(ctx, (0.10, 0.12, 0.15), a * b)
+        ctx.rectangle(bx - 16, 380, 32, 520 * b)
+        ctx.fill()
+        for i in range(int(13 * b)):
+            rgba(ctx, RED if i % 2 == 0 else INK, a * 0.9)
+            ctx.rectangle(bx - 12, 384 + i * 40, 24, 36)
+            ctx.fill()
+        text(ctx, "RISK CONTROL", bx, 950, RED, a * prog(t, t_barrier + 0.3, 0.4), align="center", face=MONO,
+             size=34, tracking=6)
+    if source:
+        source_tag(ctx, source, a)
+
+
+def locked_phone_split(ctx, t, d, note=None, source=None):
+    """Left: the customer's phone (cutout) with 'Withdrawals suspended'. Right: SIGNED keeps coming down."""
+    a = fade_io(t, d)
+    p = ease_out(prog(t, 0, 0.7))
+    draw_cut(ctx, "b11_phone_nightstand", 520, 760 + 30 * (1 - p), 210, a * p)
+    q = ease_out(prog(t, 0.6, 0.45))
+    if q > 0:
+        y = 330 + 30 * (1 - q)
+        _panel(ctx, 170, y, 700, 190, a * q, 22)
+        rgba(ctx, GREY, a * q * 0.5)
+        rrect(ctx, 200, y + 40, 62, 62, 14)
+        ctx.fill()
+        text(ctx, "EXCHANGE APP · 19:05 UTC", 290, y + 62, GREY, a * q, face=MONO, size=24, bold=False)
+        text(ctx, "Withdrawals suspended", 290, y + 112, INK, a * q, size=46)
+        text(ctx, "for every customer on the platform", 290, y + 156, GREY, a * q, face=MONO, size=22, bold=False)
+        rgba(ctx, GREY, a * q * 0.35)
+        ctx.set_line_width(2)
+        ctx.move_to(520, y + 190)
+        ctx.line_to(520, 680)
+        ctx.stroke()
+    text(ctx, "CUSTOMERS", 520, 1010, GREY, a, align="center", face=MONO, size=28, bold=False, tracking=6)
+    rgba(ctx, DIM, a)
+    ctx.rectangle(W / 2 + 20, 160, 3, 780)
+    ctx.fill()
+    k = int(max(0, t - 0.8) / 0.55)
+    for i in range(min(k, 9)):
+        r, c = divmod(i, 3)
+        x, y = 1080 + c * 230, 260 + r * 230
+        s = 1.25 - 0.25 * ease_out(prog(t, 0.8 + i * 0.55, 0.12))
+        ctx.save()
+        ctx.translate(x + 90, y + 60)
+        ctx.rotate(-0.08 + 0.05 * ((i * 7) % 3 - 1))
+        ctx.scale(s, s)
+        rgba(ctx, RED, a * 0.85)
+        ctx.set_line_width(5)
+        rrect(ctx, -100, -38, 200, 76, 6)
+        ctx.stroke()
+        text(ctx, "SIGNED", 0, 16, RED, a * 0.85, align="center", face=MONO, size=40, tracking=6)
+        ctx.restore()
+    text(ctx, "SIGNING SERVICE · STILL RUNNING", 1380, 1010, AMBER, a, align="center", face=MONO, size=28,
+         bold=False, tracking=4)
+    if note:
+        text(ctx, note, W / 2, 120, INK, a * prog(t, 1.2, 0.5), align="center", size=48)
+    if source:
+        source_tag(ctx, source, a)
+
+
+def loan_towers(ctx, t, d, mode="loan", source=None):
+    """The two towers from the opening (left: Bybit, dark; right: Bitget, lit).
+    mode='loan': light runs from Bitget to Bybit (40,000 ETH). mode='leaving': red runs out of Bitget, off-frame."""
+    a = fade_io(t, d)
+    p = ease_out(prog(t, 0, 0.9))
+    x0, y0, w, h = draw_cut(ctx, "b02_two_towers", 960, 560 + 20 * (1 - p), 760, a * p, shadow=False)
+    lt = (x0 + w * 0.40, y0 + h * 0.36)   # Bybit (left) facing side
+    bt = (x0 + w * 0.60, y0 + h * 0.30)   # Bitget (right) facing side
+    lab = a * prog(t, 0.6, 0.5)
+    text(ctx, "BYBIT", x0 + w * 0.21, y0 + h + 52, GREY if mode == "leaving" else INK, lab, align="center", face=MONO, size=34)
+    text(ctx, "BITGET", x0 + w * 0.78, y0 + h + 52, INK, lab, align="center", face=MONO, size=34)
+    if mode == "loan":
+        k = prog(t, 1.0, max(d * 0.45, 1.2))
+        for j in range(14):
+            u = (k * 1.6 - j / 14 * 0.6)
+            if 0 < u < 1:
+                x = bt[0] + (lt[0] - bt[0]) * u
+                y = bt[1] + (lt[1] - bt[1]) * u - 90 * math.sin(math.pi * u)
+                _glow(ctx, x, y, 22, AMBER, a * 0.8)
+        text(ctx, "40,000 ETH · 21 FEB 2025", W / 2, 150, AMBER, a * prog(t, 1.4, 0.5), align="center", face=MONO,
+             size=40, tracking=4)
+        text(ctx, "No interest. No collateral.", W / 2, 210, GREY, a * prog(t, 2.4, 0.5), align="center", face=MONO,
+             size=30, bold=False)
+    else:
+        for j in range(18):
+            u = ((t * 0.45 + j / 18) % 1) * prog(t, 0.8, 0.6)
+            x = bt[0] + (W + 60 - bt[0]) * u
+            y = bt[1] + 40 * math.sin(j * 1.7) * u
+            _glow(ctx, x, y, 20, RED, a * 0.8 * math.sin(math.pi * u))
+        text(ctx, "19 MONTHS LATER", W / 2, 150, RED, a * prog(t, 0.6, 0.5), align="center", face=MONO, size=40,
+             tracking=6)
+        text(ctx, "The money was leaving Bitget.", W / 2, 215, INK, a * prog(t, 1.0, 0.5), align="center", size=52)
+    if source:
+        source_tag(ctx, source, a)
