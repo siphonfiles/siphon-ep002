@@ -1,0 +1,17 @@
+{"_note": "Ep. 002 SFX candidates, Stable Audio Open Small (Stability AI Community License), 3 seeds each. Seconds = length asked.",
+ "items": [
+  ["sonar_tick", 3, "A single soft electronic sonar ping, clean digital blip with a short airy tail, minimal, dark ambient"],
+  ["building_alarm", 6, "A building fire alarm heard through a thick wall, muffled repeating electronic alarm tone in an empty office at night"],
+  ["server_hum", 8, "Steady low hum of server racks and cooling fans in a data centre, constant drone, no music"],
+  ["relay_click", 2, "A single sharp electrical relay click inside a metal machine, close up"],
+  ["key_slide", 3, "A small metal key sliding across a rubber doormat and stopping, light metallic clink"],
+  ["badge_reader", 2, "An access card reader beep, short two-tone electronic accept chirp, door lock clicks open"],
+  ["vault_open", 6, "A heavy steel bank vault door unlocking and swinging open, deep metallic clunks and a long creak, large room reverb"],
+  ["barrier_drop", 3, "A metal gate barrier slamming down into place, heavy mechanical clank"],
+  ["stamp_thud", 2, "A rubber stamp pressed hard onto paper on a wooden desk, single dull thud"],
+  ["transfer_whoosh", 2, "A quick digital whoosh, short airy swipe transition, clean"],
+  ["phone_buzz", 3, "A smartphone vibrating twice on a wooden nightstand, short buzz buzz"],
+  ["vault_close", 6, "A heavy steel vault door slowly closing and locking shut with a deep boom and echo"],
+  ["scan_beep", 3, "A soft digital scanning sweep with tiny beeps, forensic computer analysis, subtle"],
+  ["night_wind_city", 8, "Wind at the top of a tall building at night, distant city traffic far below, calm and cold"]
+ ]}
