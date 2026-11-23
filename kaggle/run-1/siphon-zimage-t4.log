@@ -1,0 +1,35 @@
+[{"stream_name":"stderr","time":23.001668709,"data":"ERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.\n"}
+,{"stream_name":"stderr","time":23.001715191,"data":"gradio-client 2.7.2 requires huggingface-hub\u003c3.0,\u003e=1.16.0, but you have huggingface-hub 0.36.2 which is incompatible.\n"}
+,{"stream_name":"stderr","time":23.001719531,"data":"gradio 6.30.0 requires huggingface-hub\u003c3.0,\u003e=1.16.0, but you have huggingface-hub 0.36.2 which is incompatible.\n"}
+,{"stream_name":"stderr","time":23.001722118,"data":"gradio 6.30.0 requires pillow\u003c13.0,\u003e=8.0, but you have pillow 13.0.0 which is incompatible.\n"}
+,{"stream_name":"stderr","time":58.471269155,"data":"WARNING: All log messages before absl::InitializeLog() is called are written to STDERR\n"}
+,{"stream_name":"stderr","time":58.471305559,"data":"I0000 00:00:1795443668.800739       7 cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.\n"}
+,{"stream_name":"stderr","time":63.849258134,"data":"Flax classes are deprecated and will be removed in Diffusers v0.40.0. We recommend migrating to PyTorch classes or pinning your version of Diffusers.\n"}
+,{"stream_name":"stderr","time":63.850013766000004,"data":"Flax classes are deprecated and will be removed in Diffusers v0.40.0. We recommend migrating to PyTorch classes or pinning your version of Diffusers.\n"}
+,{"stream_name":"stdout","time":63.974469878,"data":"[   63.2s] gpus 2 Tesla T4\n"}
+,{"stream_name":"stderr","time":209.552081707,"data":"\rFetching 18 files:   0%|          | 0/18 [00:00\u003c?, ?it/s]\rFetching 18 files:  11%|█         | 2/18 [00:00\u003c00:03,  4.55it/s]\rFetching 18 files:  22%|██▏       | 4/18 [01:09\u003c04:46, 20.45s/it]\rFetching 18 files:  28%|██▊       | 5/18 [01:17\u003c03:37, 16.72s/it]\rFetching 18 files:  72%|███████▏  | 13/18 [02:24\u003c00:51, 10.30s/it]\rFetching 18 files:  78%|███████▊  | 14/18 [02:24\u003c00:36,  9.07s/it]\rFetching 18 files: 100%|██████████| 18/18 [02:24\u003c00:00,  8.05s/it]\n"}
+,{"stream_name":"stderr","time":214.603683391,"data":"\rLoading pipeline components...:   0%|          | 0/5 [00:00\u003c?, ?it/s]\n"}
+,{"stream_name":"stderr","time":244.743162597,"data":"\rLoading checkpoint shards:   0%|          | 0/3 [00:00\u003c?, ?it/s]\u001b[A\n"}
+,{"stream_name":"stderr","time":284.394800887,"data":"\rLoading checkpoint shards:  33%|███▎      | 1/3 [00:30\u003c01:00, 30.14s/it]\u001b[A\n"}
+,{"stream_name":"stderr","time":302.985733627,"data":"\rLoading checkpoint shards:  67%|██████▋   | 2/3 [01:09\u003c00:35, 35.73s/it]\u001b[A\n"}
+,{"stream_name":"stderr","time":302.986089071,"data":"\rLoading checkpoint shards: 100%|██████████| 3/3 [01:28\u003c00:00, 27.91s/it]\u001b[A\rLoading checkpoint shards: 100%|██████████| 3/3 [01:28\u003c00:00, 29.46s/it]\n"}
+,{"stream_name":"stderr","time":303.331944211,"data":"\rLoading pipeline components...:  20%|██        | 1/5 [01:33\u003c06:13, 93.43s/it]\rLoading pipeline components...:  40%|████      | 2/5 [01:33\u003c01:55, 38.62s/it]\n"}
+,{"stream_name":"stderr","time":319.097212776,"data":"\rLoading checkpoint shards:   0%|          | 0/3 [00:00\u003c?, ?it/s]\u001b[A\n"}
+,{"stream_name":"stderr","time":335.019864245,"data":"\rLoading checkpoint shards:  33%|███▎      | 1/3 [00:15\u003c00:31, 15.77s/it]\u001b[A\n"}
+,{"stream_name":"stderr","time":335.405933429,"data":"\rLoading checkpoint shards:  67%|██████▋   | 2/3 [00:31\u003c00:15, 15.86s/it]\u001b[A\n"}
+,{"stream_name":"stderr","time":335.406212665,"data":"\rLoading checkpoint shards: 100%|██████████| 3/3 [00:32\u003c00:00,  8.79s/it]\u001b[A\rLoading checkpoint shards: 100%|██████████| 3/3 [00:32\u003c00:00, 10.69s/it]\n"}
+,{"stream_name":"stderr","time":336.09535186,"data":"\rLoading pipeline components...:  80%|████████  | 4/5 [02:05\u003c00:24, 24.49s/it]\rLoading pipeline components...: 100%|██████████| 5/5 [02:06\u003c00:00, 17.13s/it]\rLoading pipeline components...: 100%|██████████| 5/5 [02:06\u003c00:00, 25.31s/it]\n"}
+,{"stream_name":"stdout","time":336.137658246,"data":"[  335.4s] loaded torch.float16\n"}
+,{"stream_name":"stderr","time":418.306429978,"data":"\r  0%|          | 0/9 [00:00\u003c?, ?it/s]\r 11%|█         | 1/9 [00:17\u003c02:23, 17.90s/it]\r 22%|██▏       | 2/9 [00:22\u003c01:09,  9.96s/it]\r 33%|███▎      | 3/9 [00:29\u003c00:53,  8.92s/it]\r 44%|████▍     | 4/9 [00:37\u003c00:42,  8.49s/it]\r 56%|█████▌    | 5/9 [00:45\u003c00:33,  8.27s/it]\r 67%|██████▋   | 6/9 [00:53\u003c00:24,  8.18s/it]\r 78%|███████▊  | 7/9 [01:01\u003c00:16,  8.15s/it]\r 89%|████████▉ | 8/9 [01:09\u003c00:08,  8.16s/it]\r100%|██████████| 9/9 [01:18\u003c00:00,  8.21s/it]\r100%|██████████| 9/9 [01:18\u003c00:00,  8.70s/it]\n"}
+,{"stream_name":"stderr","time":437.581722205,"data":"/usr/local/lib/python3.13/dist-packages/diffusers/image_processor.py:142: RuntimeWarning: invalid value encountered in cast\n"}
+,{"stream_name":"stderr","time":437.58180868,"data":"  images = (images * 255).round().astype(\"uint8\")\n"}
+,{"stream_name":"stdout","time":437.900619093,"data":"[  437.1s] b21_two_appliances NaN/flat with torch.float16 flat image (std 0.00) - fp overflow\n"}
+,{"stream_name":"stderr","time":438.461591151,"data":"\rLoading pipeline components...:   0%|          | 0/5 [00:00\u003c?, ?it/s]\n"}
+,{"stream_name":"stderr","time":480.666141636,"data":"\rLoading checkpoint shards:   0%|          | 0/3 [00:00\u003c?, ?it/s]\u001b[AKilled\n"}
+,{"stream_name":"stderr","time":483.175683245,"data":"/usr/local/lib/python3.13/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":483.175718024,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":483.428560532,"data":"/usr/local/lib/python3.13/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":483.428590815,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":484.803808796,"data":"[NbConvertApp] Converting notebook __script__.ipynb to html\n"}
+,{"stream_name":"stderr","time":485.542983993,"data":"[NbConvertApp] Writing 293090 bytes to __results__.html\n"}
+]
