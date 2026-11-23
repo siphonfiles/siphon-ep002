@@ -11,3 +11,6 @@ Rețeta portretului din ep. 001 (Z-Image-Turbo, seed 596067, 896x1152 ( 7:9 ), 8
 Comparația: `compare_original_vs_3_outfits.jpg` (original, guler înalt, cămașă, bluză).
 Lecție: la Z-Image, schimbarea hainei păstrează omul doar dacă haina rămâne „aproape” de original ca greutate vizuală; o haină foarte diferită (negru complet, guler înalt) mută identitatea.
 Propoziția folosită (și la birou): „He wears only a plain dark navy cotton shirt with a soft open collar and matching fabric-covered buttons, completely unadorned smooth fabric.”
+
+## Biroul (02:02, Qwen-Image-Edit-2511, seed 11, 40 pași, 98,6 s)
+`presenter/reference/thomas_ref_ep002_1920x1080.png` (sursa 1344x768: `thomas_ref_ep002_source_1344x768.png`). Verificat: aceeași față și aceeași încadrare ca referința veche (Thomas centrat, lampa cu abajur în dreapta, peretele de dovezi și monitorul în spate), cămașa bleumarin fără accesorii/etichete, mâinile naturale pe dosarul manila. Pe birou: aparat negru cu un LED roșu, ecuson alb gol pe șnur bleumarin, foaie cu cifre ilizibile și un rând evidențiat cu galben, cutia neagră din stânga (era și în referința veche). Nimic lizibil, niciun logo. Comparația: `compare_desk_old_vs_ep002.jpg`.
