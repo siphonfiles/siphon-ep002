@@ -1,0 +1,56 @@
+[
+ {
+  "id": "x4_s1",
+  "seed": 1,
+  "text": "The analysts at Chainalysis, Elliptic and TRM Labs all lean the same way.",
+  "check": "The analysts at Chainalysis, Elliptic and TRM Labs all lean the same way."
+ },
+ {
+  "id": "x4_s2",
+  "seed": 2,
+  "text": "The analysts at Chainalysis, Elliptic and TRM Labs all lean the same way.",
+  "check": "The analysts at Chainalysis, Elliptic and TRM Labs all lean the same way."
+ },
+ {
+  "id": "x4_s3",
+  "seed": 3,
+  "text": "The analysts at Chainalysis, Elliptic and TRM Labs all lean the same way.",
+  "check": "The analysts at Chainalysis, Elliptic and TRM Labs all lean the same way."
+ },
+ {
+  "id": "x4_s4",
+  "seed": 4,
+  "text": "The analysts at Chainalysis, Elliptic and TRM Labs all lean the same way.",
+  "check": "The analysts at Chainalysis, Elliptic and TRM Labs all lean the same way."
+ },
+ {
+  "id": "x4_s5",
+  "seed": 5,
+  "text": "The analysts at Chainalysis, Elliptic and TRM Labs all lean the same way.",
+  "check": "The analysts at Chainalysis, Elliptic and TRM Labs all lean the same way."
+ },
+ {
+  "id": "x4_s6",
+  "seed": 6,
+  "text": "The analysts at Chainalysis, Elliptic and TRM Labs all lean the same way.",
+  "check": "The analysts at Chainalysis, Elliptic and TRM Labs all lean the same way."
+ },
+ {
+  "id": "x4_h1",
+  "seed": 1,
+  "text": "The analysts at Chain-alysis, Elliptic and TRM Labs all lean the same way.",
+  "check": "The analysts at Chainalysis, Elliptic and TRM Labs all lean the same way."
+ },
+ {
+  "id": "x4_h2",
+  "seed": 2,
+  "text": "The analysts at Chain-alysis, Elliptic and TRM Labs all lean the same way.",
+  "check": "The analysts at Chainalysis, Elliptic and TRM Labs all lean the same way."
+ },
+ {
+  "id": "x4_h3",
+  "seed": 3,
+  "text": "The analysts at Chain-alysis, Elliptic and TRM Labs all lean the same way.",
+  "check": "The analysts at Chainalysis, Elliptic and TRM Labs all lean the same way."
+ }
+]
