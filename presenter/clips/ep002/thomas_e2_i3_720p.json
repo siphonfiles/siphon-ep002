@@ -1,0 +1,15 @@
+{
+  "name": "thomas_e2_i3_720p",
+  "image": "presenter/reference/thomas_ref_ep002_1920x1080.png",
+  "audio": "presenter/clips/inputs/ep002/thomas_e2_i3.wav",
+  "line": "Here's the strange part. Bitget says not a single private key was compromised.",
+  "prompt": "A British man in his early forties with short dark brown hair and light stubble, wearing a plain dark navy cotton shirt with a soft open collar, sits at a wooden desk in a dim investigation office and speaks calmly and clearly to the camera, like a documentary presenter revealing the strange part of the case. His hands rest still and relaxed on the manila folder on the desk. Subtle natural head movements, steady eye contact with the lens, natural blinking, composed and serious expression. Warm amber desk lamp on the right, out-of-focus evidence board and monitor behind him. Static locked-off camera, soft frontal light, realistic skin texture.",
+  "resolution": "720p",
+  "seed": 42,
+  "vocal_mode": "Clean speech (fast)",
+  "acceleration": "DBCache faster",
+  "note": "ep002 i3: 0.3s silence + trimmed line (4.51s, load_voice) + silence to 5.0s @24kHz",
+  "wall_seconds": 315.2,
+  "space": "victor/LongCat-Video-Avatar-1.6",
+  "output": "thomas_e2_i3_720p.mp4"
+}
