@@ -418,7 +418,17 @@ def build(tl):
     add(s("z4"), e("z4") + .6, S.statement, line="This was Siphon Files.", color=S.GREY)
     add(e("z4") + .6, total, S.end_card)
     T = [x for x in T if x is not None]
-    return overlay_thomas(T, thomas_shots(tl)), total
+    out = overlay_thomas(T, thomas_shots(tl))
+    check_no_flash(out)
+    return out, total
+
+
+def check_no_flash(T):
+    """Montage guard (lesson 23 Nov 2026): no non-black scene may show for < 1 s (it reads as a flash)."""
+    bad = [(round(a, 2), round(b, 2)) for a, b, fn, p in T
+           if b - a < 1.0 and fn is not S.black and fn is not S.presenter]
+    if bad:
+        raise SystemExit(f"FLASH: scenes shorter than 1 s at {bad} - fix the cut before rendering")
 
 
 def main():
