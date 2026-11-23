@@ -21,10 +21,10 @@ IGNORE = {"MORFOLOGIK_RULE_EN_GB"}   # spelling: names listed separately below
 rows, spell = [], {}
 for where, text in items:
     for m in tool.check(text):
-        bad = text[m.offset:m.offset + m.errorLength]
-        if m.ruleId in IGNORE:
+        bad = text[m.offset:m.offset + getattr(m, "error_length", None) or m.errorLength]
+        if getattr(m, "rule_id", None) or m.ruleId in IGNORE:
             spell.setdefault(bad, []).append(where); continue
-        rows.append(f"| {where} | {m.ruleId} | `{bad}` → {', '.join(m.replacements[:3]) or '—'} | {m.message} | {text} |")
+        rows.append(f"| {where} | {getattr(m, "rule_id", None) or m.ruleId} | `{bad}` → {', '.join(m.replacements[:3]) or '—'} | {m.message} | {text} |")
 out = f"# LanguageTool en-GB · {len(items)} texts\n\n## Grammar / style ({len(rows)})\n\n| where | rule | text → suggestion | message | full text |\n|---|---|---|---|---|\n"
 out += "\n".join(rows) + f"\n\n## Unknown words ({len(spell)})\n\n" + "\n".join(f"- `{w}` ({len(v)}×): {', '.join(v[:4])}" for w, v in sorted(spell.items()))
 open(sys.argv[1], "w").write(out + "\n"); print(out)
