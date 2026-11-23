@@ -82,9 +82,11 @@ def overlay_thomas(T, shots):
                 out.append((pa, pb, fn, p))
             else:
                 out.append((pa, pb, _off(fn, pa - a), p))
+    first = min((x[0] for x in shots), default=None)
     for a, b, fr, t0, cam in shots:
         clip = dict(frames=fr, start=t0 - a, **FIT720)
-        out.append((a, b, S.presenter, dict(image_path=THOMAS_REF, lower_third_at=99, clip=clip,
+        lt = 0.6 if a == first else 99     # name card on his first appearance only
+        out.append((a, b, S.presenter, dict(image_path=THOMAS_REF, lower_third_at=lt, clip=clip,
                                              zoom=CLOSE if cam == "C" else None)))
     return out
 
@@ -167,7 +169,7 @@ def build(tl):
        line="The one that came to help became the one robbed.", source="[S2][S29]",
        glows=[dict(kind="flicker", x=950, y=70, r=260, color=WARM, base=0.25)])
     c4 = next(C)
-    add(c4, s("i1"), S.big_number, value=388_000_000, caption="24 SEP 2026 · BITGET · hot + warm wallets",
+    add(c4, s("i1"), S.big_number, value=388_000_000, suffix="", caption="24 SEP 2026 · BITGET · hot + warm wallets",
         count_for=1.4, source="[S2]")
     # Thomas i1..i5 (clips laid over when generated); underneath, no still of him:
     add(s("i1"), s("i2"), S.statement, line="Thomas Archer · the AI narrator of Siphon Files", color=S.GREY)
@@ -214,7 +216,7 @@ def build(tl):
 
     # ---------------- BRIDGE (Thomas) ----------------
     hb = nxt(hits, e("a10") - .01) + .5
-    IL(hb, s("d2"), "b06_empty_guard_booth", "right", kicker="THOMAS ARCHER", line="Let me stop here for a second.",
+    IL(hb, s("d2"), "b06_empty_guard_booth", "right", line="Let me stop here for a second.",
        glows=[dict(kind="flicker", x=730, y=100, r=300, color=WARM, base=0.30)])
     IL(s("d2"), s("d3"), "b04_security_appliance", "left", kicker="SECURITY PRODUCTS",
        line="Deep access. They see everything.", warm=False,
@@ -300,7 +302,7 @@ def build(tl):
     c12 = next(C)
     add(c12, s("g4"), E.big_text, value="2 h 39 min", caption="of signing after the first alert",
         source="[S2][S8]")
-    add(s("g4"), s("g5"), S.big_number, value=238_000_000, caption="left after the alarm · two estimates",
+    add(s("g4"), s("g5"), S.big_number, value=238_000_000, suffix="", prefix="~$", caption="left after the alarm · two estimates",
         count_for=1.2, source="[S7][S20]")
     IL(s("g5"), s("g7"), "b19_vault_half_full", "out", kicker="20:40 UTC",
        line="Funds move to cold storage. Last traced transfer: 21:23.", source="[S2][S6][S7]",
