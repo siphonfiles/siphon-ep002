@@ -19,6 +19,7 @@ jobs:
           sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg > /dev/null
           pip install --quiet torch torchaudio --index-url https://download.pytorch.org/whl/cpu
           pip install --quiet stable-audio-tools einops
+          pip install --quiet pytorch_lightning torchmetrics k-diffusion alias-free-torch vector-quantize-pytorch x-transformers local-attention ema-pytorch einops-exts safetensors sentencepiece "transformers<5" auraloss encodec descript-audio-codec prefigure
           pip install --quiet "numpy<2" && pip install --quiet --force-reinstall --no-deps --no-cache-dir "PyWavelets==1.6.0"
       - name: Generate
         env:
