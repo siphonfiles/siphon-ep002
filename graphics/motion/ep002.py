@@ -57,9 +57,28 @@ def thomas_shots(tl):
     return out
 
 
+def _clip_len(fr):
+    return len([f for f in os.listdir(fr) if f.endswith(".png")]) / 30.0
+
+
+def _absorb_slivers(T, shots):
+    """A scene left with < 1 s right after a shot would flash (e.g. 1:23). Hold the shot over it instead,
+    as long as the clip still has frames there."""
+    shots = [list(x) for x in shots]
+    for a, b, fn, p in T:
+        for sh in shots:
+            sa, sb, fr, t0 = sh[0], sh[1], sh[2], sh[3]
+            if a < sb < b and b - sb < 1.0 and not any(o[0] <= sb < o[1] for o in shots if o is not sh):
+                n = _clip_len(fr)
+                if b <= t0 + (n if n > 1 else 5.0) - 0.02:
+                    sh[1] = b
+    return [tuple(x) for x in shots]
+
+
 def overlay_thomas(T, shots):
     """Cut the shots into the picture: what they cover is removed; a scene resuming after a shot continues
-    where it was. Slivers under 1 s are given to the next scene (no flash)."""
+    where it was. Slivers under 1 s right after a shot are covered by holding the shot (no flash)."""
+    shots = _absorb_slivers(T, shots)
     out = []
     for a, b, fn, p in T:
         pieces = [(a, b)]
