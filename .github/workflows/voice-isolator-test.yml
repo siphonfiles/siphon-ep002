@@ -1,0 +1,42 @@
+name: voice isolator A/B (CPU)
+# Inworld Voice Isolator (Apache-2.0) pe câteva replici ale lui Thomas: original, apoi curățat. Fără cotă.
+on:
+  workflow_dispatch:
+    inputs:
+      lines:
+        default: "i1 i3 c6 f10 f4 l2 z4"
+permissions:
+  contents: write
+jobs:
+  ab:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg > /dev/null
+          pip install --quiet torch torchaudio --index-url https://download.pytorch.org/whl/cpu
+          pip install --quiet inworld-voice-isolation
+          voice-isolate-doctor || true
+      - name: Run
+        run: |
+          git fetch -q --depth 1 origin voice-tests
+          mkdir -p in out; D=sound/ep002/voice_isolator_test; mkdir -p $D; : > list.txt
+          ffmpeg -v error -y -f lavfi -i anullsrc=r=48000:cl=mono -t 0.6 g1.wav
+          ffmpeg -v error -y -f lavfi -i anullsrc=r=48000:cl=mono -t 1.4 g2.wav
+          for k in ${{ inputs.lines }}; do
+            git show FETCH_HEAD:lines/ep002-v3/$k.wav > in/raw_$k.wav
+            ffmpeg -v error -y -i in/raw_$k.wav -ac 1 -ar 48000 in/$k.wav
+            /usr/bin/time -f "$k %e s" voice-isolate in/$k.wav out/$k.wav --no-background --output-sr 0
+            for v in in out; do ffmpeg -v error -y -i $v/$k.wav -af loudnorm=I=-20:TP=-2,aresample=48000 -ac 1 $v/${k}_n.wav; done
+            echo "file '$PWD/in/${k}_n.wav'" >> list.txt; echo "file '$PWD/g1.wav'" >> list.txt
+            echo "file '$PWD/out/${k}_n.wav'" >> list.txt; echo "file '$PWD/g2.wav'" >> list.txt
+            ffmpeg -v error -y -i out/$k.wav -c:a flac $D/${k}_clean.flac
+          done
+          ffmpeg -v error -y -f concat -safe 0 -i list.txt -codec:a libmp3lame -q:a 2 $D/AB_original_then_clean.mp3
+          echo "Order: ${{ inputs.lines }} - each line: original, then cleaned (same loudness)" > $D/README.txt
+          git config user.name "siphon-bot"; git config user.email "bot@users.noreply.github.com"
+          git add $D && git commit -qm "Voice Isolator A/B (run ${{ github.run_number }})" && git pull -q --rebase && git push -q
