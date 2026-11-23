@@ -35,7 +35,7 @@ Organizația GitHub: **`siphonfiles`** (toate repo-urile private). Repo-ul vechi
 | Ep. 001 — randarea finală 4K + 720p | `siphon-ep001` › Releases › `ep001-render-10` |
 | Ep. 001 — pachetul editabil DaVinci (straturi + FCPXML) | `siphon-ep001` › Releases › `ep001-resolve-1` |
 | Ep. 001 — **arhiva DaVinci** (media 1,66 GB, `.drp`, video-ul final v7 în 3 părți + `SHA256.txt`) | `siphon-ep001` › Releases › draftul **`ep001-archive`**: https://github.com/siphonfiles/siphon-ep001/releases/tag/untagged-5d53e75463ecd147ff05 (draftul se vede doar logat; dacă linkul se schimbă, e primul din https://github.com/siphonfiles/siphon-ep001/releases). Refacerea video-ului: `cat …part0 …part1 …part2 > siphon_files_ep001_v7.mp4` + verificare cu `sha256sum -c SHA256.txt` |
-| Ep. 001 pe YouTube | video `kOfkyFjkzPY` (https://youtu.be/kOfkyFjkzPY), programat 29 nov 2026, 17:00 ora României, cu 20 de piste de dublaj |
+| Ep. 001 pe YouTube | video `kOfkyFjkzPY` (https://youtu.be/kOfkyFjkzPY), **publicat public luni 23 nov 2026, ~19:02 ora României** (în loc de programarea din 29 nov), fără dublaj, cu subtitrare EN și titlu/descriere traduse în 20 de limbi |
 | Sunetul ep. 001, cronologii, previzualizări | `siphon-ep001`, branch-ul `renders`; vocile pe branch-ul `voice-tests` |
 | **Episodul 002 — Bitget** (script **draft v3** + traducerea în română; titlul ales: „Inside the $388M Bitget Hack”) | `siphonfiles/siphon-ep002`, `episodes/002-the-guard-was-the-door.md` (+ `.ro.md`) |
 | Secretele (`HF_TOKEN`, `KAGGLE_API_TOKEN`, `KAGGLE_USERNAME`) | pe fiecare repo în parte (Settings › Secrets and variables › Actions); secretele de organizație nu merg pe repo-uri private pe planul gratuit |
