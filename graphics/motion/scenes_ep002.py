@@ -762,11 +762,11 @@ def official_notice(ctx, t, d, issuer, date, line, source=None):
         text(ctx, ln, 620, 660 + i * 60, PAPER_INK, a * q, size=48)
     s = prog(t, 1.4, 0.25)
     if s > 0:
-        r = 110 * (1.6 - 0.6 * s)
+        r = 80 * (1.6 - 0.6 * s)
         rgba(ctx, RED, a * s * 0.85); ctx.set_line_width(8)
-        ctx.arc(1180, 840, r, 0, 2 * math.pi); ctx.stroke()
-        ctx.arc(1180, 840, r * 0.78, 0, 2 * math.pi); ctx.stroke()
-        text(ctx, "ATTRIBUTED", 1180, 852, RED, a * s, align="center", face=MONO, size=30)
+        ctx.new_path(); ctx.arc(1240, 845, r, 0, 2 * math.pi); ctx.stroke()
+        ctx.new_path(); ctx.arc(1240, 845, r * 0.78, 0, 2 * math.pi); ctx.stroke()
+        text(ctx, "ATTRIBUTED", 1240, 854, RED, a * s, align="center", face=MONO, size=22)
     if source:
         source_tag(ctx, source, a)
 
@@ -971,6 +971,8 @@ def dot_grid(ctx, t, d, value, label, caption, source=None):
 def fraction_square(ctx, t, d, lit, total_cells, big, caption, source=None):
     """A square of tiny cells; only a handful light up (the share that was frozen)."""
     a = fade_io(t, d)
+    rgba(ctx, (0.03, 0.05, 0.06), a * 0.93)
+    ctx.paint()
     n = int(round(total_cells ** 0.5))
     cell = 640 / n
     for i in range(n * n):
@@ -1030,7 +1032,13 @@ def calendar_flip(ctx, t, d, start, end, lines, source=None):
     _bar(ctx, 260, 280, 520, 110, GREEN if k == len(days) - 1 else RED, a)
     text(ctx, "2026", 520, 355, (1, 1, 1), a, align="center", face=MONO, size=50)
     text(ctx, days[k], 520, 610, PAPER_INK, a, align="center", face=MONO, size=110)
-    _lines_reveal(ctx, t, lines, 900, 480, a, step=90, size=44)
+    y = 470
+    for at, ln in lines:
+        q = ease_out(prog(t, at, 0.45))
+        for k, part in enumerate(wrap(ctx, ln, 880, MONO, 40, False)):
+            text(ctx, part, 900, y + (1 - q) * 10, INK if y == 470 or k else INK, a * q, face=MONO, size=40, bold=False)
+            y += 56
+        y += 40
     if source:
         source_tag(ctx, source, a)
 
