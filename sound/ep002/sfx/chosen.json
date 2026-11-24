@@ -1,5 +1,5 @@
 {
- "note": "Gains are dB relative to full scale before the master, meant to sit well under the voice; place at the start of each anchor line (offset_s). Mix quietly: keep master -14 LUFS, TP <= -1.5.",
+ "note": "gain_db = peak level in dBFS before the master, set so the active part sits ~15 dB (hits) / ~20 dB (beds) under the mix at the anchor; placed 0.25 s (hits) / 0.4 s (beds) before the anchor line by add_sfx.py",
  "effects": {
   "sonar_tick": {
    "file": "sound/ep002/sfx/candidates/sonar_tick_s33.mp3",
@@ -14,7 +14,7 @@
     }
    ],
    "missing_anchors": [],
-   "gain_db": -26,
+   "gain_db": -20.4,
    "offset_s": 0.0,
    "why": "ping with a 1.3 s tail; s11/s22 were 0.1 s clicks"
   },
@@ -31,7 +31,7 @@
     }
    ],
    "missing_anchors": [],
-   "gain_db": -28,
+   "gain_db": -32.2,
    "offset_s": 0.0,
    "why": "only take with no gaps"
   },
@@ -44,7 +44,7 @@
     }
    ],
    "missing_anchors": [],
-   "gain_db": -30,
+   "gain_db": -26.1,
    "offset_s": 0.0,
    "why": "steady 7 s bed, use 0-7 s"
   },
@@ -57,7 +57,7 @@
     }
    ],
    "missing_anchors": [],
-   "gain_db": -24,
+   "gain_db": -18.1,
    "offset_s": 0.0,
    "why": "sharpest transient"
   },
@@ -70,7 +70,7 @@
     }
    ],
    "missing_anchors": [],
-   "gain_db": -24,
+   "gain_db": -12.0,
    "offset_s": 0.0,
    "why": "continuous slide, no dropouts"
   },
@@ -83,7 +83,7 @@
     }
    ],
    "missing_anchors": [],
-   "gain_db": -26,
+   "gain_db": -24.7,
    "offset_s": 0.0,
    "why": "no silence gap"
   },
@@ -96,7 +96,7 @@
     }
    ],
    "missing_anchors": [],
-   "gain_db": -26,
+   "gain_db": -24.2,
    "offset_s": 0.0,
    "why": "only variant generated; sound ends at 4.15 s"
   },
@@ -109,7 +109,7 @@
     }
    ],
    "missing_anchors": [],
-   "gain_db": -24,
+   "gain_db": -20.8,
    "offset_s": 0.0,
    "why": "synthesized: not reached by Stable Audio"
   },
@@ -122,7 +122,7 @@
     }
    ],
    "missing_anchors": [],
-   "gain_db": -22,
+   "gain_db": -20.1,
    "offset_s": 0.0,
    "why": "synthesized"
   },
@@ -139,7 +139,7 @@
     }
    ],
    "missing_anchors": [],
-   "gain_db": -26,
+   "gain_db": -21.4,
    "offset_s": 0.0,
    "why": "synthesized"
   },
@@ -152,7 +152,7 @@
     }
    ],
    "missing_anchors": [],
-   "gain_db": -24,
+   "gain_db": -28.4,
    "offset_s": 0.0,
    "why": "synthesized"
   },
@@ -165,7 +165,7 @@
     }
    ],
    "missing_anchors": [],
-   "gain_db": -24,
+   "gain_db": -22.5,
    "offset_s": 0.0,
    "why": "synthesized"
   },
@@ -178,7 +178,7 @@
     }
    ],
    "missing_anchors": [],
-   "gain_db": -28,
+   "gain_db": -26.4,
    "offset_s": 0.0,
    "why": "synthesized"
   },
@@ -191,7 +191,7 @@
     }
    ],
    "missing_anchors": [],
-   "gain_db": -32,
+   "gain_db": -24.6,
    "offset_s": 0.0,
    "why": "synthesized, 6 s bed with fades"
   }
