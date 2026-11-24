@@ -207,6 +207,7 @@ def build(tl):
     add(e("r1") + .35, s("r3"), E.loan_towers, mode="loan", source="[S27][S28]")
     IL(s("r3"), s("r4"), "b03_lifebuoy_dock", "in", statement="Remember that loan.",
        glows=[dict(kind="flicker", x=790, y=216, r=300, color=WARM, base=0.38, follow=0)], motes=False,
+       fog=dict(density=0.30, color=(0.45, 0.52, 0.60), speed=12, floor=0.45),
        flick=dict(lights=[dict(x=813, y=217, r=80, mode="flicker", seed=5)]))
     IL(s("r4"), nxt(hits, e("r4") - .01), "b10_empty_trading_floor", "left", kicker="24 SEPTEMBER 2026",
        line="The one that came to help became the one robbed.", source="[S2][S29]",
@@ -427,7 +428,8 @@ def build(tl):
     add(frac("w4", 0.0), s("w5"), E.fraction_square, lit=3, total_cells=1024, big="< 0.3%",
         caption="of the stolen funds frozen", source="[S7][S9]")
     IL(s("w5"), s("w6"), "b16_river_split", "in", kicker="NOVEMBER 2026 · COINJOIN",
-       line="~$161M of Bitcoin moved in 11 days", source="[S21][S22]", motes=False,
+       line="~$161M of Bitcoin moved in 11 days", source="[S21][S22]",
+       fog=dict(density=0.35, color=(0.50, 0.57, 0.65), speed=18, floor=0.30), motes=False,
        water=dict(poly=[(880, 320), (1100, 290), (1600, 330), (1650, 520), (1750, 700), (1800, 1152),
                         (250, 1152), (450, 800), (600, 520), (800, 420)],
                   holes=[[(1000, 470), (1200, 450), (1450, 470), (1430, 540), (1150, 560), (1000, 540)]],
