@@ -915,7 +915,26 @@ MOVES = {   # (zoom start, zoom end, pan x px, pan y px, depth zoom, depth pan) 
 }
 
 
-def _ill_frame(name, u, move, t=0.0, fog=None):
+def _water_mask(name, poly, holes, w, h):
+    """Soft mask (0..1) of the water area, in source pixels; cached per image."""
+    key = (name, tuple(map(tuple, poly)), tuple(tuple(map(tuple, x)) for x in holes))
+    if _water_mask.cache.get("key") != key:
+        import numpy as np
+        from PIL import Image, ImageDraw, ImageFilter
+        m = Image.new("L", (w, h), 0)
+        dr = ImageDraw.Draw(m)
+        dr.polygon([tuple(p) for p in poly], fill=255)
+        for hp in holes:
+            dr.polygon([tuple(p) for p in hp], fill=0)
+        m = m.filter(ImageFilter.GaussianBlur(40))
+        _water_mask.cache = dict(key=key, m=np.asarray(m, dtype=np.float32) / 255.0)
+    return _water_mask.cache["m"]
+
+
+_water_mask.cache = {}
+
+
+def _ill_frame(name, u, move, t=0.0, fog=None, water=None):
     """Backward warp with bilinear sampling: near pixels (depth ~1) zoom and slide more than far ones."""
     import numpy as np
     c = _ill_load(name)
@@ -937,6 +956,15 @@ def _ill_frame(name, u, move, t=0.0, fog=None):
         zz = z * (1.0 + kz * e * (db - dm)) if kz >= 0 else z * (1.0 + (-kz) * (1 - e) * (db - dm))
         sx = w / 2 + (c["xx"][r0:r1] - w / 2) / zz - px * off * (1.0 + kp * (db - dm))
         sy = h / 2 + (c["yy"][r0:r1] - h / 2) / zz - py * off * (1.0 + kp * (db - dm))
+        if water:   # flowing water: a slow travelling ripple inside the water mask (source coords)
+            wm = _water_mask(name, water["poly"], water.get("holes", []), w, h)
+            mk = wm[np.clip(sy, 0, h - 1).astype(np.int32), np.clip(sx, 0, w - 1).astype(np.int32)]
+            A = water.get("amp", 2.2)
+            sp = water.get("speed", 1.0)
+            ph1 = 0.045 * sy + 0.011 * sx - 2.1 * sp * t
+            ph2 = 0.083 * sy - 0.017 * sx - 3.3 * sp * t + 1.3
+            sx = sx + mk * A * (np.sin(ph1) + 0.45 * np.sin(ph2))
+            sy = sy + mk * A * 0.6 * (np.sin(ph1 * 0.7 + 0.8) + 0.4 * np.sin(ph2 * 1.3))
         np.clip(sx, 0, w - 1.001, out=sx)
         np.clip(sy, 0, h - 1.001, out=sy)
         x0 = sx.astype(np.int32)
@@ -1021,6 +1049,105 @@ def _cam_point(name, u, move, x, y):
     return ox * W / w, oy * W / w, z * W / w
 
 
+def _leds(ctx, t, u, name, move, g, a):
+    """Blinking status LEDs drawn over the lit LEDs of the image: 'off' = a dark dot over the LED,
+    'busy' = a short bright flash. Rates and phases come from a hash of the LED index (deterministic)."""
+    ctx.save()
+    for i, (lx, ly) in enumerate(g["pts"]):
+        rnd = random.Random(i * 7919 + g.get("seed", 1))
+        rate = rnd.uniform(*g.get("rate", (2.0, 7.0)))           # blinks per second
+        duty = rnd.uniform(*g.get("duty", (0.45, 0.8)))
+        slot = int(t * rate + rnd.random() * 1000)
+        h = random.Random(slot * 104729 + i).random()
+        x, y, sc = _cam_point(name, u, move, lx, ly)
+        r = g.get("r", 7) * sc
+        if h > duty:                                              # LED off for this slot
+            ctx.set_operator(cairo.OPERATOR_OVER)
+            dc = g.get("off", (0.03, 0.045, 0.045))
+            rg = cairo.RadialGradient(x, y, 0, x, y, r * 2.2)
+            rg.add_color_stop_rgba(0, dc[0], dc[1], dc[2], 0.92 * a)
+            rg.add_color_stop_rgba(0.55, dc[0], dc[1], dc[2], 0.7 * a)
+            rg.add_color_stop_rgba(1, dc[0], dc[1], dc[2], 0)
+            ctx.set_source(rg)
+            ctx.arc(x, y, r * 2.2, 0, 2 * math.pi)
+            ctx.fill()
+        elif h < 0.18:                                            # short bright flash
+            ctx.set_operator(cairo.OPERATOR_ADD)
+            col = g.get("color", (0.3, 1.0, 0.45))
+            rg = cairo.RadialGradient(x, y, 0, x, y, r * 2.6)
+            rg.add_color_stop_rgba(0, col[0], col[1], col[2], 0.55 * a)
+            rg.add_color_stop_rgba(1, col[0], col[1], col[2], 0)
+            ctx.set_source(rg)
+            ctx.arc(x, y, r * 2.6, 0, 2 * math.pi)
+            ctx.fill()
+    ctx.restore()
+    ctx.set_operator(cairo.OPERATOR_ADD)
+
+
+NK_OUTLINE = [(124.3, 40.0), (125.0, 40.5), (126.0, 41.4), (126.9, 41.8), (128.1, 42.0), (128.9, 42.0),
+              (129.7, 42.4), (130.6, 42.4), (130.0, 41.9), (129.7, 41.1), (129.6, 40.8), (128.9, 40.4),
+              (128.2, 40.0), (127.5, 39.8), (127.4, 39.3), (127.8, 39.0), (128.3, 38.6), (127.5, 38.3),
+              (126.7, 37.9), (126.2, 37.7), (125.6, 37.8), (125.3, 37.7), (125.0, 38.0), (125.2, 38.5),
+              (125.0, 38.6), (124.7, 38.9), (124.8, 39.4)]   # simplified, hand-drawn from public geography
+
+
+def _country(ctx, t, u, name, move, g, a):
+    """Pin on the country's spot of the map + an enlarged outline of the country that slides in from
+    the left (t_in .. t_in+dur), settles beside the pin and is joined to it by a thin leader line."""
+    from engine import MONO
+    px_, py_, sc = _cam_point(name, u, move, g["x"], g["y"])
+    pts = g.get("outline", NK_OUTLINE)
+    lon0 = sum(p[0] for p in pts) / len(pts)
+    lat0 = sum(p[1] for p in pts) / len(pts)
+    size = g.get("size", 26.0)                      # layout px per degree of the enlarged outline
+    ox, oy = g.get("offset", (-230, -120))          # where the outline settles, relative to the pin
+    t0, dur = g.get("t_in", 0.8), g.get("dur", 1.4)
+    k = clamp((t - t0) / dur)
+    k = 1 - (1 - k) ** 3                            # ease out
+    cx = (px_ + ox) * k + (-260) * (1 - k)
+    cy = py_ + oy
+    al = a * clamp((t - t0) / 0.35)
+    col = g.get("color", (1.0, 0.30, 0.34))
+    ctx.save()
+    ctx.set_operator(cairo.OPERATOR_OVER)
+    # pin, pulsing
+    pk = 0.5 + 0.5 * math.sin(t * 3.2)
+    rg = cairo.RadialGradient(px_, py_, 0, px_, py_, 34 * sc + 10)
+    rg.add_color_stop_rgba(0, col[0], col[1], col[2], 0.55 * a * (0.5 + 0.5 * pk))
+    rg.add_color_stop_rgba(1, col[0], col[1], col[2], 0)
+    ctx.set_source(rg)
+    ctx.arc(px_, py_, 34 * sc + 10, 0, 2 * math.pi)
+    ctx.fill()
+    ctx.set_source_rgba(col[0], col[1], col[2], 0.95 * a)
+    ctx.arc(px_, py_, 5.5, 0, 2 * math.pi)
+    ctx.fill()
+    if al > 0:
+        # leader line (only once settled)
+        la = al * clamp((k - 0.85) / 0.15)
+        if la > 0:
+            ctx.set_source_rgba(col[0], col[1], col[2], 0.7 * la)
+            ctx.set_line_width(1.6)
+            ctx.move_to(px_, py_)
+            ctx.line_to(cx + 2.2 * size * 0.6, cy + 1.8 * size * 0.4)
+            ctx.stroke()
+        ctx.new_path()
+        for i, (lo, la_) in enumerate(pts):
+            X = cx + (lo - lon0) * size
+            Y = cy - (la_ - lat0) * size * 1.25
+            (ctx.move_to if i == 0 else ctx.line_to)(X, Y)
+        ctx.close_path()
+        ctx.set_source_rgba(col[0], col[1], col[2], 0.28 * al)
+        ctx.fill_preserve()
+        ctx.set_source_rgba(col[0], col[1], col[2], 0.95 * al)
+        ctx.set_line_width(2.4)
+        ctx.set_line_join(cairo.LINE_JOIN_ROUND)
+        ctx.stroke()
+        lab = g.get("label", "NORTH KOREA")
+        text(ctx, lab, cx - 2.6 * size, cy + 3.4 * size, col, al, face=MONO, size=24, bold=False, tracking=5)
+    ctx.restore()
+    ctx.set_operator(cairo.OPERATOR_ADD)
+
+
 def _glows(ctx, t, u, name, move, glows, a):
     """Light effects in image coordinates: 'pulse' (alarm), 'flicker' (lamp), 'beam' (light shaft)."""
     ctx.save()
@@ -1031,6 +1158,17 @@ def _glows(ctx, t, u, name, move, glows, a):
         if kind == "pulse":
             k = 0.5 + 0.5 * math.sin(2 * math.pi * g.get("hz", 0.8) * t)
             inten = g.get("min", 0.15) + (g.get("max", 0.75) - g.get("min", 0.15)) * k * k
+        elif kind == "slow":      # slow, irregular flicker of a distant lamp (never fully off)
+            ph = g.get("phase", 0.0)
+            n = (math.sin(t * 1.7 + ph) * math.sin(t * 0.63 + 2.1 * ph) + 0.6 * math.sin(t * 3.1 + 0.7 * ph)) / 1.6
+            dip = max(0.0, math.sin(t * 0.41 + ph * 1.3)) ** 12      # now and then a short dip
+            inten = g.get("base", 0.4) * (0.62 + 0.38 * n) * (1.0 - 0.55 * dip)
+        elif kind == "country":   # an outline of a country slides in from the left and settles by its spot
+            _country(ctx, t, u, name, move, g, a)
+            continue
+        elif kind == "leds":      # server LEDs: each one blinks on its own pseudo-random rhythm
+            _leds(ctx, t, u, name, move, g, a)
+            continue
         elif kind == "flicker":
             inten = g.get("base", 0.35) * (0.85 + 0.15 * math.sin(t * 13.0) * math.sin(t * 7.3 + 1.0)
                                            + 0.08 * math.sin(t * 29.0))
@@ -1115,11 +1253,11 @@ def _motes(ctx, t, a, seed, warm=True):
 
 
 def illus(ctx, t, d, name, move="in", kicker=None, line=None, statement=None, source=None,
-          dim=0.0, motes=True, warm=True, fi=0.35, fo=0.35, fog=None, glows=None):
+          dim=0.0, motes=True, warm=True, fi=0.35, fo=0.35, fog=None, glows=None, water=None):
     """An illustration with a slow 2.5D camera move, drifting dust in the light and optional text."""
     a = fade_io(t, d, fi, fo)
     u = clamp(t / max(d, 0.01))
-    surf, _keep = _ill_frame(name, u, move, t, fog)
+    surf, _keep = _ill_frame(name, u, move, t, fog, water)
     ctx.save()
     sc = W / surf.get_width()
     ctx.scale(sc, sc)

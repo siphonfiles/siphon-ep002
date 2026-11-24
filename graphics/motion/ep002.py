@@ -33,6 +33,9 @@ REDL = (1.0, 0.15, 0.12)
 COOL = (0.55, 0.75, 1.0)
 
 
+B21_GREEN = [(948, 214), (948, 227), (948, 249), (948, 277), (551, 311), (590, 312), (630, 314), (668, 316), (708, 317), (747, 318), (785, 319), (823, 321), (861, 323), (949, 326), (551, 331), (590, 332), (668, 336), (709, 337), (785, 340), (861, 343), (948, 345), (897, 344), (551, 371), (590, 372), (629, 374), (668, 375), (708, 376), (748, 378), (785, 378), (824, 380), (949, 383), (551, 393), (590, 393), (509, 393), (629, 395), (1018, 393), (669, 396), (709, 397), (748, 398), (786, 399), (824, 401), (949, 402), (898, 402), (861, 402), (949, 442), (949, 467), (949, 674), (948, 692), (948, 707), (948, 726), (948, 746), (897, 749), (861, 751), (823, 753), (785, 754), (829, 754), (708, 758), (668, 761), (949, 786), (897, 789), (861, 791), (824, 793), (785, 794), (707, 798), (747, 796), (667, 801), (550, 807), (949, 805), (898, 809), (861, 811), (823, 813), (785, 815), (708, 820), (668, 822), (949, 848), (897, 852), (1018, 851), (861, 855), (823, 858), (785, 861), (747, 863), (707, 866), (667, 868), (949, 868), (628, 871), (589, 874), (897, 873), (550, 876), (860, 875), (823, 878), (785, 881), (747, 884), (707, 887), (668, 890), (628, 893), (590, 895), (550, 898), (949, 906), (897, 906), (860, 909), (823, 912), (784, 915), (747, 918), (707, 921), (668, 925), (949, 927), (590, 931), (550, 934), (949, 948)]   # green LEDs found in b21_two_appliances.jpg
+
+
 def thomas_shots(tl):
     """[(a, b, frames_dir, clip_t0, camera)] for every generated clip. clip_t0 = episode time of frame 0."""
     if not os.path.exists(CLIP_PLAN):
@@ -251,7 +254,10 @@ def build(tl):
        glows=[dict(kind="flicker", x=730, y=100, r=300, color=WARM, base=0.30)])
     add(nxt(hits, e("a7") - .01) + 1.0, s("a9"), E.two_reports, left=("SLOWMIST", "FIRST ACTIVITY", "31 AUG"),
         right=("MANDIANT", "PRIVILEGED ACCESS", "24 SEP"), note="The two reports haven't been reconciled", source="[S3][S7]")
-    IL(s("a9"), s("a10"), pick("b21_two_appliances", "b06_empty_guard_booth"), "out")
+    IL(s("a9"), s("a10"), pick("b21_two_appliances", "b06_empty_guard_booth"), "out",
+       glows=[dict(kind="leds", pts=B21_GREEN, rate=(2.5, 9.0), duty=(0.5, 0.85), r=6),
+              dict(kind="leds", pts=[(1018, 336), (1020, 791)], rate=(0.6, 1.1), duty=(0.55, 0.7), r=9,
+                   color=(1.0, 0.35, 0.2), seed=5)])
     add(s("a10"), nxt(hits, e("a10") - .01) + .5, E.punch, line="A name. A real one.", style=3)
 
     # ---------------- BRIDGE (Thomas) ----------------
@@ -298,8 +304,10 @@ def build(tl):
         items=[("93 TRX", "18:31 UTC"), ("0.84 ETH", "then")], source="[S6]")
     add(s("e2"), s("e3"), E.threshold_meter, label="below the risk threshold · no alert (CEO)", source="[S15]")
     IL(s("e3"), s("e4"), "b13_fingerprint_glass", "in", kicker="HOLD ON TO THIS",
-       line="Something odd about these transfers.",
-       glows=[dict(kind="flicker", x=620, y=310, r=220, color=(0.95, 0.95, 1.0), base=0.30)])
+       line="Something odd about these transfers.", motes=False,   # dust only inside the torch beam
+       glows=[dict(kind="flicker", x=620, y=310, r=220, color=(0.95, 0.95, 1.0), base=0.30),
+              dict(kind="beam", poly=[(700, 262), (600, 392), (760, 780), (940, 430)], base=0.035,
+                   color=(1.0, 0.95, 0.85))])
     IL(s("e4"), s("e5"), pick("b31_wall_clock_quiet", "b10_empty_trading_floor"), "in", kicker="18:31 → 18:58",
        line="Nothing. For almost half an hour.",
        glows=[dict(kind="flicker", x=950, y=70, r=260, color=WARM, base=0.25)])
@@ -337,7 +345,8 @@ def build(tl):
     add(nxt(hits, e("f10") - .01) + .6, c11, S.black)
     add(c11, s("g1"), E.chapter, title="Why didn't it stop?", kicker="THE WRONG SWITCH")
     if pick("b34_wrong_switch", "") == "b34_wrong_switch":
-        IL(s("g1"), s("g2"), "b34_wrong_switch", "in", line="Customer withdrawals off. Forged requests still flowing.", source="[S2][S8]")
+        IL(s("g1"), s("g2"), "b34_wrong_switch", "in", line="Customer withdrawals off. Forged requests still flowing.", source="[S2][S8]",
+           glows=[dict(kind="flicker", x=1065, y=430, r=270, color=WARM, base=0.32)])
     else:
         add(s("g1"), s("g2"), E.locked_phone_split, source="[S2][S8]")
     add(s("g2"), s("g3"), E.gates_open, gates=("SECOND PERSON?", "ALLOW-LIST?", "SIGNING"),
@@ -350,7 +359,7 @@ def build(tl):
         caption="left after the alarm · two estimates", source="[S7][S20]")
     IL(s("g5"), s("g7"), pick("b25_vault_closing", "b19_vault_half_full"), "out", kicker="20:40 UTC",
        line="Funds move to cold storage. Last traced transfer: 21:23.", source="[S2][S6][S7]",
-       glows=[dict(kind="flicker", x=790, y=90, r=320, color=WARM, base=0.35)])
+       glows=[dict(kind="flicker", x=830, y=175, r=380, color=WARM, base=0.40)])
     add(s("g7"), s("g8"), E.error_log, title="AFTER 21:23 · ILLUSTRATIVE LOG",
         lines=[(0.3, "rewrite withdrawal records"), (1.2, "ERROR  write rejected"), (2.2, "new BTC order"),
                (2.8, "ERROR  order failed"), (3.2, "new BTC order"), (3.6, "ERROR  order failed")],
@@ -393,7 +402,12 @@ def build(tl):
         caption="of the stolen funds frozen", source="[S7][S9]")
     IL(s("w5"), s("w6"), "b16_river_split", "in", kicker="NOVEMBER 2026 · COINJOIN",
        line="~$161M of Bitcoin moved in 11 days", source="[S21][S22]",
-       fog=dict(density=0.35, color=(0.50, 0.57, 0.65), speed=18, floor=0.30))
+       fog=dict(density=0.35, color=(0.50, 0.57, 0.65), speed=18, floor=0.30), motes=False,
+       water=dict(poly=[(880, 320), (1100, 290), (1600, 330), (1650, 520), (1750, 700), (1800, 1152),
+                        (250, 1152), (450, 800), (600, 520), (800, 420)],
+                  holes=[[(1000, 470), (1200, 450), (1450, 470), (1430, 540), (1150, 560), (1000, 540)]],
+                  amp=2.2, speed=1.0),
+       glows=[dict(kind="slow", x=958, y=312, r=80, color=(1.0, 0.6, 0.25), base=0.45, phase=0.7)])
     IL(s("w6"), nxt(cards, e("w8")), "b14_launderer_laptop", "in", kicker="ZACHXBT",
        line="Launderers asking for support in public chats.", source="[S23][S30]",
        glows=[dict(kind="flicker", x=380, y=330, r=260, color=WARM, base=0.30),
@@ -404,7 +418,8 @@ def build(tl):
     add(c15, s("x1"), E.chapter, title="Who?", kicker="ATTRIBUTION")
     IL(s("x1"), next(iter([c for c in cards if c > s("x2")])), "b15_investigation_wall", "in", kicker="NIGHT OF THE HACK",
        line="IP addresses matching VPNs used by a North Korean group (CEO)", source="[S19]",
-       glows=[dict(kind="flicker", x=40, y=786, r=300, color=WARM, base=0.35)])
+       glows=[dict(kind="flicker", x=40, y=786, r=300, color=WARM, base=0.35),
+              dict(kind="country", x=1292, y=428, t_in=1.0, dur=1.5, size=24, offset=(-260, -140))])
     c16 = next(C)
     add(c16, s("x3"), E.live_quote, quote="The pattern looks very much like what the North Korean team did before.",
         who="GRACY CHEN · BITGET CEO · LIVESTREAM ON X", source="[S19]")
@@ -431,7 +446,10 @@ def build(tl):
         add(e("x10") + .5, s("l3"), E.loan_towers, mode="loan", source="[S27][S28]")
     add(s("l3"), s("l4"), E.date_block, month="FEB", year="2025", line="FBI: the Bybit theft was North Korea", source="[S31]")
     if pick("b37_empty_harbour_night", "") == "b37_empty_harbour_night":
-        IL(s("l4"), s("l5"), "b37_empty_harbour_night", "in", kicker="SEPTEMBER 2026", line="Now the money was leaving Bitget.", warm=False, source="[S2][S6]")
+        IL(s("l4"), s("l5"), "b37_empty_harbour_night", "in", kicker="SEPTEMBER 2026", line="Now the money was leaving Bitget.", warm=False, source="[S2][S6]",
+           motes=False, glows=[dict(kind="slow", x=x, y=y, r=55, color=WARM, base=0.42, phase=ph)
+                               for (x, y), ph in zip([(282, 381), (481, 413), (638, 440), (1647, 392),
+                                                      (1889, 415), (2019, 446)], [0.3, 1.9, 3.1, 4.4, 5.2, 0.9])])
     else:
         add(s("l4"), s("l5"), E.loan_towers, mode="leaving", source="[S2][S6]")
     add(s("l5"), nxt(cards, e("l5")), S.statement, line="No government has named anyone. The analysts point the same way.")
@@ -444,13 +462,15 @@ def build(tl):
         source="[S2][S16]")
     IL(s("k3"), s("k4"), "b19_vault_half_full", "in", kicker="PROTECTION FUND",
        line="Rebuilt to just over $300M. Less than before.", source="[S2][S16]",
-       glows=[dict(kind="flicker", x=790, y=90, r=320, color=WARM, base=0.35)])
+       glows=[dict(kind="flicker", x=810, y=88, r=420, color=WARM, base=0.45),
+              dict(kind="beam", poly=[(700, 100), (920, 100), (1130, 640), (480, 640)], base=0.07, color=WARM)])
     IL(s("k4"), s("k5"), pick("b38_new_lock_install", "b20_two_locks_door"), "in", kicker="SINCE THEN",
        line="Critical operations need more than one approval.", source="[S2][S16]")
     add(s("k5"), s("z1"), E.redacted, title="THE VENDOR",
         lines=[(0.6, "Under review"), (2.0, "Still not named")], source="[S2][S16]")
     IL(s("z1"), s("z2"), pick("b39_night_city_window", "b01_empty_trading_office"), "out", kicker="93 TRX · 02:31 IN ASIA",
-       line="Nobody looked at it.")
+       line="Nobody looked at it.", motes=False,
+       glows=[dict(kind="slow", x=823, y=505, r=70, color=(1.0, 0.42, 0.28), base=0.55, phase=1.1)])
     IL(s("z2"), s("z3"), pick("b40b_guard_cap_desk", "b06_empty_guard_booth"), "in", statement="Someone else may have been holding the guard.")
     if pick("b41_signing_machine", "") == "b41_signing_machine":
         IL(s("z3"), s("z4"), "b41_signing_machine", "in", line="Customers locked out. The signing machine still running.", warm=False, source="[S2]",

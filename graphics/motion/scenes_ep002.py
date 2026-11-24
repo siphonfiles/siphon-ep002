@@ -151,11 +151,11 @@ def risk_form(ctx, t, d, boxes=("AML", "LIMIT", "RISK"), stamp_at=None, source=N
     sa = d * 0.75 if stamp_at is None else stamp_at
     if t < sa:
         hover = 0.5 + 0.5 * math.sin(t * 2.5)
-        rgba(ctx, (0, 0, 0), 0.25 * a)
-        ctx.rectangle(860, 760 + 10 * hover, 380, 110)
+        rgba(ctx, (0.19, 0.20, 0.23), 0.92 * a)          # dark button, light text: readable on the paper
+        rrect(ctx, 860, 760 + 10 * hover, 380, 110, 8)
         ctx.fill()
-        text(ctx, "STAMP PENDING", 1050, 840 - 24 - 6 * hover, GREY, a * 0.8, align="center", face=MONO, size=26,
-             bold=False, tracking=4)
+        text(ctx, "STAMP PENDING", 1050, 825 + 10 * hover, (0.93, 0.92, 0.88), a, align="center", face=MONO,
+             size=28, bold=True, tracking=4)
     else:
         q = ease_out(prog(t, sa, 0.12))
         s = 1.25 - 0.25 * q
@@ -437,6 +437,8 @@ def _node(ctx, x, y, label, sub, q, col=None, wid=470):
     if q <= 0:
         return
     col = col or AMBER
+    need = 32 + max(text_width(ctx, label, MONO, 34), text_width(ctx, sub, MONO, 24, False) if sub else 0) + 32
+    wid = max(wid, need)          # the box always fits its text (owner, 24 Nov: text ran past the frame)
     _panel(ctx, x, y - 52, wid, 104, q, 10)
     rgba(ctx, col, q)
     ctx.rectangle(x, y - 52, 8, 104)
@@ -484,6 +486,71 @@ def borrowed_badge(ctx, t, d, clone_at=2.0, source=None):
         source_tag(ctx, source, a)
 
 
+def _vault_door(ctx, cx, cy, r, a, t):
+    """A round vault door drawn in code: steel ring, bolts, spokes, a dial, and a warm glow from the seam
+    (the money behind it)."""
+    if a <= 0:
+        return
+    _glow(ctx, cx, cy, r * 1.55, AMBER, a * (0.16 + 0.04 * math.sin(t * 1.3)))
+    ctx.save()
+    # frame
+    rgba(ctx, (0.10, 0.12, 0.14), a)
+    rrect(ctx, cx - r * 1.22, cy - r * 1.22, r * 2.44, r * 2.44, 18)
+    ctx.fill()
+    rgba(ctx, (0.30, 0.34, 0.37), a)
+    ctx.set_line_width(3)
+    rrect(ctx, cx - r * 1.22, cy - r * 1.22, r * 2.44, r * 2.44, 18)
+    ctx.stroke()
+    # door body with a radial steel gradient
+    g = cairo.RadialGradient(cx - r * 0.3, cy - r * 0.35, r * 0.1, cx, cy, r)
+    g.add_color_stop_rgba(0, 0.52, 0.56, 0.58, a)
+    g.add_color_stop_rgba(0.7, 0.28, 0.31, 0.34, a)
+    g.add_color_stop_rgba(1, 0.16, 0.18, 0.20, a)
+    ctx.set_source(g)
+    ctx.arc(cx, cy, r, 0, 2 * math.pi)
+    ctx.fill()
+    # warm seam light around the door
+    ctx.set_line_width(5)
+    ctx.set_source_rgba(1.0, 0.72, 0.35, 0.55 * a)
+    ctx.arc(cx, cy, r + 4, 0, 2 * math.pi)
+    ctx.stroke()
+    # bolts on the rim
+    for i in range(16):
+        ang = i / 16 * 2 * math.pi
+        bx, by = cx + math.cos(ang) * r * 0.88, cy + math.sin(ang) * r * 0.88
+        rgba(ctx, (0.70, 0.73, 0.74), a)
+        ctx.arc(bx, by, r * 0.035, 0, 2 * math.pi)
+        ctx.fill()
+    # inner ring + spokes of the handle wheel
+    rgba(ctx, (0.12, 0.14, 0.16), a * 0.9)
+    ctx.set_line_width(r * 0.05)
+    ctx.arc(cx, cy, r * 0.62, 0, 2 * math.pi)
+    ctx.stroke()
+    rot = 0.15 * math.sin(t * 0.6)
+    rgba(ctx, (0.78, 0.80, 0.80), a)
+    ctx.set_line_width(r * 0.06)
+    for i in range(3):
+        ang = rot + i * math.pi / 3
+        ctx.move_to(cx - math.cos(ang) * r * 0.5, cy - math.sin(ang) * r * 0.5)
+        ctx.line_to(cx + math.cos(ang) * r * 0.5, cy + math.sin(ang) * r * 0.5)
+        ctx.stroke()
+    for i in range(6):
+        ang = rot + i * math.pi / 3
+        ctx.arc(cx + math.cos(ang) * r * 0.5, cy + math.sin(ang) * r * 0.5, r * 0.055, 0, 2 * math.pi)
+        ctx.fill()
+    # dial
+    g = cairo.RadialGradient(cx, cy, 0, cx, cy, r * 0.2)
+    g.add_color_stop_rgba(0, 0.85, 0.86, 0.86, a)
+    g.add_color_stop_rgba(1, 0.35, 0.38, 0.40, a)
+    ctx.set_source(g)
+    ctx.arc(cx, cy, r * 0.2, 0, 2 * math.pi)
+    ctx.fill()
+    rgba(ctx, AMBER, a)
+    ctx.arc(cx, cy, r * 0.045, 0, 2 * math.pi)
+    ctx.fill()
+    ctx.restore()
+
+
 def path_to_money(ctx, t, d, t_server=4.0, t_vault=12.0, t_barrier=15.0, source=None):
     """Appliance B -> web shell -> wallet job server -> the vault; then risk control drops in between."""
     a = fade_io(t, d)
@@ -496,14 +563,14 @@ def path_to_money(ctx, t, d, t_server=4.0, t_vault=12.0, t_barrier=15.0, source=
     text(ctx, "APPLIANCE B", 300, 400, AMBER, a * prog(t, 0.3, 0.4), align="center", face=MONO, size=28, bold=False,
          tracking=6)
     _wire(ctx, (x0 + w + 16, ly), (560, 330), ease_out(prog(t, 1.0, 0.6)), RED, a)
-    _node(ctx, 560, 330, "WEB SHELL", "a channel back to the attacker", a * prog(t, 1.4, 0.4), RED, 440)
+    _node(ctx, 560, 330, "WEB SHELL", "a channel back to the attacker", a * prog(t, 1.4, 0.4), RED, 520)
     _wire(ctx, (780, 382), (780, 618), ease_out(prog(t, t_server - 0.3, 0.6)), AMBER, a)
-    _node(ctx, 560, 670, "WALLET JOB SERVER", "builds withdrawal transactions", a * prog(t, t_server, 0.4), None, 440)
+    _node(ctx, 560, 670, "WALLET JOB SERVER", "builds withdrawal transactions", a * prog(t, t_server, 0.4), None, 520)
     v = ease_out(prog(t, t_vault, 0.9))
     if v > 0:
-        _wire(ctx, (1000, 670), (1250, 600), ease_out(prog(t, t_vault, 0.7)), AMBER, a)
-        draw_cut(ctx, "b19_vault_half_full", 1500, 560, 450 + 20 * v, a * v)
-        text(ctx, "NEXT TO THE MONEY", 1500, 270, AMBER, a * v, align="center", face=MONO, size=30, tracking=6)
+        _wire(ctx, (1080, 670), (1330, 600), ease_out(prog(t, t_vault, 0.7)), AMBER, a)
+        _vault_door(ctx, 1560, 580, 210 + 8 * v, a * v, t)   # drawn, so the vault photo isn't reused
+        text(ctx, "NEXT TO THE MONEY", 1560, 290, AMBER, a * v, align="center", face=MONO, size=30, tracking=6)
     b = ease_out(prog(t, t_barrier, 0.45))
     if b > 0:
         bx = 1150
@@ -520,11 +587,65 @@ def path_to_money(ctx, t, d, t_server=4.0, t_vault=12.0, t_barrier=15.0, source=
         source_tag(ctx, source, a)
 
 
+PHONE_SCREEN = ((30, 60), (325, 8), (808, 150), (555, 205))   # TL, TR, BR, BL of the screen in the cutout (836x284)
+
+
+def _phone_app(ctx, box, a, t):
+    """A generic exchange app drawn onto the phone's screen (no real brand): hidden balance, a red
+    'Withdrawals paused' banner and a greyed-out Withdraw button."""
+    if a <= 0:
+        return
+    x0, y0, w, h = box
+    k = w / 836.0
+    P = [(x0 + x * k, y0 + y * k) for x, y in PHONE_SCREEN]
+    CW, CH = 300.0, 520.0                       # content units: portrait screen
+    (tlx, tly), (trx, try_), _, (blx, bly) = P
+    m = cairo.Matrix((trx - tlx) / CW, (try_ - tly) / CW, (blx - tlx) / CH, (bly - tly) / CH, tlx, tly)
+    ctx.save()
+    ctx.new_path()
+    ctx.move_to(*P[0])
+    for q in P[1:]:
+        ctx.line_to(*q)
+    ctx.close_path()
+    ctx.clip()
+    ctx.transform(m)
+    rgba(ctx, (0.06, 0.07, 0.09), a)
+    ctx.rectangle(-20, -20, CW + 40, CH + 40)
+    ctx.fill()
+    text(ctx, "9:05", 22, 26, INK, a * 0.8, face=MONO, size=12, bold=False)
+    text(ctx, "Wallet", 22, 74, INK, a, size=26)
+    text(ctx, "TOTAL BALANCE", 22, 110, GREY, a, face=MONO, size=11, bold=False, tracking=2)
+    text(ctx, "•••••• USDT", 22, 144, INK, a, face=MONO, size=24)
+    # red banner
+    rgba(ctx, RED, a * (0.85 + 0.15 * math.sin(t * 3)))
+    rrect(ctx, 16, 170, CW - 32, 54, 8)
+    ctx.fill()
+    text(ctx, "Withdrawals paused", CW / 2, 204, (1, 1, 1), a, align="center", size=19)
+    # greyed buttons
+    for i, lab in enumerate(("Deposit", "Withdraw")):
+        bx = 16 + i * (CW - 32) / 2 + (6 if i else 0)
+        rgba(ctx, (0.18, 0.19, 0.22), a)
+        rrect(ctx, bx, 244, (CW - 32) / 2 - 6, 48, 8)
+        ctx.fill()
+        text(ctx, lab, bx + ((CW - 32) / 2 - 6) / 2, 274, GREY if i else INK, a * (0.45 if i else 0.9),
+             align="center", size=17, bold=False)
+    # asset rows
+    for j, (sym, amt) in enumerate((("BTC", "••••"), ("ETH", "••••"), ("USDT", "••••"), ("SOL", "••••"))):
+        yy = 330 + j * 46
+        rgba(ctx, (0.22, 0.24, 0.27), a)
+        ctx.arc(34, yy - 6, 12, 0, 2 * math.pi)
+        ctx.fill()
+        text(ctx, sym, 56, yy, INK, a * 0.85, face=MONO, size=15, bold=False)
+        text(ctx, amt, CW - 22, yy, GREY, a * 0.8, align="right", face=MONO, size=15, bold=False)
+    ctx.restore()
+
+
 def locked_phone_split(ctx, t, d, note=None, source=None):
     """Left: the customer's phone (cutout) with 'Withdrawals suspended'. Right: SIGNED keeps coming down."""
     a = fade_io(t, d)
     p = ease_out(prog(t, 0, 0.7))
-    draw_cut(ctx, "b11_phone_nightstand", 520, 760 + 30 * (1 - p), 210, a * p)
+    box = draw_cut(ctx, "b11_phone_nightstand", 520, 760 + 30 * (1 - p), 210, a * p)
+    _phone_app(ctx, box, a * p, t)
     q = ease_out(prog(t, 0.6, 0.45))
     if q > 0:
         y = 330 + 30 * (1 - q)
