@@ -188,7 +188,8 @@ def build(tl):
     add(c3, s("r1"), E.chapter, title="The rescuer", kicker="FEBRUARY 2025")
     if pick("b42_emptied_deposit_wall", "") == "b42_emptied_deposit_wall":
         IL(s("r1"), e("r1") + .35, "b42_emptied_deposit_wall", "in", kicker="BYBIT · 21 FEB 2025",
-           line="~$1.5 billion stolen. The FBI blames North Korea.", warm=False, source="[S31][S28]")
+           line="~$1.5 billion stolen. The FBI blames North Korea.", warm=False, source="[S31][S28]",
+           glows=[dict(kind="pulse", x=670, y=125, r=260, color=(1.0, 0.2, 0.18), min=0.05, max=0.85, hz=1.2)])
     else:
         IL(s("r1"), e("r1") + .35, "b02_two_towers", "up", kicker="BYBIT · 21 FEB 2025",
            line="~$1.5 billion stolen. The FBI blames North Korea.", source="[S31][S28]",
@@ -446,7 +447,17 @@ def build(tl):
        line="Nobody looked at it.")
     IL(s("z2"), s("z3"), pick("b40b_guard_cap_desk", "b06_empty_guard_booth"), "in", statement="Someone else may have been holding the guard.")
     if pick("b41_signing_machine", "") == "b41_signing_machine":
-        IL(s("z3"), s("z4"), "b41_signing_machine", "in", line="Customers locked out. The signing machine still running.", warm=False, source="[S2]")
+        IL(s("z3"), s("z4"), "b41_signing_machine", "in", line="Customers locked out. The signing machine still running.", warm=False, source="[S2]",
+           glows=[dict(kind="pulse", x=1165, y=129, r=170, color=(1.0, 0.2, 0.18), min=0.0, max=0.9, hz=1.5),
+                  dict(kind="pulse", x=938, y=308, r=38, color=(1.0, 0.2, 0.18), min=0.0, max=0.7, hz=1.9),
+                  dict(kind="pulse", x=938, y=377, r=38, color=(1.0, 0.2, 0.18), min=0.0, max=0.7, hz=2.7),
+                  dict(kind="pulse", x=938, y=449, r=38, color=(1.0, 0.2, 0.18), min=0.0, max=0.7, hz=1.3),
+                  dict(kind="pulse", x=938, y=522, r=38, color=(1.0, 0.2, 0.18), min=0.0, max=0.7, hz=3.1),
+                  dict(kind="pulse", x=938, y=659, r=38, color=(1.0, 0.2, 0.18), min=0.0, max=0.7, hz=2.3),
+                  dict(kind="pulse", x=938, y=752, r=38, color=(1.0, 0.2, 0.18), min=0.0, max=0.7, hz=1.7),
+                  dict(kind="pulse", x=938, y=810, r=38, color=(1.0, 0.2, 0.18), min=0.0, max=0.7, hz=2.9),
+                  dict(kind="pulse", x=1113, y=587, r=38, color=(1.0, 0.2, 0.18), min=0.0, max=0.7, hz=2.1),
+                  dict(kind="flicker", x=1090, y=385, r=70, color=(1.0, 0.75, 0.35), base=0.45)])
     else:
         add(s("z3"), s("z4"), E.locked_phone_split, source="[S2]")
     add(s("z4"), e("z4") + .6, S.statement, line="This was Siphon Files.", color=S.GREY)
