@@ -186,9 +186,13 @@ def build(tl):
 
     # ---------------- THE RESCUER ----------------
     add(c3, s("r1"), E.chapter, title="The rescuer", kicker="FEBRUARY 2025")
-    IL(s("r1"), e("r1") + .35, "b02_two_towers", "up", kicker="BYBIT · 21 FEB 2025",
-       line="~$1.5 billion stolen. The FBI blames North Korea.", source="[S31][S28]",
-       fog=dict(density=0.22, color=(0.45, 0.50, 0.58), speed=10, far=0.45))
+    if pick("b42_emptied_deposit_wall", "") == "b42_emptied_deposit_wall":
+        IL(s("r1"), e("r1") + .35, "b42_emptied_deposit_wall", "in", kicker="BYBIT · 21 FEB 2025",
+           line="~$1.5 billion stolen. The FBI blames North Korea.", warm=False, source="[S31][S28]")
+    else:
+        IL(s("r1"), e("r1") + .35, "b02_two_towers", "up", kicker="BYBIT · 21 FEB 2025",
+           line="~$1.5 billion stolen. The FBI blames North Korea.", source="[S31][S28]",
+           fog=dict(density=0.22, color=(0.45, 0.50, 0.58), speed=10, far=0.45))
     add(e("r1") + .35, s("r3"), E.loan_towers, mode="loan", source="[S27][S28]")
     IL(s("r3"), s("r4"), "b03_lifebuoy_dock", "in", statement="Remember that loan.",
        glows=[dict(kind="flicker", x=790, y=216, r=300, color=WARM, base=0.38)],
