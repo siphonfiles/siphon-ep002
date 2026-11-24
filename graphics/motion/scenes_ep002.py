@@ -568,8 +568,8 @@ def path_to_money(ctx, t, d, t_server=4.0, t_vault=12.0, t_barrier=15.0, source=
     _node(ctx, 560, 670, "WALLET JOB SERVER", "builds withdrawal transactions", a * prog(t, t_server, 0.4), None, 520)
     v = ease_out(prog(t, t_vault, 0.9))
     if v > 0:
-        _wire(ctx, (1080, 670), (1330, 600), ease_out(prog(t, t_vault, 0.7)), AMBER, a)
-        _vault_door(ctx, 1560, 580, 210 + 8 * v, a * v, t)   # drawn, so the vault photo isn't reused
+        _wire(ctx, (1080, 670), (1262, 600), ease_out(prog(t, t_vault, 0.7)), AMBER, a)
+        draw_cut(ctx, "b19_vault_half_full", 1560, 560, 450 + 20 * v, a * v)   # the real vault (owner, 24 Nov)
         text(ctx, "NEXT TO THE MONEY", 1560, 290, AMBER, a * v, align="center", face=MONO, size=30, tracking=6)
     b = ease_out(prog(t, t_barrier, 0.45))
     if b > 0:
@@ -587,7 +587,7 @@ def path_to_money(ctx, t, d, t_server=4.0, t_vault=12.0, t_barrier=15.0, source=
         source_tag(ctx, source, a)
 
 
-PHONE_SCREEN = ((26, 56), (322, 3), (812, 148), (556, 208))   # TL, TR, BR, BL of the screen in the cutout (836x284)
+PHONE_SCREEN = ((18, 64), (322, 2), (814, 150), (548, 236))   # TL, TR, BR, BL of the screen in the cutout (836x284)
 
 
 def _phone_app(ctx, box, a, t):
@@ -601,13 +601,8 @@ def _phone_app(ctx, box, a, t):
     CW, CH = 300.0, 520.0                       # content units: portrait screen
     (tlx, tly), (trx, try_), _, (blx, bly) = P
     m = cairo.Matrix((trx - tlx) / CW, (try_ - tly) / CW, (blx - tlx) / CH, (bly - tly) / CH, tlx, tly)
+    ctx.push_group()
     ctx.save()
-    ctx.new_path()
-    ctx.move_to(*P[0])
-    for q in P[1:]:
-        ctx.line_to(*q)
-    ctx.close_path()
-    ctx.clip()
     ctx.transform(m)
     rgba(ctx, (0.06, 0.07, 0.09), a)
     ctx.rectangle(-20, -20, CW + 40, CH + 40)
@@ -637,6 +632,17 @@ def _phone_app(ctx, box, a, t):
         ctx.fill()
         text(ctx, sym, 56, yy, INK, a * 0.85, face=MONO, size=15, bold=False)
         text(ctx, amt, CW - 22, yy, GREY, a * 0.8, align="right", face=MONO, size=15, bold=False)
+    ctx.restore()
+    src = ctx.pop_group()
+    # paint the app only through the exact screen mask of the photo (no grey left at the edges)
+    if "screen_mask" not in _CUTS:
+        _CUTS["screen_mask"] = cairo.ImageSurface.create_from_png(_os.path.join(_CUT_DIR, "c_b11_phone_screen_mask.png"))
+    mk = _CUTS["screen_mask"]
+    ctx.save()
+    ctx.set_source(src)
+    ctx.translate(x0, y0)
+    ctx.scale(k, k)
+    ctx.mask_surface(mk, 0, 0)
     ctx.restore()
 
 
