@@ -49,13 +49,233 @@
    "tail": 0.35
   },
   {
-   "name": "thomas_e2_z2_720p",
-   "first": "z2",
-   "last": "z2",
-   "lead": 0.3,
+   "name": "thomas_e2_z_1_720p",
+   "first": "z1",
+   "last": "z3",
    "camera": "M",
-   "tail": 0.35
+   "t0": [
+    "z1",
+    -0.2
+   ],
+   "a": [
+    "z1",
+    -0.2
+   ],
+   "b": [
+    "z1",
+    4.1
+   ],
+   "chain": "z"
+  },
+  {
+   "name": "thomas_e2_z_2_720p",
+   "first": "z1",
+   "last": "z3",
+   "camera": "C",
+   "t0": [
+    "z1",
+    4.1
+   ],
+   "a": [
+    "z1",
+    4.1
+   ],
+   "b": [
+    "z2",
+    2.063
+   ],
+   "chain": "z"
+  },
+  {
+   "name": "thomas_e2_z_3_720p",
+   "first": "z1",
+   "last": "z3",
+   "camera": "M",
+   "t0": [
+    "z2",
+    2.063
+   ],
+   "a": [
+    "z2",
+    2.063
+   ],
+   "b": [
+    "z3",
+    1.499
+   ],
+   "chain": "z"
+  },
+  {
+   "name": "thomas_e2_z_4_720p",
+   "first": "z1",
+   "last": "z3",
+   "camera": "C",
+   "t0": [
+    "z3",
+    1.499
+   ],
+   "a": [
+    "z3",
+    1.499
+   ],
+   "b": [
+    "z3",
+    6.254
+   ],
+   "chain": "z"
+  },
+  {
+   "name": "thomas_e2_d12_1_720p",
+   "first": "d1",
+   "last": "d2",
+   "camera": "M",
+   "t0": [
+    "d1",
+    -0.3
+   ],
+   "a": [
+    "d1",
+    -0.3
+   ],
+   "b": [
+    "d2",
+    2.561
+   ],
+   "chain": "d12"
+  },
+  {
+   "name": "thomas_e2_d12_2_720p",
+   "first": "d1",
+   "last": "d2",
+   "camera": "C",
+   "t0": [
+    "d2",
+    2.561
+   ],
+   "a": [
+    "d2",
+    2.561
+   ],
+   "b": [
+    "d2",
+    6.62
+   ],
+   "chain": "d12"
+  },
+  {
+   "name": "thomas_e2_d4_720p",
+   "first": "d4",
+   "last": "d4",
+   "camera": "C",
+   "t0": [
+    "d4",
+    -0.3
+   ],
+   "a": [
+    "d4",
+    -0.3
+   ],
+   "b": [
+    "d4",
+    2.151
+   ],
+   "chain": "d4"
+  },
+  {
+   "name": "thomas_e2_i5_720p",
+   "first": "i5",
+   "last": "i5",
+   "camera": "M",
+   "t0": [
+    "i5",
+    -0.3
+   ],
+   "a": [
+    "i5",
+    -0.3
+   ],
+   "b": [
+    "i5",
+    2.261
+   ],
+   "chain": "i5"
+  },
+  {
+   "name": "thomas_e2_l_1_720p",
+   "first": "l1",
+   "last": "l5",
+   "camera": "M",
+   "t0": [
+    "l1",
+    -0.3
+   ],
+   "a": [
+    "l1",
+    -0.3
+   ],
+   "b": [
+    "l1",
+    4.2
+   ],
+   "chain": "l"
+  },
+  {
+   "name": "thomas_e2_l_2_720p",
+   "first": "l1",
+   "last": "l5",
+   "camera": "C",
+   "t0": [
+    "l1",
+    4.2
+   ],
+   "a": [
+    "l1",
+    4.2
+   ],
+   "b": [
+    "l3",
+    0.867
+   ],
+   "chain": "l"
+  },
+  {
+   "name": "thomas_e2_l_3_720p",
+   "first": "l1",
+   "last": "l5",
+   "camera": "M",
+   "t0": [
+    "l3",
+    0.867
+   ],
+   "a": [
+    "l3",
+    0.867
+   ],
+   "b": [
+    "l4",
+    2.715
+   ],
+   "chain": "l"
+  },
+  {
+   "name": "thomas_e2_l_4_720p",
+   "first": "l1",
+   "last": "l5",
+   "camera": "C",
+   "t0": [
+    "l4",
+    2.715
+   ],
+   "a": [
+    "l4",
+    2.715
+   ],
+   "b": [
+    "l5",
+    4.083
+   ],
+   "chain": "l"
   }
  ],
- "note": "Order = generation order (most important first). 720p, DBCache faster, seed 42."
+ "note": "Order = generation order (most important first). 720p, DBCache faster, seed 42. 24 Nov: 12 chained clips (z, d12, d4, i5, l) cover every remaining Thomas line."
 }

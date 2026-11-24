@@ -45,6 +45,11 @@ def thomas_shots(tl):
             continue
         if c["first"] not in v or c["last"] not in v:
             continue
+        if "t0" in c:                       # chained clip (24 Nov): explicit window, [line, offset from its start]
+            T = lambda r: v[r[0]][0] + r[1]
+            t0, a, b = T(c["t0"]), T(c["a"]), T(c["b"])
+            out.append((a, b, fr, t0, c.get("camera", "M")))
+            continue
         t0 = v[c["first"]][0] - c["lead"]
         a = v[c["first"]][0] - min(c["lead"], 0.35)
         b = v[c["last"]][1] + c.get("tail", 0.35)
@@ -95,8 +100,9 @@ def overlay_thomas(T, shots):
             pieces = nxt
         for pa, pb in pieces:
             if pb - pa < 1.0 and (pa, pb) != (a, b):
-                fill = S.black if fn is S.black else fn
-                out.append((pa, pb, _off(fill, pa - a), p))   # keep continuity, it is short anyway
+                # a sliver next to a Thomas shot: black (section breath), never the scene's text flashing
+                fill = S.black if fn is S.black or any(abs(pa - x[1]) < 1e-6 or abs(pb - x[0]) < 1e-6 for x in shots) else fn
+                out.append((pa, pb, S.black, {}) if fill is S.black else (pa, pb, _off(fill, pa - a), p))
             elif pa == a:
                 out.append((pa, pb, fn, p))
             else:
