@@ -46,7 +46,8 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898+github-actions[bot]@users.noreply.github.com"
           mkdir -p /tmp/pub && cp stills/*.png /tmp/pub/
-          git fetch --depth 1 origin renders && git switch -c renders FETCH_HEAD
+          git reset -q --hard && git clean -fdq
+          git fetch --depth 1 origin renders && git switch -f -c renders FETCH_HEAD
           mkdir -p "stills/ep002-run-${GITHUB_RUN_NUMBER}" && cp /tmp/pub/* "stills/ep002-run-${GITHUB_RUN_NUMBER}/"
           git add stills && git commit -qm "ep002 stills run ${GITHUB_RUN_NUMBER}" && git push -q origin renders
 
