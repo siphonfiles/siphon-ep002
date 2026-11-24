@@ -369,9 +369,10 @@ def build(tl):
         add(s("g1"), s("g2"), E.locked_phone_split, source="[S2][S8]")
     add(s("g2"), s("g3"), E.gates_open, gates=("SECOND PERSON?", "ALLOW-LIST?", "SIGNING"),
         title="FORGED REQUEST · WARM WALLETS · ACCORDING TO ONE ANALYSIS", source="[S8]")
-    add(s("g3"), nxt(cards, e("g3")), E.punch, line="The signing service kept running.", style=2)
+    # the number appears on its words ("For two hours and thirty-nine minutes..."), not after the line
+    add(s("g3"), s("g3") + 2.15, E.punch, line="The signing service kept running.", style=2)
     c12 = next(C)
-    add(c12, s("g4"), E.big_text, value="2 h 39 min", caption="of signing after the first alert",
+    add(s("g3") + 2.15, s("g4"), E.big_text, value="2 h 39 min", caption="of signing after the first alert",
         source="[S2][S8]")
     add(s("g4"), s("g5"), E.remaining_bar, total=388_000_000, before=150_000_000,
         caption="left after the alarm · two estimates", source="[S7][S20]")
