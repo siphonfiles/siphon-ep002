@@ -359,9 +359,13 @@ def build(tl):
         source="[S2][S8]")
     add(s("g4"), s("g5"), E.remaining_bar, total=388_000_000, before=150_000_000,
         caption="left after the alarm · two estimates", source="[S7][S20]")
-    IL(s("g5"), s("g7"), pick("b25_vault_closing", "b19_vault_half_full"), "out", kicker="20:40 UTC",
-       line="Funds move to cold storage. Last traced transfer: 21:23.", source="[S2][S6][S7]",
+    IL(s("g5"), s("g6"), pick("b25_vault_closing", "b19_vault_half_full"), "out", kicker="20:40 UTC",
+       line="Funds move to cold storage.", source="[S2][S7]",
        glows=[dict(kind="flicker", x=830, y=175, r=380, color=WARM, base=0.40)])
+    IL(s("g6"), s("g7"), "b37_empty_harbour_night", "in", kicker="21:23 UTC · LAST TRACED TRANSFER", warm=False, source="[S6][S7]",
+       motes=False, glows=[dict(kind="slow", x=x, y=y, r=55, color=WARM, base=0.42, phase=ph)
+                           for (x, y), ph in zip([(282, 381), (481, 413), (638, 440), (1647, 392),
+                                                  (1889, 415), (2019, 446)], [0.3, 1.9, 3.1, 4.4, 5.2, 0.9])])
     add(s("g7"), s("g8"), E.error_log, title="AFTER 21:23 · ILLUSTRATIVE LOG",
         lines=[(0.3, "rewrite withdrawal records"), (1.2, "ERROR  write rejected"), (2.2, "new BTC order"),
                (2.8, "ERROR  order failed"), (3.2, "new BTC order"), (3.6, "ERROR  order failed")],
@@ -447,13 +451,8 @@ def build(tl):
     else:
         add(e("x10") + .5, s("l3"), E.loan_towers, mode="loan", source="[S27][S28]")
     add(s("l3"), s("l4"), E.date_block, month="FEB", year="2025", line="FBI: the Bybit theft was North Korea", source="[S31]")
-    if pick("b37_empty_harbour_night", "") == "b37_empty_harbour_night":
-        IL(s("l4"), s("l5"), "b37_empty_harbour_night", "in", kicker="SEPTEMBER 2026", line="Now the money was leaving Bitget.", warm=False, source="[S2][S6]",
-           motes=False, glows=[dict(kind="slow", x=x, y=y, r=55, color=WARM, base=0.42, phase=ph)
-                               for (x, y), ph in zip([(282, 381), (481, 413), (638, 440), (1647, 392),
-                                                      (1889, 415), (2019, 446)], [0.3, 1.9, 3.1, 4.4, 5.2, 0.9])])
-    else:
-        add(s("l4"), s("l5"), E.loan_towers, mode="leaving", source="[S2][S6]")
+    # l4-l5 are covered by Thomas (l chain); the harbour moved to g6
+    add(s("l4"), s("l5"), E.loan_towers, mode="leaving", source="[S2][S6]")
     add(s("l5"), nxt(cards, e("l5")), S.statement, line="No government has named anyone. The analysts point the same way.")
 
     # ---------------- AFTERWARDS ----------------
