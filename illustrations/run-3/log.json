@@ -1,0 +1,50 @@
+[
+  {
+    "id": "b21_two_appliances",
+    "seed": 2101,
+    "seconds": 14.9,
+    "prompt": "Two identical black rack-mounted network security appliances stacked in a dark server cabinet, seen from the front at eye level, rows of tiny green status lights on both, one small red light glowing alone on the upper unit, patch cables curving away into the shadows, the open cabinet door framing the shot. Cinematic 3D render for a premium investigative documentary, stylized realism with clean matte materials, low-key lighting with deep navy and charcoal shadows, one warm amber key light as the only strong accent, a subtle cool teal rim light, soft volumetric haze, shallow depth of field, 35mm lens, clearly separated foreground, midground and background layers, calm restrained mood, fine film grain."
+  },
+  {
+    "id": "b22_recovered_drive",
+    "seed": 2102,
+    "seconds": 15.0,
+    "prompt": "A single opened hard disk drive lying on a black anti-static mat under a narrow forensic lamp, its mirror platter and read arm exposed, a pair of fine tweezers and a magnifying loupe beside it, everything else falling into darkness. Cinematic 3D render for a premium investigative documentary, stylized realism with clean matte materials, low-key lighting with deep navy and charcoal shadows, one warm amber key light as the only strong accent, a subtle cool teal rim light, soft volumetric haze, shallow depth of field, 35mm lens, clearly separated foreground, midground and background layers, calm restrained mood, fine film grain."
+  },
+  {
+    "id": "b23_server_cable",
+    "seed": 2103,
+    "seconds": 20.0,
+    "prompt": "A single server in a long dark data centre aisle, one bright amber network cable plugged into its front port and running away along the floor out of frame, rows of identical servers fading into blue haze behind it. Cinematic 3D render for a premium investigative documentary, stylized realism with clean matte materials, low-key lighting with deep navy and charcoal shadows, one warm amber key light as the only strong accent, a subtle cool teal rim light, soft volumetric haze, shallow depth of field, 35mm lens, clearly separated foreground, midground and background layers, calm restrained mood, fine film grain."
+  },
+  {
+    "id": "b24_crisis_room",
+    "seed": 2104,
+    "seconds": 14.6,
+    "prompt": "A dark operations room at night lit only by a wall of screens glowing alarm red, three people seen from behind standing still in front of the screens as dark silhouettes, one with a hand on the back of a chair, coffee cups left on a long desk in the foreground. Cinematic 3D render for a premium investigative documentary, stylized realism with clean matte materials, low-key lighting with deep navy and charcoal shadows, one warm amber key light as the only strong accent, a subtle cool teal rim light, soft volumetric haze, shallow depth of field, 35mm lens, clearly separated foreground, midground and background layers, calm restrained mood, fine film grain."
+  },
+  {
+    "id": "b25_vault_closing",
+    "seed": 2105,
+    "seconds": 15.0,
+    "prompt": "A massive round steel vault door slowly swinging shut, seen from inside the vault, a narrowing wedge of warm amber light from the corridor falling across the floor, empty metal shelves on both sides of the vault. Cinematic 3D render for a premium investigative documentary, stylized realism with clean matte materials, low-key lighting with deep navy and charcoal shadows, one warm amber key light as the only strong accent, a subtle cool teal rim light, soft volumetric haze, shallow depth of field, 35mm lens, clearly separated foreground, midground and background layers, calm restrained mood, fine film grain."
+  },
+  {
+    "id": "b26_rivers_meet",
+    "seed": 2106,
+    "seconds": 20.9,
+    "prompt": "Aerial night view of two dark rivers flowing toward each other through a black landscape and merging into one wider river, faint amber light reflecting on the left river and cold teal light on the right river, thin mist over the water where they join. Cinematic 3D render for a premium investigative documentary, stylized realism with clean matte materials, low-key lighting with deep navy and charcoal shadows, one warm amber key light as the only strong accent, a subtle cool teal rim light, soft volumetric haze, shallow depth of field, 35mm lens, clearly separated foreground, midground and background layers, calm restrained mood, fine film grain."
+  },
+  {
+    "id": "b27_coin_crowd",
+    "seed": 2107,
+    "seconds": 14.8,
+    "prompt": "A dense heap of thousands of small dull silver coins spilling across a dark table, one lone gold coin resting on top of the heap catching a warm amber spotlight, the edges of the heap fading into darkness. Cinematic 3D render for a premium investigative documentary, stylized realism with clean matte materials, low-key lighting with deep navy and charcoal shadows, one warm amber key light as the only strong accent, a subtle cool teal rim light, soft volumetric haze, shallow depth of field, 35mm lens, clearly separated foreground, midground and background layers, calm restrained mood, fine film grain."
+  },
+  {
+    "id": "b28_guard_monitors",
+    "seed": 2108,
+    "seconds": 21.2,
+    "prompt": "An empty security guard desk at night facing a wall of small CCTV monitors showing empty grey corridors, a swivel chair pushed back from the desk, a guard cap and a radio left on the desk, one monitor glowing slightly brighter than the rest. Cinematic 3D render for a premium investigative documentary, stylized realism with clean matte materials, low-key lighting with deep navy and charcoal shadows, one warm amber key light as the only strong accent, a subtle cool teal rim light, soft volumetric haze, shallow depth of field, 35mm lens, clearly separated foreground, midground and background layers, calm restrained mood, fine film grain."
+  }
+]
