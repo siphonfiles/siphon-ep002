@@ -14,9 +14,9 @@
     }
    ],
    "missing_anchors": [],
-   "gain_db": -20.4,
-   "offset_s": 0.0,
-   "why": "ping with a 1.3 s tail; s11/s22 were 0.1 s clicks"
+   "gain_db": -24.4,
+   "offset_s": -0.35,
+   "why": "ping with a 1.3 s tail; s11/s22 were 0.1 s clicks; -4 dB and 0.35 s earlier so the tail clears the first word of t1"
   },
   "building_alarm": {
    "file": "sound/ep002/sfx/candidates/building_alarm_s22.mp3",
@@ -31,9 +31,9 @@
     }
    ],
    "missing_anchors": [],
-   "gain_db": -32.2,
+   "gain_db": -38.2,
    "offset_s": 0.0,
-   "why": "only take with no gaps"
+   "why": "only take with no gaps; -6 dB after ASR on v4 (t3 'Bitget' got less clear under it)"
   },
   "server_hum": {
    "file": "sound/ep002/sfx/candidates/server_hum_s22.mp3",
