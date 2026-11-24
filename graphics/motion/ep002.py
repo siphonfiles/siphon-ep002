@@ -364,9 +364,9 @@ def build(tl):
        glows=[dict(kind="flicker", x=830, y=175, r=380, color=WARM, base=0.40)])
     IL(s("g6"), s("g7"), "b37_empty_harbour_night", "in", kicker="21:23 UTC · LAST TRACED TRANSFER", warm=False, source="[S6][S7]",
        motes=False, glows=[dict(kind="lamp", x=x, y=y, r=70, core=c, color=WARM, base=0.38, seed=sd, **({'refl': rf} if rf else {}))
-                           for (x, y, c, sd, rf) in [(282, 384, 26, 1, (500, 720, 34)), (482, 418, 22, 9, (500, 700, 26)),
-                                                     (638, 441, 18, 3, (490, 640, 20)), (1649, 393, 24, 13, (510, 720, 30)),
-                                                     (1890, 415, 22, 17, (520, 740, 28)), (2020, 450, 18, 24, None)]])
+                           for (x, y, c, sd, rf) in [(282, 384, 26, 35, (500, 720, 34)), (482, 418, 22, 2, (500, 700, 26)),
+                                                     (638, 441, 18, 14, (490, 640, 20)), (1649, 393, 24, 25, (510, 720, 30)),
+                                                     (1890, 415, 22, 34, (520, 740, 28)), (2020, 450, 18, 32, None)]])
     add(s("g7"), s("g8"), E.error_log, title="AFTER 21:23 · ILLUSTRATIVE LOG",
         lines=[(0.3, "rewrite withdrawal records"), (1.2, "ERROR  write rejected"), (2.2, "new BTC order"),
                (2.8, "ERROR  order failed"), (3.2, "new BTC order"), (3.6, "ERROR  order failed")],

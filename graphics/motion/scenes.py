@@ -1157,9 +1157,9 @@ def _lamp_level(t, seed):
         return v - math.floor(v)
     period = 0.8 + 0.45 * h(seed * 3.1)
     win = math.floor(t / period + h(seed))
-    if h(win * 1.7 + 0.3) < 0.42:                      # this window is a burst
-        tick = math.floor(t / 0.07)
-        return 0.22 + 0.78 * (h(tick * 0.91 + 5.0) > 0.5)
+    if h(win * 1.7 + 0.3) < 0.2:                       # this window is a burst (rare)
+        tick = math.floor(t / 0.13)
+        return 0.62 + 0.38 * (h(tick * 0.91 + 5.0) > 0.5)   # dims, never goes out
     return 0.92 + 0.08 * h(math.floor(t / 0.1) * 1.3)
 
 
