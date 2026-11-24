@@ -205,7 +205,7 @@ def build(tl):
     add(s("i3"), s("i4"), S.kinetic, line="Bitget says not a single private key was compromised.",
         highlight=("not", "single"), cut=False, source="[S2][S3]")
     add(s("i4"), s("i5"), S.question, q="How do you steal $388M without the keys?")
-    add(s("i5"), nxt(hits, e("i5") - .01) + .6, S.statement, line="You make the exchange sign it for you.")
+    add(s("i5"), nxt(hits, e("i5") - .01) + .6, E.punch, line="You make the exchange sign it for you.", style=1)
 
     # ---------------- HOW AN EXCHANGE PAYS YOU ----------------
     c5 = next(C)
@@ -227,21 +227,21 @@ def build(tl):
        line="Inside a security product. Not the wallets.", warm=False, source="[S3][S4][S7]",
        glows=[dict(kind="pulse", x=1230, y=566, r=230, color=REDL, min=0.10, max=0.70, hz=0.9),
               dict(kind="pulse", x=1050, y=112, r=120, color=REDL, min=0.05, max=0.40, hz=1.3)])
-    add(s("a3"), s("a5"), S.explainer, name="PRODUCT A · PRODUCT B",
+    add(s("a3"), s("a5"), E.two_boxes, left="PRODUCT A", right="PRODUCT B",
         lines=[(0.6, "Two third-party security tools · vendor not named"),
                (frac("a4", 0.2) - s("a3"), "Product A: a zero-day → a hidden script")], source="[S4][S8]")
-    add(s("a5"), s("a6"), E.explorer_line, cols=["db_password=", "********", "(plain text)"],
-        label="FOUND BY THE SCRIPT · ILLUSTRATIVE", source="[S4][S8]", cut=False)
+    add(s("a5"), s("a6"), E.config_file, filename="config · ILLUSTRATIVE", hot=2,
+        rows=["host = wallet-db.internal", "user = svc_wallet", "db_password = ********   # plain text", "timeout = 30"],
+        source="[S4][S8]")
     add(s("a6"), s("a7"), E.key_appliance, statement="A spare key under the doormat — inside the security office.",
         source="[S4][S8]")
     IL(s("a7"), nxt(hits, e("a7") - .01) + 1.0, "b06_empty_guard_booth", "in", kicker="FROM HERE ON",
        line="We know someone is inside. Bitget doesn't.",
        glows=[dict(kind="flicker", x=730, y=100, r=300, color=WARM, base=0.30)])
-    add(nxt(hits, e("a7") - .01) + 1.0, s("a9"), S.explainer, name="ONE CAVEAT",
-        lines=[(0.5, "SlowMist: first activity 31 August"), (1.6, "Mandiant: privileged access dated 24 September"),
-               (3.0, "The two reports haven't been reconciled")], source="[S3][S7]")
+    add(nxt(hits, e("a7") - .01) + 1.0, s("a9"), E.two_reports, left=("SLOWMIST", "FIRST ACTIVITY", "31 AUG"),
+        right=("MANDIANT", "PRIVILEGED ACCESS", "24 SEP"), note="The two reports haven't been reconciled", source="[S3][S7]")
     IL(s("a9"), s("a10"), pick("b21_two_appliances", "b06_empty_guard_booth"), "out")
-    add(s("a10"), nxt(hits, e("a10") - .01) + .5, S.statement, line="A name. A real one.")
+    add(s("a10"), nxt(hits, e("a10") - .01) + .5, E.punch, line="A name. A real one.", style=3)
 
     # ---------------- BRIDGE (Thomas) ----------------
     hb = nxt(hits, e("a10") - .01) + .5
@@ -261,7 +261,7 @@ def build(tl):
                                               ("24 SEP", "machine 3 · night of the theft")],
         title="THE SCRIPT SPREADS", source="[S4][S7]")
     add(s("b2"), s("b4"), E.borrowed_badge, clone_at=s("b3") - s("b2") + 0.3, source="[S4][S7][S15]")
-    add(s("b4"), s("b5"), S.explainer, name="THE EMPLOYEE",
+    add(s("b4"), s("b5"), E.blank_profile, title="THE EMPLOYEE",
         lines=[(0.6, "Wasn't there"), (1.8, "Credentials stolen via the zero-day"),
                (3.4, "Insider collusion ruled out, for now (Bitget)")], source="[S15]")
     add(s("b5"), nxt(hits, e("b8") - .01), E.path_to_money, t_server=s("b6") - s("b5"), t_vault=s("b7") - s("b5"),
@@ -271,7 +271,7 @@ def build(tl):
     c8 = next(C)
     add(nxt(hits, e("b8") - .01), c8, S.black)
     add(c8, s("c1"), S.countdown, label="42 MIN", sub="24 SEP 2026 · 17:49 UTC")
-    add(s("c1"), s("c2"), S.explainer, name="17:49 UTC · WALLET HOST",
+    add(s("c1"), s("c2"), E.trash_restore, when="17:49 UTC · WALLET HOST",
         lines=[(0.6, "A tool starts"), (2.0, "Later recovered from deleted files (SlowMist)")], source="[S4][S7]")
     add(s("c2"), s("c4"), E.risk_form, stamp_at=99, label="risk checks answered by the attacker's tool",
         source="[S4][S7]")
@@ -283,25 +283,24 @@ def build(tl):
     c9 = next(C)
     add(nxt(hits, e("c6") - .01) + .5, c9, S.black)
     add(c9, s("e1"), S.countdown, label="18:31 UTC", sub="02:31 IN ASIA")
-    add(s("e1"), s("e2"), E.explorer_line, cols=["18:31", "93 TRX", "· then ·", "0.84 ETH"],
-        label="THE TEST TRANSFERS", source="[S6]", cut=False)
-    add(s("e2"), s("e3"), E.risk_form, stamp_at=0.6, label="below the risk threshold · no alert (CEO)", source="[S15]")
+    add(s("e1"), s("e2"), E.two_receipts, title="THE TEST TRANSFERS",
+        items=[("93 TRX", "18:31 UTC"), ("0.84 ETH", "then")], source="[S6]")
+    add(s("e2"), s("e3"), E.threshold_meter, label="below the risk threshold · no alert (CEO)", source="[S15]")
     IL(s("e3"), s("e4"), "b13_fingerprint_glass", "in", kicker="HOLD ON TO THIS",
        line="Something odd about these transfers.",
        glows=[dict(kind="flicker", x=620, y=310, r=220, color=(0.95, 0.95, 1.0), base=0.30)])
     IL(s("e4"), s("e5"), pick("b31_wall_clock_quiet", "b10_empty_trading_floor"), "in", kicker="18:31 → 18:58",
        line="Nothing. For almost half an hour.",
        glows=[dict(kind="flicker", x=950, y=70, r=260, color=WARM, base=0.25)])
-    add(s("e5"), s("e6"), S.big_number, value=34.75, prefix="", suffix="M USDT", decimals=2, count_for=1.0,
-        caption="18:58 UTC · one transfer", source="[S6]")
+    add(s("e5"), s("e6"), E.single_transfer, amount="34.75M USDT", caption="18:58 UTC · one transfer", source="[S6]")
     IL(s("e6"), nxt(cards, e("e7")), pick("b28_guard_monitors", "b12_alarm_control_room"), "out", kicker="STILL NO ALARM", warm=False,
        glows=[dict(kind="pulse", x=930, y=106, r=160, color=(0.4, 0.1, 0.1), min=0.02, max=0.08, hz=0.3)])
 
     # ---------------- LOCKED OUT ----------------
     c10 = next(C)
     add(c10, s("f2"), E.burst, clock="19:01", n=7, chains=5, seconds=15, source="[S6]")
-    add(s("f2"), s("f3"), E.explorer_line, cols=["19:03", "small test", "different wallet"],
-        label="ONE MORE TEST", source="[S6][S8]", cut=False)
+    add(s("f2"), s("f3"), E.radar_ping, clock="19:03",
+        lines=[(0.4, "One more small test"), (1.2, "to a different wallet")], source="[S6][S8]")
     if pick("b32b_ledger_gap", "") == "b32b_ledger_gap":
         IL(s("f3"), s("f4"), "b32b_ledger_gap", "in", kicker="19:05 UTC", line="Reconciliation flags the gap.",
            warm=False, source="[S2]")
@@ -315,8 +314,8 @@ def build(tl):
         IL(s("f5"), s("f6"), "b24_crisis_room", "in", kicker="19:14 UTC", line="Highest-level emergency.", warm=False, source="[S2]")
     else:
         add(s("f5"), s("f6"), S.explainer, name="19:14 UTC", lines=[(0.4, "Highest-level emergency")], source="[S2]")
-    add(s("f6"), s("f9"), E.burst, clock="19:16", n=5, chains=5, seconds=9, red=True,
-        caption="≈ $203 million", source="[S6]")
+    add(s("f6"), s("f9"), E.drain_bar, clock="19:16", total=203_000_000, steps=5,
+        caption="5 transfers · 5 chains · 9 seconds · ≈ $203 million", source="[S6]")
     if pick("b33_closed_shutter_counter", "") == "b33_closed_shutter_counter":
         IL(s("f9"), nxt(hits, e("f10") - .01) + .6, "b33_closed_shutter_counter", "in", kicker="19:16 UTC", line="Customers locked out since 19:05. The attacker wasn't.", warm=False, source="[S2][S8]")
     else:
@@ -330,20 +329,21 @@ def build(tl):
         IL(s("g1"), s("g2"), "b34_wrong_switch", "in", line="Customer withdrawals off. Forged requests still flowing.", source="[S2][S8]")
     else:
         add(s("g1"), s("g2"), E.locked_phone_split, source="[S2][S8]")
-    add(s("g2"), s("g3"), E.pipeline, steps=("FORGED REQUEST", "SECOND PERSON?", "ALLOW-LIST?", "SIGNATURE"),
-        forged=False, title="WARM WALLETS · ACCORDING TO ONE ANALYSIS", source="[S8]")
-    add(s("g3"), nxt(cards, e("g3")), S.statement, line="The signing service kept running.")
+    add(s("g2"), s("g3"), E.gates_open, gates=("SECOND PERSON?", "ALLOW-LIST?", "SIGNING"),
+        title="FORGED REQUEST · WARM WALLETS · ACCORDING TO ONE ANALYSIS", source="[S8]")
+    add(s("g3"), nxt(cards, e("g3")), E.punch, line="The signing service kept running.", style=2)
     c12 = next(C)
     add(c12, s("g4"), E.big_text, value="2 h 39 min", caption="of signing after the first alert",
         source="[S2][S8]")
-    add(s("g4"), s("g5"), S.big_number, value=238_000_000, suffix="", prefix="~$", caption="left after the alarm · two estimates",
-        count_for=1.2, source="[S7][S20]")
+    add(s("g4"), s("g5"), E.remaining_bar, total=388_000_000, before=150_000_000,
+        caption="left after the alarm · two estimates", source="[S7][S20]")
     IL(s("g5"), s("g7"), pick("b25_vault_closing", "b19_vault_half_full"), "out", kicker="20:40 UTC",
        line="Funds move to cold storage. Last traced transfer: 21:23.", source="[S2][S6][S7]",
        glows=[dict(kind="flicker", x=790, y=90, r=320, color=WARM, base=0.35)])
-    add(s("g7"), s("g8"), S.explainer, name="AFTER 21:23",
-        lines=[(0.6, "Attempts to rewrite withdrawal records"), (2.4, "Two fake Bitcoin orders → errors"),
-               (4.0, "Covering tracks, or going for more? The reports don't say.")], source="[S4][S7]")
+    add(s("g7"), s("g8"), E.error_log, title="AFTER 21:23 · ILLUSTRATIVE LOG",
+        lines=[(0.3, "rewrite withdrawal records"), (1.2, "ERROR  write rejected"), (2.2, "new BTC order"),
+               (2.8, "ERROR  order failed"), (3.2, "new BTC order"), (3.6, "ERROR  order failed")],
+        caption="Covering tracks, or going for more? The reports don't say.", at_caption=4.0, source="[S4][S7]")
     add(s("g8"), s("g9"), E.clock_span, marks=[(0.19, "19:05", "alarm"), (0.97, "21:23", "last transfer")],
         source="[S2][S6]")
     IL(s("g9"), nxt(cards, e("g10")), pick("b22_recovered_drive", "b13_fingerprint_glass"), "in", kicker="THE NEXT MORNING",
@@ -354,7 +354,7 @@ def build(tl):
     c13 = next(C)
     add(c13, s("h1"), E.chapter, title="The tell", kicker="FINGERPRINTS")
     add(s("h1"), s("h3"), E.gas_bars, source="[S6]")
-    add(s("h3"), s("h4"), S.big_number, value=35678, prefix="", suffix=" transactions", count_for=1.0,
+    add(s("h3"), s("h4"), E.dot_grid, value=35678, label="transactions",
         caption="in the 8 days before · not one customer payout used those limits", source="[S6]")
     if pick("b27_coin_crowd", "") == "b27_coin_crowd":
         IL(s("h4"), s("h5"), "b27_coin_crowd", "in", kicker="ZCASH · ~1,000 INPUTS PER TRANSFER",
@@ -365,7 +365,7 @@ def build(tl):
     IL(s("h5"), nxt(hits, e("h6") - .01) + .5, pick("b35_shredded_paper", "b13_fingerprint_glass"), "in", kicker="COMMANDS DELETED",
        line="The fingerprints weren't.", source="[S8][S16]",
        glows=[dict(kind="flicker", x=620, y=310, r=240, color=(0.95, 0.95, 1.0), base=0.35)])
-    add(nxt(hits, e("h6") - .01) + .5, nxt(cards, e("h7")), S.statement, line="And a new problem: how to keep it.")
+    add(nxt(hits, e("h6") - .01) + .5, nxt(cards, e("h7")), E.punch, line="And a new problem: how to keep it.", style=4)
 
     # ---------------- WHERE DID IT GO? ----------------
     c14 = next(C)
@@ -378,7 +378,7 @@ def build(tl):
        line="Asked to block the addresses. Declined.", source="[S7][S9]",
        fog=dict(density=0.35, color=(0.45, 0.52, 0.60), speed=12, far=0.5),
        glows=[dict(kind="flicker", x=600, y=360, r=260, color=(0.5, 0.9, 0.9), base=0.20)])
-    add(frac("w4", 0.0), s("w5"), S.big_number, value=0.3, prefix="< ", suffix="%", decimals=1, count_for=0.8,
+    add(frac("w4", 0.0), s("w5"), E.fraction_square, lit=3, total_cells=1024, big="< 0.3%",
         caption="of the stolen funds frozen", source="[S7][S9]")
     IL(s("w5"), s("w6"), "b16_river_split", "in", kicker="NOVEMBER 2026 · COINJOIN",
        line="~$161M of Bitcoin moved in 11 days", source="[S21][S22]",
@@ -395,23 +395,21 @@ def build(tl):
        line="IP addresses matching VPNs used by a North Korean group (CEO)", source="[S19]",
        glows=[dict(kind="flicker", x=40, y=786, r=300, color=WARM, base=0.35)])
     c16 = next(C)
-    add(c16, s("x3"), S.quote_card, quote="The pattern looks very much like what the North Korean team did before.",
-        who="GRACY CHEN · BITGET CEO · X LIVESTREAM", source="[S19]")
-    add(s("x3"), s("x5"), S.explainer, name="FOUR DAYS LATER",
-        lines=[(0.5, "“Preliminary indicators”"), (frac("x4", 0.1) - s("x3"), "Chainalysis · Elliptic · TRM: lean North Korea")],
-        source="[S10][S11][S12][S13]")
-    add(s("x5"), s("x6"), S.big_number, value=6_300_000_000, caption="Binance · ~5 weeks later", count_for=1.2,
-        source="[S17][S25]")
+    add(c16, s("x3"), E.live_quote, quote="The pattern looks very much like what the North Korean team did before.",
+        who="GRACY CHEN · BITGET CEO · LIVESTREAM ON X", source="[S19]")
+    add(s("x3"), s("x5"), E.three_tags, title="FOUR DAYS LATER · “PRELIMINARY INDICATORS”",
+        tags=("Chainalysis", "Elliptic", "TRM Labs"), verdict="All lean North Korea", source="[S10][S11][S12][S13]")
+    add(s("x5"), s("x6"), E.compare_bars, rows=[("BITGET · 24 SEP 2026", 388_000_000), ("BINANCE · ~5 WEEKS LATER", 6_300_000_000)],
+        caption="drawn to scale", source="[S17][S25]")
     x6b = s("x6")
     if pick("b26_rivers_meet", "") == "b26_rivers_meet":
         IL(s("x6"), s("x7"), "b26_rivers_meet", "in", kicker="CHAINALYSIS",
            line="The Binance money met the Bitget money on-chain.", source="[S24]")
         x6b = s("x7")
-    add(x6b, s("x8"), E.flow_split, title="ON-CHAIN", rows=[
-        ("BINANCE $", "same address", "via THORChain (ZachXBT)"),
-        ("BITGET $", "same address", "commingled (Chainalysis)")], source="[S24][S26]")
-    add(s("x8"), s("x9"), S.explainer, name="FBI · 31 OCT 2026",
-        lines=[(0.6, "Binance: North Korea's TraderTraitor")], source="[S17][S25]")
+    add(x6b, s("x8"), E.merge_two, left="BINANCE $", right="BITGET $", mid="SAME ADDRESS", title="ON-CHAIN",
+        notes=[(1.0, "via THORChain (ZachXBT)"), (1.8, "commingled (Chainalysis)")], source="[S24][S26]")
+    add(s("x8"), s("x9"), E.official_notice, issuer="FBI", date="31 OCT 2026",
+        line="Binance theft: North Korea's TraderTraitor", source="[S17][S25]")
     add(s("x9"), e("x10") + .5, S.dossier, stamp="BITGET\nNO OFFICIAL ATTRIBUTION",
         lines=[(0.6, "No government statement"), (1.8, "Mandiant names no one")], source="[S3][S8]")
 
@@ -420,7 +418,7 @@ def build(tl):
         IL(e("x10") + .5, s("l3"), "b36_cargo_ship_dawn", "out", kicker="21 FEB 2025 · BITGET → BYBIT", line="40,000 ETH · No interest. No collateral.", source="[S27][S28]")
     else:
         add(e("x10") + .5, s("l3"), E.loan_towers, mode="loan", source="[S27][S28]")
-    add(s("l3"), s("l4"), S.explainer, name="FBI · FEB 2025", lines=[(0.5, "Bybit: North Korea")], source="[S31]")
+    add(s("l3"), s("l4"), E.date_block, month="FEB", year="2025", line="FBI: the Bybit theft was North Korea", source="[S31]")
     if pick("b37_empty_harbour_night", "") == "b37_empty_harbour_night":
         IL(s("l4"), s("l5"), "b37_empty_harbour_night", "in", kicker="SEPTEMBER 2026", line="Now the money was leaving Bitget.", warm=False, source="[S2][S6]")
     else:
@@ -430,16 +428,16 @@ def build(tl):
     # ---------------- AFTERWARDS ----------------
     c17 = next(C)
     add(c17, s("k1"), E.chapter, title="Afterwards", kicker="THE CUSTOMERS")
-    IL(s("k1"), s("k3"), "b11_phone_nightstand", "out", kicker="BITGET",
-       line="Losses covered from its own protection fund · withdrawals back by 2 Oct", source="[S2][S16]",
-       glows=[dict(kind="pulse", x=920, y=696, r=260, color=WARM, min=0.10, max=0.30, hz=0.3)])
+    add(s("k1"), s("k3"), E.calendar_flip, start="24 SEP", end="2 OCT",
+        lines=[(0.6, "Losses covered from Bitget's own protection fund"), (1.6, "Withdrawals back by 2 October")],
+        source="[S2][S16]")
     IL(s("k3"), s("k4"), "b19_vault_half_full", "in", kicker="PROTECTION FUND",
        line="Rebuilt to just over $300M. Less than before.", source="[S2][S16]",
        glows=[dict(kind="flicker", x=790, y=90, r=320, color=WARM, base=0.35)])
     IL(s("k4"), s("k5"), pick("b38_new_lock_install", "b20_two_locks_door"), "in", kicker="SINCE THEN",
        line="Critical operations need more than one approval.", source="[S2][S16]")
-    add(s("k5"), s("z1"), S.explainer, name="THE VENDOR", lines=[(0.6, "Under review"), (2.0, "Still not named")],
-        source="[S2][S16]")
+    add(s("k5"), s("z1"), E.redacted, title="THE VENDOR",
+        lines=[(0.6, "Under review"), (2.0, "Still not named")], source="[S2][S16]")
     IL(s("z1"), s("z2"), pick("b39_night_city_window", "b01_empty_trading_office"), "out", kicker="93 TRX · 02:31 IN ASIA",
        line="Nobody looked at it.")
     IL(s("z2"), s("z3"), pick("b40b_guard_cap_desk", "b06_empty_guard_booth"), "in", statement="Someone else may have been holding the guard.")

@@ -603,3 +603,491 @@ def loan_towers(ctx, t, d, mode="loan", source=None):
         text(ctx, "The money was leaving Bitget.", W / 2, 215, INK, a * prog(t, 0.6, 0.4), align="center", size=52)
     if source:
         source_tag(ctx, source, a)
+
+
+# ============================================================================
+# 24 Nov 2026: one design per scene (owner: no picture and no layout may repeat)
+# ============================================================================
+PAPER = (0.86, 0.84, 0.79)
+PAPER_INK = (0.14, 0.14, 0.16)
+TERM = (0.03, 0.05, 0.05)
+
+
+def _bar(ctx, x, y, w, h, col, a):
+    rgba(ctx, col, a)
+    ctx.rectangle(x, y, w, h)
+    ctx.fill()
+
+
+def _lines_reveal(ctx, t, lines, x, y, a, step=66, size=38, col=INK, sub=GREY, face=MONO, align="left"):
+    for i, (at, ln) in enumerate(lines):
+        q = ease_out(prog(t, at, 0.45))
+        text(ctx, ln, x, y + i * step + (1 - q) * 10, col if i == 0 else sub, a * q, align=align,
+             face=face, size=size, bold=False)
+
+
+def two_boxes(ctx, t, d, left, right, lines, source=None):
+    """Two closed product boxes side by side, the left one lit; facts below."""
+    a = fade_io(t, d)
+    for i, (lab, x) in enumerate(((left, 560), (right, 1360))):
+        q = ease_out(prog(t, 0.15 + 0.3 * i, 0.6))
+        y = 330 + (1 - q) * 30
+        rgba(ctx, (0.08, 0.11, 0.12), a * q)
+        ctx.move_to(x - 210, y + 60); ctx.line_to(x, y); ctx.line_to(x + 210, y + 60); ctx.line_to(x, y + 120)
+        ctx.close_path(); ctx.fill()
+        rgba(ctx, (0.06, 0.09, 0.10), a * q)
+        ctx.move_to(x - 210, y + 60); ctx.line_to(x, y + 120); ctx.line_to(x, y + 330); ctx.line_to(x - 210, y + 270)
+        ctx.close_path(); ctx.fill()
+        rgba(ctx, (0.04, 0.07, 0.08), a * q)
+        ctx.move_to(x + 210, y + 60); ctx.line_to(x, y + 120); ctx.line_to(x, y + 330); ctx.line_to(x + 210, y + 270)
+        ctx.close_path(); ctx.fill()
+        col = AMBER if i == 0 else GREY
+        rgba(ctx, col, a * q * (0.6 + 0.4 * math.sin(t * 3)) if i == 0 else a * q * 0.6)
+        ctx.set_line_width(3)
+        ctx.move_to(x - 210, y + 60); ctx.line_to(x, y); ctx.line_to(x + 210, y + 60); ctx.line_to(x + 210, y + 270)
+        ctx.line_to(x, y + 330); ctx.line_to(x - 210, y + 270); ctx.close_path(); ctx.stroke()
+        text(ctx, lab, x, y + 410, col, a * q, align="center", face=MONO, size=44, tracking=6)
+    _lines_reveal(ctx, t, lines, W / 2, 870, a, step=60, size=34, align="center")
+    if source:
+        source_tag(ctx, source, a)
+
+
+def two_reports(ctx, t, d, left, right, note, source=None):
+    """Two paper reports with different dates and a ≠ between them."""
+    a = fade_io(t, d)
+    for i, ((who, lab, date), x, tilt) in enumerate(((left, 600, -0.03), (right, 1320, 0.03))):
+        q = ease_out(prog(t, 0.3 + 0.9 * i, 0.6))
+        ctx.save(); ctx.translate(x, 470 + (1 - q) * 40); ctx.rotate(tilt)
+        rgba(ctx, PAPER, a * q); ctx.rectangle(-230, -260, 460, 560); ctx.fill()
+        text(ctx, who, -190, -190, PAPER_INK, a * q, face=MONO, size=34, tracking=4)
+        for k in range(7):
+            _bar(ctx, -190, -130 + k * 34, 380 - (k * 37) % 140, 10, (0.6, 0.6, 0.6), a * q)
+        text(ctx, lab, -190, 170, (0.4, 0.4, 0.42), a * q, face=MONO, size=24, bold=False)
+        text(ctx, date, -190, 235, RED if i else PAPER_INK, a * q, face=MONO, size=52)
+        ctx.restore()
+    q = prog(t, 2.2, 0.4)
+    text(ctx, "≠", W / 2, 560, AMBER, a * q, align="center", face=MONO, size=150)
+    text(ctx, note, W / 2, 940, GREY, a * prog(t, 2.6, 0.5), align="center", face=MONO, size=34, bold=False)
+    if source:
+        source_tag(ctx, source, a)
+
+
+def blank_profile(ctx, t, d, title, lines, source=None):
+    """An empty staff profile (no photo, no name) with notes stamped beside it."""
+    a = fade_io(t, d)
+    _panel(ctx, 260, 250, 520, 620, a, 16)
+    rgba(ctx, DIM, a); ctx.arc(520, 450, 110, 0, 2 * math.pi); ctx.fill()
+    rgba(ctx, DIM, a); ctx.arc(520, 680, 190, math.pi, 2 * math.pi); ctx.fill()
+    rgba(ctx, (0.10, 0.12, 0.15), a); ctx.rectangle(262, 690, 516, 180); ctx.fill()
+    text(ctx, "? ? ?", 520, 790, GREY, a, align="center", face=MONO, size=48)
+    text(ctx, title, 900, 330, AMBER, a, face=MONO, size=40, tracking=8)
+    for i, (at, ln) in enumerate(lines):
+        q = ease_out(prog(t, at, 0.35))
+        y = 460 + i * 130
+        _bar(ctx, 900, y - 46, 8, 60, RED if i == 0 else AMBER, a * q)
+        text(ctx, ln, 940, y, INK, a * q, face=HEAD, size=46, bold=i == 0)
+    if source:
+        source_tag(ctx, source, a)
+
+
+def trash_restore(ctx, t, d, when, lines, source=None):
+    """A file lifted back out of a bin: the tool recovered from deleted files."""
+    a = fade_io(t, d)
+    text(ctx, when, 200, 260, AMBER, a, face=MONO, size=64)
+    bx, by = 560, 700
+    rgba(ctx, GREY, a); ctx.set_line_width(6)
+    ctx.move_to(bx - 130, by - 160); ctx.line_to(bx - 100, by + 140); ctx.line_to(bx + 100, by + 140)
+    ctx.line_to(bx + 130, by - 160); ctx.stroke()
+    ctx.move_to(bx - 160, by - 170); ctx.line_to(bx + 160, by - 170); ctx.stroke()
+    for k in (-50, 0, 50):
+        ctx.move_to(bx + k, by - 120); ctx.line_to(bx + k * 0.8, by + 110); ctx.stroke()
+    q = ease_in_out(prog(t, 0.8, 1.6))
+    fy = by - 60 - 340 * q
+    rgba(ctx, AMBER, a * (0.3 + 0.7 * q)); rrect(ctx, bx - 60, fy - 80, 120, 160, 10); ctx.fill()
+    rgba(ctx, TERM, a); ctx.rectangle(bx - 40, fy - 40, 80, 8); ctx.rectangle(bx - 40, fy - 15, 60, 8)
+    ctx.rectangle(bx - 40, fy + 10, 70, 8); ctx.fill()
+    _lines_reveal(ctx, t, lines, 900, 520, a, step=80, size=44)
+    if source:
+        source_tag(ctx, source, a)
+
+
+def error_log(ctx, t, d, title, lines, caption=None, at_caption=3.5, source=None):
+    """A server log scrolling; failed writes come back as red ERROR lines."""
+    a = fade_io(t, d)
+    rgba(ctx, TERM, a * 0.95); rrect(ctx, 220, 200, 1480, 700, 14); ctx.fill()
+    _bar(ctx, 220, 200, 1480, 56, (0.12, 0.14, 0.15), a)
+    text(ctx, title, 260, 240, GREY, a, face=MONO, size=28, bold=False, tracking=4)
+    for i, (at, ln) in enumerate(lines):
+        q = prog(t, at, 0.15)
+        bad = ln.startswith("ERROR")
+        n = int(len(ln) * clamp(prog(t, at, 0.8)))
+        text(ctx, ("> " if not bad else "") + ln[:n], 270, 340 + i * 90, RED if bad else GREEN, a * q,
+             face=MONO, size=36, bold=bad)
+    if caption:
+        text(ctx, caption, W / 2, 980, INK, a * prog(t, at_caption, 0.5), align="center", face=HEAD, size=44)
+    if source:
+        source_tag(ctx, source, a)
+
+
+def three_tags(ctx, t, d, title, tags, verdict, source=None):
+    """Three analyst tags light up one by one and all point at the same verdict."""
+    a = fade_io(t, d)
+    text(ctx, title, W / 2, 230, GREY, a, align="center", face=MONO, size=32, tracking=8)
+    for i, tg in enumerate(tags):
+        q = ease_out(prog(t, 0.4 + 0.5 * i, 0.4))
+        x = 480 + i * 480
+        _panel(ctx, x - 190, 340, 380, 120, a * q, 60)
+        text(ctx, tg, x, 415, INK, a * q, align="center", face=MONO, size=38)
+        r = ease_out(prog(t, 2.0, 0.8))
+        rgba(ctx, AMBER, a * q * 0.8); ctx.set_line_width(4)
+        ctx.move_to(x, 460); ctx.line_to(x + (W / 2 - x) * r, 460 + 220 * r); ctx.stroke()
+    q = ease_out(prog(t, 2.6, 0.5))
+    text(ctx, verdict, W / 2, 790, AMBER, a * q, align="center", face=HEAD, size=72)
+    if source:
+        source_tag(ctx, source, a)
+
+
+def official_notice(ctx, t, d, issuer, date, line, source=None):
+    """An official notice sheet with a round seal (no real emblem) pressed onto it."""
+    a = fade_io(t, d)
+    rgba(ctx, PAPER, a); ctx.rectangle(560, 140, 800, 800); ctx.fill()
+    text(ctx, issuer, 620, 250, PAPER_INK, a, face=MONO, size=40, tracking=6)
+    text(ctx, date, 620, 310, (0.4, 0.4, 0.42), a, face=MONO, size=30, bold=False)
+    _bar(ctx, 620, 340, 680, 3, PAPER_INK, a)
+    for k in range(5):
+        _bar(ctx, 620, 400 + k * 40, 680 - (k * 53) % 200, 12, (0.62, 0.62, 0.62), a)
+    q = ease_out(prog(t, 0.6, 0.5))
+    lines = wrap(ctx, line, 660, HEAD, 48, True)
+    for i, ln in enumerate(lines):
+        text(ctx, ln, 620, 660 + i * 60, PAPER_INK, a * q, size=48)
+    s = prog(t, 1.4, 0.25)
+    if s > 0:
+        r = 110 * (1.6 - 0.6 * s)
+        rgba(ctx, RED, a * s * 0.85); ctx.set_line_width(8)
+        ctx.arc(1180, 840, r, 0, 2 * math.pi); ctx.stroke()
+        ctx.arc(1180, 840, r * 0.78, 0, 2 * math.pi); ctx.stroke()
+        text(ctx, "ATTRIBUTED", 1180, 852, RED, a * s, align="center", face=MONO, size=30)
+    if source:
+        source_tag(ctx, source, a)
+
+
+def date_block(ctx, t, d, month, year, line, source=None):
+    """A tear-off calendar block (month / year) with one line under it."""
+    a = fade_io(t, d)
+    q = ease_out(prog(t, 0.1, 0.5))
+    rgba(ctx, (0.95, 0.94, 0.90), a * q); rrect(ctx, 760, 220, 400, 440, 18); ctx.fill()
+    _bar(ctx, 760, 220, 400, 120, RED, a * q)
+    text(ctx, month, 960, 305, (1, 1, 1), a * q, align="center", face=MONO, size=64)
+    text(ctx, year, 960, 560, PAPER_INK, a * q, align="center", face=MONO, size=130)
+    text(ctx, line, W / 2, 800, INK, a * prog(t, 0.6, 0.5), align="center", face=HEAD, size=64)
+    if source:
+        source_tag(ctx, source, a)
+
+
+def redacted(ctx, t, d, title, lines, source=None):
+    """A file with the vendor's name blacked out; the bar stays."""
+    a = fade_io(t, d)
+    rgba(ctx, PAPER, a); ctx.rectangle(360, 220, 1200, 640); ctx.fill()
+    text(ctx, title, 420, 320, PAPER_INK, a, face=MONO, size=36, tracking=6)
+    text(ctx, "NAME:", 420, 440, (0.4, 0.4, 0.42), a, face=MONO, size=36, bold=False)
+    q = ease_in_out(prog(t, 0.2, 0.6))
+    _bar(ctx, 560, 395, 760 * q, 62, (0.02, 0.02, 0.02), a)
+    for i, (at, ln) in enumerate(lines):
+        r = ease_out(prog(t, at, 0.4))
+        text(ctx, ln, 420, 580 + i * 90, RED if i else PAPER_INK, a * r, face=MONO, size=44)
+    if source:
+        source_tag(ctx, source, a)
+
+
+def config_file(ctx, t, d, filename, rows, hot, source=None):
+    """A config file in a light editor; one line (the password) highlighted."""
+    a = fade_io(t, d)
+    rgba(ctx, (0.93, 0.93, 0.91), a); rrect(ctx, 380, 220, 1160, 640, 12); ctx.fill()
+    _bar(ctx, 380, 220, 1160, 60, (0.80, 0.80, 0.78), a)
+    text(ctx, filename, 420, 262, PAPER_INK, a, face=MONO, size=28, bold=False)
+    for i, ln in enumerate(rows):
+        y = 360 + i * 72
+        if i == hot:
+            q = prog(t, 0.8, 0.4)
+            _bar(ctx, 400, y - 46, 1120, 64, (1.0, 0.85, 0.3), a * q * 0.85)
+        text(ctx, f"{i + 1:>2}", 410, y, (0.6, 0.6, 0.6), a, face=MONO, size=30, bold=False)
+        text(ctx, ln, 480, y, PAPER_INK, a, face=MONO, size=36, bold=i == hot)
+    if source:
+        source_tag(ctx, source, a)
+
+
+def two_receipts(ctx, t, d, title, items, source=None):
+    """Small transfer slips printing one after another (the test transfers)."""
+    a = fade_io(t, d)
+    text(ctx, title, W / 2, 230, GREY, a, align="center", face=MONO, size=32, tracking=8)
+    for i, (big, sub) in enumerate(items):
+        q = ease_out(prog(t, 0.4 + 1.0 * i, 0.9))
+        x = 700 + i * 520
+        h = 420 * q
+        rgba(ctx, PAPER, a); ctx.rectangle(x - 170, 320, 340, h); ctx.fill()
+        for k in range(0, 340, 20):
+            rgba(ctx, PAPER, a); ctx.move_to(x - 170 + k, 320 + h); ctx.line_to(x - 160 + k, 334 + h)
+            ctx.line_to(x - 150 + k, 320 + h); ctx.fill()
+        if q > 0.6:
+            text(ctx, sub, x, 400, (0.4, 0.4, 0.42), a, align="center", face=MONO, size=28, bold=False)
+            text(ctx, big, x, 560, PAPER_INK, a, align="center", face=MONO, size=64)
+            text(ctx, "OK", x, 690, GREEN, a, align="center", face=MONO, size=36)
+    if source:
+        source_tag(ctx, source, a)
+
+
+def radar_ping(ctx, t, d, clock, lines, source=None):
+    """A radar sweep: one small blip, a test the alarms never caught."""
+    a = fade_io(t, d)
+    cx, cy, R = 620, 540, 330
+    rgba(ctx, DIM, a); ctx.set_line_width(2)
+    for k in (1, 2, 3):
+        ctx.arc(cx, cy, R * k / 3, 0, 2 * math.pi); ctx.stroke()
+    ang = t * 2.2
+    g = cairo.RadialGradient(cx, cy, 0, cx, cy, R)
+    g.add_color_stop_rgba(0, AMBER[0], AMBER[1], AMBER[2], 0.0)
+    g.add_color_stop_rgba(1, AMBER[0], AMBER[1], AMBER[2], 0.25 * a)
+    ctx.set_source(g); ctx.move_to(cx, cy); ctx.arc(cx, cy, R, ang - 0.6, ang); ctx.close_path(); ctx.fill()
+    bx, by = cx + R * 0.55 * math.cos(2.1), cy + R * 0.55 * math.sin(2.1)
+    ph = ((ang - 2.1) % (2 * math.pi)) / (2 * math.pi)
+    rgba(ctx, AMBER, a * max(0.2, 1 - ph)); ctx.arc(bx, by, 14, 0, 2 * math.pi); ctx.fill()
+    text(ctx, clock, 1100, 420, AMBER, a, face=MONO, size=90)
+    _lines_reveal(ctx, t, lines, 1100, 530, a, step=66, size=38)
+    if source:
+        source_tag(ctx, source, a)
+
+
+def gates_open(ctx, t, d, gates, title=None, source=None):
+    """A request walks through four checkpoints; none of them is closed."""
+    a = fade_io(t, d)
+    if title:
+        text(ctx, title, W / 2, 230, GREY, a, align="center", face=MONO, size=30, tracking=6)
+    n = len(gates)
+    for i, g in enumerate(gates):
+        x = 330 + i * (1260 / (n - 1))
+        _bar(ctx, x - 70, 400, 14, 300, GREY, a)
+        _bar(ctx, x + 56, 400, 14, 300, GREY, a)
+        q = ease_out(prog(t, 0.5 + 0.45 * i, 0.4))
+        rgba(ctx, RED, a * 0.9); ctx.set_line_width(6)
+        ctx.move_to(x - 56, 420); ctx.line_to(x - 56 + 40 * math.cos(1.4 * q), 420 + 260)
+        ctx.stroke()
+        text(ctx, g, x, 780, INK, a, align="center", face=MONO, size=28)
+        text(ctx, "open" if q > 0.5 else "", x, 830, RED, a, align="center", face=MONO, size=26, bold=False)
+    p = ease_in_out(prog(t, 0.4, max(d * 0.6, 1.0)))
+    rgba(ctx, AMBER, a); rrect(ctx, 200 + p * 1460, 530, 70, 50, 8); ctx.fill()
+    if source:
+        source_tag(ctx, source, a)
+
+
+def drain_bar(ctx, t, d, clock, total, steps, caption=None, source=None):
+    """One horizontal reserve bar losing `steps` chunks, with a red counter."""
+    a = fade_io(t, d)
+    text(ctx, clock, 200, 300, RED, a, face=MONO, size=100)
+    x0, y0, w, h = 200, 470, 1520, 150
+    _bar(ctx, x0, y0, w, h, DIM, a)
+    k = min(steps, int(prog(t, 0.5, max(d * 0.55, 1.0)) * steps + 0.001))
+    _bar(ctx, x0, y0, w * (1 - 0.55 * k / steps), h, AMBER, a * 0.85)
+    for j in range(k):
+        xx = x0 + w * (1 - 0.55 * (j + 1) / steps)
+        _bar(ctx, xx, y0, w * 0.55 / steps - 6, h, RED, a * 0.5)
+    text(ctx, f"−${total * k / steps / 1e6:,.0f}M", x0 + w, 760, RED, a, align="right", face=MONO, size=80)
+    text(ctx, f"{k} / {steps} transfers", x0, 760, INK, a, face=MONO, size=40, bold=False)
+    if caption:
+        text(ctx, caption, x0, 840, GREY, a * prog(t, 1.5, 0.5), face=MONO, size=30, bold=False)
+    if source:
+        source_tag(ctx, source, a)
+
+
+def threshold_meter(ctx, t, d, label, source=None):
+    """A vertical meter: two small transfers stay under the alert line."""
+    a = fade_io(t, d)
+    x, y0, hgt = 820, 220, 620
+    _bar(ctx, x, y0, 120, hgt, DIM, a)
+    ly = y0 + hgt * 0.35
+    rgba(ctx, RED, a); ctx.set_line_width(4); ctx.set_dash([18, 12])
+    ctx.move_to(x - 120, ly); ctx.line_to(x + 240, ly); ctx.stroke(); ctx.set_dash([])
+    text(ctx, "ALERT", x + 260, ly + 12, RED, a, face=MONO, size=34)
+    for i, (at, lvl) in enumerate(((0.4, 0.12), (1.4, 0.2))):
+        q = ease_out(prog(t, at, 0.6))
+        hh = hgt * lvl * q
+        _bar(ctx, x + 10, y0 + hgt - hh, 100, hh, AMBER, a * (0.5 + 0.5 * (i == 1)))
+    text(ctx, label, W / 2, 960, GREY, a * prog(t, 2.0, 0.5), align="center", face=MONO, size=34, bold=False)
+    if source:
+        source_tag(ctx, source, a)
+
+
+def single_transfer(ctx, t, d, amount, caption, source=None):
+    """One block slides from the exchange's wallet into the dark."""
+    a = fade_io(t, d)
+    _panel(ctx, 200, 380, 360, 300, a, 16)
+    text(ctx, "WALLET", 380, 545, GREY, a, align="center", face=MONO, size=34)
+    p = ease_in_out(prog(t, 0.4, 1.4))
+    x = 380 + p * 1150
+    rgba(ctx, AMBER, a); rrect(ctx, x - 230, 470, 460, 120, 14); ctx.fill()
+    text(ctx, amount, x, 552, TERM, a, align="center", face=MONO, size=58)
+    g = cairo.LinearGradient(1300, 0, W, 0)
+    g.add_color_stop_rgba(0, 0, 0, 0, 0); g.add_color_stop_rgba(1, 0, 0, 0, a)
+    ctx.set_source(g); ctx.rectangle(1300, 300, W - 1300, 460); ctx.fill()
+    text(ctx, caption, W / 2, 820, INK, a * prog(t, 1.2, 0.5), align="center", face=MONO, size=40, bold=False)
+    if source:
+        source_tag(ctx, source, a)
+
+
+def remaining_bar(ctx, t, d, total, before, caption, source=None):
+    """A bar of the whole theft split at the alarm: what had gone, and what still went."""
+    a = fade_io(t, d)
+    x0, y0, w, h = 200, 420, 1520, 180
+    p = ease_out(prog(t, 0.2, 0.8))
+    wb = w * before / total
+    _bar(ctx, x0, y0, wb * p, h, GREY, a)
+    q = ease_out(prog(t, 1.0, 1.0))
+    _bar(ctx, x0 + wb, y0, (w - wb) * q, h, RED, a)
+    rgba(ctx, INK, a); ctx.set_line_width(4); ctx.move_to(x0 + wb, y0 - 50); ctx.line_to(x0 + wb, y0 + h + 50); ctx.stroke()
+    text(ctx, "ALARM", x0 + wb, y0 - 70, INK, a, align="center", face=MONO, size=30)
+    text(ctx, f"~${before / 1e6:.0f}M", x0 + 20, y0 + h + 90, GREY, a * p, face=MONO, size=48)
+    text(ctx, f"~${(total - before) / 1e6:.0f}M", x0 + w, y0 + h + 90, RED, a * q, align="right", face=MONO, size=90)
+    text(ctx, caption, x0 + w, y0 + h + 160, GREY, a * q, align="right", face=MONO, size=30, bold=False)
+    if source:
+        source_tag(ctx, source, a)
+
+
+def dot_grid(ctx, t, d, value, label, caption, source=None):
+    """A field of dots filling up fast while a counter runs."""
+    a = fade_io(t, d)
+    cols, rows = 48, 18
+    k = int(cols * rows * ease_out(prog(t, 0.1, 1.2)))
+    for i in range(cols * rows):
+        x = 200 + (i % cols) * 32
+        y = 200 + (i // cols) * 32
+        rgba(ctx, AMBER if i < k else DIM, a * (0.9 if i < k else 0.6))
+        ctx.arc(x, y, 7, 0, 2 * math.pi); ctx.fill()
+    v = int(value * ease_out(prog(t, 0.1, 1.2)))
+    text(ctx, f"{v:,} {label}", 200, 860, INK, a, face=MONO, size=72)
+    text(ctx, caption, 200, 930, GREY, a * prog(t, 1.2, 0.5), face=MONO, size=30, bold=False)
+    if source:
+        source_tag(ctx, source, a)
+
+
+def fraction_square(ctx, t, d, lit, total_cells, big, caption, source=None):
+    """A square of tiny cells; only a handful light up (the share that was frozen)."""
+    a = fade_io(t, d)
+    n = int(round(total_cells ** 0.5))
+    cell = 640 / n
+    for i in range(n * n):
+        x = 240 + (i % n) * cell
+        y = 220 + (i // n) * cell
+        on = i in (n * 7 + 11, n * 19 + 4, n * 26 + 23)[:lit]
+        q = prog(t, 0.6, 0.4) if on else 1
+        rgba(ctx, AMBER if on else DIM, a * (q if on else 0.7))
+        ctx.rectangle(x, y, cell - 2, cell - 2); ctx.fill()
+    text(ctx, big, 1100, 560, AMBER, a * prog(t, 0.6, 0.5), face=MONO, size=170)
+    text(ctx, caption, 1100, 650, GREY, a * prog(t, 0.9, 0.5), face=MONO, size=36, bold=False)
+    if source:
+        source_tag(ctx, source, a)
+
+
+def compare_bars(ctx, t, d, rows, caption, source=None):
+    """Two horizontal bars to scale (one tiny, one huge)."""
+    a = fade_io(t, d)
+    mx = max(v for _, v in rows)
+    for i, (lab, v) in enumerate(rows):
+        q = ease_out(prog(t, 0.3 + 0.6 * i, 1.0))
+        y = 380 + i * 230
+        text(ctx, lab, 200, y - 20, INK if i else GREY, a, face=MONO, size=36)
+        _bar(ctx, 200, y, 1520 * v / mx * q, 100, AMBER if i else GREY, a)
+        text(ctx, f"${v / 1e9:.1f}B" if v >= 1e9 else f"${v / 1e6:.0f}M", 200 + 1520 * v / mx * q + 20, y + 70,
+             INK, a * q, face=MONO, size=48)
+    text(ctx, caption, 200, 920, GREY, a * prog(t, 1.6, 0.5), face=MONO, size=34, bold=False)
+    if source:
+        source_tag(ctx, source, a)
+
+
+def live_quote(ctx, t, d, quote, who, source=None):
+    """A quote inside a livestream frame (LIVE tag, chat column), no real logo."""
+    a = fade_io(t, d)
+    _panel(ctx, 160, 160, 1200, 760, a, 14)
+    rgba(ctx, RED, a); rrect(ctx, 200, 200, 120, 50, 8); ctx.fill()
+    text(ctx, "LIVE", 260, 237, (1, 1, 1), a, align="center", face=MONO, size=30)
+    lines = wrap(ctx, quote, 1060, SERIF, 64, True)
+    p = ease_out(prog(t, 0.2, 0.7))
+    for i, ln in enumerate(lines):
+        text(ctx, ln, 220, 420 + i * 84 + (1 - p) * 14, INK, a * p, face=SERIF, size=64, italic=True)
+    text(ctx, who, 220, 860, GREY, a, face=MONO, size=28, bold=False)
+    for k in range(9):
+        y = 200 + k * 80 - (t * 40) % 80
+        if 180 < y < 900:
+            _bar(ctx, 1420, y, 300 - (k * 47) % 160, 22, DIM, a)
+    if source:
+        source_tag(ctx, source, a)
+
+
+def calendar_flip(ctx, t, d, start, end, lines, source=None):
+    """Calendar days flipping from the hack to the day withdrawals came back."""
+    a = fade_io(t, d)
+    days = ["24 SEP", "25 SEP", "26 SEP", "27 SEP", "28 SEP", "29 SEP", "30 SEP", "1 OCT", "2 OCT"]
+    k = min(len(days) - 1, int(prog(t, 0.3, 1.8) * (len(days) - 1) + 0.0001))
+    rgba(ctx, (0.95, 0.94, 0.90), a); rrect(ctx, 260, 280, 520, 460, 18); ctx.fill()
+    _bar(ctx, 260, 280, 520, 110, GREEN if k == len(days) - 1 else RED, a)
+    text(ctx, "2026", 520, 355, (1, 1, 1), a, align="center", face=MONO, size=50)
+    text(ctx, days[k], 520, 610, PAPER_INK, a, align="center", face=MONO, size=110)
+    _lines_reveal(ctx, t, lines, 900, 480, a, step=90, size=44)
+    if source:
+        source_tag(ctx, source, a)
+
+
+def punch(ctx, t, d, line, style=0):
+    """End-of-section line. Several layouts so no two look alike."""
+    rgba(ctx, (0, 0, 0)); ctx.paint()
+    a = fade_io(t, d, 0.4, 0.05)
+    if style == 1:      # left aligned, accent rule
+        lines = wrap(ctx, line, 1300, HEAD, 84, True)
+        for i, ln in enumerate(lines):
+            text(ctx, ln, 260, 500 + i * 100, INK, a, size=84)
+        _bar(ctx, 200, 420, 12, 100 * len(lines) + 40, AMBER, a)
+    elif style == 2:    # typewriter mono
+        n = int(len(line) * clamp(t / max(min(d * 0.5, 2.0), 0.1)))
+        lines = wrap(ctx, line[:n], 1500, MONO, 64, False)
+        for i, ln in enumerate(lines):
+            text(ctx, ln, 210, 520 + i * 84, AMBER, a, face=MONO, size=64, bold=False)
+    elif style == 3:    # stacked, words grow in
+        words = line.split()
+        lines = wrap(ctx, line, 1400, HEAD, 110, True)
+        for i, ln in enumerate(lines):
+            q = ease_out(prog(t, 0.15 * i, 0.5))
+            text(ctx, ln.upper(), W / 2, 470 + i * 130, INK, a * q, align="center", size=110)
+    elif style == 4:    # underline sweep
+        lines = wrap(ctx, line, 1500, SERIF, 76, True)
+        for i, ln in enumerate(lines):
+            y = H / 2 + i * 100 - (len(lines) - 1) * 50
+            text(ctx, ln, W / 2, y, INK, a, align="center", face=SERIF, size=76)
+            w = text_width(ctx, ln, SERIF, 76, True)
+            _bar(ctx, W / 2 - w / 2, y + 22, w * ease_out(prog(t, 0.6 + 0.3 * i, 0.8)), 5, AMBER, a)
+    else:
+        lines = wrap(ctx, line, W - 400, SERIF, 72, True)
+        for i, ln in enumerate(lines):
+            text(ctx, ln, W / 2, H / 2 + i * 92 - (len(lines) - 1) * 46, INK, a, align="center",
+                 face=SERIF, size=72, italic=True)
+
+
+def merge_two(ctx, t, d, left, right, mid, notes, title=None, source=None):
+    """Two streams of coins from opposite sides converging on one address."""
+    a = fade_io(t, d)
+    if title:
+        text(ctx, title, W / 2, 230, GREY, a, align="center", face=MONO, size=30, tracking=6)
+    cx, cy = W / 2, 560
+    for (lab, x0, col) in ((left, 330, GREY), (right, 1590, AMBER)):
+        _panel(ctx, x0 - 170, 280, 340, 130, a, 20)
+        text(ctx, lab, x0, 360, col, a, align="center", face=MONO, size=36)
+        rgba(ctx, DIM, a); ctx.set_line_width(4); ctx.move_to(x0, 410); ctx.curve_to(x0, 560, cx, 420, cx, cy - 80)
+        ctx.stroke()
+        for k in range(6):
+            ph = (t * 0.45 + k / 6) % 1
+            bx = (1 - ph) ** 3 * x0 + 3 * (1 - ph) ** 2 * ph * x0 + 3 * (1 - ph) * ph ** 2 * cx + ph ** 3 * cx
+            by = (1 - ph) ** 3 * 410 + 3 * (1 - ph) ** 2 * ph * 560 + 3 * (1 - ph) * ph ** 2 * 420 + ph ** 3 * (cy - 80)
+            rgba(ctx, col, a * prog(t, 0.3, 0.5)); ctx.arc(bx, by, 10, 0, 2 * math.pi); ctx.fill()
+    q = ease_out(prog(t, 0.8, 0.5))
+    rgba(ctx, RED, a * q); ctx.arc(cx, cy, 80, 0, 2 * math.pi); ctx.fill()
+    text(ctx, mid, cx, cy + 150, INK, a * q, align="center", face=MONO, size=40)
+    _lines_reveal(ctx, t, notes, cx, cy + 240, a, step=56, size=32, align="center")
+    if source:
+        source_tag(ctx, source, a)
