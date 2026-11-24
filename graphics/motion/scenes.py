@@ -934,7 +934,81 @@ def _water_mask(name, poly, holes, w, h):
 _water_mask.cache = {}
 
 
-def _ill_frame(name, u, move, t=0.0, fog=None, water=None):
+def flick_level(t, mode="flicker", seed=0):
+    """How far a light is dimmed at time t, 0..1. 'slow' = calm breathing, 'flicker' = a lamp that
+    mostly holds and now and then stutters (short irregular dips). Same as siphon-core."""
+    ph = seed * 1.7
+    if mode == "slow":
+        return 0.5 + 0.5 * math.sin(2 * math.pi * 0.35 * t + ph) * math.sin(2 * math.pi * 0.13 * t + 1.1 + ph)
+    base = 0.12 * (0.5 + 0.5 * math.sin(2 * math.pi * 0.5 * t + ph))
+    n = (math.sin(t * 7.1 + ph) + math.sin(t * 11.3 + 2.0 + ph) + math.sin(t * 17.9 + 4.1 + ph)) / 3.0
+    burst = clamp((math.sin(t * 0.9 + ph) - 0.35) / 0.4)
+    return clamp(base + burst * clamp((n + 0.15) / 0.5))
+
+
+def _one_light_mask(name, L):
+    """Bright pixels near one light, plus the soft light it throws around (source pixels, flat)."""
+    import numpy as np
+    key = (name, repr(sorted(L.items())))
+    if key in _one_light_mask.cache:
+        return _one_light_mask.cache[key]
+    c = _ill_load(name)
+    w, h = c["w"], c["h"]
+    mx = c["img"].reshape(h, w, 3).max(axis=2) / 255.0
+    g = np.exp(-((c["xx"] - L["x"]) ** 2 + (c["yy"] - L["y"]) ** 2) / (2.0 * L["r"] ** 2))
+    thr = L.get("thr", 0.55)
+    hot = np.clip((mx - (thr - 0.12)) / 0.2, 0, 1)
+    m = (g * (hot + L.get("amb", 0.35) * (1 - hot))).astype(np.float32).reshape(-1)
+    if len(_one_light_mask.cache) > 24:
+        _one_light_mask.cache.clear()
+    _one_light_mask.cache[key] = m
+    return m
+
+
+_one_light_mask.cache = {}
+_FLICK_NOW = {}
+
+
+def _flick_dips(flick, t):
+    """Per-light dim amount now. Each light has its own seed, so they never stutter together."""
+    out = []
+    for k, L in enumerate(flick["lights"]):
+        mode = L.get("mode", flick.get("mode", "flicker"))
+        dep = L.get("depth", flick.get("depth", 0.3 if mode == "flicker" else 0.5))
+        out.append(dep * flick_level(t, mode, L.get("seed", flick.get("seed", 0) * 7 + k * 3 + 1)))
+    return out
+
+
+def _ripple_mask(name, rp):
+    """Bright screen areas only, pulled in from dark edges (silhouettes) so their pixels are never moved."""
+    import numpy as np
+    from PIL import Image, ImageFilter
+    key = (name, repr(sorted(rp.items())))
+    if key in _ripple_mask.cache:
+        return _ripple_mask.cache[key]
+    c = _ill_load(name)
+    w, h = c["w"], c["h"]
+    lum = c["img"].reshape(h, w, 3).mean(axis=2)
+    m = (lum > rp.get("thr", 70)).astype(np.uint8) * 255
+    im = Image.fromarray(m).filter(ImageFilter.MinFilter(2 * rp.get("guard", 14) + 1)).filter(
+        ImageFilter.GaussianBlur(rp.get("guard", 14) / 2))
+    m = np.asarray(im, dtype=np.float32) / 255.0
+    if "y1" in rp:
+        m[int(rp["y1"]):] = 0
+    if "box" in rp:
+        x0, y0, x1, y1 = rp["box"]
+        b = np.zeros_like(m)
+        b[int(y0):int(y1), int(x0):int(x1)] = 1
+        m = m * b
+    _ripple_mask.cache.clear()
+    _ripple_mask.cache[key] = m
+    return m
+
+
+_ripple_mask.cache = {}
+
+
+def _ill_frame(name, u, move, t=0.0, fog=None, water=None, flick=None, ripple=None):
     """Backward warp with bilinear sampling: near pixels (depth ~1) zoom and slide more than far ones."""
     import numpy as np
     c = _ill_load(name)
@@ -949,6 +1023,13 @@ def _ill_frame(name, u, move, t=0.0, fog=None, water=None):
     fogA = _fog_alpha(name, t, fog, d, w, h) if fog else None
     if fog:
         fc = np.array(fog.get("color", (0.6, 0.65, 0.72)), dtype=np.float32) * 255.0
+    dimmap = None
+    if flick:
+        dimmap = np.ones(w * h, dtype=np.float32)
+        for L, dp in zip(flick["lights"], _flick_dips(flick, t)):
+            if dp > 0.002:
+                dimmap -= dp * _one_light_mask(name, L)
+        np.clip(dimmap, 0.0, 1.0, out=dimmap)
     band = 144   # rows per band: keeps temporaries small (the render box has 3 GB for 2 workers + 2 encoders)
     for r0 in range(0, h, band):
         r1 = min(h, r0 + band)
@@ -956,6 +1037,12 @@ def _ill_frame(name, u, move, t=0.0, fog=None, water=None):
         zz = z * (1.0 + kz * e * (db - dm)) if kz >= 0 else z * (1.0 + (-kz) * (1 - e) * (db - dm))
         sx = w / 2 + (c["xx"][r0:r1] - w / 2) / zz - px * off * (1.0 + kp * (db - dm))
         sy = h / 2 + (c["yy"][r0:r1] - h / 2) / zz - py * off * (1.0 + kp * (db - dm))
+        if ripple:  # bands on the screens drift as a slow wave; dark shapes stay put
+            rm = _ripple_mask(name, ripple)
+            k = rm[np.clip(sy, 0, h - 1).astype(np.int32), np.clip(sx, 0, w - 1).astype(np.int32)]
+            amp, wl, sp = ripple.get("amp", 6.0), ripple.get("wl", 520.0), ripple.get("speed", 0.6)
+            sy = sy + amp * k * np.sin(2 * math.pi * (sx / wl - sp * t / 6.0))
+            sx = sx - ripple.get("drift", 18.0) * k * math.sin(2 * math.pi * 0.05 * t)
         if water:   # flowing water: a slow travelling ripple inside the water mask (source coords)
             wm = _water_mask(name, water["poly"], water.get("holes", []), w, h)
             mk = wm[np.clip(sy, 0, h - 1).astype(np.int32), np.clip(sx, 0, w - 1).astype(np.int32)]
@@ -975,6 +1062,8 @@ def _ill_frame(name, u, move, t=0.0, fog=None, water=None):
         top = im[i] * (1 - fx) + im[i + 1] * fx
         bot = im[i + w] * (1 - fx) + im[i + w + 1] * fx
         out = top * (1 - fy) + bot * fy
+        if dimmap is not None:
+            out = out * dimmap[i][..., None]
         if fogA is not None:
             a = fogA[r0:r1, :, None]
             out = out * (1 - a) + fc * a
@@ -1215,6 +1304,8 @@ def _glows(ctx, t, u, name, move, glows, a):
         else:
             inten = g.get("base", 0.10) * (0.8 + 0.2 * math.sin(t * 1.3) * math.sin(t * 0.7 + 2.0))
         inten *= a
+        if "follow" in g:      # this glow belongs to a flickering lamp: it dims with it
+            inten *= max(0.0, 1.0 - 1.6 * _FLICK_NOW.get(g["follow"], 0.0))
         if kind == "beam":
             pts = [_cam_point(name, u, move, x, y)[:2] for x, y in g["poly"]]
             (ax, ay), (bx, by) = pts[0], pts[-1]
@@ -1293,11 +1384,14 @@ def _motes(ctx, t, a, seed, warm=True):
 
 
 def illus(ctx, t, d, name, move="in", kicker=None, line=None, statement=None, source=None,
-          dim=0.0, motes=True, warm=True, fi=0.35, fo=0.35, fog=None, glows=None, water=None):
+          dim=0.0, motes=True, warm=True, fi=0.35, fo=0.35, fog=None, glows=None, water=None, flick=None, ripple=None):
     """An illustration with a slow 2.5D camera move, drifting dust in the light and optional text."""
     a = fade_io(t, d, fi, fo)
     u = clamp(t / max(d, 0.01))
-    surf, _keep = _ill_frame(name, u, move, t, fog, water)
+    surf, _keep = _ill_frame(name, u, move, t, fog, water, flick, ripple)
+    _FLICK_NOW.clear()
+    if flick:
+        _FLICK_NOW.update(enumerate(_flick_dips(flick, t)))
     ctx.save()
     sc = W / surf.get_width()
     ctx.scale(sc, sc)

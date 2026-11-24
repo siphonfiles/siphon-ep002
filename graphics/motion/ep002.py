@@ -164,7 +164,8 @@ def build(tl):
 
     # ---------------- TEASER ----------------
     IL(s("t1"), nxt(hits, e("t1") - .01), "b01_empty_trading_office", "in", fi=0.15, fo=0.0,
-       kicker="BITGET · 02:31 IN ASIA", glows=[dict(kind="flicker", x=1150, y=470, r=220, color=WARM, base=0.30)])
+       kicker="BITGET · 02:31 IN ASIA", glows=[dict(kind="flicker", x=1150, y=470, r=220, color=WARM, base=0.30, follow=0)],
+       flick=dict(lights=[dict(x=1157, y=475, r=70, mode="flicker", seed=3)]))
     h0 = nxt(hits, e("t1") - .01)
     c0 = next(C)
     add(h0, c0, S.black)
@@ -205,11 +206,12 @@ def build(tl):
            fog=dict(density=0.22, color=(0.45, 0.50, 0.58), speed=10, far=0.45))
     add(e("r1") + .35, s("r3"), E.loan_towers, mode="loan", source="[S27][S28]")
     IL(s("r3"), s("r4"), "b03_lifebuoy_dock", "in", statement="Remember that loan.",
-       glows=[dict(kind="flicker", x=790, y=216, r=300, color=WARM, base=0.38)],
-       fog=dict(density=0.30, color=(0.45, 0.52, 0.60), speed=12, floor=0.45))
+       glows=[dict(kind="flicker", x=790, y=216, r=300, color=WARM, base=0.38, follow=0)], motes=False,
+       flick=dict(lights=[dict(x=813, y=217, r=80, mode="flicker", seed=5)]))
     IL(s("r4"), nxt(hits, e("r4") - .01), "b10_empty_trading_floor", "left", kicker="24 SEPTEMBER 2026",
        line="The one that came to help became the one robbed.", source="[S2][S29]",
-       glows=[dict(kind="flicker", x=950, y=70, r=260, color=WARM, base=0.25)])
+       glows=[dict(kind="flicker", x=950, y=70, r=260, color=WARM, base=0.25, follow=0)],
+       flick=dict(lights=[dict(x=969, y=70, r=90, mode="flicker", seed=7), dict(x=1400, y=700, r=520, mode="slow", depth=0.15, thr=0.6, amb=0.1, seed=11)]))
     c4 = next(C)
     add(c4, s("i1"), S.big_number, value=388_000_000, suffix="", caption="24 SEP 2026 · BITGET · hot + warm wallets",
         count_for=1.4, source="[S2]")
@@ -231,7 +233,8 @@ def build(tl):
        line="Without it, nothing leaves. With it, anything does.")
     IL(s("p5"), nxt(hits, e("p6") - .01), "b08_corridor_door", "in", kicker="THE PLAN",
        line="Get close to the machine that signs.",
-       glows=[dict(kind="flicker", x=780, y=516, r=340, color=WARM, base=0.25)])
+       glows=[dict(kind="flicker", x=780, y=516, r=340, color=WARM, base=0.25, follow=0)],
+       flick=dict(lights=[dict(x=809, y=553, r=220, mode="flicker", depth=0.3, thr=0.5, amb=0.5, seed=13), dict(x=1311, y=303, r=80, mode="slow", depth=0.3, seed=17)]))
 
     # ---------------- T-MINUS 24 DAYS ----------------
     c6 = next(C)
@@ -251,7 +254,9 @@ def build(tl):
         source="[S4][S8]")
     IL(s("a7"), nxt(hits, e("a7") - .01) + 1.0, "b06_empty_guard_booth", "in", kicker="FROM HERE ON",
        line="We know someone is inside. Bitget doesn't.",
-       glows=[dict(kind="flicker", x=730, y=100, r=300, color=WARM, base=0.30)])
+       glows=[dict(kind="flicker", x=730, y=100, r=300, color=WARM, base=0.30, follow=0)],
+       ripple=dict(thr=150, amp=4.0, guard=10, box=(0, 150, 1900, 450)),
+       flick=dict(lights=[dict(x=747, y=117, r=90, mode="flicker", seed=19), dict(x=1400, y=450, r=600, mode="slow", depth=0.15, thr=0.6, amb=0.1, seed=23)]))
     add(nxt(hits, e("a7") - .01) + 1.0, s("a9"), E.two_reports, left=("SLOWMIST", "FIRST ACTIVITY", "31 AUG"),
         right=("MANDIANT", "PRIVILEGED ACCESS", "24 SEP"), note="The two reports haven't been reconciled", source="[S3][S7]")
     IL(s("a9"), s("a10"), pick("b21_two_appliances", "b06_empty_guard_booth"), "out",
@@ -263,12 +268,14 @@ def build(tl):
     # ---------------- BRIDGE (Thomas) ----------------
     hb = nxt(hits, e("a10") - .01) + .5
     IL(hb, s("d2"), pick("b23_server_cable", "b06_empty_guard_booth"), "right", line="Let me stop here for a second.",
-       glows=[dict(kind="flicker", x=730, y=100, r=300, color=WARM, base=0.30)])
+       glows=[dict(kind="flicker", x=614, y=40, r=240, color=COOL, base=0.18, follow=0)],
+       flick=dict(lights=[dict(x=614, y=18, r=120, mode="flicker", seed=29), dict(x=471, y=111, r=30, mode="slow", depth=0.5, seed=31), dict(x=1628, y=377, r=60, mode="slow", depth=0.45, seed=37)]))
     IL(s("d2"), s("d3"), pick("b29_rack_access_ports", "b04_security_appliance"), "left", kicker="SECURITY PRODUCTS",
        line="Deep access. They see everything.", warm=False,
-       glows=[dict(kind="pulse", x=1230, y=566, r=200, color=(1.0, 0.6, 0.2), min=0.1, max=0.4, hz=0.5)])
+       flick=dict(lights=[dict(x=942, y=522, r=40, mode="slow", depth=0.5, seed=41), dict(x=500, y=480, r=170, mode="slow", depth=0.45, thr=0.5, seed=43)]))
     IL(s("d3"), e("d4") + .6, pick("b30_master_key_ring", "b08_corridor_door"), "in", statement="Take over the guard, and you're already in every corridor.",
-       glows=[dict(kind="flicker", x=780, y=516, r=340, color=WARM, base=0.25)])
+       glows=[dict(kind="flicker", x=1085, y=219, r=200, color=WARM, base=0.22, follow=0)],
+       flick=dict(lights=[dict(x=1085, y=219, r=60, mode="flicker", seed=47), dict(x=614, y=410, r=260, mode="flicker", depth=0.25, thr=0.5, amb=0.5, seed=53)]))
 
     # ---------------- T-MINUS 2 HOURS 24 MINUTES ----------------
     c7 = next(C)
@@ -294,7 +301,8 @@ def build(tl):
         source="[S4][S7]")
     add(s("c4"), s("c5"), E.pipeline, forged=True, title="ACCORDING TO ONE ANALYSIS", source="[S8]")
     IL(s("c5"), nxt(hits, e("c6") - .01) + .5, "b09_stamp_form", "in", statement="Try it.",
-       glows=[dict(kind="flicker", x=700, y=100, r=260, color=WARM, base=0.25)])
+       glows=[dict(kind="flicker", x=700, y=100, r=260, color=WARM, base=0.25, follow=0)],
+       flick=dict(lights=[dict(x=1024, y=629, r=500, mode="flicker", depth=0.25, thr=0.5, amb=0.6, seed=59)]))
 
     # ---------------- 18:31 ----------------
     c9 = next(C)
@@ -307,15 +315,19 @@ def build(tl):
     add(s("e2"), s("e3"), E.threshold_meter, label="below the risk threshold · no alert (CEO)", source="[S15]")
     IL(s("e3"), s("e4"), "b13_fingerprint_glass", "in", kicker="HOLD ON TO THIS",
        line="Something odd about these transfers.", motes=False,   # dust only inside the torch beam
-       glows=[dict(kind="flicker", x=620, y=310, r=220, color=(0.95, 0.95, 1.0), base=0.30),
+       glows=[dict(kind="flicker", x=620, y=310, r=220, color=(0.95, 0.95, 1.0), base=0.30, follow=0),
               dict(kind="beam", poly=[(700, 262), (600, 392), (760, 780), (940, 430)], base=0.035,
-                   color=(1.0, 0.95, 0.85))])
+                   color=(1.0, 0.95, 0.85), follow=0)],
+       flick=dict(lights=[dict(x=635, y=336, r=70, mode="flicker", seed=61)]))
     IL(s("e4"), s("e5"), pick("b31_wall_clock_quiet", "b10_empty_trading_floor"), "in", kicker="18:31 → 18:58",
        line="Nothing. For almost half an hour.",
-       glows=[dict(kind="flicker", x=950, y=70, r=260, color=WARM, base=0.25)])
+       glows=[dict(kind="flicker", x=1044, y=300, r=300, color=WARM, base=0.22, follow=0)],
+       flick=dict(lights=[dict(x=1044, y=336, r=260, mode="flicker", depth=0.3, thr=0.5, amb=0.5, seed=67)]))
     add(s("e5"), s("e6"), E.single_transfer, amount="34.75M USDT", caption="18:58 UTC · one transfer", source="[S6]")
     IL(s("e6"), nxt(cards, e("e7")), pick("b28_guard_monitors", "b12_alarm_control_room"), "out", kicker="STILL NO ALARM", warm=False,
-       glows=[dict(kind="pulse", x=930, y=106, r=160, color=(0.4, 0.1, 0.1), min=0.02, max=0.08, hz=0.3)])
+       glows=[dict(kind="pulse", x=930, y=106, r=160, color=(0.4, 0.1, 0.1), min=0.02, max=0.08, hz=0.3)],
+       ripple=dict(thr=150, amp=4.0, guard=10, box=(0, 0, 1720, 470)),
+       flick=dict(lights=[dict(x=993, y=573, r=120, mode="slow", depth=0.35, seed=71), dict(x=900, y=300, r=900, mode="slow", depth=0.18, amb=0.1, seed=73)]))
 
     # ---------------- LOCKED OUT ----------------
     c10 = next(C)
@@ -324,7 +336,8 @@ def build(tl):
         lines=[(0.4, "One more small test"), (1.2, "to a different wallet")], source="[S6][S8]")
     if pick("b32b_ledger_gap", "") == "b32b_ledger_gap":
         IL(s("f3"), s("f4"), "b32b_ledger_gap", "in", kicker="19:05 UTC", line="Reconciliation flags the gap.",
-           warm=False, source="[S2]")
+           warm=False, source="[S2]",
+       flick=dict(lights=[dict(x=1450, y=500, r=700, mode="slow", depth=0.12, thr=0.6, amb=0.1, seed=89)]))
     else:
         IL(s("f3"), s("f4"), "b12_alarm_control_room", "in", kicker="19:05 UTC", line="Reconciliation flags the gap.",
        warm=False, source="[S2]",
@@ -332,13 +345,15 @@ def build(tl):
               dict(kind="beam", poly=[(900, 180), (1000, 180), (1120, 660), (760, 660)], color=(1.0, 0.35, 0.25), base=0.16)])
     add(s("f4"), s("f5"), E.locked_phone_split, note="If you had money on Bitget", source="[S2]")
     if pick("b24_crisis_room", "") == "b24_crisis_room":
-        IL(s("f5"), s("f6"), "b24_crisis_room", "in", kicker="19:14 UTC", line="Highest-level emergency.", warm=False, source="[S2]")
+        IL(s("f5"), s("f6"), "b24_crisis_room", "in", kicker="19:14 UTC", line="Highest-level emergency.", warm=False, source="[S2]",
+       flick=dict(lights=[dict(x=900, y=450, r=900, mode="slow", depth=0.15, thr=0.45, amb=0.1, seed=79)]))
     else:
         add(s("f5"), s("f6"), S.explainer, name="19:14 UTC", lines=[(0.4, "Highest-level emergency")], source="[S2]")
     add(s("f6"), s("f9"), E.drain_bar, clock="19:16", total=203_000_000, steps=5,
         caption="5 transfers · 5 chains · 9 seconds · ≈ $203 million", source="[S6]")
     if pick("b33_closed_shutter_counter", "") == "b33_closed_shutter_counter":
-        IL(s("f9"), nxt(hits, e("f10") - .01) + .6, "b33_closed_shutter_counter", "in", kicker="19:16 UTC", line="Customers locked out since 19:05. The attacker wasn't.", warm=False, source="[S2][S8]")
+        IL(s("f9"), nxt(hits, e("f10") - .01) + .6, "b33_closed_shutter_counter", "in", kicker="19:16 UTC", line="Customers locked out since 19:05. The attacker wasn't.", warm=False, source="[S2][S8]",
+       flick=dict(lights=[dict(x=885, y=117, r=90, mode="flicker", seed=83)]))
     else:
         add(s("f9"), nxt(hits, e("f10") - .01) + .6, E.locked_phone_split, source="[S2][S8]")
 
@@ -348,7 +363,8 @@ def build(tl):
     add(c11, s("g1"), E.chapter, title="Why didn't it stop?", kicker="THE WRONG SWITCH")
     if pick("b34_wrong_switch", "") == "b34_wrong_switch":
         IL(s("g1"), s("g2"), "b34_wrong_switch", "in", line="Customer withdrawals off. Forged requests still flowing.", source="[S2][S8]",
-           glows=[dict(kind="flicker", x=1065, y=430, r=270, color=WARM, base=0.32)])
+           glows=[dict(kind="flicker", x=1065, y=430, r=270, color=WARM, base=0.32, follow=0)],
+       flick=dict(lights=[dict(x=980, y=600, r=220, mode="flicker", depth=0.3, thr=0.5, amb=0.5, seed=97)]))
     else:
         add(s("g1"), s("g2"), E.locked_phone_split, source="[S2][S8]")
     add(s("g2"), s("g3"), E.gates_open, gates=("SECOND PERSON?", "ALLOW-LIST?", "SIGNING"),
@@ -361,7 +377,8 @@ def build(tl):
         caption="left after the alarm · two estimates", source="[S7][S20]")
     IL(s("g5"), s("g6"), pick("b25_vault_closing", "b19_vault_half_full"), "out", kicker="20:40 UTC",
        line="Funds move to cold storage.", source="[S2][S7]",
-       glows=[dict(kind="flicker", x=830, y=175, r=380, color=WARM, base=0.40)])
+       glows=[dict(kind="flicker", x=830, y=175, r=380, color=WARM, base=0.40, follow=0)],
+       flick=dict(lights=[dict(x=850, y=172, r=100, mode="flicker", seed=101)]))
     IL(s("g6"), s("g7"), "b37_empty_harbour_night", "in", kicker="21:23 UTC · LAST TRACED TRANSFER", warm=False, source="[S6][S7]",
        motes=False, glows=[dict(kind="lamp", x=x, y=y, r=70, core=c, color=WARM, base=0.38, seed=sd, **({'refl': rf} if rf else {}))
                            for (x, y, c, sd, rf) in [(282, 384, 26, 35, (500, 720, 34)), (482, 418, 22, 2, (500, 700, 26)),
@@ -375,7 +392,8 @@ def build(tl):
         source="[S2][S6]")
     IL(s("g9"), nxt(cards, e("g10")), pick("b22_recovered_drive", "b13_fingerprint_glass"), "in", kicker="THE NEXT MORNING",
        line="Root cause found. Reported to law enforcement.", source="[S2]",
-       glows=[dict(kind="flicker", x=620, y=310, r=220, color=(0.95, 0.95, 1.0), base=0.30)])
+       glows=[dict(kind="flicker", x=1044, y=215, r=260, color=WARM, base=0.25, follow=0)],
+       flick=dict(lights=[dict(x=1044, y=215, r=70, mode="flicker", seed=103)]))
 
     # ---------------- THE TELL ----------------
     c13 = next(C)
@@ -390,8 +408,7 @@ def build(tl):
         add(s("h4"), s("h5"), S.explainer, name="ZCASH",
             lines=[(0.6, "~1,000 inputs per stolen transfer"), (2.4, "previous maximum for that wallet: 54")], source="[S7]")
     IL(s("h5"), nxt(hits, e("h6") - .01) + .5, pick("b35_shredded_paper", "b13_fingerprint_glass"), "in", kicker="COMMANDS DELETED",
-       line="The fingerprints weren't.", source="[S8][S16]",
-       glows=[dict(kind="flicker", x=620, y=310, r=240, color=(0.95, 0.95, 1.0), base=0.35)])
+       line="The fingerprints weren't.", source="[S8][S16]")
     add(nxt(hits, e("h6") - .01) + .5, nxt(cards, e("h7")), E.punch, line="And a new problem: how to keep it.", style=4)
 
     # ---------------- WHERE DID IT GO? ----------------
@@ -403,13 +420,13 @@ def build(tl):
         ("ZEC", "private pool", "can't be followed")], source="[S6][S7]")
     IL(s("w3"), s("w5"), "b18_open_barrier", "in", kicker="THORCHAIN",
        line="Asked to block the addresses. Declined.", source="[S7][S9]",
-       fog=dict(density=0.35, color=(0.45, 0.52, 0.60), speed=12, far=0.5),
-       glows=[dict(kind="flicker", x=600, y=360, r=260, color=(0.5, 0.9, 0.9), base=0.20)])
+       fog=dict(density=0.35, color=(0.45, 0.52, 0.60), speed=25, far=0.5),
+       glows=[dict(kind="flicker", x=600, y=360, r=260, color=(0.5, 0.9, 0.9), base=0.20, follow=0)], motes=False,
+       flick=dict(lights=[dict(x=348, y=592, r=140, mode="flicker", depth=0.3, seed=107), dict(x=676, y=360, r=70, mode="flicker", seed=109), dict(x=307, y=340, r=120, mode="slow", depth=0.45, seed=113)]))
     add(frac("w4", 0.0), s("w5"), E.fraction_square, lit=3, total_cells=1024, big="< 0.3%",
         caption="of the stolen funds frozen", source="[S7][S9]")
     IL(s("w5"), s("w6"), "b16_river_split", "in", kicker="NOVEMBER 2026 · COINJOIN",
-       line="~$161M of Bitcoin moved in 11 days", source="[S21][S22]",
-       fog=dict(density=0.35, color=(0.50, 0.57, 0.65), speed=18, floor=0.30), motes=False,
+       line="~$161M of Bitcoin moved in 11 days", source="[S21][S22]", motes=False,
        water=dict(poly=[(880, 320), (1100, 290), (1600, 330), (1650, 520), (1750, 700), (1800, 1152),
                         (250, 1152), (450, 800), (600, 520), (800, 420)],
                   holes=[[(1000, 470), (1200, 450), (1450, 470), (1430, 540), (1150, 560), (1000, 540)]],
@@ -417,16 +434,18 @@ def build(tl):
        glows=[dict(kind="slow", x=958, y=312, r=80, color=(1.0, 0.6, 0.25), base=0.45, phase=0.7)])
     IL(s("w6"), nxt(cards, e("w8")), "b14_launderer_laptop", "in", kicker="ZACHXBT",
        line="Launderers asking for support in public chats.", source="[S23][S30]",
-       glows=[dict(kind="flicker", x=380, y=330, r=260, color=WARM, base=0.30),
-              dict(kind="pulse", x=880, y=560, r=380, color=COOL, min=0.06, max=0.16, hz=0.4)])
+       glows=[dict(kind="flicker", x=380, y=330, r=260, color=WARM, base=0.30, follow=0),
+              dict(kind="pulse", x=880, y=560, r=380, color=COOL, min=0.06, max=0.16, hz=0.4)],
+       flick=dict(lights=[dict(x=389, y=307, r=80, mode="flicker", seed=127), dict(x=901, y=573, r=200, mode="slow", depth=0.2, thr=0.6, amb=0.1, seed=131)]))
 
     # ---------------- WHO? ----------------
     c15 = next(C)
     add(c15, s("x1"), E.chapter, title="Who?", kicker="ATTRIBUTION")
     IL(s("x1"), next(iter([c for c in cards if c > s("x2")])), "b15_investigation_wall", "in", kicker="NIGHT OF THE HACK",
        line="IP addresses matching VPNs used by a North Korean group (CEO)", source="[S19]",
-       glows=[dict(kind="flicker", x=40, y=786, r=300, color=WARM, base=0.35),
-              dict(kind="country", x=1292, y=428, t_in=1.0, dur=1.2, size=10, offset=(130, 10), slide=140)])
+       glows=[dict(kind="flicker", x=40, y=786, r=300, color=WARM, base=0.35, follow=0),
+              dict(kind="country", x=1292, y=428, t_in=1.0, dur=1.2, size=10, offset=(130, 10), slide=140)],
+       flick=dict(lights=[dict(x=31, y=819, r=120, mode="flicker", seed=137)]))
     c16 = next(C)
     add(c16, s("x3"), E.live_quote, quote="The pattern looks very much like what the North Korean team did before.",
         who="GRACY CHEN · BITGET CEO · LIVESTREAM ON X", source="[S19]")
@@ -448,7 +467,8 @@ def build(tl):
 
     # ---------------- THE LOAN (Thomas) ----------------
     if pick("b36_cargo_ship_dawn", "") == "b36_cargo_ship_dawn":
-        IL(e("x10") + .5, s("l3"), "b36_cargo_ship_dawn", "out", kicker="21 FEB 2025 · BITGET → BYBIT", line="40,000 ETH · No interest. No collateral.", source="[S27][S28]")
+        IL(e("x10") + .5, s("l3"), "b36_cargo_ship_dawn", "out", kicker="21 FEB 2025 · BITGET → BYBIT", line="40,000 ETH · No interest. No collateral.", source="[S27][S28]", motes=False,
+       flick=dict(lights=[dict(x=1679, y=444, r=40, mode="slow", depth=0.5, seed=139)]))
     else:
         add(e("x10") + .5, s("l3"), E.loan_towers, mode="loan", source="[S27][S28]")
     add(s("l3"), s("l4"), E.date_block, month="FEB", year="2025", line="FBI: the Bybit theft was North Korea", source="[S31]")
@@ -464,14 +484,18 @@ def build(tl):
         source="[S2][S16]")
     IL(s("k3"), s("k4"), "b19_vault_half_full", "in", kicker="PROTECTION FUND",
        line="Rebuilt to just over $300M. Less than before.", source="[S2][S16]",
-       glows=[dict(kind="flicker", x=810, y=88, r=420, color=WARM, base=0.45),
-              dict(kind="beam", poly=[(700, 100), (920, 100), (1130, 640), (480, 640)], base=0.07, color=WARM)])
+       glows=[dict(kind="flicker", x=810, y=88, r=420, color=WARM, base=0.45, follow=0),
+              dict(kind="beam", poly=[(700, 100), (920, 100), (1130, 640), (480, 640)], base=0.07, color=WARM, follow=0)],
+       flick=dict(lights=[dict(x=799, y=76, r=110, mode="flicker", seed=149)]))
     IL(s("k4"), s("k5"), pick("b38_new_lock_install", "b20_two_locks_door"), "in", kicker="SINCE THEN",
-       line="Critical operations need more than one approval.", source="[S2][S16]")
+       line="Critical operations need more than one approval.", source="[S2][S16]",
+       flick=dict(lights=[dict(x=1157, y=428, r=90, mode="flicker", seed=151)]))
     # z1 is covered by Thomas (z chain); the window moved to e1
     add(s("k5"), s("z2"), E.redacted, title="THE VENDOR",
         lines=[(0.6, "Under review"), (2.0, "Still not named")], source="[S2][S16]")
-    IL(s("z2"), s("z3"), pick("b40b_guard_cap_desk", "b06_empty_guard_booth"), "in", statement="Someone else may have been holding the guard.")
+    IL(s("z2"), s("z3"), pick("b40b_guard_cap_desk", "b06_empty_guard_booth"), "in", statement="Someone else may have been holding the guard.",
+       ripple=dict(thr=150, amp=4.0, guard=10, box=(0, 100, 1250, 500)),
+       flick=dict(lights=[dict(x=1485, y=418, r=80, mode="flicker", seed=157), dict(x=600, y=320, r=700, mode="slow", depth=0.15, thr=0.6, amb=0.1, seed=163)]))
     if pick("b41_signing_machine", "") == "b41_signing_machine":
         IL(s("z3"), s("z4"), "b41_signing_machine", "in", line="Customers locked out. The signing machine still running.", warm=False, source="[S2]",
            glows=[dict(kind="pulse", x=1165, y=129, r=170, color=(1.0, 0.2, 0.18), min=0.0, max=0.9, hz=1.5),
@@ -483,7 +507,8 @@ def build(tl):
                   dict(kind="pulse", x=938, y=752, r=38, color=(1.0, 0.2, 0.18), min=0.0, max=0.7, hz=1.7),
                   dict(kind="pulse", x=938, y=810, r=38, color=(1.0, 0.2, 0.18), min=0.0, max=0.7, hz=2.9),
                   dict(kind="pulse", x=1113, y=587, r=38, color=(1.0, 0.2, 0.18), min=0.0, max=0.7, hz=2.1),
-                  dict(kind="flicker", x=1090, y=385, r=70, color=(1.0, 0.75, 0.35), base=0.45)])
+                  dict(kind="flicker", x=1090, y=385, r=70, color=(1.0, 0.75, 0.35), base=0.45)],
+       flick=dict(lights=[dict(x=1085, y=385, r=40, mode="slow", depth=0.5, seed=167)]))
     else:
         add(s("z3"), s("z4"), E.locked_phone_split, source="[S2]")
     add(s("z4"), e("z4") + .6, S.statement, line="This was Siphon Files.", color=S.GREY)
