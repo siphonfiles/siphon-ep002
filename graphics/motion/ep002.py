@@ -300,7 +300,9 @@ def build(tl):
     c9 = next(C)
     add(nxt(hits, e("c6") - .01) + .5, c9, S.black)
     add(c9, s("e1"), S.countdown, label="18:31 UTC", sub="02:31 IN ASIA")
-    add(s("e1"), s("e2"), E.two_receipts, title="THE TEST TRANSFERS",
+    IL(s("e1"), s("e1") + 3.0, "b39_night_city_window", "out", kicker="18:31 UTC · 02:31 IN ASIA",
+       motes=False, glows=[dict(kind="slow", x=823, y=505, r=70, color=(1.0, 0.42, 0.28), base=0.55, phase=1.1)])
+    add(s("e1") + 3.0, s("e2"), E.two_receipts, title="THE TEST TRANSFERS",
         items=[("93 TRX", "18:31 UTC"), ("0.84 ETH", "then")], source="[S6]")
     add(s("e2"), s("e3"), E.threshold_meter, label="below the risk threshold · no alert (CEO)", source="[S15]")
     IL(s("e3"), s("e4"), "b13_fingerprint_glass", "in", kicker="HOLD ON TO THIS",
@@ -466,11 +468,9 @@ def build(tl):
               dict(kind="beam", poly=[(700, 100), (920, 100), (1130, 640), (480, 640)], base=0.07, color=WARM)])
     IL(s("k4"), s("k5"), pick("b38_new_lock_install", "b20_two_locks_door"), "in", kicker="SINCE THEN",
        line="Critical operations need more than one approval.", source="[S2][S16]")
-    add(s("k5"), s("z1"), E.redacted, title="THE VENDOR",
+    # z1 is covered by Thomas (z chain); the window moved to e1
+    add(s("k5"), s("z2"), E.redacted, title="THE VENDOR",
         lines=[(0.6, "Under review"), (2.0, "Still not named")], source="[S2][S16]")
-    IL(s("z1"), s("z2"), pick("b39_night_city_window", "b01_empty_trading_office"), "out", kicker="93 TRX · 02:31 IN ASIA",
-       line="Nobody looked at it.", motes=False,
-       glows=[dict(kind="slow", x=823, y=505, r=70, color=(1.0, 0.42, 0.28), base=0.55, phase=1.1)])
     IL(s("z2"), s("z3"), pick("b40b_guard_cap_desk", "b06_empty_guard_booth"), "in", statement="Someone else may have been holding the guard.")
     if pick("b41_signing_machine", "") == "b41_signing_machine":
         IL(s("z3"), s("z4"), "b41_signing_machine", "in", line="Customers locked out. The signing machine still running.", warm=False, source="[S2]",
