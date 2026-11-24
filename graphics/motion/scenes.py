@@ -1104,7 +1104,7 @@ def _country(ctx, t, u, name, move, g, a):
     t0, dur = g.get("t_in", 0.8), g.get("dur", 1.4)
     k = clamp((t - t0) / dur)
     k = 1 - (1 - k) ** 3                            # ease out
-    cx = (px_ + ox) * k + (-260) * (1 - k)
+    cx = px_ + ox - g.get("slide", 160) * (1 - k)   # a short slide in from the left
     cy = py_ + oy
     al = a * clamp((t - t0) / 0.35)
     col = g.get("color", (1.0, 0.30, 0.34))
@@ -1128,7 +1128,7 @@ def _country(ctx, t, u, name, move, g, a):
             ctx.set_source_rgba(col[0], col[1], col[2], 0.7 * la)
             ctx.set_line_width(1.6)
             ctx.move_to(px_, py_)
-            ctx.line_to(cx + 2.2 * size * 0.6, cy + 1.8 * size * 0.4)
+            ctx.line_to(cx - 3.4 * size, cy + 0.4 * size)
             ctx.stroke()
         ctx.new_path()
         for i, (lo, la_) in enumerate(pts):
@@ -1143,7 +1143,8 @@ def _country(ctx, t, u, name, move, g, a):
         ctx.set_line_join(cairo.LINE_JOIN_ROUND)
         ctx.stroke()
         lab = g.get("label", "NORTH KOREA")
-        text(ctx, lab, cx - 2.6 * size, cy + 3.4 * size, col, al, face=MONO, size=24, bold=False, tracking=5)
+        text(ctx, lab, cx, cy + 4.6 * size, col, al, align="center", face=MONO, size=g.get("label_size", 20),
+             bold=True, tracking=4)
     ctx.restore()
     ctx.set_operator(cairo.OPERATOR_ADD)
 

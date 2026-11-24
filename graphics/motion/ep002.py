@@ -419,7 +419,7 @@ def build(tl):
     IL(s("x1"), next(iter([c for c in cards if c > s("x2")])), "b15_investigation_wall", "in", kicker="NIGHT OF THE HACK",
        line="IP addresses matching VPNs used by a North Korean group (CEO)", source="[S19]",
        glows=[dict(kind="flicker", x=40, y=786, r=300, color=WARM, base=0.35),
-              dict(kind="country", x=1292, y=428, t_in=1.0, dur=1.5, size=24, offset=(-260, -140))])
+              dict(kind="country", x=1292, y=428, t_in=1.0, dur=1.2, size=10, offset=(130, 10), slide=140)])
     c16 = next(C)
     add(c16, s("x3"), E.live_quote, quote="The pattern looks very much like what the North Korean team did before.",
         who="GRACY CHEN · BITGET CEO · LIVESTREAM ON X", source="[S19]")

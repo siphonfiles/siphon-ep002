@@ -587,7 +587,7 @@ def path_to_money(ctx, t, d, t_server=4.0, t_vault=12.0, t_barrier=15.0, source=
         source_tag(ctx, source, a)
 
 
-PHONE_SCREEN = ((30, 60), (325, 8), (808, 150), (555, 205))   # TL, TR, BR, BL of the screen in the cutout (836x284)
+PHONE_SCREEN = ((26, 56), (322, 3), (812, 148), (556, 208))   # TL, TR, BR, BL of the screen in the cutout (836x284)
 
 
 def _phone_app(ctx, box, a, t):
