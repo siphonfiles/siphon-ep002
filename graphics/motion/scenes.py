@@ -1149,6 +1149,20 @@ def _country(ctx, t, u, name, move, g, a):
     ctx.set_operator(cairo.OPERATOR_ADD)
 
 
+def _lamp_level(t, seed):
+    """Brightness 0..1 of one failing street lamp: steady most of the time, then short bursts of
+    stuttering on/off. Each lamp has its own rhythm, so they never flicker together."""
+    def h(n):
+        v = math.sin(n * 12.9898 + seed * 78.233) * 43758.5453
+        return v - math.floor(v)
+    period = 0.8 + 0.45 * h(seed * 3.1)
+    win = math.floor(t / period + h(seed))
+    if h(win * 1.7 + 0.3) < 0.42:                      # this window is a burst
+        tick = math.floor(t / 0.07)
+        return 0.22 + 0.78 * (h(tick * 0.91 + 5.0) > 0.5)
+    return 0.92 + 0.08 * h(math.floor(t / 0.1) * 1.3)
+
+
 def _glows(ctx, t, u, name, move, glows, a):
     """Light effects in image coordinates: 'pulse' (alarm), 'flicker' (lamp), 'beam' (light shaft)."""
     ctx.save()
@@ -1159,6 +1173,31 @@ def _glows(ctx, t, u, name, move, glows, a):
         if kind == "pulse":
             k = 0.5 + 0.5 * math.sin(2 * math.pi * g.get("hz", 0.8) * t)
             inten = g.get("min", 0.15) + (g.get("max", 0.75) - g.get("min", 0.15)) * k * k
+        elif kind == "lamp":      # a lamp that really goes dark and back: dims the lamp and its reflection
+            lv = _lamp_level(t, g.get("seed", 1))
+            x, y, sc = _cam_point(name, u, move, g["x"], g["y"])
+            dk = (0.045, 0.052, 0.06)
+            ctx.save()
+            ctx.set_operator(cairo.OPERATOR_OVER)
+            rc = g.get("core", 26) * sc
+            rg = cairo.RadialGradient(x, y, 0, x, y, rc)
+            rg.add_color_stop_rgba(0, dk[0], dk[1], dk[2], 0.9 * (1 - lv) * a)
+            rg.add_color_stop_rgba(1, dk[0], dk[1], dk[2], 0)
+            ctx.set_source(rg)
+            ctx.arc(x, y, rc, 0, 2 * math.pi)
+            ctx.fill()
+            if "refl" in g:
+                y0, y1, rw = g["refl"]
+                xa, ya, _ = _cam_point(name, u, move, g["x"], y0)
+                xb, yb, _ = _cam_point(name, u, move, g["x"], y1)
+                lg = cairo.LinearGradient(0, ya, 0, yb)
+                lg.add_color_stop_rgba(0, dk[0], dk[1], dk[2], 0.75 * (1 - lv) * a)
+                lg.add_color_stop_rgba(1, dk[0], dk[1], dk[2], 0.25 * (1 - lv) * a)
+                ctx.set_source(lg)
+                ctx.rectangle(xa - rw * sc, ya, 2 * rw * sc, yb - ya)
+                ctx.fill()
+            ctx.restore()
+            inten = g.get("base", 0.4) * lv
         elif kind == "slow":      # slow, irregular flicker of a distant lamp (never fully off)
             ph = g.get("phase", 0.0)
             n = (math.sin(t * 1.7 + ph) * math.sin(t * 0.63 + 2.1 * ph) + 0.6 * math.sin(t * 3.1 + 0.7 * ph)) / 1.6

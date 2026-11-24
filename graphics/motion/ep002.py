@@ -363,9 +363,10 @@ def build(tl):
        line="Funds move to cold storage.", source="[S2][S7]",
        glows=[dict(kind="flicker", x=830, y=175, r=380, color=WARM, base=0.40)])
     IL(s("g6"), s("g7"), "b37_empty_harbour_night", "in", kicker="21:23 UTC · LAST TRACED TRANSFER", warm=False, source="[S6][S7]",
-       motes=False, glows=[dict(kind="slow", x=x, y=y, r=55, color=WARM, base=0.42, phase=ph)
-                           for (x, y), ph in zip([(282, 381), (481, 413), (638, 440), (1647, 392),
-                                                  (1889, 415), (2019, 446)], [0.3, 1.9, 3.1, 4.4, 5.2, 0.9])])
+       motes=False, glows=[dict(kind="lamp", x=x, y=y, r=70, core=c, color=WARM, base=0.38, seed=sd, **({'refl': rf} if rf else {}))
+                           for (x, y, c, sd, rf) in [(282, 384, 26, 1, (500, 720, 34)), (482, 418, 22, 9, (500, 700, 26)),
+                                                     (638, 441, 18, 3, (490, 640, 20)), (1649, 393, 24, 13, (510, 720, 30)),
+                                                     (1890, 415, 22, 17, (520, 740, 28)), (2020, 450, 18, 24, None)]])
     add(s("g7"), s("g8"), E.error_log, title="AFTER 21:23 · ILLUSTRATIVE LOG",
         lines=[(0.3, "rewrite withdrawal records"), (1.2, "ERROR  write rejected"), (2.2, "new BTC order"),
                (2.8, "ERROR  order failed"), (3.2, "new BTC order"), (3.6, "ERROR  order failed")],
