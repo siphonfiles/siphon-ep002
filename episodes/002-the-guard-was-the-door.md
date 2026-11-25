@@ -1,6 +1,6 @@
 # Episode 002 — The Guard Was the Door
 
-**Title (decided 22 Nov 2026): Inside the $388M Bitget Hack** · thumbnail text: **NO KEY WAS STOLEN**
+**Title (decided 25 Nov 2026, replaces 22 Nov): Bitget's Alarm Rang. $388M in Crypto Kept Leaving.** · thumbnail: to be chosen from `thumbnails/ep002/` (A: "NO KEY WAS STOLEN" on the emptied box under the alarm) · previous title "Inside the $388M Bitget Hack" kept as Test & Compare variant C
 **Before publishing: YouTube Test & Compare** with (A) this title + "NO KEY WAS STOLEN", (B) "They Stole $388,000,000 Without a Single Key" + "THE GUARD LET THEM IN", (C) "The Exchange That Froze Its Customers, Not the Thief" + "$388M. NO KEY." (CLAUDE.md section 9; reasoning in `research/title-psychology.md`).
 
 **Subject:** the Bitget exchange theft (24 September 2026, UTC). About $388M left Bitget's hot and warm wallets in under three hours. Bitget says no private key was compromised: the attacker got in through third-party *security* products, reached the wallet system and made Bitget's own signing service approve forged withdrawals.
