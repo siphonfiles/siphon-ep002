@@ -81,8 +81,11 @@ P += V("l1", .5) + V("l2", .6) + V("l3", .6) + V("l4", .6) + V("l5", SECTION)
 # ---------------- AFTERWARDS ----------------
 P += [("card", 1.5)] + M(("track", "memory_piano"), ("level", "feature"), ("music", "full@3")) \
     + V("k1", .6) + V("k2", .7) + V("k3", .8) + V("k4", .6) + [("voice", "k5")] + M(FADE) + [("pause", SECTION)]
-P += V("z1", .7) + V("z2", .7) + [("track", "heist"), ("level", "key"), ("music", "full@2"), ("pause", .3)] \
-    + V("z3", 1.0) + M(("music", "pulse@1")) + V("z4", 1.2) + [("music", "fade"), ("pause", EM.END_FADE + 0.5)]
+P += V("z1", .7) + V("z2", .7) + [("pause", .3)] + V("z3", 1.0) + V("z4", 0) \
+    + [("track", "heist"), ("level", "key"), ("music", "full@1"), ("pause", 1.2),
+       ("music", "fade"), ("pause", EM.END_FADE + 0.5)]
+# 25 Nov 2026 (owner): no music under Thomas while he speaks (it came in under z3 at 10:57) ->
+# the closing heist piece starts after z4, over the end card, then fades as before; timeline unchanged
 # 23 Nov 2026: under the full heist piece both ASR models heard "Siphoned Files" in z4 (the clean take is
 # heard right) -> the sign-off sits on the thinner pulse layer, then the piece fades as before
 

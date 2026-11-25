@@ -182,7 +182,7 @@ def build(tl):
     IL(s("t3"), nxt(hits, e("t3") - .01), "b12_alarm_control_room", "in", fo=0.0, kicker="19:05 UTC",
        line="The alarm. And the money kept leaving.", warm=False, source="[S2]",
        glows=[dict(kind="pulse", x=930, y=106, r=300, color=REDL, min=0.10, max=0.65, hz=1.1),
-              dict(kind="beam", poly=[(900, 180), (1000, 180), (1120, 660), (760, 660)], color=(1.0, 0.35, 0.25), base=0.12)])
+              ])   # 25 Nov: the drawn beam polygon removed (its hard edges sat beside the cone already in the image)
     h2 = nxt(hits, e("t3") - .01)
     add(h2, s("t4"), S.black)
     add(s("t4"), nxt(hits, e("t4")), S.kinetic,
@@ -297,7 +297,7 @@ def build(tl):
     add(nxt(hits, e("b8") - .01), c8, S.black)
     add(c8, s("c1"), S.countdown, label="42 MIN", sub="24 SEP 2026 · 17:49 UTC")
     add(s("c1"), s("c2"), E.trash_restore, when="17:49 UTC · WALLET HOST",
-        lines=[(0.6, "A tool starts"), (2.0, "Later recovered from deleted files (SlowMist)")], source="[S4][S7]")
+        lines=[(0.6, "A tool starts"), (2.0, "Later recovered from deleted"), (2.0, "files (SlowMist)")], source="[S4][S7]")
     add(s("c2"), s("c4"), E.risk_form, stamp_at=99, label="risk checks answered by the attacker's tool",
         source="[S4][S7]")
     add(s("c4"), s("c5"), E.pipeline, forged=True, title="ACCORDING TO ONE ANALYSIS", source="[S8]")

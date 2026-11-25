@@ -184,16 +184,11 @@
   },
   "night_wind_city": {
    "file": "sound/ep002/sfx/synth/night_wind_city_synth.mp3",
-   "anchors": [
-    {
-     "line": "l1",
-     "t": 597.119
-    }
-   ],
+   "anchors": [],
    "missing_anchors": [],
    "gain_db": -24.6,
    "offset_s": 0.0,
-   "why": "synthesized, 6 s bed with fades"
+   "why": "synthesized, 6 s bed with fades; removed from l1 on 25 Nov 2026 (owner: no wind under Thomas at 9:56) - unused"
   }
  }
 }

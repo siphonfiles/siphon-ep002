@@ -829,7 +829,7 @@ def trash_restore(ctx, t, d, when, lines, source=None):
     for k in (-50, 0, 50):
         ctx.move_to(bx + k, by - 120); ctx.line_to(bx + k * 0.8, by + 110); ctx.stroke()
     q = ease_in_out(prog(t, 0.8, 1.6))
-    fy = by - 60 - 340 * q
+    fy = by - 60 - 200 * q   # 25 Nov: stops at y 440 (top 360), clear of the time label at y 260
     rgba(ctx, AMBER, a * (0.3 + 0.7 * q)); rrect(ctx, bx - 60, fy - 80, 120, 160, 10); ctx.fill()
     rgba(ctx, TERM, a); ctx.rectangle(bx - 40, fy - 40, 80, 8); ctx.rectangle(bx - 40, fy - 15, 60, 8)
     ctx.rectangle(bx - 40, fy + 10, 70, 8); ctx.fill()
