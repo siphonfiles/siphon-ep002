@@ -62,7 +62,7 @@ jobs:
   parts:
     needs: release
     runs-on: ubuntu-22.04
-    timeout-minutes: 60
+    timeout-minutes: 240
     strategy:
       fail-fast: false
       max-parallel: 18
@@ -95,8 +95,9 @@ jobs:
   assemble:
     needs: parts
     runs-on: ubuntu-22.04
-    timeout-minutes: 40
+    timeout-minutes: 90
     steps:
+      - uses: actions/checkout@v5
       - run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg > /dev/null
       - name: Download parts + audio
         run: |
@@ -115,6 +116,10 @@ jobs:
       - name: Publish and clean up the parts
         run: |
           gh release upload "$TAG" siphon_files_*.mp4 --repo "$GITHUB_REPOSITORY" --clobber
+          if [ "${{ inputs.scale }}" = "2" ]; then
+            cp thumbnails/ep002/ep002_thumbnail_FINAL.jpg episodes/publish/002-youtube.md episodes/publish/002-description.txt episodes/publish/002-captions-en.srt .
+            gh release upload "$TAG" ep002_thumbnail_FINAL.jpg 002-youtube.md 002-description.txt 002-captions-en.srt --repo "$GITHUB_REPOSITORY" --clobber
+          fi
           for f in parts/*.mp4; do gh release delete-asset "$TAG" "$(basename $f)" --repo "$GITHUB_REPOSITORY" -y; done
         env:
           GH_TOKEN: ${{ github.token }}

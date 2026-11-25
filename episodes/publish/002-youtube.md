@@ -6,7 +6,7 @@ Everything YouTube Studio asks for. The 4K video comes from `render-ep002.yml` s
 | What | File |
 |---|---|
 | Video (4K, 3840x2160) | Release `ep002-render-N` › `siphon_files_ep002_scale2.mp4` |
-| Thumbnail (1280x720) | `thumbnails/ep002/ep002_thumb_D_crypto_coins_heist.jpg` ("CRYPTO HEIST / NO KEY TAKEN") |
+| Thumbnail (1280x720) | `thumbnails/ep002/ep002_thumbnail_FINAL.jpg` (= variant D) ("CRYPTO HEIST / NO KEY TAKEN") |
 | Description (copy-paste, 4,981 / 5,000 characters) | `episodes/publish/002-description.txt` |
 | English captions | `episodes/publish/002-captions-en.srt` (223 cues, from the voice timeline, `scripts/make_captions_ep002.py`) |
 
