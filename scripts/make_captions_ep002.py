@@ -43,7 +43,7 @@ R = [  # spoken form -> written form (longest first where they overlap)
     ("about a thousand pieces", "about 1,000 pieces"), ("had used fifty-four", "had used 54"),
     ("Ninety-three T R X", "93 TRX"), ("ninety-three T R X", "93 TRX"),
     ("U S D T", "USDT"), ("X R P", "XRP"), ("Zach X B T", "ZachXBT"), ("Thor Chain", "THORChain"),
-    ("Coin Join", "CoinJoin"), ("Bit-get", "Bitget"), ("Chain-alysis", "Chainalysis"),
+    ("Trader Traitor", "TraderTraitor"), ("go back nineteen months", "go back 19 months"), ("by the second of October", "by 2 October"), ("Coin Join", "CoinJoin"), ("Bit-get", "Bitget"), ("Chain-alysis", "Chainalysis"),
     ("February twenty twenty-five", "February 2025"), ("twenty twenty-six", "2026"),
     ("the thirty-first of August", "31 August"), ("The thirty-first of August", "31 August"),
     ("the twenty-third of September", "23 September"), ("the twenty-fourth of September", "24 September"),
@@ -61,24 +61,85 @@ R = [  # spoken form -> written form (longest first where they overlap)
 def written(t):
     for a, b in R:
         t = t.replace(a, b)
-    return t
+    return t.replace("24 September, 2026,", "24 September 2026,")
+
+
+SOFT = (", ", "; ", ": ", " — ")
+LINE = 42
+KEEP = {"withdrawal services", "security products", "way in", "database password", "malicious activity", "crypto exchange", "cold wallets", "risk threshold", "wallet host", "test transfers", "binance money", "private pool", "wallet job", "job server", "web shell",
+        "risk control", "signing service", "protection fund", "customer support", "security product", "security office"}
+WEAK = {"a", "an", "the", "of", "to", "that", "and", "at", "for", "by", "in", "on", "into", "from", "with",
+        "its", "their", "his", "her", "every", "no", "some", "one", "two", "five", "about", "than", "was", "were"}
+
+
+def break_cost(left, right):
+    """Penalty for ending a line/cue on `left` and starting the next on `right`."""
+    lw, rw = left.split()[-1].lower().strip(",.;:"), right.split()[0]
+    c = 0
+    if lw in WEAK:
+        c += 25
+    if re.match(r"^[$\d]", lw) and rw.lower().strip(",.") in ("million", "billion", "thousand", "trx", "ether", "usdt", "days", "minutes", "hours", "weeks"):
+        c += 60
+    if (len(rw.strip(",.")) == 1 and rw not in ("a", "I")) or (len(lw) == 1 and lw not in ("a",)):
+        c += 60
+    if f"{lw} {rw.lower().strip(',.')}" in KEEP:
+        c += 60
+    if rw.lower() in ("and", "but", "which", "where", "so", "because", "when", "or"):
+        c -= 10
+    return c
+
+
+def split_long(p):
+    """A sentence longer than MAX is cut once, at the clause break nearest its middle (a plain space only if
+    there is no comma/semicolon/dash), so no cue is left with a one-word tail like "million."."""
+    if len(p) <= MAX:
+        return [p]
+    best = None
+    for i in range(len(p)):
+        for sep in SOFT + (" ",):
+            if p.startswith(sep, i):
+                left, right = p[:i + len(sep.rstrip())].strip(), p[i + len(sep):].strip()
+                if min(len(left), len(right)) < 15:
+                    continue
+                cost = abs(len(left) - len(right)) + (0 if sep != " " else 60) + break_cost(left, right)
+                if best is None or cost < best[0]:
+                    best = (cost, left, right)
+    return split_long(best[1]) + split_long(best[2])
 
 
 def chunks(text):
-    parts = re.split(r"(?<=[.!?])\s+", text.strip())
+    """Sentences, cut where needed, then regrouped so nothing flashes alone: runs of short sentences share a
+    cue ("No interest. No collateral."), and a lone short one joins its neighbour ("31 August. That's ...")."""
+    sents = [p for sent in re.split(r"(?<=[.!?])\s+", text.strip()) if sent for p in split_long(sent)]
+    runs = []
+    for p in sents:
+        if runs and len(runs[-1]) < 25 and len(p) < 25 and len(runs[-1]) + 1 + len(p) <= 48:
+            runs[-1] += " " + p
+        else:
+            runs.append(p)
     out = []
-    for p in parts:
-        while len(p) > MAX:
-            cut = max(p.rfind(", ", 0, MAX), p.rfind(": ", 0, MAX), p.rfind("; ", 0, MAX), p.rfind(" — ", 0, MAX))
-            if cut < 20:
-                cut = p.rfind(" ", 0, MAX)
-            out.append(p[:cut + 1].strip())
-            p = p[cut + 1:].strip()
-        if out and len(out[-1]) + len(p) + 1 <= MAX and not out[-1].endswith((".", "?", "!")):
+    i = 0
+    while i < len(runs):
+        p = runs[i]
+        if len(p) < 17 and out and len(out[-1]) + 1 + len(p) <= MAX and not (i == 0):
             out[-1] += " " + p
+        elif len(p) < 17 and i + 1 < len(runs) and len(p) + 1 + len(runs[i + 1]) <= MAX + 6:
+            out.append(p + " " + runs[i + 1])
+            i += 1
         else:
             out.append(p)
-    return [c for c in out if c]
+        i += 1
+    return out
+
+
+def wrap(p):
+    """Two balanced lines when a cue is longer than one line."""
+    if len(p) <= LINE:
+        return p
+    sp = [i for i, ch in enumerate(p) if ch == " "]
+    i = min(sp, key=lambda k: max(k, len(p) - k - 1) + (0 if p[k - 1] in ",.;:?" else 3) + break_cost(p[:k], p[k + 1:])
+            + (100 if max(k, len(p) - k - 1) > LINE + 2 else 0))
+    return p[:i] + "\n" + p[i + 1:]
 
 
 def ts(x):
@@ -96,11 +157,14 @@ def main():
         t = e["t"]
         for p in parts:
             d = e["dur"] * len(p) / total
-            cues.append((t, t + d, p))
+            cues.append([t, t + d, p])
             t += d
+    # a cue may stay up into the silence after it (up to 1 s, never into the next cue), for reading time
+    for c, n in zip(cues, cues[1:] + [[1e9]]):
+        c[1] = min(c[1] + 1.0, n[0] - 0.05, c[0] + 7.0) if n[0] - c[1] > 0.1 else min(c[1], c[0] + 7.0)
     with open(OUT, "w") as f:
         for i, (a, b, p) in enumerate(cues, 1):
-            f.write(f"{i}\n{ts(a)} --> {ts(min(b, a + 7.0))}\n{p}\n\n")
+            f.write(f"{i}\n{ts(a)} --> {ts(b)}\n{wrap(p)}\n\n")
     left = sorted(set(re.findall(r"\b(?:[A-Z] ){1,}[A-Z]\b|\b(?:twenty|thirty|forty|fifty|sixty|seventy|eighty|ninety)-\w+",
                                  " ".join(c[2] for c in cues))))
     print(len(cues), "cues ->", OUT, "| still spelled out:", left)
