@@ -8,7 +8,7 @@ Usage: python3 scripts/phone_screen_mask_ep002.py
 import os
 import cv2
 import numpy as np
-from PIL import Image
+from PIL import Image, ImageFilter
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 D = os.path.join(ROOT, "illustrations/ep002/cutouts")
@@ -34,7 +34,11 @@ def main():
     holes = (ff == 0) & (lum > 48)          # small holes filled; the dark home bar / notch stay out
     mk = ((mk > 0) | holes).astype(np.uint8) * 255
     mk = cv2.GaussianBlur(mk, (3, 3), 0)
-    Image.fromarray(mk).save(os.path.join(D, "c_b11_phone_screen_mask.png"))
+    # cairo masks by ALPHA: a grayscale PNG loads without alpha and masks nothing (the app then covered the frame)
+    a = Image.fromarray(mk).filter(ImageFilter.MinFilter(3))      # 1 px inside the glass edge
+    out = Image.new("RGBA", a.size, (255, 255, 255, 0))
+    out.putalpha(a)
+    out.save(os.path.join(D, "c_b11_phone_screen_mask.png"))
     print("screen mask:", int((mk > 128).sum()), "px")
 
 
