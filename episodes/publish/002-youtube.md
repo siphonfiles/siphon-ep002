@@ -13,7 +13,7 @@ Everything YouTube Studio asks for. The 4K video comes from `render-ep002.yml` s
 ## Details
 - **Title (owner, 25 Nov 2026):** Bitget's Alarm Rang. $388M in Crypto Kept Leaving.
 - **Thumbnail (owner, 25 Nov 2026):** D, the emptied box under the red alarm, crypto coins streaming out
-- **Playlist:** "Crypto Heists Explained" (create it; add ep. 001 and ep. 002)
+- **Playlist:** "Crypto Heists, Investigated | Siphon Files" (the existing one; ep. 001 already in it)
 - **Audience:** No, it's not made for kids
 - **Age restriction:** none
 
@@ -48,3 +48,14 @@ Everything YouTube Studio asks for. The 4K video comes from `render-ep002.yml` s
 
 ## Not used on purpose
 - "Inside job" (the CEO says internal collusion was excluded; the intruder was outside), "North Korea did it" or "Lazarus" as a fact (no official attribution for Bitget), "Bitcoin" in the title (13 different assets were taken).
+
+## Upload status (25 Nov 2026)
+
+- Uploaded to YouTube Studio: video `3XH8W7ur_dc` (https://youtu.be/3XH8W7ur_dc), file `siphon_files_ep002_scale2.mp4` (render-17, 4K).
+- **Scheduled public: Mon 30 Nov 2026, 18:00 (GMT+02:00).**
+- Details done: title A, description, 20 tags, thumbnail D, playlist, language English (UK), Education, AI use = Yes, no paid promotion, not made for kids, auto chapters/places/concepts off.
+- A/B test (Title only): A / B / C, starts at publication.
+- Subtitles: 20 languages, all published (en + 19).
+- End screen 11:05–11:12: subscribe + video ep. 001. Card 9:20 → ep. 001 ("Case 001: the Drift hack" / "A fake firm. $285M.").
+- Title/description translations: left to YouTube's automatic translation (check after publishing, as with ep. 001).
+- After publishing: add a card + end screen + description link in ep. 001 pointing to ep. 002; recheck the STATUS facts on the morning of 30 Nov.
