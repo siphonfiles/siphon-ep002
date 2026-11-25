@@ -1,0 +1,790 @@
+[
+ {
+  "id": 1,
+  "text": "E ora două și jumătate dimineața, în Asia."
+ },
+ {
+  "id": 2,
+  "text": "Un transfer minuscul pleacă de pe bursa cripto Bitget."
+ },
+ {
+  "id": 3,
+  "text": "Nimeni nu se uită la el."
+ },
+ {
+  "id": 4,
+  "text": "Nici trei ore mai târziu, dispăruseră circa 388 de milioane de dolari."
+ },
+ {
+  "id": 5,
+  "text": "Iar Bitget spune că nu a fost furată nici măcar o cheie."
+ },
+ {
+  "id": 6,
+  "text": "La 19:05 a sunat alarma."
+ },
+ {
+  "id": 7,
+  "text": "Bitget a înghețat toate retragerile clienților."
+ },
+ {
+  "id": 8,
+  "text": "Iar banii au continuat să plece încă două ore."
+ },
+ {
+  "id": 9,
+  "text": "Și primul semn că era cineva înăuntru?"
+ },
+ {
+  "id": 10,
+  "text": "E în loguri. Datat cu 24 de zile mai devreme."
+ },
+ {
+  "id": 11,
+  "text": "Ca să înțelegi de ce doare tocmai cazul ăsta, hai să ne întoarcem 19 luni în urmă. Februarie 2025."
+ },
+ {
+  "id": 12,
+  "text": "Bursa Bybit tocmai a pierdut 1,5 miliarde de dolari."
+ },
+ {
+  "id": 13,
+  "text": "FBI dă vina pe Coreea de Nord."
+ },
+ {
+  "id": 14,
+  "text": "Clienții se grăbesc să-și scoată banii."
+ },
+ {
+  "id": 15,
+  "text": "În aceeași zi, un concurent trimite ajutor."
+ },
+ {
+  "id": 16,
+  "text": "Bitget îi împrumută lui Bybit 40.000 de ether ca retragerile să poată continua."
+ },
+ {
+  "id": 17,
+  "text": "Fără dobândă. Fără garanții."
+ },
+ {
+  "id": 18,
+  "text": "Reține împrumutul ăsta."
+ },
+ {
+  "id": 19,
+  "text": "Revine la final."
+ },
+ {
+  "id": 20,
+  "text": "Pe 24 septembrie 2026, bursa care sărise în ajutor a devenit cea jefuită."
+ },
+ {
+  "id": 21,
+  "text": "La momentul respectiv, cel mai mare furt cripto al anului."
+ },
+ {
+  "id": 22,
+  "text": "Sunt Thomas Archer, naratorul AI al Siphon Files."
+ },
+ {
+  "id": 23,
+  "text": "Fiecare afirmație din acest episod are o sursă, iar toate sunt în descriere."
+ },
+ {
+  "id": 24,
+  "text": "Și acum, partea ciudată."
+ },
+ {
+  "id": 25,
+  "text": "Bitget spune că nici măcar o cheie privată nu a fost compromisă."
+ },
+ {
+  "id": 26,
+  "text": "Deci cum furi 388 de milioane de dolari fără chei?"
+ },
+ {
+  "id": 27,
+  "text": "Pui bursa să semneze în locul tău."
+ },
+ {
+  "id": 28,
+  "text": "O bursă își ține majoritatea banilor în portofele reci."
+ },
+ {
+  "id": 29,
+  "text": "Offline, lente, greu de accesat."
+ },
+ {
+  "id": 30,
+  "text": "Acelea n-au fost atinse."
+ },
+ {
+  "id": 31,
+  "text": "Portofelele calde țin o rezervă."
+ },
+ {
+  "id": 32,
+  "text": "Portofelele fierbinți îți plătesc retragerile automat, non-stop."
+ },
+ {
+  "id": 33,
+  "text": "Când apeși „Retrage”, o cerere intră într-un flux de procesare."
+ },
+ {
+  "id": 34,
+  "text": "Verificările de risc o analizează."
+ },
+ {
+  "id": 35,
+  "text": "Apoi un serviciu de semnare pune pe ea o semnătură criptografică, iar banii pleacă."
+ },
+ {
+  "id": 36,
+  "text": "Fără semnătura aceea, nu pleacă nimic."
+ },
+ {
+  "id": 37,
+  "text": "Cu ea, pleacă orice."
+ },
+ {
+  "id": 38,
+  "text": "Deci atacatorului nu i-a trebuit niciodată secretul din spatele semnăturii."
+ },
+ {
+  "id": 39,
+  "text": "Trebuia să ajungă aproape de sistemul care îl folosește."
+ },
+ {
+  "id": 40,
+  "text": "Și pentru asta îi trebuia o cale de intrare pe care n-o supraveghea nimeni."
+ },
+ {
+  "id": 41,
+  "text": "31 august. Cea mai timpurie activitate malițioasă găsită de anchetatori în loguri."
+ },
+ {
+  "id": 42,
+  "text": "Nu în portofele."
+ },
+ {
+  "id": 43,
+  "text": "Într-un produs de securitate."
+ },
+ {
+  "id": 44,
+  "text": "Unul dintre cele două instrumente externe cu care Bitget își proteja sistemele."
+ },
+ {
+  "id": 45,
+  "text": "Anchetatorii le numesc produsul A și produsul B."
+ },
+ {
+  "id": 46,
+  "text": "Furnizorul nu a fost numit."
+ },
+ {
+  "id": 47,
+  "text": "În produsul A, o vulnerabilitate încă nedescoperită,"
+ },
+ {
+  "id": 48,
+  "text": "un zero-day, i-a permis atacatorului să ruleze un script ascuns."
+ },
+ {
+  "id": 49,
+  "text": "Scriptul a găsit o parolă a bazei de date, stocată în clar."
+ },
+ {
+  "id": 50,
+  "text": "O cheie de rezervă lipită sub preș."
+ },
+ {
+  "id": 51,
+  "text": "Doar că preșul era în biroul de securitate."
+ },
+ {
+  "id": 52,
+  "text": "De aici încolo, noi știm că e cineva înăuntru. Bitget nu știe."
+ },
+ {
+  "id": 53,
+  "text": "O precizare. Mandiant datează accesul privilegiat al atacatorului abia pe 24 septembrie."
+ },
+ {
+  "id": 54,
+  "text": "Cele două rapoarte nu au fost puse de acord."
+ },
+ {
+  "id": 55,
+  "text": "Dar un script ascuns pe PC-ul unui paznic nu poate muta bani."
+ },
+ {
+  "id": 56,
+  "text": "Ca să se apropie de portofele, avea nevoie de altceva."
+ },
+ {
+  "id": 57,
+  "text": "Un nume. Unul real."
+ },
+ {
+  "id": 58,
+  "text": "Să mă opresc puțin aici."
+ },
+ {
+  "id": 59,
+  "text": "Companiile cumpără produse de securitate ca să păzească ușile."
+ },
+ {
+  "id": 60,
+  "text": "Le dau acces profund, pentru că așa văd totul."
+ },
+ {
+  "id": 61,
+  "text": "Deci, dacă cineva pune stăpânire pe paznic, nu trebuie să spargă nicio ușă."
+ },
+ {
+  "id": 62,
+  "text": "E deja pe fiecare coridor."
+ },
+ {
+  "id": 63,
+  "text": "Același script se răspândise."
+ },
+ {
+  "id": 64,
+  "text": "Un al doilea calculator, pe 23 septembrie."
+ },
+ {
+  "id": 65,
+  "text": "Un al treilea, în noaptea furtului."
+ },
+ {
+  "id": 66,
+  "text": "La 16:07, cineva s-a autentificat în platforma de administrare a produsului B."
+ },
+ {
+  "id": 67,
+  "text": "Cu identitatea unui angajat real al Bitget."
+ },
+ {
+  "id": 68,
+  "text": "Persoana aceea nu era acolo."
+ },
+ {
+  "id": 69,
+  "text": "Bitget spune că datele de acces au fost furate prin acel zero-day"
+ },
+ {
+  "id": 70,
+  "text": "și că, deocamdată, a exclus implicarea cuiva din interior."
+ },
+ {
+  "id": 71,
+  "text": "Mandiant a găsit un web shell pe echipamentul B și un canal înapoi spre atacator."
+ },
+ {
+  "id": 72,
+  "text": "De acolo s-a deplasat lateral, spre serverul de joburi al portofelelor din producție."
+ },
+ {
+  "id": 73,
+  "text": "Serverul care pregătește tranzacțiile de retragere."
+ },
+ {
+  "id": 74,
+  "text": "Și a instalat pe el pachete malițioase."
+ },
+ {
+  "id": 75,
+  "text": "Acum era chiar lângă bani."
+ },
+ {
+  "id": 76,
+  "text": "Dar fiecare retragere mai avea de trecut de un singur obstacol. Controlul riscului."
+ },
+ {
+  "id": 77,
+  "text": "La 17:49, un instrument a pornit pe serverul portofelelor."
+ },
+ {
+  "id": 78,
+  "text": "SlowMist l-a recuperat mai târziu din fișiere șterse."
+ },
+ {
+  "id": 79,
+  "text": "Nu s-a luptat cu controlul riscului."
+ },
+ {
+  "id": 80,
+  "text": "I-a falsificat răspunsurile."
+ },
+ {
+  "id": 81,
+  "text": "Apoi a creat cereri de retragere"
+ },
+ {
+  "id": 82,
+  "text": "și le-a introdus în fluxul normal de retrageri al Bitget."
+ },
+ {
+  "id": 83,
+  "text": "Potrivit unei analize,"
+ },
+ {
+  "id": 84,
+  "text": "sistemul pur și simplu l-a crezut pe solicitant când a spus că verificările trecuseră."
+ },
+ {
+  "id": 85,
+  "text": "Pe hârtie, era suficient."
+ },
+ {
+  "id": 86,
+  "text": "Exista o singură cale de a afla dacă funcționa și în practică."
+ },
+ {
+  "id": 87,
+  "text": "Trebuia încercat."
+ },
+ {
+  "id": 88,
+  "text": "18:31. Două transferuri minuscule."
+ },
+ {
+  "id": 89,
+  "text": "93 TRX. Apoi 0,84 ether."
+ },
+ {
+  "id": 90,
+  "text": "Teste. CEO-ul Bitget spune că erau sub pragul de risc, deci nu s-a declanșat nicio alertă."
+ },
+ {
+  "id": 91,
+  "text": "Și era ceva ciudat la aceste transferuri."
+ },
+ {
+  "id": 92,
+  "text": "Ceva care l-ar fi putut da de gol. Ține minte asta."
+ },
+ {
+  "id": 93,
+  "text": "Apoi, nimic. Timp de aproape jumătate de oră."
+ },
+ {
+  "id": 94,
+  "text": "18:58. 34,75 milioane USDT pleacă într-un singur transfer."
+ },
+ {
+  "id": 95,
+  "text": "Încă nicio alarmă."
+ },
+ {
+  "id": 96,
+  "text": "Așa că s-a oprit din testat."
+ },
+ {
+  "id": 97,
+  "text": "19:01. Șapte transferuri. Cinci blockchain-uri. Cincisprezece secunde."
+ },
+ {
+  "id": 98,
+  "text": "19:03. Încă un test mic, dintr-un alt portofel."
+ },
+ {
+  "id": 99,
+  "text": "19:05. Reconcilierea Bitget semnalează în sfârșit diferența."
+ },
+ {
+  "id": 100,
+  "text": "Dacă aveai bani pe Bitget în acel moment,"
+ },
+ {
+  "id": 101,
+  "text": "iată ce vedeai: retragerea ta se oprise."
+ },
+ {
+  "id": 102,
+  "text": "Controlul riscului blocase retragerile tuturor clienților de pe platformă."
+ },
+ {
+  "id": 103,
+  "text": "19:14. Urgență de cel mai înalt nivel."
+ },
+ {
+  "id": 104,
+  "text": "19:16."
+ },
+ {
+  "id": 105,
+  "text": "Cinci transferuri. Cinci rețele. Nouă secunde."
+ },
+ {
+  "id": 106,
+  "text": "Circa 203 milioane de dolari."
+ },
+ {
+  "id": 107,
+  "text": "Clienții fuseseră blocați cu 11 minute mai devreme."
+ },
+ {
+  "id": 108,
+  "text": "Atacatorul, nu."
+ },
+ {
+  "id": 109,
+  "text": "Blocarea retragerilor clienților era pârghia greșită."
+ },
+ {
+  "id": 110,
+  "text": "Cererile falsificate nu erau retrageri ale clienților."
+ },
+ {
+  "id": 111,
+  "text": "Potrivit unei analize,"
+ },
+ {
+  "id": 112,
+  "text": "la portofelele calde nimic nu stătea între o cerere și o semnătură."
+ },
+ {
+  "id": 113,
+  "text": "Nicio a doua persoană."
+ },
+ {
+  "id": 114,
+  "text": "Nicio listă de destinații permise."
+ },
+ {
+  "id": 115,
+  "text": "Așa că serviciul de semnare a rămas activ."
+ },
+ {
+  "id": 116,
+  "text": "Încă 2 ore și 39 de minute după prima alertă."
+ },
+ {
+  "id": 117,
+  "text": "Potrivit a două estimări separate, după alarmă"
+ },
+ {
+  "id": 118,
+  "text": "au plecat circa 238 de milioane de dolari."
+ },
+ {
+  "id": 119,
+  "text": "Peste jumătate din suma furată."
+ },
+ {
+  "id": 120,
+  "text": "La 20:40, Bitget a început să mute fonduri în portofele reci."
+ },
+ {
+  "id": 121,
+  "text": "Fără să știe încă dacă fuseseră furate chei."
+ },
+ {
+  "id": 122,
+  "text": "Ultimul transfer identificat a plecat la 21:23."
+ },
+ {
+  "id": 123,
+  "text": "Apoi atacatorul a încercat să rescrie înregistrările de retragere direct în baza de date."
+ },
+ {
+  "id": 124,
+  "text": "Ca să-și șteargă urmele sau să fure mai mult."
+ },
+ {
+  "id": 125,
+  "text": "Rapoartele nu precizează."
+ },
+ {
+  "id": 126,
+  "text": "Două ordine Bitcoin false au returnat erori."
+ },
+ {
+  "id": 127,
+  "text": "La 21:44, Bitget a oprit serviciile de retragere, inclusiv semnarea."
+ },
+ {
+  "id": 128,
+  "text": "A doua zi dimineață,"
+ },
+ {
+  "id": 129,
+  "text": "Bitget a găsit cauza principală și a raportat furtul autorităților."
+ },
+ {
+  "id": 130,
+  "text": "Iar când anchetatorii s-au întors la acele prime transferuri de test,"
+ },
+ {
+  "id": 131,
+  "text": "detaliul ciudat era chiar sub ochii lor."
+ },
+ {
+  "id": 132,
+  "text": "Fiecare transfer Ethereum stabilește o limită de combustibil. Gas."
+ },
+ {
+  "id": 133,
+  "text": "Plățile obișnuite ale Bitget către clienți foloseau circa 63.000."
+ },
+ {
+  "id": 134,
+  "text": "Transferurile atacatorului foloseau exact 100.000 sau 200.000."
+ },
+ {
+  "id": 135,
+  "text": "În cele 8 zile dinainte, acele portofele trimiseseră 35.678 de tranzacții."
+ },
+ {
+  "id": 136,
+  "text": "Nicio plată către un client nu făcuse asta."
+ },
+ {
+  "id": 137,
+  "text": "Pe Zcash, era și mai bătător la ochi."
+ },
+ {
+  "id": 138,
+  "text": "Fiecare transfer furat aduna circa 1.000 de bucăți mici de monedă."
+ },
+ {
+  "id": 139,
+  "text": "Cea mai mare tranzacție anterioară a portofelului folosise 54."
+ },
+ {
+  "id": 140,
+  "text": "Comenzile falsificate erau șterse după fiecare transfer."
+ },
+ {
+  "id": 141,
+  "text": "Amprentele, nu."
+ },
+ {
+  "id": 142,
+  "text": "Nimeni nu le căuta."
+ },
+ {
+  "id": 143,
+  "text": "Acum hoțul avea 388 de milioane de dolari."
+ },
+ {
+  "id": 144,
+  "text": "Și o problemă nouă: cum să-i păstreze."
+ },
+ {
+  "id": 145,
+  "text": "Stablecoin-urile au plecat primele, pentru că stablecoin-urile pot fi înghețate."
+ },
+ {
+  "id": 146,
+  "text": "Tot USDT-ul a fost schimbat pe ether în 20 de minute."
+ },
+ {
+  "id": 147,
+  "text": "XRP-ul a fost schimbat în Bitcoin prin THORChain."
+ },
+ {
+  "id": 148,
+  "text": "O parte din Zcash a dispărut într-un pool privat, unde nu poate fi urmărită."
+ },
+ {
+  "id": 149,
+  "text": "Bitget i-a cerut lui THORChain să blocheze adresele."
+ },
+ {
+  "id": 150,
+  "text": "THORChain a refuzat, invocând designul său fără permisiuni."
+ },
+ {
+  "id": 151,
+  "text": "În final, a fost înghețat mai puțin de 0,3%."
+ },
+ {
+  "id": 152,
+  "text": "În noiembrie, Bitcoin-ul a început să se miște din nou."
+ },
+ {
+  "id": 153,
+  "text": "Circa 161 de milioane de dolari în 11 zile, cea mai mare parte prin CoinJoin,"
+ },
+ {
+  "id": 154,
+  "text": "care amestecă monedele multor oameni într-o singură tranzacție."
+ },
+ {
+  "id": 155,
+  "text": "Iar cei care îi mutau nu se ascundeau prea bine."
+ },
+ {
+  "id": 156,
+  "text": "ZachXBT spune că spălătorii de bani au cerut ajutor de la suport"
+ },
+ {
+  "id": 157,
+  "text": "în chat-urile publice ale serviciilor pe care le foloseau."
+ },
+ {
+  "id": 158,
+  "text": "Swap-uri eșuate. Plăți care nu mai ajungeau."
+ },
+ {
+  "id": 159,
+  "text": "El spune că unul dintre ei mai manevrase bani furați."
+ },
+ {
+  "id": 160,
+  "text": "Din exploit-ul Kelp DAO din aprilie."
+ },
+ {
+  "id": 161,
+  "text": "Deci cine stătea în spate?"
+ },
+ {
+  "id": 162,
+  "text": "În noaptea atacului, CEO-ul Bitget, Gracy Chen,"
+ },
+ {
+  "id": 163,
+  "text": "a spus că unele adrese IP se potriveau cu servicii VPN folosite de un grup nord-coreean."
+ },
+ {
+  "id": 164,
+  "text": "Patru zile mai târziu, a fost mai prudentă."
+ },
+ {
+  "id": 165,
+  "text": "Asta, a spus ea, se baza pe indicii preliminare."
+ },
+ {
+  "id": 166,
+  "text": "Analiștii de la Chainalysis, Elliptic și TRM Labs înclină toți în aceeași direcție."
+ },
+ {
+  "id": 167,
+  "text": "Apoi, 5 săptămâni mai târziu, Binance a pierdut peste 6 miliarde de dolari."
+ },
+ {
+  "id": 168,
+  "text": "Iar Chainalysis a văzut cum banii furați de la Binance"
+ },
+ {
+  "id": 169,
+  "text": "se întâlnesc pe blockchain cu banii de la Bitget."
+ },
+ {
+  "id": 170,
+  "text": "ZachXBT spune că ambele sume au ajuns, prin THORChain, la aceeași adresă."
+ },
+ {
+  "id": 171,
+  "text": "La două zile după furtul de la Binance,"
+ },
+ {
+  "id": 172,
+  "text": "FBI i-a numit pe hoți: TraderTraitor, din Coreea de Nord."
+ },
+ {
+  "id": 173,
+  "text": "Despre Bitget, niciun guvern n-a spus nimic."
+ },
+ {
+  "id": 174,
+  "text": "Iar raportul Mandiant nu numește absolut pe nimeni."
+ },
+ {
+  "id": 175,
+  "text": "Ceea ce ne aduce înapoi la acel împrumut."
+ },
+ {
+  "id": 176,
+  "text": "În februarie 2025, când Bybit a fost jefuită, Bitget a trimis 40.000 de ether în aceeași zi."
+ },
+ {
+  "id": 177,
+  "text": "Fără dobândă. Fără garanții."
+ },
+ {
+  "id": 178,
+  "text": "FBI a pus acel furt pe seama Coreei de Nord."
+ },
+ {
+  "id": 179,
+  "text": "Nouăsprezece luni mai târziu, banii plecau de la Bitget."
+ },
+ {
+  "id": 180,
+  "text": "Niciun guvern n-a numit pe nimeni."
+ },
+ {
+  "id": 181,
+  "text": "Dar analiștii indică aceeași direcție."
+ },
+ {
+  "id": 182,
+  "text": "Dacă aveai bani pe Bitget, nu i-ai pierdut."
+ },
+ {
+  "id": 183,
+  "text": "Bitget spune că a acoperit pierderea din propriul fond de protecție."
+ },
+ {
+  "id": 184,
+  "text": "Până pe 2 octombrie, toate retragerile funcționau din nou."
+ },
+ {
+  "id": 185,
+  "text": "Fondul a fost refăcut la puțin peste 300 de milioane de dolari."
+ },
+ {
+  "id": 186,
+  "text": "Tot sub nivelul de dinainte."
+ },
+ {
+  "id": 187,
+  "text": "Vulnerabilitatea e remediată."
+ },
+ {
+  "id": 188,
+  "text": "Operațiunile critice cer acum mai mult de o aprobare."
+ },
+ {
+  "id": 189,
+  "text": "Iar Bitget spune că revizuiește cum își alege furnizorii de securitate."
+ },
+ {
+  "id": 190,
+  "text": "Furnizorul tot nu a fost numit."
+ },
+ {
+  "id": 191,
+  "text": "Totul a început cu un transfer de 93 TRX, la două și jumătate dimineața."
+ },
+ {
+  "id": 192,
+  "text": "Nimeni nu s-a uitat la el."
+ },
+ {
+  "id": 193,
+  "text": "Bitget a cumpărat unelte ca să păzească ușa."
+ },
+ {
+  "id": 194,
+  "text": "Timp de săptămâni, poate că altcineva le-a ținut în mână."
+ },
+ {
+  "id": 195,
+  "text": "Iar când alarma a sunat în sfârșit, bursa și-a blocat clienții"
+ },
+ {
+  "id": 196,
+  "text": "și a lăsat sistemul de semnare pornit."
+ },
+ {
+  "id": 197,
+  "text": "Sunt Thomas Archer. Acesta a fost Siphon Files."
+ }
+]

@@ -8,7 +8,7 @@ Everything YouTube Studio asks for. The 4K video comes from `render-ep002.yml` s
 | Video (4K, 3840x2160) | Release `ep002-render-N` › `siphon_files_ep002_scale2.mp4` |
 | Thumbnail (1280x720) | `thumbnails/ep002/ep002_thumbnail_FINAL.jpg` (= variant D) ("CRYPTO HEIST / NO KEY TAKEN") |
 | Description (copy-paste, 4,981 / 5,000 characters) | `episodes/publish/002-description.txt` |
-| English captions | `episodes/publish/002-captions-en.srt` (223 cues, from the voice timeline, `scripts/make_captions_ep002.py`) |
+| Captions, English + 19 languages | `episodes/publish/002-captions-<code>.srt` (197 cues each, same timings; English from the voice timeline, `scripts/make_captions_ep002.py`; translations in `subs/<code>.json` → `scripts/build_subs_ep002.py`; review notes in `subs/review/`). All in the Release, also as `002-captions-all.zip` |
 
 ## Details
 - **Title (owner, 25 Nov 2026):** Bitget's Alarm Rang. $388M in Crypto Kept Leaving.
@@ -31,7 +31,9 @@ Everything YouTube Studio asks for. The 4K video comes from `render-ep002.yml` s
 - **Comments:** on, hold potentially inappropriate comments for review · **Show likes:** yes
 
 ## Video elements
-- **Subtitles:** upload `002-captions-en.srt` as English (United Kingdom), "With timing"
+- **Subtitles:** Studio › Subtitles › Add language, then Add › Upload file › "With timing", one file per language:
+  English (United Kingdom) `en` · Spanish (Latin America) `es` · Portuguese (Brazil) `pt-BR` · French `fr` · German `de` · Italian `it` · Dutch `nl` · Polish `pl` · Romanian `ro` · Turkish `tr` · Russian `ru` · Ukrainian `uk` · Arabic `ar` · Hindi `hi` · Indonesian `id` · Vietnamese `vi` · Japanese `ja` · Korean `ko` · Chinese (Simplified) `zh-Hans` · Chinese (Traditional, Taiwan) `zh-Hant`
+  Uploaded subtitles replace YouTube's machine translation for that language. Each translation: written from the final English cues, then checked by a separate reviewer (blind back-translation into English, meaning compared cue by cue, native read).
 - **End screen (from 11:05, after Thomas's last line, ~8 s):** subscribe button + video element → ep. 001 (https://youtu.be/kOfkyFjkzPY). Not earlier: it would cover Thomas while he speaks
 - **Cards:** ep. 001 at about 9:20, where the Binance link comes up ("Who?")
 - **Ep. 001, after ep. 002 is public:** add a card and an end-screen element pointing to ep. 002, and the line "Next episode, the Bitget hack: <link>" in its description

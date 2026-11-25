@@ -3,8 +3,9 @@ SRT, and check them. Usage: python3 scripts/build_subs_ep002.py [code ...]  (def
 
 Checks (printed; exit code 1 if any hard error):
   hard  - 197 cues, same ids/order, none empty, no line breaks; every brand/name present in the English cue is
-          present verbatim; the same numbers (digits, separators ignored) for languages that write numbers like
-          English (ja/ko/zh/hi may write 3億8800万 etc.: listed for the reviewer instead).
+          present verbatim.
+  notes - every cue whose digits differ from the English (3億8800万, "ساعتين", "tháng 9", "19 h 05" are fine
+          grammar): listed so the reviewer confirms the value is exactly the same.
   soft  - reading speed (characters per second) and length vs the English.
 """
 import json
@@ -22,6 +23,7 @@ TIMES = [b.split("\n")[1] for b in EN]
 NAMES = ["Bitget", "Bybit", "Binance", "Mandiant", "SlowMist", "Chainalysis", "Elliptic", "TRM Labs", "ZachXBT",
          "THORChain", "Zcash", "CoinJoin", "Kelp DAO", "TraderTraitor", "Gracy Chen", "Thomas Archer", "Siphon Files",
          "FBI", "VPN", "IP", "USDT", "TRX", "XRP", "Bitcoin", "Ethereum"]
+MONTHS = {"February": 2, "April": 4, "August": 8, "September": 9, "October": 10, "November": 11}
 CJK = {"ja", "zh-Hans", "zh-Hant"}
 FREE_NUM = {"ja", "ko", "zh-Hans", "zh-Hant", "hi"}
 LINE = {"ja": 18, "zh-Hans": 18, "zh-Hant": 18, "ko": 24}
@@ -70,8 +72,12 @@ def check(code):
         for nm in NAMES:
             if re.search(rf"\b{re.escape(nm)}\b", s["en"]) and nm not in t:
                 hard.append(f"{s['id']}: name '{nm}' missing")
-        if nums(s["en"]) != nums(t):
-            (numnote if code in FREE_NUM else hard).append(f"{s['id']}: numbers {nums(s['en'])} -> {nums(t)} | {t}")
+        tn = nums(t)
+        for m, k in MONTHS.items():  # "tháng 9", "9月": a month written as a number is fine
+            if re.search(rf"\b{m}\b", s["en"]) and str(k) in tn and tn.count(str(k)) > nums(s["en"]).count(str(k)):
+                tn.remove(str(k))
+        if nums(s["en"]) != tn:
+            numnote.append(f"{s['id']}: numbers {nums(s['en'])} -> {nums(t)} | {t}")
         L = width(t) / 2 if code in CJK else len(t)
         cps = L / max(s["sec"], 0.3)
         ratio = (width(t) if code in CJK else len(t)) / len(s["en"])

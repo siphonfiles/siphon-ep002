@@ -1,0 +1,790 @@
+[
+ {
+  "id": 1,
+  "text": "Half drie 's nachts, in Azië."
+ },
+ {
+  "id": 2,
+  "text": "Een piepkleine transfer verlaat de cryptobeurs Bitget."
+ },
+ {
+  "id": 3,
+  "text": "Niemand kijkt ernaar."
+ },
+ {
+  "id": 4,
+  "text": "Nog geen drie uur later is ongeveer 388 miljoen dollar weg."
+ },
+ {
+  "id": 5,
+  "text": "En Bitget zegt dat er geen enkele sleutel is gestolen."
+ },
+ {
+  "id": 6,
+  "text": "Om 19:05 ging het alarm af."
+ },
+ {
+  "id": 7,
+  "text": "Bitget bevroor alle opnames van klanten."
+ },
+ {
+  "id": 8,
+  "text": "En het geld bleef nog twee uur wegstromen."
+ },
+ {
+  "id": 9,
+  "text": "En het eerste teken dat er iemand binnen was?"
+ },
+ {
+  "id": 10,
+  "text": "Dat staat in de logs. Gedateerd 24 dagen eerder."
+ },
+ {
+  "id": 11,
+  "text": "Om te begrijpen waarom dit pijn doet: ga 19 maanden terug. Februari 2025."
+ },
+ {
+  "id": 12,
+  "text": "De beurs Bybit heeft net 1,5 miljard dollar verloren."
+ },
+ {
+  "id": 13,
+  "text": "De FBI wijst Noord-Korea aan."
+ },
+ {
+  "id": 14,
+  "text": "Klanten haasten zich om hun geld weg te halen."
+ },
+ {
+  "id": 15,
+  "text": "Diezelfde dag stuurt een concurrent hulp."
+ },
+ {
+  "id": 16,
+  "text": "Bitget leent Bybit 40.000 ether om de opnames draaiende te houden."
+ },
+ {
+  "id": 17,
+  "text": "Geen rente. Geen onderpand."
+ },
+ {
+  "id": 18,
+  "text": "Onthoud die lening."
+ },
+ {
+  "id": 19,
+  "text": "Die komt aan het eind terug."
+ },
+ {
+  "id": 20,
+  "text": "Op 24 september 2026 werd de beurs die had geholpen zelf beroofd."
+ },
+ {
+  "id": 21,
+  "text": "Destijds de grootste cryptodiefstal van het jaar."
+ },
+ {
+  "id": 22,
+  "text": "Ik ben Thomas Archer, de AI-verteller van Siphon Files."
+ },
+ {
+  "id": 23,
+  "text": "Elke bewering in deze aflevering heeft een bron, en ze staan allemaal in de beschrijving."
+ },
+ {
+  "id": 24,
+  "text": "Nu komt het vreemde."
+ },
+ {
+  "id": 25,
+  "text": "Bitget zegt dat er geen enkele privésleutel is gecompromitteerd."
+ },
+ {
+  "id": 26,
+  "text": "Dus hoe steel je 388 miljoen dollar zonder de sleutels?"
+ },
+ {
+  "id": 27,
+  "text": "Je laat de beurs voor jou tekenen."
+ },
+ {
+  "id": 28,
+  "text": "Een beurs bewaart het meeste geld in cold wallets."
+ },
+ {
+  "id": 29,
+  "text": "Offline, traag, moeilijk bereikbaar."
+ },
+ {
+  "id": 30,
+  "text": "Daar is niet aan gekomen."
+ },
+ {
+  "id": 31,
+  "text": "Warm wallets houden een reserve."
+ },
+ {
+  "id": 32,
+  "text": "Hot wallets betalen je opnames automatisch uit, dag en nacht."
+ },
+ {
+  "id": 33,
+  "text": "Als je op ‘opnemen’ drukt, gaat er een verzoek een pijplijn in."
+ },
+ {
+  "id": 34,
+  "text": "Risicochecks bekijken het."
+ },
+ {
+  "id": 35,
+  "text": "Dan zet een ondertekeningsdienst er een cryptografische handtekening op, en het geld vertrekt."
+ },
+ {
+  "id": 36,
+  "text": "Zonder die handtekening gaat er niets weg."
+ },
+ {
+  "id": 37,
+  "text": "Mét die handtekening alles."
+ },
+ {
+  "id": 38,
+  "text": "De aanvaller had het geheim achter de handtekening dus nooit nodig."
+ },
+ {
+  "id": 39,
+  "text": "Hij moest dicht bij de machine komen die het gebruikt."
+ },
+ {
+  "id": 40,
+  "text": "En daarvoor had hij een ingang nodig waar niemand op zou letten."
+ },
+ {
+  "id": 41,
+  "text": "31 augustus. De vroegste kwaadaardige activiteit die onderzoekers in de logs vonden."
+ },
+ {
+  "id": 42,
+  "text": "Niet in de wallets."
+ },
+ {
+  "id": 43,
+  "text": "In een beveiligingsproduct."
+ },
+ {
+  "id": 44,
+  "text": "Een van twee tools van derden waarmee Bitget zijn systemen beschermde."
+ },
+ {
+  "id": 45,
+  "text": "De onderzoekers noemen ze product A en product B."
+ },
+ {
+  "id": 46,
+  "text": "De leverancier is niet bekendgemaakt."
+ },
+ {
+  "id": 47,
+  "text": "In product A liet een lek dat nog niemand had gevonden,"
+ },
+ {
+  "id": 48,
+  "text": "een zero-day, de aanvaller een verborgen script uitvoeren."
+ },
+ {
+  "id": 49,
+  "text": "Het script vond een databasewachtwoord, gewoon in platte tekst."
+ },
+ {
+  "id": 50,
+  "text": "Een reservesleutel onder de deurmat geplakt."
+ },
+ {
+  "id": 51,
+  "text": "Alleen lag die deurmat in het beveiligingskantoor."
+ },
+ {
+  "id": 52,
+  "text": "Vanaf hier weten wij dat er iemand binnen is. Bitget niet."
+ },
+ {
+  "id": 53,
+  "text": "Eén kanttekening. Mandiant dateert de geprivilegieerde toegang van de aanvaller pas op 24 september."
+ },
+ {
+  "id": 54,
+  "text": "De twee rapporten zijn niet op elkaar afgestemd."
+ },
+ {
+  "id": 55,
+  "text": "Maar een verborgen script op de pc van een bewaker verplaatst geen geld."
+ },
+ {
+  "id": 56,
+  "text": "Om bij de wallets te komen, had hij iets anders nodig."
+ },
+ {
+  "id": 57,
+  "text": "Een naam. Een echte."
+ },
+ {
+  "id": 58,
+  "text": "Laat me hier even stilstaan."
+ },
+ {
+  "id": 59,
+  "text": "Bedrijven kopen beveiligingsproducten om de deuren te bewaken."
+ },
+ {
+  "id": 60,
+  "text": "Ze geven ze diepe toegang, want zo zien ze alles."
+ },
+ {
+  "id": 61,
+  "text": "Wie de bewaker overneemt, hoeft dus geen enkele deur te forceren."
+ },
+ {
+  "id": 62,
+  "text": "Die staat al in elke gang."
+ },
+ {
+  "id": 63,
+  "text": "Hetzelfde script had zich verspreid."
+ },
+ {
+  "id": 64,
+  "text": "Een tweede machine op 23 september."
+ },
+ {
+  "id": 65,
+  "text": "Een derde in de nacht van de diefstal."
+ },
+ {
+  "id": 66,
+  "text": "Om 16:07 logde iemand in op het beheerplatform van product B."
+ },
+ {
+  "id": 67,
+  "text": "Met de identiteit van een echte medewerker van Bitget."
+ },
+ {
+  "id": 68,
+  "text": "Die persoon was er niet."
+ },
+ {
+  "id": 69,
+  "text": "Bitget zegt dat de inloggegevens via de zero-day zijn gestolen,"
+ },
+ {
+  "id": 70,
+  "text": "en dat het iemand van binnenuit voorlopig heeft uitgesloten."
+ },
+ {
+  "id": 71,
+  "text": "Mandiant vond een webshell op appliance B, en een kanaal terug naar de aanvaller."
+ },
+ {
+  "id": 72,
+  "text": "Van daaruit bewoog hij zich zijwaarts, naar de wallet-jobserver in productie."
+ },
+ {
+  "id": 73,
+  "text": "De machine die opnametransacties opbouwt."
+ },
+ {
+  "id": 74,
+  "text": "En installeerde er kwaadaardige pakketten op."
+ },
+ {
+  "id": 75,
+  "text": "Nu stond hij naast het geld."
+ },
+ {
+  "id": 76,
+  "text": "Maar elke opname moest nog langs één ding. De risicocontrole."
+ },
+ {
+  "id": 77,
+  "text": "Om 17:49 startte een tool op de wallethost."
+ },
+ {
+  "id": 78,
+  "text": "SlowMist haalde die later terug uit verwijderde bestanden."
+ },
+ {
+  "id": 79,
+  "text": "Die vocht de risicocontrole niet aan."
+ },
+ {
+  "id": 80,
+  "text": "Die vervalste de antwoorden ervan."
+ },
+ {
+  "id": 81,
+  "text": "Daarna bouwde de tool opnameverzoeken"
+ },
+ {
+  "id": 82,
+  "text": "en duwde die in het normale opnameproces van Bitget."
+ },
+ {
+  "id": 83,
+  "text": "Volgens één analyse"
+ },
+ {
+  "id": 84,
+  "text": "geloofde het systeem de aanvrager gewoon op zijn woord dat de checks geslaagd waren."
+ },
+ {
+  "id": 85,
+  "text": "Op papier was dat genoeg."
+ },
+ {
+  "id": 86,
+  "text": "Er was maar één manier om te weten of het in de praktijk werkte."
+ },
+ {
+  "id": 87,
+  "text": "Proberen."
+ },
+ {
+  "id": 88,
+  "text": "18:31. Twee piepkleine transfers."
+ },
+ {
+  "id": 89,
+  "text": "93 TRX. Dan 0,84 ether."
+ },
+ {
+  "id": 90,
+  "text": "Tests. Volgens de CEO van Bitget lagen ze onder de risicodrempel, dus ging er geen alarm af."
+ },
+ {
+  "id": 91,
+  "text": "En er was iets vreemds aan deze transfers."
+ },
+ {
+  "id": 92,
+  "text": "Iets wat hen had kunnen verraden. Onthoud het."
+ },
+ {
+  "id": 93,
+  "text": "Dan niets. Bijna een halfuur lang."
+ },
+ {
+  "id": 94,
+  "text": "18:58. 34,75 miljoen USDT gaat eruit in één transfer."
+ },
+ {
+  "id": 95,
+  "text": "Nog steeds geen alarm."
+ },
+ {
+  "id": 96,
+  "text": "Dus stopte hij met testen."
+ },
+ {
+  "id": 97,
+  "text": "19:01. Zeven transfers. Vijf blockchains. Vijftien seconden."
+ },
+ {
+  "id": 98,
+  "text": "19:03. Nog één kleine test, vanuit een andere wallet."
+ },
+ {
+  "id": 99,
+  "text": "19:05. De afstemming van Bitget signaleert eindelijk het gat."
+ },
+ {
+  "id": 100,
+  "text": "Als je op dat moment geld bij Bitget had,"
+ },
+ {
+  "id": 101,
+  "text": "zag je dit: je opname werd stopgezet."
+ },
+ {
+  "id": 102,
+  "text": "De risicocontrole had opnames geblokkeerd voor alle klanten op het platform."
+ },
+ {
+  "id": 103,
+  "text": "19:14. Noodsituatie van het hoogste niveau."
+ },
+ {
+  "id": 104,
+  "text": "19:16."
+ },
+ {
+  "id": 105,
+  "text": "Vijf transfers. Vijf chains. Negen seconden."
+ },
+ {
+  "id": 106,
+  "text": "Ongeveer 203 miljoen dollar."
+ },
+ {
+  "id": 107,
+  "text": "De klanten waren 11 minuten eerder buitengesloten."
+ },
+ {
+  "id": 108,
+  "text": "De aanvaller niet."
+ },
+ {
+  "id": 109,
+  "text": "Klantopnames blokkeren was de verkeerde schakelaar."
+ },
+ {
+  "id": 110,
+  "text": "De vervalste verzoeken waren geen klantopnames."
+ },
+ {
+  "id": 111,
+  "text": "Volgens één analyse"
+ },
+ {
+  "id": 112,
+  "text": "stond er bij de warm wallets niets tussen een verzoek en een handtekening."
+ },
+ {
+  "id": 113,
+  "text": "Geen tweede persoon."
+ },
+ {
+  "id": 114,
+  "text": "Geen lijst met toegestane bestemmingen."
+ },
+ {
+  "id": 115,
+  "text": "Dus bleef de ondertekeningsdienst draaien."
+ },
+ {
+  "id": 116,
+  "text": "Nog 2 uur en 39 minuten na de eerste melding."
+ },
+ {
+  "id": 117,
+  "text": "Twee afzonderlijke schattingen stellen het geld dat"
+ },
+ {
+  "id": 118,
+  "text": "na het alarm vertrok op ongeveer 238 miljoen dollar."
+ },
+ {
+  "id": 119,
+  "text": "Meer dan de helft van de buit."
+ },
+ {
+  "id": 120,
+  "text": "Om 20:40 begon Bitget geld naar cold storage te verplaatsen."
+ },
+ {
+  "id": 121,
+  "text": "Nog steeds niet zeker of er sleutels waren gestolen."
+ },
+ {
+  "id": 122,
+  "text": "De laatste getraceerde transfer vertrok om 21:23."
+ },
+ {
+  "id": 123,
+  "text": "Daarna probeerde de aanvaller opnamegegevens direct in de database te herschrijven."
+ },
+ {
+  "id": 124,
+  "text": "Sporen wissen, of op zoek naar meer."
+ },
+ {
+  "id": 125,
+  "text": "De rapporten zeggen het niet."
+ },
+ {
+  "id": 126,
+  "text": "Twee valse Bitcoin-orders gaven een foutmelding."
+ },
+ {
+  "id": 127,
+  "text": "Om 21:44 legde Bitget de opnamediensten stil, het ondertekenen inbegrepen."
+ },
+ {
+  "id": 128,
+  "text": "De volgende ochtend"
+ },
+ {
+  "id": 129,
+  "text": "vond Bitget de hoofdoorzaak en meldde de diefstal bij de autoriteiten."
+ },
+ {
+  "id": 130,
+  "text": "En toen onderzoekers teruggingen naar die eerste testtransfers,"
+ },
+ {
+  "id": 131,
+  "text": "lag het vreemde detail daar gewoon."
+ },
+ {
+  "id": 132,
+  "text": "Elke Ethereum-transfer stelt een brandstoflimiet in. Gas."
+ },
+ {
+  "id": 133,
+  "text": "Gewone uitbetalingen van Bitget aan klanten gebruikten zo'n 63.000."
+ },
+ {
+  "id": 134,
+  "text": "De transfers van de aanvaller gebruikten precies 100.000, of 200.000."
+ },
+ {
+  "id": 135,
+  "text": "In de 8 dagen daarvoor verstuurden die wallets 35.678 transacties."
+ },
+ {
+  "id": 136,
+  "text": "Geen enkele uitbetaling aan een klant deed dat."
+ },
+ {
+  "id": 137,
+  "text": "Op Zcash viel het nog meer op."
+ },
+ {
+  "id": 138,
+  "text": "Elke gestolen transfer bundelde zo'n 1.000 muntstukjes."
+ },
+ {
+  "id": 139,
+  "text": "De grootste transactie van die wallet had er tot dan toe 54 gebruikt."
+ },
+ {
+  "id": 140,
+  "text": "De vervalste commando's werden na elke transfer gewist."
+ },
+ {
+  "id": 141,
+  "text": "De vingerafdrukken niet."
+ },
+ {
+  "id": 142,
+  "text": "Niemand lette erop."
+ },
+ {
+  "id": 143,
+  "text": "Nu had de dief 388 miljoen dollar."
+ },
+ {
+  "id": 144,
+  "text": "En een nieuw probleem: hoe hij het kon houden."
+ },
+ {
+  "id": 145,
+  "text": "De stablecoins gingen eerst, want stablecoins kunnen worden bevroren."
+ },
+ {
+  "id": 146,
+  "text": "Alle USDT werd binnen 20 minuten omgewisseld voor ether."
+ },
+ {
+  "id": 147,
+  "text": "De XRP ging via THORChain naar Bitcoin."
+ },
+ {
+  "id": 148,
+  "text": "Een deel van de Zcash verdween in een privépool, waar het niet te volgen is."
+ },
+ {
+  "id": 149,
+  "text": "Bitget vroeg THORChain de adressen te blokkeren."
+ },
+ {
+  "id": 150,
+  "text": "THORChain weigerde, met een beroep op zijn permissionless ontwerp."
+ },
+ {
+  "id": 151,
+  "text": "Uiteindelijk werd minder dan 0,3% bevroren."
+ },
+ {
+  "id": 152,
+  "text": "In november kwam de Bitcoin weer in beweging."
+ },
+ {
+  "id": 153,
+  "text": "Ongeveer 161 miljoen dollar in 11 dagen, grotendeels via CoinJoin,"
+ },
+ {
+  "id": 154,
+  "text": "dat de munten van veel mensen mengt tot één transactie."
+ },
+ {
+  "id": 155,
+  "text": "En wie het verplaatste, verstopte zich niet erg goed."
+ },
+ {
+  "id": 156,
+  "text": "ZachXBT zegt dat de witwassers om klantenservice vroegen"
+ },
+ {
+  "id": 157,
+  "text": "in de openbare chats van de diensten die ze gebruikten."
+ },
+ {
+  "id": 158,
+  "text": "Mislukte swaps. Ontbrekende uitbetalingen."
+ },
+ {
+  "id": 159,
+  "text": "Volgens hem had een van hen al eerder gestolen geld verwerkt."
+ },
+ {
+  "id": 160,
+  "text": "Van de exploit bij Kelp DAO in april."
+ },
+ {
+  "id": 161,
+  "text": "Dus wie zat erachter?"
+ },
+ {
+  "id": 162,
+  "text": "In de nacht van de hack zei de CEO van Bitget, Gracy Chen,"
+ },
+ {
+  "id": 163,
+  "text": "dat enkele IP-adressen overeenkwamen met VPN-diensten van een Noord-Koreaanse groep."
+ },
+ {
+  "id": 164,
+  "text": "Vier dagen later was ze voorzichtiger."
+ },
+ {
+  "id": 165,
+  "text": "Dat, zei ze, was gebaseerd op voorlopige aanwijzingen."
+ },
+ {
+  "id": 166,
+  "text": "De analisten van Chainalysis, Elliptic en TRM Labs neigen allemaal dezelfde kant op."
+ },
+ {
+  "id": 167,
+  "text": "Toen, 5 weken later, verloor Binance meer dan 6 miljard dollar."
+ },
+ {
+  "id": 168,
+  "text": "En Chainalysis zag het gestolen geld van Binance"
+ },
+ {
+  "id": 169,
+  "text": "op de blockchain samenkomen met het geld van Bitget."
+ },
+ {
+  "id": 170,
+  "text": "ZachXBT zegt dat beide via THORChain op hetzelfde adres aankwamen."
+ },
+ {
+  "id": 171,
+  "text": "Twee dagen na de diefstal bij Binance"
+ },
+ {
+  "id": 172,
+  "text": "noemde de FBI de daders: TraderTraitor uit Noord-Korea."
+ },
+ {
+  "id": 173,
+  "text": "Over Bitget heeft geen enkele regering iets gezegd."
+ },
+ {
+  "id": 174,
+  "text": "En het rapport van Mandiant noemt helemaal niemand."
+ },
+ {
+  "id": 175,
+  "text": "Wat ons terugbrengt bij die lening."
+ },
+ {
+  "id": 176,
+  "text": "In februari 2025, toen Bybit werd beroofd, stuurde Bitget dezelfde dag 40.000 ether."
+ },
+ {
+  "id": 177,
+  "text": "Geen rente. Geen onderpand."
+ },
+ {
+  "id": 178,
+  "text": "De FBI schreef die diefstal toe aan Noord-Korea."
+ },
+ {
+  "id": 179,
+  "text": "Negentien maanden later stroomde het geld weg bij Bitget."
+ },
+ {
+  "id": 180,
+  "text": "Geen regering heeft iemand aangewezen."
+ },
+ {
+  "id": 181,
+  "text": "Maar de analisten wijzen dezelfde kant op."
+ },
+ {
+  "id": 182,
+  "text": "Had je geld bij Bitget, dan ben je het niet kwijt."
+ },
+ {
+  "id": 183,
+  "text": "Bitget zegt dat het het verlies uit zijn eigen beschermingsfonds heeft gedekt."
+ },
+ {
+  "id": 184,
+  "text": "Tegen 2 oktober was elke opname weer mogelijk."
+ },
+ {
+  "id": 185,
+  "text": "Het fonds is weer aangevuld tot iets meer dan 300 miljoen dollar."
+ },
+ {
+  "id": 186,
+  "text": "Nog altijd minder dan voorheen."
+ },
+ {
+  "id": 187,
+  "text": "Het lek is gedicht."
+ },
+ {
+  "id": 188,
+  "text": "Kritieke handelingen vereisen nu meer dan één goedkeuring."
+ },
+ {
+  "id": 189,
+  "text": "En Bitget zegt dat het herziet hoe het zijn beveiligingsleveranciers kiest."
+ },
+ {
+  "id": 190,
+  "text": "De leverancier is nog steeds niet bekendgemaakt."
+ },
+ {
+  "id": 191,
+  "text": "Het begon met een transfer van 93 TRX, om half drie 's nachts."
+ },
+ {
+  "id": 192,
+  "text": "Niemand keek ernaar."
+ },
+ {
+  "id": 193,
+  "text": "Bitget kocht tools om de deur te bewaken."
+ },
+ {
+  "id": 194,
+  "text": "Wekenlang had misschien iemand anders ze in handen."
+ },
+ {
+  "id": 195,
+  "text": "En toen het alarm eindelijk afging, sloot de beurs haar klanten buiten,"
+ },
+ {
+  "id": 196,
+  "text": "en liet de ondertekeningsmachine doordraaien."
+ },
+ {
+  "id": 197,
+  "text": "Ik ben Thomas Archer. Dit was Siphon Files."
+ }
+]

@@ -1,0 +1,790 @@
+[
+ {
+  "id": 1,
+  "text": "Asya'da saat gece iki buçuk."
+ },
+ {
+  "id": 2,
+  "text": "Kripto borsası Bitget'ten minicik bir transfer çıkıyor."
+ },
+ {
+  "id": 3,
+  "text": "Kimse ona bakmıyor."
+ },
+ {
+  "id": 4,
+  "text": "Üç saat bile geçmeden yaklaşık 388 milyon dolar yok oluyor."
+ },
+ {
+  "id": 5,
+  "text": "Ve Bitget tek bir anahtarın bile çalınmadığını söylüyor."
+ },
+ {
+  "id": 6,
+  "text": "Saat 19:05'te alarm çaldı."
+ },
+ {
+  "id": 7,
+  "text": "Bitget tüm müşteri çekimlerini dondurdu."
+ },
+ {
+  "id": 8,
+  "text": "Ama para iki saat daha çıkmaya devam etti."
+ },
+ {
+  "id": 9,
+  "text": "Peki birinin içeride olduğuna dair ilk işaret?"
+ },
+ {
+  "id": 10,
+  "text": "Kayıtlarda. 24 gün öncesine ait."
+ },
+ {
+  "id": 11,
+  "text": "Bunun neden acıttığını anlamak için 19 ay geri gidelim. Şubat 2025."
+ },
+ {
+  "id": 12,
+  "text": "Bybit borsası az önce 1,5 milyar dolar kaybetti."
+ },
+ {
+  "id": 13,
+  "text": "FBI suçu Kuzey Kore'ye yüklüyor."
+ },
+ {
+  "id": 14,
+  "text": "Müşteriler paralarını çekmek için koşuşturuyor."
+ },
+ {
+  "id": 15,
+  "text": "Aynı gün bir rakip yardım gönderiyor."
+ },
+ {
+  "id": 16,
+  "text": "Bitget, çekimler sürsün diye Bybit'e 40.000 ETH borç veriyor."
+ },
+ {
+  "id": 17,
+  "text": "Faiz yok. Teminat yok."
+ },
+ {
+  "id": 18,
+  "text": "Bu borcu unutma."
+ },
+ {
+  "id": 19,
+  "text": "Sonda yeniden karşımıza çıkacak."
+ },
+ {
+  "id": 20,
+  "text": "24 Eylül 2026'da yardıma koşan borsa, soyulan borsa oldu."
+ },
+ {
+  "id": 21,
+  "text": "O sırada yılın en büyük kripto hırsızlığıydı."
+ },
+ {
+  "id": 22,
+  "text": "Ben Thomas Archer, Siphon Files'ın yapay zekâ anlatıcısı."
+ },
+ {
+  "id": 23,
+  "text": "Bu bölümdeki her iddianın bir kaynağı var ve hepsi açıklamada."
+ },
+ {
+  "id": 24,
+  "text": "İşin tuhaf yanı şu."
+ },
+ {
+  "id": 25,
+  "text": "Bitget, tek bir özel anahtarın bile ele geçirilmediğini söylüyor."
+ },
+ {
+  "id": 26,
+  "text": "Peki anahtarlar olmadan 388 milyon dolar nasıl çalınır?"
+ },
+ {
+  "id": 27,
+  "text": "Borsaya senin yerine imzalatırsın."
+ },
+ {
+  "id": 28,
+  "text": "Bir borsa parasının çoğunu soğuk cüzdanlarda tutar."
+ },
+ {
+  "id": 29,
+  "text": "Çevrimdışı, yavaş, ulaşması zor."
+ },
+ {
+  "id": 30,
+  "text": "Onlara dokunulmadı."
+ },
+ {
+  "id": 31,
+  "text": "Ilık cüzdanlar bir rezerv tutar."
+ },
+ {
+  "id": 32,
+  "text": "Sıcak cüzdanlar senin çekimlerini günün her saati otomatik olarak öder."
+ },
+ {
+  "id": 33,
+  "text": "“Çek” düğmesine bastığında bir talep işlem hattına girer."
+ },
+ {
+  "id": 34,
+  "text": "Risk kontrolleri inceler."
+ },
+ {
+  "id": 35,
+  "text": "Sonra imzalama servisi ona kriptografik bir imza atar ve para hareket eder."
+ },
+ {
+  "id": 36,
+  "text": "O imza olmadan hiçbir şey çıkmaz."
+ },
+ {
+  "id": 37,
+  "text": "İmzayla her şey çıkar."
+ },
+ {
+  "id": 38,
+  "text": "Yani saldırganın imzanın ardındaki sırra hiç ihtiyacı yoktu."
+ },
+ {
+  "id": 39,
+  "text": "Onu kullanan makineye yaklaşması gerekiyordu."
+ },
+ {
+  "id": 40,
+  "text": "Bunun için de kimsenin izlemeyeceği bir giriş yolu lazımdı."
+ },
+ {
+  "id": 41,
+  "text": "31 Ağustos. Araştırmacıların kayıtlarda bulduğu en erken kötü amaçlı etkinlik bu."
+ },
+ {
+  "id": 42,
+  "text": "Cüzdanların içinde değil."
+ },
+ {
+  "id": 43,
+  "text": "Bir güvenlik ürününün içinde."
+ },
+ {
+  "id": 44,
+  "text": "Bitget'in sistemlerini korumak için kullandığı iki üçüncü taraf araçtan biri."
+ },
+ {
+  "id": 45,
+  "text": "Araştırmacılar bunlara Ürün A ve Ürün B diyor."
+ },
+ {
+  "id": 46,
+  "text": "Tedarikçinin adı açıklanmadı."
+ },
+ {
+  "id": 47,
+  "text": "Ürün A'da henüz kimsenin bulmadığı bir açık,"
+ },
+ {
+  "id": 48,
+  "text": "yani sıfırıncı gün açığı, saldırgana gizli bir betik çalıştırttı."
+ },
+ {
+  "id": 49,
+  "text": "Betik, düz metin hâlinde duran bir veritabanı şifresi buldu."
+ },
+ {
+  "id": 50,
+  "text": "Paspasın altına bantlanmış yedek bir anahtar."
+ },
+ {
+  "id": 51,
+  "text": "Ne var ki paspas güvenlik odasındaydı."
+ },
+ {
+  "id": 52,
+  "text": "Bu noktadan sonra birinin içeride olduğunu biliyoruz. Bitget bilmiyor."
+ },
+ {
+  "id": 53,
+  "text": "Bir çekince: Mandiant, saldırganın ayrıcalıklı erişimini en erken 24 Eylül'e tarihliyor."
+ },
+ {
+  "id": 54,
+  "text": "İki rapor henüz birbiriyle uzlaştırılmadı."
+ },
+ {
+  "id": 55,
+  "text": "Ama bekçinin makinesindeki gizli bir betik para taşıyamaz."
+ },
+ {
+  "id": 56,
+  "text": "Cüzdanlara yaklaşmak için başka bir şeye ihtiyaçları vardı."
+ },
+ {
+  "id": 57,
+  "text": "Bir isim. Gerçek bir isim."
+ },
+ {
+  "id": 58,
+  "text": "Burada bir saniye duralım."
+ },
+ {
+  "id": 59,
+  "text": "Şirketler kapıları izlemek için güvenlik ürünleri satın alır."
+ },
+ {
+  "id": 60,
+  "text": "Onlara derin erişim verirler, çünkü her şeyi ancak böyle görürler."
+ },
+ {
+  "id": 61,
+  "text": "Yani biri bekçiyi ele geçirirse, hiçbir kapıyı kırması gerekmez."
+ },
+ {
+  "id": 62,
+  "text": "Zaten her koridorda duruyordur."
+ },
+ {
+  "id": 63,
+  "text": "Aynı betik yayılmıştı."
+ },
+ {
+  "id": 64,
+  "text": "23 Eylül'de ikinci bir makine."
+ },
+ {
+  "id": 65,
+  "text": "Üçüncüsü, hırsızlık gecesi."
+ },
+ {
+  "id": 66,
+  "text": "Saat 16:07'de biri Ürün B'nin yönetim platformuna giriş yaptı."
+ },
+ {
+  "id": 67,
+  "text": "Gerçek bir Bitget çalışanının kimliğiyle."
+ },
+ {
+  "id": 68,
+  "text": "O kişi orada değildi."
+ },
+ {
+  "id": 69,
+  "text": "Bitget, kimlik bilgilerinin sıfırıncı gün açığıyla çalındığını"
+ },
+ {
+  "id": 70,
+  "text": "ve içeriden birinin müdahalesini şimdilik dışladığını söylüyor."
+ },
+ {
+  "id": 71,
+  "text": "Mandiant, B cihazında bir web shell ve saldırgana uzanan bir kanal buldu."
+ },
+ {
+  "id": 72,
+  "text": "Oradan yanal hareketle üretimdeki cüzdan iş sunucusuna geçtiler."
+ },
+ {
+  "id": 73,
+  "text": "Çekim işlemlerini oluşturan makine."
+ },
+ {
+  "id": 74,
+  "text": "Ve üzerine kötü amaçlı paketler kurdular."
+ },
+ {
+  "id": 75,
+  "text": "Artık paranın hemen yanındaydılar."
+ },
+ {
+  "id": 76,
+  "text": "Ama her çekim hâlâ bir engeli daha aşmak zorundaydı. Risk kontrolü."
+ },
+ {
+  "id": 77,
+  "text": "Saat 17:49'da cüzdan sunucusunda bir araç çalışmaya başladı."
+ },
+ {
+  "id": 78,
+  "text": "SlowMist onu daha sonra silinmiş dosyalardan kurtardı."
+ },
+ {
+  "id": 79,
+  "text": "Risk kontrolüyle savaşmadı."
+ },
+ {
+  "id": 80,
+  "text": "Onun yanıtlarını taklit etti."
+ },
+ {
+  "id": 81,
+  "text": "Sonra çekim talepleri oluşturdu"
+ },
+ {
+  "id": 82,
+  "text": "ve bunları Bitget'in normal çekim sürecine soktu."
+ },
+ {
+  "id": 83,
+  "text": "Bir analize göre"
+ },
+ {
+  "id": 84,
+  "text": "sistem, kontrollerin geçildiğine dair talep edenin sözüne öylece güvendi."
+ },
+ {
+  "id": 85,
+  "text": "Kâğıt üzerinde bu yeterliydi."
+ },
+ {
+  "id": 86,
+  "text": "Pratikte işe yarayıp yaramadığını anlamanın tek bir yolu vardı."
+ },
+ {
+  "id": 87,
+  "text": "Denemek."
+ },
+ {
+  "id": 88,
+  "text": "18:31. İki minicik transfer."
+ },
+ {
+  "id": 89,
+  "text": "93 TRX. Sonra 0,84 ETH."
+ },
+ {
+  "id": 90,
+  "text": "Testler. Bitget CEO'suna göre risk eşiğinin altındaydılar, bu yüzden alarm çalmadı."
+ },
+ {
+  "id": 91,
+  "text": "Ve bu transferlerde tuhaf bir şey vardı."
+ },
+ {
+  "id": 92,
+  "text": "Onları ele verebilecek bir şey. Bunu aklında tut."
+ },
+ {
+  "id": 93,
+  "text": "Sonra hiçbir şey. Neredeyse yarım saat boyunca."
+ },
+ {
+  "id": 94,
+  "text": "18:58. 34,75 milyon USDT tek bir transferle çıkıyor."
+ },
+ {
+  "id": 95,
+  "text": "Hâlâ alarm yok."
+ },
+ {
+  "id": 96,
+  "text": "Bu yüzden denemeyi bıraktılar."
+ },
+ {
+  "id": 97,
+  "text": "19:01. Yedi transfer. Beş blokzincir. On beş saniye."
+ },
+ {
+  "id": 98,
+  "text": "19:03. Farklı bir cüzdandan küçük bir test daha."
+ },
+ {
+  "id": 99,
+  "text": "19:05. Bitget'in mutabakat sistemi sonunda farkı yakalıyor."
+ },
+ {
+  "id": 100,
+  "text": "O anda Bitget'te paran vardıysa,"
+ },
+ {
+  "id": 101,
+  "text": "gördüğün şuydu: çekimin durdu."
+ },
+ {
+  "id": 102,
+  "text": "Risk kontrolü platformdaki tüm müşterilerin çekimlerini engellemişti."
+ },
+ {
+  "id": 103,
+  "text": "19:14. En üst seviye acil durum."
+ },
+ {
+  "id": 104,
+  "text": "19:16."
+ },
+ {
+  "id": 105,
+  "text": "Beş transfer. Beş zincir. Dokuz saniye."
+ },
+ {
+  "id": 106,
+  "text": "Yaklaşık 203 milyon dolar."
+ },
+ {
+  "id": 107,
+  "text": "Müşterilerin erişimi 11 dakika önce kesilmişti."
+ },
+ {
+  "id": 108,
+  "text": "Saldırganınki kesilmemişti."
+ },
+ {
+  "id": 109,
+  "text": "Müşteri çekimlerini engellemek, yanlış şalteri indirmekti."
+ },
+ {
+  "id": 110,
+  "text": "Sahte talepler müşteri çekimi değildi."
+ },
+ {
+  "id": 111,
+  "text": "Bir analize göre"
+ },
+ {
+  "id": 112,
+  "text": "ılık cüzdanlarda bir talep ile imza arasında hiçbir şey yoktu."
+ },
+ {
+  "id": 113,
+  "text": "İkinci bir kişi yok."
+ },
+ {
+  "id": 114,
+  "text": "İzin verilen adres listesi yok."
+ },
+ {
+  "id": 115,
+  "text": "Böylece imzalama servisi çalışmaya devam etti."
+ },
+ {
+  "id": 116,
+  "text": "İlk uyarıdan sonra 2 saat 39 dakika boyunca."
+ },
+ {
+  "id": 117,
+  "text": "İki ayrı tahmine göre alarmdan sonra"
+ },
+ {
+  "id": 118,
+  "text": "çıkan para yaklaşık 238 milyon dolar."
+ },
+ {
+  "id": 119,
+  "text": "Hırsızlığın yarısından fazlası."
+ },
+ {
+  "id": 120,
+  "text": "Saat 20:40'ta Bitget fonları soğuk depolamaya taşımaya başladı."
+ },
+ {
+  "id": 121,
+  "text": "Anahtarların alınıp alınmadığından hâlâ emin değildi."
+ },
+ {
+  "id": 122,
+  "text": "İzi sürülen son transfer 21:23'te çıktı."
+ },
+ {
+  "id": 123,
+  "text": "Sonra saldırgan çekim kayıtlarını doğrudan veritabanında değiştirmeye çalıştı."
+ },
+ {
+  "id": 124,
+  "text": "İz örtmek mi, daha fazlası mı?"
+ },
+ {
+  "id": 125,
+  "text": "Raporlar söylemiyor."
+ },
+ {
+  "id": 126,
+  "text": "İki sahte Bitcoin emri hata verdi."
+ },
+ {
+  "id": 127,
+  "text": "Saat 21:44'te Bitget, imzalama dahil çekim servislerini kapattı."
+ },
+ {
+  "id": 128,
+  "text": "Ertesi sabah"
+ },
+ {
+  "id": 129,
+  "text": "Bitget kök nedeni buldu ve hırsızlığı kolluk kuvvetlerine bildirdi."
+ },
+ {
+  "id": 130,
+  "text": "Ve araştırmacılar o ilk test transferlerine geri döndüğünde,"
+ },
+ {
+  "id": 131,
+  "text": "tuhaf ayrıntı tam oradaydı."
+ },
+ {
+  "id": 132,
+  "text": "Her Ethereum transferi bir yakıt limiti belirler. Gas."
+ },
+ {
+  "id": 133,
+  "text": "Bitget'in normal müşteri ödemeleri yaklaşık 63.000 kullanıyordu."
+ },
+ {
+  "id": 134,
+  "text": "Saldırganın transferleri ise tam 100.000 ya da 200.000 kullandı."
+ },
+ {
+  "id": 135,
+  "text": "Önceki 8 günde o cüzdanlar 35.678 işlem göndermişti."
+ },
+ {
+  "id": 136,
+  "text": "Tek bir müşteri ödemesi bile bunu yapmamıştı."
+ },
+ {
+  "id": 137,
+  "text": "Zcash'te iz daha da göze batıyordu."
+ },
+ {
+  "id": 138,
+  "text": "Çalınan her transfer yaklaşık 1.000 küçük coin parçasını bir araya getirdi."
+ },
+ {
+  "id": 139,
+  "text": "Cüzdanın bundan önceki en büyük işlemi 54 parça kullanmıştı."
+ },
+ {
+  "id": 140,
+  "text": "Sahte komutlar her transferden sonra silindi."
+ },
+ {
+  "id": 141,
+  "text": "Parmak izleri silinmedi."
+ },
+ {
+  "id": 142,
+  "text": "Kimse onları aramıyordu."
+ },
+ {
+  "id": 143,
+  "text": "Artık hırsızın elinde 388 milyon dolar vardı."
+ },
+ {
+  "id": 144,
+  "text": "Ve yeni bir sorun: Parayı nasıl elinde tutacaktı?"
+ },
+ {
+  "id": 145,
+  "text": "Önce stablecoin'ler gitti, çünkü stablecoin'ler dondurulabilir."
+ },
+ {
+  "id": 146,
+  "text": "Tüm USDT 20 dakika içinde ETH'ye çevrildi."
+ },
+ {
+  "id": 147,
+  "text": "XRP, THORChain üzerinden Bitcoin'e geçti."
+ },
+ {
+  "id": 148,
+  "text": "Zcash'in bir kısmı, takip edilemediği gizli bir havuzda kayboldu."
+ },
+ {
+  "id": 149,
+  "text": "Bitget, THORChain'den adresleri engellemesini istedi."
+ },
+ {
+  "id": 150,
+  "text": "THORChain, izinsiz (permissionless) tasarımını gerekçe göstererek reddetti."
+ },
+ {
+  "id": 151,
+  "text": "Sonunda paranın %0,3'ünden azı donduruldu."
+ },
+ {
+  "id": 152,
+  "text": "Kasımda Bitcoin'ler yeniden hareket etmeye başladı."
+ },
+ {
+  "id": 153,
+  "text": "11 günde yaklaşık 161 milyon dolar, çoğu CoinJoin üzerinden."
+ },
+ {
+  "id": 154,
+  "text": "Bu yöntem, birçok kişinin coin'lerini tek bir işlemde karıştırıyor."
+ },
+ {
+  "id": 155,
+  "text": "Ve parayı taşıyanlar pek iyi saklanmıyordu."
+ },
+ {
+  "id": 156,
+  "text": "ZachXBT'ye göre parayı aklayanlar, kullandıkları servislerin"
+ },
+ {
+  "id": 157,
+  "text": "herkese açık sohbetlerinde müşteri desteği istedi."
+ },
+ {
+  "id": 158,
+  "text": "Başarısız takaslar. Gelmeyen ödemeler."
+ },
+ {
+  "id": 159,
+  "text": "Ona göre içlerinden biri daha önce de çalıntı para işlemişti."
+ },
+ {
+  "id": 160,
+  "text": "Nisandaki Kelp DAO istismarından."
+ },
+ {
+  "id": 161,
+  "text": "Peki arkasında kim vardı?"
+ },
+ {
+  "id": 162,
+  "text": "Saldırı gecesi Bitget'in CEO'su Gracy Chen,"
+ },
+ {
+  "id": 163,
+  "text": "bazı IP adreslerinin bir Kuzey Kore grubunun kullandığı VPN servisleriyle eşleştiğini söyledi."
+ },
+ {
+  "id": 164,
+  "text": "Dört gün sonra daha temkinliydi."
+ },
+ {
+  "id": 165,
+  "text": "Bunun ön göstergelere dayandığını söyledi."
+ },
+ {
+  "id": 166,
+  "text": "Chainalysis, Elliptic ve TRM Labs analistlerinin hepsi aynı yöne eğiliyor."
+ },
+ {
+  "id": 167,
+  "text": "Ardından, 5 hafta sonra, Binance 6 milyar dolardan fazla kaybetti."
+ },
+ {
+  "id": 168,
+  "text": "Ve Chainalysis, çalınan Binance parasının"
+ },
+ {
+  "id": 169,
+  "text": "blokzincirde Bitget parasıyla buluştuğunu gördü."
+ },
+ {
+  "id": 170,
+  "text": "ZachXBT'ye göre ikisi de THORChain üzerinden aynı adrese ulaştı."
+ },
+ {
+  "id": 171,
+  "text": "Binance hırsızlığından iki gün sonra"
+ },
+ {
+  "id": 172,
+  "text": "FBI hırsızların adını verdi: Kuzey Kore'nin TraderTraitor grubu."
+ },
+ {
+  "id": 173,
+  "text": "Bitget için hiçbir hükümet tek kelime etmedi."
+ },
+ {
+  "id": 174,
+  "text": "Mandiant'ın raporu da kimsenin adını vermiyor."
+ },
+ {
+  "id": 175,
+  "text": "Bu da bizi o borca geri getiriyor."
+ },
+ {
+  "id": 176,
+  "text": "Şubat 2025'te Bybit soyulduğunda Bitget aynı gün 40.000 ETH gönderdi."
+ },
+ {
+  "id": 177,
+  "text": "Faiz yok. Teminat yok."
+ },
+ {
+  "id": 178,
+  "text": "FBI o hırsızlığı Kuzey Kore'ye yükledi."
+ },
+ {
+  "id": 179,
+  "text": "On dokuz ay sonra para Bitget'ten çıkıyordu."
+ },
+ {
+  "id": 180,
+  "text": "Hiçbir hükümet kimsenin adını vermedi."
+ },
+ {
+  "id": 181,
+  "text": "Ama analistler aynı yönü gösteriyor."
+ },
+ {
+  "id": 182,
+  "text": "Bitget'te paran vardıysa, onu kaybetmedin."
+ },
+ {
+  "id": 183,
+  "text": "Bitget, kaybı kendi koruma fonundan karşıladığını söylüyor."
+ },
+ {
+  "id": 184,
+  "text": "Tüm çekimler 2 Ekim'e kadar yeniden açıldı."
+ },
+ {
+  "id": 185,
+  "text": "Fon yeniden 300 milyon doların biraz üzerine çıkarıldı."
+ },
+ {
+  "id": 186,
+  "text": "Yine de öncekinden az."
+ },
+ {
+  "id": 187,
+  "text": "Açık kapatıldı."
+ },
+ {
+  "id": 188,
+  "text": "Kritik işlemler artık birden fazla onay gerektiriyor."
+ },
+ {
+  "id": 189,
+  "text": "Ve Bitget, güvenlik tedarikçilerini nasıl seçtiğini gözden geçirdiğini söylüyor."
+ },
+ {
+  "id": 190,
+  "text": "Tedarikçinin adı hâlâ açıklanmadı."
+ },
+ {
+  "id": 191,
+  "text": "Her şey gece iki buçukta 93 TRX'lik bir transferle başladı."
+ },
+ {
+  "id": 192,
+  "text": "Kimse ona bakmadı."
+ },
+ {
+  "id": 193,
+  "text": "Bitget kapıyı korusun diye araçlar aldı."
+ },
+ {
+  "id": 194,
+  "text": "Haftalarca bu araçlar başka birinin elinde olmuş olabilir."
+ },
+ {
+  "id": 195,
+  "text": "Ve alarm sonunda çaldığında borsa müşterilerini dışarıda bıraktı"
+ },
+ {
+  "id": 196,
+  "text": "imza makinesini ise çalışır hâlde bıraktı."
+ },
+ {
+  "id": 197,
+  "text": "Ben Thomas Archer. Bu, Siphon Files'tı."
+ }
+]

@@ -1,0 +1,790 @@
+[
+ {
+  "id": 1,
+  "back": "Half past two at night in Asia."
+ },
+ {
+  "id": 2,
+  "back": "A small transfer leaves the crypto exchange Bitget."
+ },
+ {
+  "id": 3,
+  "back": "Nobody pays attention to it."
+ },
+ {
+  "id": 4,
+  "back": "Less than three hours later, about 388 million dollars have vanished."
+ },
+ {
+  "id": 5,
+  "back": "And Bitget says not a single key was stolen."
+ },
+ {
+  "id": 6,
+  "back": "At 19:05 the alarm went off."
+ },
+ {
+  "id": 7,
+  "back": "Bitget froze all of the customers' withdrawals."
+ },
+ {
+  "id": 8,
+  "back": "And the money kept leaving for the next two hours."
+ },
+ {
+  "id": 9,
+  "back": "And the first sign of someone being inside?"
+ },
+ {
+  "id": 10,
+  "back": "It's in the log. Of a date 24 days earlier."
+ },
+ {
+  "id": 11,
+  "back": "To understand why this case stings, go back 19 months. February 2025."
+ },
+ {
+  "id": 12,
+  "back": "The exchange Bybit has just lost 1.5 billion dollars."
+ },
+ {
+  "id": 13,
+  "back": "The FBI puts the blame for it on North Korea."
+ },
+ {
+  "id": 14,
+  "back": "Customers have rushed to withdraw their money."
+ },
+ {
+  "id": 15,
+  "back": "That same day, a rival sends help."
+ },
+ {
+  "id": 16,
+  "back": "Bitget lends Bybit 40,000 ether so that its withdrawals keep running."
+ },
+ {
+  "id": 17,
+  "back": "No interest. No collateral."
+ },
+ {
+  "id": 18,
+  "back": "Remember that loan."
+ },
+ {
+  "id": 19,
+  "back": "It will come again at the end."
+ },
+ {
+  "id": 20,
+  "back": "On 24 September 2026, the exchange that helped was itself robbed."
+ },
+ {
+  "id": 21,
+  "back": "At that time, this was the year's biggest crypto theft."
+ },
+ {
+  "id": 22,
+  "back": "I'm Thomas Archer, the AI narrator of Siphon Files."
+ },
+ {
+  "id": 23,
+  "back": "Every claim in this episode has a source, and all the sources are in the description."
+ },
+ {
+  "id": 24,
+  "back": "Now hear the strange thing."
+ },
+ {
+  "id": 25,
+  "back": "Bitget says not a single private key was compromised."
+ },
+ {
+  "id": 26,
+  "back": "So how do you steal 388 million dollars without the keys?"
+ },
+ {
+  "id": 27,
+  "back": "You get the exchange itself to sign for you."
+ },
+ {
+  "id": 28,
+  "back": "An exchange keeps most of its money in cold wallets."
+ },
+ {
+  "id": 29,
+  "back": "Offline, slow, out of reach."
+ },
+ {
+  "id": 30,
+  "back": "They weren't even touched."
+ },
+ {
+  "id": 31,
+  "back": "The warm wallet holds the reserve."
+ },
+ {
+  "id": 32,
+  "back": "Hot wallets pay your withdrawals automatically, around the clock."
+ },
+ {
+  "id": 33,
+  "back": "When you press withdraw, a request goes into a pipeline."
+ },
+ {
+  "id": 34,
+  "back": "Risk checks examine it."
+ },
+ {
+  "id": 35,
+  "back": "Then a signing service puts a cryptographic signature on it, and the money sets off."
+ },
+ {
+  "id": 36,
+  "back": "Without that signature, nothing leaves."
+ },
+ {
+  "id": 37,
+  "back": "With it, anything can leave."
+ },
+ {
+  "id": 38,
+  "back": "So the attacker never even needed the secret behind the signature."
+ },
+ {
+  "id": 39,
+  "back": "They had to reach the machine that uses it."
+ },
+ {
+  "id": 40,
+  "back": "And for this, they needed a way in that nobody keeps an eye on."
+ },
+ {
+  "id": 41,
+  "back": "31 August. This is the earliest malicious activity investigators found in the logs."
+ },
+ {
+  "id": 42,
+  "back": "Not inside the wallet."
+ },
+ {
+  "id": 43,
+  "back": "Inside a security product."
+ },
+ {
+  "id": 44,
+  "back": "One of the two third-party tools with which Bitget protected its systems."
+ },
+ {
+  "id": 45,
+  "back": "Investigators call them Product A and Product B."
+ },
+ {
+  "id": 46,
+  "back": "The vendor's name hasn't been given."
+ },
+ {
+  "id": 47,
+  "back": "In Product A, a flaw that nobody had found until then,"
+ },
+ {
+  "id": 48,
+  "back": "that is, a zero-day, through it the attacker ran a hidden script."
+ },
+ {
+  "id": 49,
+  "back": "The script found a database password, lying in plain text."
+ },
+ {
+  "id": 50,
+  "back": "Like a spare key taped under the doormat."
+ },
+ {
+  "id": 51,
+  "back": "Only the doormat was inside the security office."
+ },
+ {
+  "id": 52,
+  "back": "From here, we know someone is inside. Bitget doesn't know."
+ },
+ {
+  "id": 53,
+  "back": "Keep one thing in mind. Mandiant considers the attacker's privileged access only from 24 September."
+ },
+ {
+  "id": 54,
+  "back": "The two reports haven't yet been reconciled."
+ },
+ {
+  "id": 55,
+  "back": "But a hidden script on the guard's machine can't move money."
+ },
+ {
+  "id": 56,
+  "back": "To reach the wallets, they needed something else."
+ },
+ {
+  "id": 57,
+  "back": "A name. A real name."
+ },
+ {
+  "id": 58,
+  "back": "I'll pause here for a moment."
+ },
+ {
+  "id": 59,
+  "back": "Companies buy security products to monitor the doors."
+ },
+ {
+  "id": 60,
+  "back": "They give them deep access, because only then can these products see everything."
+ },
+ {
+  "id": 61,
+  "back": "That is, if someone takes over the guard, they don't need to break any door."
+ },
+ {
+  "id": 62,
+  "back": "He is already standing in every corridor."
+ },
+ {
+  "id": 63,
+  "back": "The same script had spread."
+ },
+ {
+  "id": 64,
+  "back": "A second machine on 23 September."
+ },
+ {
+  "id": 65,
+  "back": "The third, on the night of the theft."
+ },
+ {
+  "id": 66,
+  "back": "At 16:07, someone logged into Product B's management platform."
+ },
+ {
+  "id": 67,
+  "back": "With the identity of a real Bitget employee."
+ },
+ {
+  "id": 68,
+  "back": "That person wasn't there."
+ },
+ {
+  "id": 69,
+  "back": "Bitget says the credentials were stolen through that same zero-day,"
+ },
+ {
+  "id": 70,
+  "back": "and for now it has dismissed the possibility of any insider."
+ },
+ {
+  "id": 71,
+  "back": "Mandiant found a web shell on appliance B, and a channel going to the attacker."
+ },
+ {
+  "id": 72,
+  "back": "From there, they reached the production wallet job server by a side route."
+ },
+ {
+  "id": 73,
+  "back": "The machine that builds withdrawal transactions."
+ },
+ {
+  "id": 74,
+  "back": "And installed malicious packages on it."
+ },
+ {
+  "id": 75,
+  "back": "Now they were standing right next to the money."
+ },
+ {
+  "id": 76,
+  "back": "But every withdrawal still had to get past one more thing. Risk control."
+ },
+ {
+  "id": 77,
+  "back": "At 17:49, a tool switched on on the wallet host."
+ },
+ {
+  "id": 78,
+  "back": "SlowMist later recovered it from deleted files."
+ },
+ {
+  "id": 79,
+  "back": "It didn't fight risk control."
+ },
+ {
+  "id": 80,
+  "back": "It made its answers forged."
+ },
+ {
+  "id": 81,
+  "back": "Then it built withdrawal requests,"
+ },
+ {
+  "id": 82,
+  "back": "and pushed them into Bitget's normal withdrawal process."
+ },
+ {
+  "id": 83,
+  "back": "According to one analysis,"
+ },
+ {
+  "id": 84,
+  "back": "the system simply accepted the requester's word that the checks had passed."
+ },
+ {
+  "id": 85,
+  "back": "On paper, that much was enough."
+ },
+ {
+  "id": 86,
+  "back": "There was only one way to know whether it works in reality."
+ },
+ {
+  "id": 87,
+  "back": "Trying it out."
+ },
+ {
+  "id": 88,
+  "back": "18:31. Two tiny transfers."
+ },
+ {
+  "id": 89,
+  "back": "93 TRX. Then 0.84 ether."
+ },
+ {
+  "id": 90,
+  "back": "Tests. Bitget's CEO says they were below the risk threshold, so no alert rang."
+ },
+ {
+  "id": 91,
+  "back": "And there was something odd in these transfers."
+ },
+ {
+  "id": 92,
+  "back": "Something that could reveal their secret. Remember this."
+ },
+ {
+  "id": 93,
+  "back": "Then, nothing. For about half an hour."
+ },
+ {
+  "id": 94,
+  "back": "18:58. 34.75 million USDT leave in a single transfer."
+ },
+ {
+  "id": 95,
+  "back": "Still no alarm."
+ },
+ {
+  "id": 96,
+  "back": "So they stopped testing."
+ },
+ {
+  "id": 97,
+  "back": "19:01. Seven transfers. Five blockchains. Fifteen seconds."
+ },
+ {
+  "id": 98,
+  "back": "19:03. One more small test, from another wallet."
+ },
+ {
+  "id": 99,
+  "back": "19:05. Bitget's reconciliation system finally catches the difference."
+ },
+ {
+  "id": 100,
+  "back": "If at that time your money was on Bitget,"
+ },
+ {
+  "id": 101,
+  "back": "then you saw this: your withdrawal stopped."
+ },
+ {
+  "id": 102,
+  "back": "Risk control had stopped withdrawals of every customer on the platform."
+ },
+ {
+  "id": 103,
+  "back": "19:14. Highest-level emergency."
+ },
+ {
+  "id": 104,
+  "back": "19:16."
+ },
+ {
+  "id": 105,
+  "back": "Five transfers. Five chains. Nine seconds."
+ },
+ {
+  "id": 106,
+  "back": "About 203 million dollars."
+ },
+ {
+  "id": 107,
+  "back": "The customers' way had already been closed 11 minutes earlier."
+ },
+ {
+  "id": 108,
+  "back": "Not the attacker's."
+ },
+ {
+  "id": 109,
+  "back": "Stopping customer withdrawals was the wrong switch."
+ },
+ {
+  "id": 110,
+  "back": "The forged requests weren't customer withdrawals."
+ },
+ {
+  "id": 111,
+  "back": "According to one analysis,"
+ },
+ {
+  "id": 112,
+  "back": "on the warm wallet there was nothing at all between request and signature."
+ },
+ {
+  "id": 113,
+  "back": "No second person."
+ },
+ {
+  "id": 114,
+  "back": "No list of approved addresses."
+ },
+ {
+  "id": 115,
+  "back": "So the signing service kept running."
+ },
+ {
+  "id": 116,
+  "back": "For 2 hours 39 minutes after the first alert."
+ },
+ {
+  "id": 117,
+  "back": "According to two separate estimates, after the alarm"
+ },
+ {
+  "id": 118,
+  "back": "the money that left was about 238 million dollars."
+ },
+ {
+  "id": 119,
+  "back": "More than half the stolen amount."
+ },
+ {
+  "id": 120,
+  "back": "At 20:40, Bitget began moving funds into cold storage."
+ },
+ {
+  "id": 121,
+  "back": "Still not certain whether the keys have been taken or not."
+ },
+ {
+  "id": 122,
+  "back": "The last traced transfer left at 21:23."
+ },
+ {
+  "id": 123,
+  "back": "Then the attacker tried to change withdrawal records directly in the database."
+ },
+ {
+  "id": 124,
+  "back": "To erase traces, or for more money."
+ },
+ {
+  "id": 125,
+  "back": "The reports don't say this."
+ },
+ {
+  "id": 126,
+  "back": "Two fake Bitcoin orders got errors."
+ },
+ {
+  "id": 127,
+  "back": "At 21:44, Bitget shut the withdrawal services, including signing."
+ },
+ {
+  "id": 128,
+  "back": "The next morning,"
+ },
+ {
+  "id": 129,
+  "back": "Bitget found the root cause and gave the report of the theft to legal agencies."
+ },
+ {
+  "id": 130,
+  "back": "And when investigators went back to those first test transfers,"
+ },
+ {
+  "id": 131,
+  "back": "that odd thing was right there."
+ },
+ {
+  "id": 132,
+  "back": "Every Ethereum transfer sets a fuel limit. Gas."
+ },
+ {
+  "id": 133,
+  "back": "Bitget's normal customer payouts used about 63,000."
+ },
+ {
+  "id": 134,
+  "back": "The attacker's transfers used exactly 100,000, or 200,000."
+ },
+ {
+  "id": 135,
+  "back": "In the 8 days before that, those wallets sent 35,678 transactions."
+ },
+ {
+  "id": 136,
+  "back": "Not a single customer payout did that."
+ },
+ {
+  "id": 137,
+  "back": "On Zcash, it was even clearer."
+ },
+ {
+  "id": 138,
+  "back": "Each stolen transfer joined together about 1,000 pieces of coin."
+ },
+ {
+  "id": 139,
+  "back": "Before that, the wallet's biggest transaction had taken 54."
+ },
+ {
+  "id": 140,
+  "back": "The forged commands were deleted after each transfer."
+ },
+ {
+  "id": 141,
+  "back": "The fingerprints not."
+ },
+ {
+  "id": 142,
+  "back": "Nobody was keeping an eye on them."
+ },
+ {
+  "id": 143,
+  "back": "Now the thief had 388 million dollars."
+ },
+ {
+  "id": 144,
+  "back": "And a new problem: how to keep them saved."
+ },
+ {
+  "id": 145,
+  "back": "First the stablecoins were removed, because stablecoins can get frozen."
+ },
+ {
+  "id": 146,
+  "back": "All USDT was changed into ether within 20 minutes."
+ },
+ {
+  "id": 147,
+  "back": "XRP was changed into Bitcoin through THORChain."
+ },
+ {
+  "id": 148,
+  "back": "A part of Zcash vanished into a private pool, where it can't be followed."
+ },
+ {
+  "id": 149,
+  "back": "Bitget asked THORChain to block the addresses."
+ },
+ {
+  "id": 150,
+  "back": "THORChain refused, citing its permissionless design."
+ },
+ {
+  "id": 151,
+  "back": "In the end, less than 0.3% got frozen."
+ },
+ {
+  "id": 152,
+  "back": "In November, Bitcoin started moving forward again."
+ },
+ {
+  "id": 153,
+  "back": "About 161 million dollars in 11 days, mostly through CoinJoin,"
+ },
+ {
+  "id": 154,
+  "back": "which mixes many people's coins into a single transaction."
+ },
+ {
+  "id": 155,
+  "back": "And those moving it forward weren't even hiding properly."
+ },
+ {
+  "id": 156,
+  "back": "ZachXBT says the money launderers asked for customer support"
+ },
+ {
+  "id": 157,
+  "back": "in the public chats of the very services they were using."
+ },
+ {
+  "id": 158,
+  "back": "Failed swaps. Stuck payouts."
+ },
+ {
+  "id": 159,
+  "back": "He says one of them had handled stolen money before too."
+ },
+ {
+  "id": 160,
+  "back": "From April's Kelp DAO exploit."
+ },
+ {
+  "id": 161,
+  "back": "So who was behind this?"
+ },
+ {
+  "id": 162,
+  "back": "On the night of the hack, Bitget's CEO, Gracy Chen,"
+ },
+ {
+  "id": 163,
+  "back": "said some IP addresses matched a North Korean group's VPN service."
+ },
+ {
+  "id": 164,
+  "back": "Four days later, she was more cautious."
+ },
+ {
+  "id": 165,
+  "back": "She said, this was based on preliminary signs."
+ },
+ {
+  "id": 166,
+  "back": "The analysts of Chainalysis, Elliptic and TRM Labs all lean toward one side."
+ },
+ {
+  "id": 167,
+  "back": "Then, 5 weeks later, Binance lost more than 6 billion dollars."
+ },
+ {
+  "id": 168,
+  "back": "And Chainalysis saw that the money stolen from Binance"
+ },
+ {
+  "id": 169,
+  "back": "joined Bitget's money on the blockchain."
+ },
+ {
+  "id": 170,
+  "back": "ZachXBT says both reached the same address through THORChain."
+ },
+ {
+  "id": 171,
+  "back": "Two days after the Binance theft,"
+ },
+ {
+  "id": 172,
+  "back": "the FBI gave the thieves' name: North Korea's TraderTraitor."
+ },
+ {
+  "id": 173,
+  "back": "In Bitget's case, no government said a word."
+ },
+ {
+  "id": 174,
+  "back": "And Mandiant's report doesn't name anyone at all."
+ },
+ {
+  "id": 175,
+  "back": "Which brings us back to that same loan."
+ },
+ {
+  "id": 176,
+  "back": "In February 2025, when Bybit was robbed, Bitget sent 40,000 ether the same day."
+ },
+ {
+  "id": 177,
+  "back": "No interest. No collateral."
+ },
+ {
+  "id": 178,
+  "back": "The FBI put the blame for that theft on North Korea."
+ },
+ {
+  "id": 179,
+  "back": "Nineteen months later, money was leaving Bitget."
+ },
+ {
+  "id": 180,
+  "back": "No government named anyone."
+ },
+ {
+  "id": 181,
+  "back": "But the analysts point the same way."
+ },
+ {
+  "id": 182,
+  "back": "If your money was on Bitget, it didn't sink."
+ },
+ {
+  "id": 183,
+  "back": "Bitget says it made good the loss from its own protection fund."
+ },
+ {
+  "id": 184,
+  "back": "By 2 October every withdrawal was working again."
+ },
+ {
+  "id": 185,
+  "back": "The fund has been refilled to a bit over 300 million dollars."
+ },
+ {
+  "id": 186,
+  "back": "Still less than before."
+ },
+ {
+  "id": 187,
+  "back": "The flaw has been fixed."
+ },
+ {
+  "id": 188,
+  "back": "Important operations now need more than one approval."
+ },
+ {
+  "id": 189,
+  "back": "And according to Bitget, it is reviewing the way of choosing security vendors."
+ },
+ {
+  "id": 190,
+  "back": "The vendor's name still hasn't been given."
+ },
+ {
+  "id": 191,
+  "back": "The start had happened with a transfer of 93 TRX, at half past two at night."
+ },
+ {
+  "id": 192,
+  "back": "Nobody paid attention to it."
+ },
+ {
+  "id": 193,
+  "back": "Bitget bought tools to protect the door."
+ },
+ {
+  "id": 194,
+  "back": "For weeks, perhaps they were in someone else's hands."
+ },
+ {
+  "id": 195,
+  "back": "And when the alarm finally rang, the exchange closed its customers' way,"
+ },
+ {
+  "id": 196,
+  "back": "and left the signing machine running."
+ },
+ {
+  "id": 197,
+  "back": "I'm Thomas Archer. This was Siphon Files."
+ }
+]

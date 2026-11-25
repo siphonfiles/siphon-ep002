@@ -1,0 +1,790 @@
+[
+ {
+  "id": 1,
+  "text": "Pukul setengah tiga dini hari, di Asia."
+ },
+ {
+  "id": 2,
+  "text": "Sebuah transfer kecil keluar dari bursa kripto Bitget."
+ },
+ {
+  "id": 3,
+  "text": "Tak ada yang memperhatikannya."
+ },
+ {
+  "id": 4,
+  "text": "Kurang dari tiga jam kemudian, sekitar US$388 juta lenyap."
+ },
+ {
+  "id": 5,
+  "text": "Dan Bitget menyatakan tak satu kunci pun dicuri."
+ },
+ {
+  "id": 6,
+  "text": "Pukul 19:05, alarm berbunyi."
+ },
+ {
+  "id": 7,
+  "text": "Bitget membekukan semua penarikan nasabah."
+ },
+ {
+  "id": 8,
+  "text": "Dan uang terus keluar selama dua jam lagi."
+ },
+ {
+  "id": 9,
+  "text": "Lalu tanda pertama bahwa ada orang di dalam?"
+ },
+ {
+  "id": 10,
+  "text": "Ada di log. Bertanggal 24 hari sebelumnya."
+ },
+ {
+  "id": 11,
+  "text": "Untuk memahami kenapa kasus ini menyakitkan, mundur 19 bulan. Februari 2025."
+ },
+ {
+  "id": 12,
+  "text": "Bursa Bybit baru saja kehilangan US$1,5 miliar."
+ },
+ {
+  "id": 13,
+  "text": "FBI menyalahkan Korea Utara."
+ },
+ {
+  "id": 14,
+  "text": "Nasabah bergegas menarik uang mereka."
+ },
+ {
+  "id": 15,
+  "text": "Hari itu juga, seorang pesaing mengirim bantuan."
+ },
+ {
+  "id": 16,
+  "text": "Bitget meminjamkan 40.000 ether kepada Bybit agar penarikannya tetap berjalan."
+ },
+ {
+  "id": 17,
+  "text": "Tanpa bunga. Tanpa jaminan."
+ },
+ {
+  "id": 18,
+  "text": "Ingat pinjaman itu."
+ },
+ {
+  "id": 19,
+  "text": "Ini akan muncul lagi di akhir."
+ },
+ {
+  "id": 20,
+  "text": "Pada 24 September 2026, bursa yang dulu menolong justru dirampok."
+ },
+ {
+  "id": 21,
+  "text": "Saat itu, pencurian kripto terbesar tahun ini."
+ },
+ {
+  "id": 22,
+  "text": "Saya Thomas Archer, narator AI Siphon Files."
+ },
+ {
+  "id": 23,
+  "text": "Setiap klaim di episode ini ada sumbernya, dan semuanya ada di deskripsi."
+ },
+ {
+  "id": 24,
+  "text": "Inilah bagian anehnya."
+ },
+ {
+  "id": 25,
+  "text": "Bitget menyatakan tak satu pun kunci privat yang dibobol."
+ },
+ {
+  "id": 26,
+  "text": "Jadi bagaimana mencuri US$388 juta tanpa kuncinya?"
+ },
+ {
+  "id": 27,
+  "text": "Anda membuat bursa itu menandatanganinya untuk Anda."
+ },
+ {
+  "id": 28,
+  "text": "Bursa menyimpan sebagian besar uangnya di cold wallet."
+ },
+ {
+  "id": 29,
+  "text": "Offline, lambat, sulit dijangkau."
+ },
+ {
+  "id": 30,
+  "text": "Wallet itu tidak tersentuh."
+ },
+ {
+  "id": 31,
+  "text": "Warm wallet menyimpan cadangan."
+ },
+ {
+  "id": 32,
+  "text": "Hot wallet membayar penarikan Anda secara otomatis, sepanjang waktu."
+ },
+ {
+  "id": 33,
+  "text": "Saat Anda menekan tombol tarik, permintaan masuk ke jalur pemrosesan."
+ },
+ {
+  "id": 34,
+  "text": "Cek risiko menilainya."
+ },
+ {
+  "id": 35,
+  "text": "Lalu layanan penandatanganan membubuhkan tanda tangan kriptografis, dan uang pun berpindah."
+ },
+ {
+  "id": 36,
+  "text": "Tanpa tanda tangan itu, tak ada yang keluar."
+ },
+ {
+  "id": 37,
+  "text": "Dengannya, apa pun bisa keluar."
+ },
+ {
+  "id": 38,
+  "text": "Jadi penyerang tak pernah perlu rahasia di balik tanda tangan."
+ },
+ {
+  "id": 39,
+  "text": "Mereka perlu mendekati mesin yang menggunakannya."
+ },
+ {
+  "id": 40,
+  "text": "Dan untuk itu, mereka butuh jalan masuk yang tak diawasi siapa pun."
+ },
+ {
+  "id": 41,
+  "text": "31 Agustus. Itulah aktivitas berbahaya paling awal yang ditemukan penyelidik di log."
+ },
+ {
+  "id": 42,
+  "text": "Bukan di dalam wallet."
+ },
+ {
+  "id": 43,
+  "text": "Di dalam sebuah produk keamanan."
+ },
+ {
+  "id": 44,
+  "text": "Salah satu dari dua alat pihak ketiga yang dipakai Bitget untuk melindungi sistemnya."
+ },
+ {
+  "id": 45,
+  "text": "Para penyelidik menyebutnya Produk A dan Produk B."
+ },
+ {
+  "id": 46,
+  "text": "Vendornya belum disebutkan."
+ },
+ {
+  "id": 47,
+  "text": "Di Produk A, sebuah celah yang belum ditemukan siapa pun,"
+ },
+ {
+  "id": 48,
+  "text": "sebuah zero-day, membuat penyerang bisa menjalankan skrip tersembunyi."
+ },
+ {
+  "id": 49,
+  "text": "Skrip itu menemukan kata sandi database, tersimpan sebagai teks biasa."
+ },
+ {
+  "id": 50,
+  "text": "Kunci cadangan yang ditempel di bawah keset."
+ },
+ {
+  "id": 51,
+  "text": "Hanya saja, kesetnya ada di dalam kantor keamanan."
+ },
+ {
+  "id": 52,
+  "text": "Mulai dari sini, kita tahu ada orang di dalam. Bitget tidak."
+ },
+ {
+  "id": 53,
+  "text": "Satu catatan: Mandiant baru mencatat akses istimewa penyerang sejak 24 September."
+ },
+ {
+  "id": 54,
+  "text": "Kedua laporan itu belum diselaraskan."
+ },
+ {
+  "id": 55,
+  "text": "Tapi skrip tersembunyi di mesin penjaga tak bisa memindahkan uang."
+ },
+ {
+  "id": 56,
+  "text": "Untuk mendekati wallet, mereka butuh hal lain."
+ },
+ {
+  "id": 57,
+  "text": "Sebuah nama. Nama asli."
+ },
+ {
+  "id": 58,
+  "text": "Saya berhenti sejenak di sini."
+ },
+ {
+  "id": 59,
+  "text": "Perusahaan membeli produk keamanan untuk mengawasi pintu."
+ },
+ {
+  "id": 60,
+  "text": "Mereka memberinya akses mendalam, karena dengan cara itulah produk itu melihat segalanya."
+ },
+ {
+  "id": 61,
+  "text": "Artinya, jika seseorang mengambil alih penjaga, ia tak perlu mendobrak pintu mana pun."
+ },
+ {
+  "id": 62,
+  "text": "Ia sudah berdiri di setiap lorong."
+ },
+ {
+  "id": 63,
+  "text": "Skrip yang sama sudah menyebar."
+ },
+ {
+  "id": 64,
+  "text": "Mesin kedua pada 23 September."
+ },
+ {
+  "id": 65,
+  "text": "Mesin ketiga, pada malam pencurian."
+ },
+ {
+  "id": 66,
+  "text": "Pukul 16:07, seseorang masuk ke platform manajemen Produk B."
+ },
+ {
+  "id": 67,
+  "text": "Dengan identitas seorang karyawan Bitget yang asli."
+ },
+ {
+  "id": 68,
+  "text": "Orang itu tidak ada di sana."
+ },
+ {
+  "id": 69,
+  "text": "Bitget menyatakan kredensialnya dicuri lewat zero-day itu,"
+ },
+ {
+  "id": 70,
+  "text": "dan bahwa, untuk saat ini, keterlibatan orang dalam dikesampingkan."
+ },
+ {
+  "id": 71,
+  "text": "Mandiant menemukan web shell di perangkat B, dan saluran balik ke penyerang."
+ },
+ {
+  "id": 72,
+  "text": "Dari sana, mereka bergerak menyamping, ke server job wallet produksi."
+ },
+ {
+  "id": 73,
+  "text": "Mesin yang menyusun transaksi penarikan."
+ },
+ {
+  "id": 74,
+  "text": "Dan memasang paket berbahaya di sana."
+ },
+ {
+  "id": 75,
+  "text": "Kini mereka berdiri di samping uangnya."
+ },
+ {
+  "id": 76,
+  "text": "Tapi setiap penarikan masih harus melewati satu hal lagi. Kontrol risiko."
+ },
+ {
+  "id": 77,
+  "text": "Pukul 17:49, sebuah alat mulai berjalan di host wallet."
+ },
+ {
+  "id": 78,
+  "text": "SlowMist kemudian memulihkannya dari file yang dihapus."
+ },
+ {
+  "id": 79,
+  "text": "Alat itu tidak melawan kontrol risiko."
+ },
+ {
+  "id": 80,
+  "text": "Ia memalsukan jawabannya."
+ },
+ {
+  "id": 81,
+  "text": "Lalu ia membuat permintaan penarikan,"
+ },
+ {
+  "id": 82,
+  "text": "dan mendorongnya ke proses penarikan normal Bitget."
+ },
+ {
+  "id": 83,
+  "text": "Menurut satu analisis,"
+ },
+ {
+  "id": 84,
+  "text": "sistem begitu saja percaya pada klaim pemohon bahwa pemeriksaan telah lolos."
+ },
+ {
+  "id": 85,
+  "text": "Di atas kertas, itu cukup."
+ },
+ {
+  "id": 86,
+  "text": "Hanya ada satu cara untuk mengetahui apakah cara itu berhasil dalam praktik."
+ },
+ {
+  "id": 87,
+  "text": "Coba saja."
+ },
+ {
+  "id": 88,
+  "text": "18:31. Dua transfer mungil."
+ },
+ {
+  "id": 89,
+  "text": "93 TRX. Lalu 0,84 ether."
+ },
+ {
+  "id": 90,
+  "text": "Uji coba. Kata CEO Bitget, nilainya di bawah ambang risiko, jadi tak ada peringatan."
+ },
+ {
+  "id": 91,
+  "text": "Dan ada yang janggal pada transfer-transfer ini."
+ },
+ {
+  "id": 92,
+  "text": "Sesuatu yang bisa saja membongkar kedok mereka. Ingat baik-baik."
+ },
+ {
+  "id": 93,
+  "text": "Lalu, tak ada apa-apa. Selama hampir setengah jam."
+ },
+ {
+  "id": 94,
+  "text": "18:58. 34,75 juta USDT keluar dalam satu transfer."
+ },
+ {
+  "id": 95,
+  "text": "Masih tak ada alarm."
+ },
+ {
+  "id": 96,
+  "text": "Jadi mereka berhenti menguji."
+ },
+ {
+  "id": 97,
+  "text": "19:01. Tujuh transfer. Lima blockchain. Lima belas detik."
+ },
+ {
+  "id": 98,
+  "text": "19:03. Satu uji kecil lagi, dari wallet yang berbeda."
+ },
+ {
+  "id": 99,
+  "text": "19:05. Rekonsiliasi Bitget akhirnya menandai selisihnya."
+ },
+ {
+  "id": 100,
+  "text": "Jika Anda punya uang di Bitget saat itu,"
+ },
+ {
+  "id": 101,
+  "text": "inilah yang Anda lihat: penarikan Anda terhenti."
+ },
+ {
+  "id": 102,
+  "text": "Kontrol risiko telah memblokir penarikan semua nasabah di platform."
+ },
+ {
+  "id": 103,
+  "text": "19:14. Darurat tingkat tertinggi."
+ },
+ {
+  "id": 104,
+  "text": "19:16."
+ },
+ {
+  "id": 105,
+  "text": "Lima transfer. Lima chain. Sembilan detik."
+ },
+ {
+  "id": 106,
+  "text": "Sekitar US$203 juta."
+ },
+ {
+  "id": 107,
+  "text": "Nasabah sudah terkunci 11 menit sebelumnya."
+ },
+ {
+  "id": 108,
+  "text": "Penyerangnya tidak."
+ },
+ {
+  "id": 109,
+  "text": "Memblokir penarikan nasabah adalah tombol yang salah."
+ },
+ {
+  "id": 110,
+  "text": "Permintaan palsu itu bukan penarikan nasabah."
+ },
+ {
+  "id": 111,
+  "text": "Menurut satu analisis,"
+ },
+ {
+  "id": 112,
+  "text": "di warm wallet tak ada apa pun antara permintaan dan tanda tangan."
+ },
+ {
+  "id": 113,
+  "text": "Tanpa orang kedua."
+ },
+ {
+  "id": 114,
+  "text": "Tanpa daftar tujuan yang diizinkan."
+ },
+ {
+  "id": 115,
+  "text": "Jadi layanan penandatanganan terus berjalan."
+ },
+ {
+  "id": 116,
+  "text": "Selama 2 jam 39 menit setelah peringatan pertama."
+ },
+ {
+  "id": 117,
+  "text": "Dua estimasi terpisah menaksir uang yang keluar"
+ },
+ {
+  "id": 118,
+  "text": "setelah alarm sekitar US$238 juta."
+ },
+ {
+  "id": 119,
+  "text": "Lebih dari separuh total curian."
+ },
+ {
+  "id": 120,
+  "text": "Pukul 20:40, Bitget mulai memindahkan dana ke cold storage."
+ },
+ {
+  "id": 121,
+  "text": "Masih belum yakin apakah kunci telah diambil."
+ },
+ {
+  "id": 122,
+  "text": "Transfer terakhir yang terlacak keluar pukul 21:23."
+ },
+ {
+  "id": 123,
+  "text": "Lalu penyerang mencoba menulis ulang catatan penarikan langsung di database."
+ },
+ {
+  "id": 124,
+  "text": "Menutupi jejak, atau mencuri lagi."
+ },
+ {
+  "id": 125,
+  "text": "Laporan tak menjelaskannya."
+ },
+ {
+  "id": 126,
+  "text": "Dua order Bitcoin palsu menghasilkan error."
+ },
+ {
+  "id": 127,
+  "text": "Pukul 21:44, Bitget mematikan layanan penarikan, termasuk penandatanganan."
+ },
+ {
+  "id": 128,
+  "text": "Keesokan paginya,"
+ },
+ {
+  "id": 129,
+  "text": "Bitget menemukan akar masalahnya dan melaporkan pencurian ke penegak hukum."
+ },
+ {
+  "id": 130,
+  "text": "Dan saat penyelidik kembali ke transfer uji coba pertama itu,"
+ },
+ {
+  "id": 131,
+  "text": "detail janggal itu ternyata ada di sana."
+ },
+ {
+  "id": 132,
+  "text": "Setiap transfer Ethereum menetapkan batas bahan bakar. Gas."
+ },
+ {
+  "id": 133,
+  "text": "Pembayaran normal Bitget ke nasabah memakai sekitar 63.000."
+ },
+ {
+  "id": 134,
+  "text": "Transfer penyerang memakai tepat 100.000, atau 200.000."
+ },
+ {
+  "id": 135,
+  "text": "Dalam 8 hari sebelumnya, wallet-wallet itu mengirim 35.678 transaksi."
+ },
+ {
+  "id": 136,
+  "text": "Tak satu pun pembayaran ke nasabah seperti itu."
+ },
+ {
+  "id": 137,
+  "text": "Di Zcash, jejaknya lebih mencolok lagi."
+ },
+ {
+  "id": 138,
+  "text": "Tiap transfer curian menggabungkan sekitar 1.000 kepingan koin kecil."
+ },
+ {
+  "id": 139,
+  "text": "Transaksi terbesar wallet itu sebelumnya memakai 54."
+ },
+ {
+  "id": 140,
+  "text": "Perintah palsu itu dihapus setelah tiap transfer."
+ },
+ {
+  "id": 141,
+  "text": "Sidik jarinya tidak."
+ },
+ {
+  "id": 142,
+  "text": "Tak ada yang mewaspadainya."
+ },
+ {
+  "id": 143,
+  "text": "Kini si pencuri memegang US$388 juta."
+ },
+ {
+  "id": 144,
+  "text": "Dan masalah baru: cara menyimpannya."
+ },
+ {
+  "id": 145,
+  "text": "Stablecoin dipindahkan lebih dulu, karena stablecoin bisa dibekukan."
+ },
+ {
+  "id": 146,
+  "text": "Semua USDT ditukar ke ether dalam 20 menit."
+ },
+ {
+  "id": 147,
+  "text": "XRP-nya ditukar ke Bitcoin lewat THORChain."
+ },
+ {
+  "id": 148,
+  "text": "Sebagian Zcash lenyap ke pool privat, tempat ia tak bisa dilacak."
+ },
+ {
+  "id": 149,
+  "text": "Bitget meminta THORChain memblokir alamat-alamat itu."
+ },
+ {
+  "id": 150,
+  "text": "THORChain menolak, dengan alasan desainnya yang permissionless."
+ },
+ {
+  "id": 151,
+  "text": "Pada akhirnya, kurang dari 0,3% yang dibekukan."
+ },
+ {
+  "id": 152,
+  "text": "Pada bulan November, Bitcoin itu mulai bergerak lagi."
+ },
+ {
+  "id": 153,
+  "text": "Sekitar US$161 juta dalam 11 hari, sebagian besar lewat CoinJoin,"
+ },
+ {
+  "id": 154,
+  "text": "yang mencampur koin banyak orang ke dalam satu transaksi."
+ },
+ {
+  "id": 155,
+  "text": "Dan orang-orang yang memindahkannya tidak begitu pandai bersembunyi."
+ },
+ {
+  "id": 156,
+  "text": "ZachXBT mengatakan para pencuci uang meminta bantuan layanan pelanggan"
+ },
+ {
+  "id": 157,
+  "text": "di chat publik layanan yang mereka pakai."
+ },
+ {
+  "id": 158,
+  "text": "Swap gagal. Pembayaran tak masuk."
+ },
+ {
+  "id": 159,
+  "text": "Menurutnya, salah satunya pernah menangani uang curian."
+ },
+ {
+  "id": 160,
+  "text": "Dari eksploit Kelp DAO pada April."
+ },
+ {
+  "id": 161,
+  "text": "Jadi siapa dalangnya?"
+ },
+ {
+  "id": 162,
+  "text": "Pada malam peretasan, CEO Bitget, Gracy Chen,"
+ },
+ {
+  "id": 163,
+  "text": "mengatakan beberapa alamat IP cocok dengan layanan VPN yang dipakai sebuah kelompok Korea Utara."
+ },
+ {
+  "id": 164,
+  "text": "Empat hari kemudian, ia lebih berhati-hati."
+ },
+ {
+  "id": 165,
+  "text": "Itu, katanya, didasarkan pada indikator awal."
+ },
+ {
+  "id": 166,
+  "text": "Para analis di Chainalysis, Elliptic, dan TRM Labs semuanya condong ke arah yang sama."
+ },
+ {
+  "id": 167,
+  "text": "Lalu, 5 minggu kemudian, Binance kehilangan lebih dari US$6 miliar."
+ },
+ {
+  "id": 168,
+  "text": "Dan Chainalysis melihat uang curian dari Binance"
+ },
+ {
+  "id": 169,
+  "text": "bertemu dengan uang Bitget di blockchain."
+ },
+ {
+  "id": 170,
+  "text": "ZachXBT mengatakan keduanya tiba, lewat THORChain, di alamat yang sama."
+ },
+ {
+  "id": 171,
+  "text": "Dua hari setelah pencurian Binance,"
+ },
+ {
+  "id": 172,
+  "text": "FBI menyebut pencurinya: TraderTraitor dari Korea Utara."
+ },
+ {
+  "id": 173,
+  "text": "Untuk Bitget, tak satu pun pemerintah angkat bicara."
+ },
+ {
+  "id": 174,
+  "text": "Dan laporan Mandiant tak menyebut nama siapa pun."
+ },
+ {
+  "id": 175,
+  "text": "Yang membawa kita kembali ke pinjaman itu."
+ },
+ {
+  "id": 176,
+  "text": "Pada Februari 2025, saat Bybit dirampok, Bitget mengirim 40.000 ether hari itu juga."
+ },
+ {
+  "id": 177,
+  "text": "Tanpa bunga. Tanpa jaminan."
+ },
+ {
+  "id": 178,
+  "text": "FBI menyalahkan Korea Utara atas pencurian itu."
+ },
+ {
+  "id": 179,
+  "text": "Sembilan belas bulan kemudian, uang mengalir keluar dari Bitget."
+ },
+ {
+  "id": 180,
+  "text": "Belum ada pemerintah yang menyebut nama."
+ },
+ {
+  "id": 181,
+  "text": "Tapi para analis menunjuk ke arah yang sama."
+ },
+ {
+  "id": 182,
+  "text": "Jika Anda punya uang di Bitget, Anda tidak kehilangannya."
+ },
+ {
+  "id": 183,
+  "text": "Bitget menyatakan telah menutup kerugian dari dana perlindungannya sendiri."
+ },
+ {
+  "id": 184,
+  "text": "Semua penarikan sudah pulih pada 2 Oktober."
+ },
+ {
+  "id": 185,
+  "text": "Dana itu kini telah dipulihkan menjadi sedikit di atas US$300 juta."
+ },
+ {
+  "id": 186,
+  "text": "Masih lebih kecil dari dulu."
+ },
+ {
+  "id": 187,
+  "text": "Celahnya sudah diperbaiki."
+ },
+ {
+  "id": 188,
+  "text": "Operasi kritis kini butuh lebih dari satu persetujuan."
+ },
+ {
+  "id": 189,
+  "text": "Dan Bitget menyatakan sedang meninjau cara memilih vendor keamanannya."
+ },
+ {
+  "id": 190,
+  "text": "Vendornya masih belum disebutkan."
+ },
+ {
+  "id": 191,
+  "text": "Semuanya berawal dari transfer 93 TRX, pukul setengah tiga dini hari."
+ },
+ {
+  "id": 192,
+  "text": "Tak ada yang memperhatikannya."
+ },
+ {
+  "id": 193,
+  "text": "Bitget membeli alat untuk menjaga pintu."
+ },
+ {
+  "id": 194,
+  "text": "Selama berminggu-minggu, orang lain mungkin telah memegangnya."
+ },
+ {
+  "id": 195,
+  "text": "Dan saat alarm akhirnya berbunyi, bursa itu mengunci nasabahnya,"
+ },
+ {
+  "id": 196,
+  "text": "dan membiarkan mesin penandatanganan tetap berjalan."
+ },
+ {
+  "id": 197,
+  "text": "Saya Thomas Archer. Ini tadi Siphon Files."
+ }
+]

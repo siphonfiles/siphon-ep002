@@ -1,0 +1,790 @@
+[
+ {
+  "id": 1,
+  "text": "Hai giờ rưỡi sáng, ở châu Á."
+ },
+ {
+  "id": 2,
+  "text": "Một lệnh chuyển nhỏ rời khỏi sàn crypto Bitget."
+ },
+ {
+  "id": 3,
+  "text": "Không ai để ý đến nó."
+ },
+ {
+  "id": 4,
+  "text": "Chưa đầy ba tiếng sau, khoảng 388 triệu đô la đã biến mất."
+ },
+ {
+  "id": 5,
+  "text": "Và Bitget nói không một khóa nào bị đánh cắp."
+ },
+ {
+  "id": 6,
+  "text": "Lúc 19:05, báo động vang lên."
+ },
+ {
+  "id": 7,
+  "text": "Bitget đóng băng mọi lệnh rút tiền của khách hàng."
+ },
+ {
+  "id": 8,
+  "text": "Và tiền vẫn tiếp tục chảy ra thêm hai tiếng nữa."
+ },
+ {
+  "id": 9,
+  "text": "Còn dấu hiệu đầu tiên cho thấy có kẻ ở bên trong?"
+ },
+ {
+  "id": 10,
+  "text": "Nó nằm trong log. Có từ 24 ngày trước đó."
+ },
+ {
+  "id": 11,
+  "text": "Để hiểu vì sao vụ này lại đau, hãy lùi lại 19 tháng. Tháng 2/2025."
+ },
+ {
+  "id": 12,
+  "text": "Sàn Bybit vừa mất 1,5 tỷ đô la."
+ },
+ {
+  "id": 13,
+  "text": "FBI quy trách nhiệm cho Triều Tiên."
+ },
+ {
+  "id": 14,
+  "text": "Khách hàng đổ xô rút tiền ra."
+ },
+ {
+  "id": 15,
+  "text": "Ngay hôm đó, một đối thủ ra tay giúp đỡ."
+ },
+ {
+  "id": 16,
+  "text": "Bitget cho Bybit vay 40.000 ether để duy trì việc rút tiền."
+ },
+ {
+  "id": 17,
+  "text": "Không lãi suất. Không tài sản thế chấp."
+ },
+ {
+  "id": 18,
+  "text": "Hãy nhớ khoản vay đó."
+ },
+ {
+  "id": 19,
+  "text": "Ở cuối tập, nó sẽ quay trở lại."
+ },
+ {
+  "id": 20,
+  "text": "Ngày 24/9/2026, sàn từng ra tay giúp đỡ lại trở thành sàn bị cướp."
+ },
+ {
+  "id": 21,
+  "text": "Vào thời điểm đó, đây là vụ trộm crypto lớn nhất trong năm."
+ },
+ {
+  "id": 22,
+  "text": "Tôi là Thomas Archer, người dẫn chuyện AI của Siphon Files."
+ },
+ {
+  "id": 23,
+  "text": "Mọi thông tin trong tập này đều có nguồn, và tất cả nằm trong phần mô tả."
+ },
+ {
+  "id": 24,
+  "text": "Đây mới là điều kỳ lạ."
+ },
+ {
+  "id": 25,
+  "text": "Bitget nói không một khóa riêng tư nào bị xâm phạm."
+ },
+ {
+  "id": 26,
+  "text": "Vậy làm sao trộm 388 triệu đô la mà không có khóa?"
+ },
+ {
+  "id": 27,
+  "text": "Bạn khiến chính sàn ký giúp bạn."
+ },
+ {
+  "id": 28,
+  "text": "Một sàn giao dịch giữ phần lớn tiền của mình trong ví lạnh."
+ },
+ {
+  "id": 29,
+  "text": "Ngoại tuyến, chậm, khó tiếp cận."
+ },
+ {
+  "id": 30,
+  "text": "Những ví đó không bị đụng đến."
+ },
+ {
+  "id": 31,
+  "text": "Ví ấm giữ một khoản dự trữ."
+ },
+ {
+  "id": 32,
+  "text": "Ví nóng tự động chi trả các lệnh rút của bạn, suốt ngày đêm."
+ },
+ {
+  "id": 33,
+  "text": "Khi bạn bấm rút tiền, một yêu cầu đi vào dây chuyền xử lý."
+ },
+ {
+  "id": 34,
+  "text": "Khâu kiểm tra rủi ro duyệt nó."
+ },
+ {
+  "id": 35,
+  "text": "Rồi dịch vụ ký gắn một chữ ký mật mã lên đó, và tiền được chuyển đi."
+ },
+ {
+  "id": 36,
+  "text": "Không có chữ ký đó, không gì rời đi được."
+ },
+ {
+  "id": 37,
+  "text": "Có nó, thứ gì cũng đi được."
+ },
+ {
+  "id": 38,
+  "text": "Vậy kẻ tấn công chưa bao giờ cần bí mật đằng sau chữ ký."
+ },
+ {
+  "id": 39,
+  "text": "Họ cần tiếp cận cỗ máy sử dụng nó."
+ },
+ {
+  "id": 40,
+  "text": "Và để làm vậy, họ cần một lối vào không ai canh chừng."
+ },
+ {
+  "id": 41,
+  "text": "Ngày 31 tháng 8. Đó là hoạt động độc hại sớm nhất mà điều tra viên tìm thấy trong log."
+ },
+ {
+  "id": 42,
+  "text": "Không phải bên trong các ví."
+ },
+ {
+  "id": 43,
+  "text": "Mà bên trong một sản phẩm bảo mật."
+ },
+ {
+  "id": 44,
+  "text": "Một trong hai công cụ bên thứ ba mà Bitget dùng để bảo vệ hệ thống của mình."
+ },
+ {
+  "id": 45,
+  "text": "Các điều tra viên gọi chúng là Sản phẩm A và Sản phẩm B."
+ },
+ {
+  "id": 46,
+  "text": "Nhà cung cấp chưa được nêu tên."
+ },
+ {
+  "id": 47,
+  "text": "Trên Sản phẩm A, một lỗ hổng chưa ai phát hiện,"
+ },
+ {
+  "id": 48,
+  "text": "một lỗ hổng zero-day, cho phép kẻ tấn công chạy một đoạn mã ẩn."
+ },
+ {
+  "id": 49,
+  "text": "Đoạn mã tìm thấy mật khẩu cơ sở dữ liệu, lưu dưới dạng văn bản thuần."
+ },
+ {
+  "id": 50,
+  "text": "Chìa khóa dự phòng dán dưới thảm chùi chân."
+ },
+ {
+  "id": 51,
+  "text": "Có điều, tấm thảm lại nằm trong phòng an ninh."
+ },
+ {
+  "id": 52,
+  "text": "Từ đây, chúng ta biết có người ở bên trong. Bitget thì không."
+ },
+ {
+  "id": 53,
+  "text": "Một lưu ý. Mandiant chỉ xác định quyền truy cập đặc quyền của kẻ tấn công từ ngày 24 tháng 9 trở đi."
+ },
+ {
+  "id": 54,
+  "text": "Hai báo cáo vẫn chưa được đối chiếu thống nhất."
+ },
+ {
+  "id": 55,
+  "text": "Nhưng mã ẩn trên máy người gác thì không thể chuyển tiền."
+ },
+ {
+  "id": 56,
+  "text": "Để đến gần các ví, họ cần thứ khác."
+ },
+ {
+  "id": 57,
+  "text": "Một cái tên. Một cái tên thật."
+ },
+ {
+  "id": 58,
+  "text": "Để tôi dừng lại ở đây một chút."
+ },
+ {
+  "id": 59,
+  "text": "Các công ty mua sản phẩm bảo mật để canh các cánh cửa."
+ },
+ {
+  "id": 60,
+  "text": "Họ trao cho chúng quyền truy cập sâu, vì đó là cách chúng nhìn thấy mọi thứ."
+ },
+ {
+  "id": 61,
+  "text": "Nghĩa là nếu ai đó chiếm được người gác, người đó không cần phá cánh cửa nào."
+ },
+ {
+  "id": 62,
+  "text": "Người đó đã đứng sẵn ở mọi hành lang."
+ },
+ {
+  "id": 63,
+  "text": "Chính đoạn mã đó đã lan ra."
+ },
+ {
+  "id": 64,
+  "text": "Máy thứ hai vào ngày 23 tháng 9."
+ },
+ {
+  "id": 65,
+  "text": "Máy thứ ba, vào đêm xảy ra vụ trộm."
+ },
+ {
+  "id": 66,
+  "text": "Lúc 16:07, ai đó đăng nhập vào nền tảng quản lý của Sản phẩm B."
+ },
+ {
+  "id": 67,
+  "text": "Bằng danh tính của một nhân viên Bitget có thật."
+ },
+ {
+  "id": 68,
+  "text": "Người đó không có mặt."
+ },
+ {
+  "id": 69,
+  "text": "Bitget nói thông tin đăng nhập bị đánh cắp qua lỗ hổng zero-day đó,"
+ },
+ {
+  "id": 70,
+  "text": "và rằng, tạm thời, họ đã loại trừ khả năng có người trong nội bộ tiếp tay."
+ },
+ {
+  "id": 71,
+  "text": "Mandiant tìm thấy một web shell trên thiết bị B, và một kênh kết nối về kẻ tấn công."
+ },
+ {
+  "id": 72,
+  "text": "Từ đó, họ di chuyển ngang, sang máy chủ tác vụ ví đang vận hành."
+ },
+ {
+  "id": 73,
+  "text": "Cỗ máy tạo ra các giao dịch rút tiền."
+ },
+ {
+  "id": 74,
+  "text": "Và cài các gói độc hại lên đó."
+ },
+ {
+  "id": 75,
+  "text": "Giờ họ đã đứng ngay cạnh số tiền."
+ },
+ {
+  "id": 76,
+  "text": "Nhưng mỗi lệnh rút vẫn phải vượt qua thêm một thứ. Kiểm soát rủi ro."
+ },
+ {
+  "id": 77,
+  "text": "Lúc 17:49, một công cụ khởi chạy trên máy chủ ví."
+ },
+ {
+  "id": 78,
+  "text": "SlowMist sau đó khôi phục nó từ các tệp đã bị xóa."
+ },
+ {
+  "id": 79,
+  "text": "Nó không chống lại kiểm soát rủi ro."
+ },
+ {
+  "id": 80,
+  "text": "Nó giả mạo các câu trả lời."
+ },
+ {
+  "id": 81,
+  "text": "Rồi nó tạo các yêu cầu rút tiền,"
+ },
+ {
+  "id": 82,
+  "text": "và đẩy chúng vào quy trình rút tiền thông thường của Bitget."
+ },
+ {
+  "id": 83,
+  "text": "Theo một phân tích,"
+ },
+ {
+  "id": 84,
+  "text": "hệ thống cứ thế tin lời bên yêu cầu rằng các bước kiểm tra đã đạt."
+ },
+ {
+  "id": 85,
+  "text": "Trên giấy tờ, thế là đủ."
+ },
+ {
+  "id": 86,
+  "text": "Chỉ có một cách để biết cách này có hiệu quả trên thực tế hay không."
+ },
+ {
+  "id": 87,
+  "text": "Thử xem."
+ },
+ {
+  "id": 88,
+  "text": "18:31. Hai lệnh chuyển rất nhỏ."
+ },
+ {
+  "id": 89,
+  "text": "93 TRX. Rồi 0,84 ether."
+ },
+ {
+  "id": 90,
+  "text": "Thử nghiệm. CEO của Bitget nói chúng dưới ngưỡng rủi ro, nên không có cảnh báo nào."
+ },
+ {
+  "id": 91,
+  "text": "Và có một điều kỳ lạ ở những lệnh chuyển này."
+ },
+ {
+  "id": 92,
+  "text": "Một điều lẽ ra có thể làm lộ họ. Hãy ghi nhớ điều này."
+ },
+ {
+  "id": 93,
+  "text": "Rồi, không có gì cả. Suốt gần nửa tiếng."
+ },
+ {
+  "id": 94,
+  "text": "18:58. 34,75 triệu USDT rời đi trong một lệnh chuyển."
+ },
+ {
+  "id": 95,
+  "text": "Vẫn không có báo động."
+ },
+ {
+  "id": 96,
+  "text": "Vậy là họ thôi thử nghiệm."
+ },
+ {
+  "id": 97,
+  "text": "19:01. Bảy lệnh chuyển. Năm blockchain. Mười lăm giây."
+ },
+ {
+  "id": 98,
+  "text": "19:03. Thêm một thử nghiệm nhỏ, từ một ví khác."
+ },
+ {
+  "id": 99,
+  "text": "19:05. Hệ thống đối soát của Bitget cuối cùng phát hiện khoản chênh lệch."
+ },
+ {
+  "id": 100,
+  "text": "Nếu bạn có tiền trên Bitget lúc đó,"
+ },
+ {
+  "id": 101,
+  "text": "đây là điều bạn thấy: lệnh rút của bạn bị dừng."
+ },
+ {
+  "id": 102,
+  "text": "Kiểm soát rủi ro đã chặn lệnh rút của mọi khách hàng trên nền tảng."
+ },
+ {
+  "id": 103,
+  "text": "19:14. Tình trạng khẩn cấp cấp cao nhất."
+ },
+ {
+  "id": 104,
+  "text": "19:16."
+ },
+ {
+  "id": 105,
+  "text": "Năm lệnh chuyển. Năm chuỗi. Chín giây."
+ },
+ {
+  "id": 106,
+  "text": "Khoảng 203 triệu đô la."
+ },
+ {
+  "id": 107,
+  "text": "Khách hàng đã bị khóa từ 11 phút trước."
+ },
+ {
+  "id": 108,
+  "text": "Kẻ tấn công thì không."
+ },
+ {
+  "id": 109,
+  "text": "Chặn rút tiền của khách hàng là bấm nhầm công tắc."
+ },
+ {
+  "id": 110,
+  "text": "Các yêu cầu giả mạo không phải lệnh rút của khách hàng."
+ },
+ {
+  "id": 111,
+  "text": "Theo một phân tích,"
+ },
+ {
+  "id": 112,
+  "text": "trên các ví ấm, không có gì ngăn giữa một yêu cầu và một chữ ký."
+ },
+ {
+  "id": 113,
+  "text": "Không người thứ hai."
+ },
+ {
+  "id": 114,
+  "text": "Không danh sách địa chỉ được phép."
+ },
+ {
+  "id": 115,
+  "text": "Vậy là dịch vụ ký vẫn tiếp tục chạy."
+ },
+ {
+  "id": 116,
+  "text": "Suốt 2 giờ 39 phút sau cảnh báo đầu tiên."
+ },
+ {
+  "id": 117,
+  "text": "Hai ước tính độc lập cho rằng số tiền rời đi"
+ },
+ {
+  "id": 118,
+  "text": "sau báo động là khoảng 238 triệu đô la."
+ },
+ {
+  "id": 119,
+  "text": "Hơn một nửa số tiền bị trộm."
+ },
+ {
+  "id": 120,
+  "text": "Lúc 20:40, Bitget bắt đầu chuyển tiền vào lưu trữ lạnh."
+ },
+ {
+  "id": 121,
+  "text": "Vẫn chưa chắc liệu khóa có bị lấy hay không."
+ },
+ {
+  "id": 122,
+  "text": "Lệnh chuyển cuối cùng được truy vết rời đi lúc 21:23."
+ },
+ {
+  "id": 123,
+  "text": "Rồi kẻ tấn công cố ghi đè hồ sơ rút tiền trực tiếp trong cơ sở dữ liệu."
+ },
+ {
+  "id": 124,
+  "text": "Để xóa dấu vết, hay để lấy thêm."
+ },
+ {
+  "id": 125,
+  "text": "Các báo cáo không nói rõ."
+ },
+ {
+  "id": 126,
+  "text": "Hai lệnh Bitcoin giả bị báo lỗi."
+ },
+ {
+  "id": 127,
+  "text": "Lúc 21:44, Bitget tắt các dịch vụ rút tiền, kể cả dịch vụ ký."
+ },
+ {
+  "id": 128,
+  "text": "Sáng hôm sau,"
+ },
+ {
+  "id": 129,
+  "text": "Bitget tìm ra nguyên nhân gốc và báo vụ trộm cho cơ quan thực thi pháp luật."
+ },
+ {
+  "id": 130,
+  "text": "Và khi điều tra viên xem lại những lệnh chuyển thử đầu tiên ấy,"
+ },
+ {
+  "id": 131,
+  "text": "chi tiết kỳ lạ ấy nằm ngay ở đó."
+ },
+ {
+  "id": 132,
+  "text": "Mỗi giao dịch Ethereum đặt một giới hạn nhiên liệu. Gas."
+ },
+ {
+  "id": 133,
+  "text": "Các khoản chi trả thông thường của Bitget cho khách dùng khoảng 63.000."
+ },
+ {
+  "id": 134,
+  "text": "Các lệnh chuyển của kẻ tấn công dùng đúng 100.000, hoặc 200.000."
+ },
+ {
+  "id": 135,
+  "text": "Trong 8 ngày trước đó, các ví này đã gửi 35.678 giao dịch."
+ },
+ {
+  "id": 136,
+  "text": "Không một khoản chi trả nào cho khách làm vậy."
+ },
+ {
+  "id": 137,
+  "text": "Trên Zcash, dấu hiệu còn rõ hơn."
+ },
+ {
+  "id": 138,
+  "text": "Mỗi lệnh chuyển tiền bị trộm gom khoảng 1.000 mảnh coin nhỏ."
+ },
+ {
+  "id": 139,
+  "text": "Giao dịch lớn nhất trước đó của ví này dùng 54."
+ },
+ {
+  "id": 140,
+  "text": "Các lệnh giả bị xóa sau mỗi lần chuyển."
+ },
+ {
+  "id": 141,
+  "text": "Dấu vân tay thì không."
+ },
+ {
+  "id": 142,
+  "text": "Không ai dò tìm chúng."
+ },
+ {
+  "id": 143,
+  "text": "Giờ kẻ trộm có 388 triệu đô la."
+ },
+ {
+  "id": 144,
+  "text": "Và một vấn đề mới: làm sao giữ được nó."
+ },
+ {
+  "id": 145,
+  "text": "Stablecoin được chuyển đi trước tiên, vì stablecoin có thể bị đóng băng."
+ },
+ {
+  "id": 146,
+  "text": "Toàn bộ USDT được đổi sang ether trong vòng 20 phút."
+ },
+ {
+  "id": 147,
+  "text": "XRP được đổi sang Bitcoin qua THORChain."
+ },
+ {
+  "id": 148,
+  "text": "Một phần Zcash biến mất vào một pool riêng tư, nơi không thể truy dấu."
+ },
+ {
+  "id": 149,
+  "text": "Bitget yêu cầu THORChain chặn các địa chỉ."
+ },
+ {
+  "id": 150,
+  "text": "THORChain từ chối, viện dẫn thiết kế không cần cấp phép của mình."
+ },
+ {
+  "id": 151,
+  "text": "Cuối cùng, chưa đến 0,3% bị đóng băng."
+ },
+ {
+  "id": 152,
+  "text": "Vào tháng 11, số Bitcoin đó bắt đầu di chuyển trở lại."
+ },
+ {
+  "id": 153,
+  "text": "Khoảng 161 triệu đô la trong 11 ngày, phần lớn qua CoinJoin,"
+ },
+ {
+  "id": 154,
+  "text": "phương thức trộn coin của nhiều người vào một giao dịch."
+ },
+ {
+  "id": 155,
+  "text": "Và những người chuyển tiền không giấu mình kỹ lắm."
+ },
+ {
+  "id": 156,
+  "text": "ZachXBT nói những kẻ rửa tiền đã nhờ bộ phận hỗ trợ khách hàng"
+ },
+ {
+  "id": 157,
+  "text": "trong các nhóm chat công khai của dịch vụ họ đang dùng."
+ },
+ {
+  "id": 158,
+  "text": "Swap thất bại. Tiền chưa về."
+ },
+ {
+  "id": 159,
+  "text": "Anh ấy nói một người trong số đó từng xử lý tiền bị trộm."
+ },
+ {
+  "id": 160,
+  "text": "Từ vụ khai thác Kelp DAO hồi tháng 4."
+ },
+ {
+  "id": 161,
+  "text": "Vậy ai đứng sau vụ này?"
+ },
+ {
+  "id": 162,
+  "text": "Ngay đêm xảy ra vụ hack, CEO của Bitget, Gracy Chen,"
+ },
+ {
+  "id": 163,
+  "text": "nói một số địa chỉ IP trùng với dịch vụ VPN mà một nhóm Triều Tiên sử dụng."
+ },
+ {
+  "id": 164,
+  "text": "Bốn ngày sau, bà thận trọng hơn."
+ },
+ {
+  "id": 165,
+  "text": "Bà nói điều đó dựa trên các dấu hiệu sơ bộ."
+ },
+ {
+  "id": 166,
+  "text": "Các nhà phân tích tại Chainalysis, Elliptic và TRM Labs đều nghiêng về cùng một hướng."
+ },
+ {
+  "id": 167,
+  "text": "Rồi, 5 tuần sau, Binance mất hơn 6 tỷ đô la."
+ },
+ {
+  "id": 168,
+  "text": "Và Chainalysis đã thấy tiền bị trộm từ Binance"
+ },
+ {
+  "id": 169,
+  "text": "gặp tiền của Bitget trên blockchain."
+ },
+ {
+  "id": 170,
+  "text": "ZachXBT nói cả hai đều đến, qua THORChain, cùng một địa chỉ."
+ },
+ {
+  "id": 171,
+  "text": "Hai ngày sau vụ trộm Binance,"
+ },
+ {
+  "id": 172,
+  "text": "FBI nêu tên thủ phạm: TraderTraitor của Triều Tiên."
+ },
+ {
+  "id": 173,
+  "text": "Với Bitget, chưa chính phủ nào nói một lời."
+ },
+ {
+  "id": 174,
+  "text": "Và báo cáo của Mandiant không nêu tên ai cả."
+ },
+ {
+  "id": 175,
+  "text": "Điều đó đưa chúng ta trở lại khoản vay ấy."
+ },
+ {
+  "id": 176,
+  "text": "Tháng 2/2025, khi Bybit bị cướp, Bitget gửi 40.000 ether ngay trong ngày."
+ },
+ {
+  "id": 177,
+  "text": "Không lãi suất. Không tài sản thế chấp."
+ },
+ {
+  "id": 178,
+  "text": "FBI quy vụ trộm đó cho Triều Tiên."
+ },
+ {
+  "id": 179,
+  "text": "Mười chín tháng sau, tiền đang chảy ra khỏi Bitget."
+ },
+ {
+  "id": 180,
+  "text": "Chưa chính phủ nào nêu tên ai."
+ },
+ {
+  "id": 181,
+  "text": "Nhưng các nhà phân tích chỉ về cùng một hướng."
+ },
+ {
+  "id": 182,
+  "text": "Nếu bạn có tiền trên Bitget, bạn đã không mất nó."
+ },
+ {
+  "id": 183,
+  "text": "Bitget nói họ đã bù khoản lỗ bằng quỹ bảo vệ của chính mình."
+ },
+ {
+  "id": 184,
+  "text": "Đến ngày 2/10, mọi lệnh rút đã hoạt động lại."
+ },
+ {
+  "id": 185,
+  "text": "Quỹ đã được bổ sung trở lại, lên mức nhỉnh hơn 300 triệu đô la."
+ },
+ {
+  "id": 186,
+  "text": "Vẫn ít hơn trước."
+ },
+ {
+  "id": 187,
+  "text": "Lỗ hổng đã được vá."
+ },
+ {
+  "id": 188,
+  "text": "Các thao tác quan trọng giờ cần nhiều hơn một phê duyệt."
+ },
+ {
+  "id": 189,
+  "text": "Và Bitget nói họ đang xem xét lại cách chọn nhà cung cấp bảo mật."
+ },
+ {
+  "id": 190,
+  "text": "Nhà cung cấp vẫn chưa được nêu tên."
+ },
+ {
+  "id": 191,
+  "text": "Mọi chuyện bắt đầu bằng một lệnh chuyển 93 TRX, lúc hai giờ rưỡi sáng."
+ },
+ {
+  "id": 192,
+  "text": "Không ai để ý đến nó."
+ },
+ {
+  "id": 193,
+  "text": "Bitget mua công cụ để canh giữ cánh cửa."
+ },
+ {
+  "id": 194,
+  "text": "Suốt nhiều tuần, có thể một người khác đã nắm giữ chúng."
+ },
+ {
+  "id": 195,
+  "text": "Và khi báo động cuối cùng vang lên, sàn đã chặn khách hàng của mình,"
+ },
+ {
+  "id": 196,
+  "text": "và để cỗ máy ký tiếp tục chạy."
+ },
+ {
+  "id": 197,
+  "text": "Tôi là Thomas Archer. Bạn vừa xem Siphon Files."
+ }
+]

@@ -1,0 +1,911 @@
+1
+00:00:01,200 --> 00:00:03,680
+Duas e meia da madrugada, na Ásia.
+
+2
+00:00:03,680 --> 00:00:06,944
+Uma transferência minúscula sai
+da corretora de cripto Bitget.
+
+3
+00:00:06,944 --> 00:00:09,184
+Ninguém olha para ela.
+
+4
+00:00:11,684 --> 00:00:15,608
+Menos de três horas depois,
+cerca de US$ 388 milhões sumiram.
+
+5
+00:00:15,608 --> 00:00:19,691
+E a Bitget diz que nem uma
+única chave foi roubada.
+
+6
+00:00:22,591 --> 00:00:24,311
+Às 19:05, o alarme disparou.
+
+7
+00:00:24,311 --> 00:00:26,624
+A Bitget congelou todos
+os saques de clientes.
+
+8
+00:00:26,624 --> 00:00:30,380
+E o dinheiro continuou
+saindo por mais duas horas.
+
+9
+00:00:30,430 --> 00:00:33,152
+E o primeiro sinal de que
+alguém estava lá dentro?
+
+10
+00:00:33,152 --> 00:00:36,685
+Está nos registros.
+Com data de 24 dias antes.
+
+11
+00:00:42,835 --> 00:00:47,465
+Para entender por que este dói,
+volte 19 meses. Fevereiro de 2025.
+
+12
+00:00:47,465 --> 00:00:50,644
+A corretora Bybit acaba
+de perder US$ 1,5 bilhão.
+
+13
+00:00:50,644 --> 00:00:52,509
+O FBI culpa a Coreia do Norte.
+
+14
+00:00:52,509 --> 00:00:56,339
+Os clientes correm para
+sacar o seu dinheiro.
+
+15
+00:00:56,389 --> 00:00:58,535
+No mesmo dia, uma rival manda ajuda.
+
+16
+00:00:58,535 --> 00:01:02,575
+A Bitget empresta à Bybit 40.000 ether
+para manter os saques funcionando.
+
+17
+00:01:02,575 --> 00:01:04,928
+Sem juros. Sem garantia.
+
+18
+00:01:04,978 --> 00:01:06,063
+Lembre-se desse empréstimo.
+
+19
+00:01:06,063 --> 00:01:08,042
+Ele volta no final.
+
+20
+00:01:08,092 --> 00:01:13,331
+Em 24 de setembro de 2026, a corretora
+que veio ajudar é que foi roubada.
+
+21
+00:01:13,331 --> 00:01:17,823
+Na época, o maior roubo de cripto do ano.
+
+22
+00:01:19,423 --> 00:01:23,243
+Eu sou Thomas Archer,
+o narrador de IA do Siphon Files.
+
+23
+00:01:23,293 --> 00:01:27,379
+Cada afirmação deste episódio tem uma
+fonte, e todas estão na descrição.
+
+24
+00:01:27,429 --> 00:01:28,834
+Aqui vem a parte estranha.
+
+25
+00:01:28,834 --> 00:01:32,487
+A Bitget diz que nem uma única
+chave privada foi comprometida.
+
+26
+00:01:32,537 --> 00:01:37,156
+Então, como você rouba US$
+388 milhões sem as chaves?
+
+27
+00:01:37,206 --> 00:01:40,117
+Você faz a corretora assinar por você.
+
+28
+00:01:42,217 --> 00:01:45,601
+Uma corretora guarda a maior parte
+do dinheiro em carteiras frias.
+
+29
+00:01:45,601 --> 00:01:47,488
+Offline, lentas, difíceis de alcançar.
+
+30
+00:01:47,488 --> 00:01:49,469
+Essas não foram tocadas.
+
+31
+00:01:49,519 --> 00:01:51,014
+As carteiras mornas guardam uma reserva.
+
+32
+00:01:51,014 --> 00:01:55,136
+As carteiras quentes pagam seus
+saques automaticamente, dia e noite.
+
+33
+00:01:55,186 --> 00:01:58,194
+Ao apertar “sacar”, um pedido
+entra num fluxo de processamento.
+
+34
+00:01:58,194 --> 00:01:59,429
+Passa por verificações de risco.
+
+35
+00:01:59,429 --> 00:02:04,329
+Depois, um serviço de assinatura aplica nele uma
+assinatura criptográfica, e o dinheiro se move.
+
+36
+00:02:04,379 --> 00:02:06,423
+Sem essa assinatura, nada sai.
+
+37
+00:02:06,423 --> 00:02:08,379
+Com ela, qualquer coisa sai.
+
+38
+00:02:08,429 --> 00:02:11,255
+Então o atacante nunca precisou
+do segredo por trás da assinatura.
+
+39
+00:02:11,255 --> 00:02:14,460
+Ele precisava chegar perto
+da máquina que o usa.
+
+40
+00:02:14,510 --> 00:02:18,705
+E, para isso, precisava de uma
+entrada que ninguém vigiasse.
+
+41
+00:02:20,905 --> 00:02:27,091
+31 de agosto. É a atividade maliciosa mais antiga
+que os investigadores encontraram nos registros.
+
+42
+00:02:27,141 --> 00:02:28,545
+Não dentro das carteiras.
+
+43
+00:02:28,545 --> 00:02:30,133
+Dentro de um produto de segurança.
+
+44
+00:02:30,133 --> 00:02:34,629
+Uma de duas ferramentas de terceiros que a
+Bitget usava para proteger seus sistemas.
+
+45
+00:02:34,679 --> 00:02:37,323
+Os investigadores as chamam
+de Produto A e Produto B.
+
+46
+00:02:37,323 --> 00:02:39,347
+O nome do fornecedor não foi divulgado.
+
+47
+00:02:39,397 --> 00:02:41,974
+No Produto A, uma falha que
+ninguém tinha encontrado ainda,
+
+48
+00:02:41,974 --> 00:02:45,531
+um zero-day, deixou o atacante
+rodar um script oculto.
+
+49
+00:02:45,581 --> 00:02:49,736
+O script achou uma senha de
+banco de dados, em texto puro.
+
+50
+00:02:49,786 --> 00:02:51,777
+Uma chave reserva colada
+embaixo do capacho.
+
+51
+00:02:51,777 --> 00:02:55,394
+Só que o capacho ficava
+dentro da sala da segurança.
+
+52
+00:02:55,444 --> 00:02:59,768
+Daqui em diante, sabemos que tem
+alguém lá dentro. A Bitget, não.
+
+53
+00:02:59,968 --> 00:03:05,343
+Uma ressalva. A Mandiant só data o acesso
+privilegiado do atacante a partir de 24 de setembro.
+
+54
+00:03:05,343 --> 00:03:08,847
+Os dois relatórios não foram conciliados.
+
+55
+00:03:08,897 --> 00:03:11,571
+Mas um script oculto na máquina de
+um vigia não consegue mover dinheiro.
+
+56
+00:03:11,571 --> 00:03:14,519
+Para chegar perto das carteiras,
+ele precisava de outra coisa.
+
+57
+00:03:14,569 --> 00:03:17,103
+Um nome. Um nome real.
+
+58
+00:03:17,303 --> 00:03:19,209
+Vou parar aqui um segundo.
+
+59
+00:03:19,259 --> 00:03:21,969
+Empresas compram produtos de
+segurança para vigiar as portas.
+
+60
+00:03:21,969 --> 00:03:25,979
+Dão a eles acesso profundo,
+porque é assim que eles veem tudo.
+
+61
+00:03:26,029 --> 00:03:30,560
+Ou seja, se alguém domina o vigia,
+não precisa arrombar porta nenhuma.
+
+62
+00:03:30,610 --> 00:03:33,411
+Já está parado em todos os corredores.
+
+63
+00:03:35,610 --> 00:03:37,324
+O mesmo script tinha se espalhado.
+
+64
+00:03:37,324 --> 00:03:39,418
+Uma segunda máquina em 23 de setembro.
+
+65
+00:03:39,418 --> 00:03:42,000
+Uma terceira, na noite do roubo.
+
+66
+00:03:42,050 --> 00:03:46,563
+Às 16:07, alguém entrou na
+plataforma de gestão do Produto B.
+
+67
+00:03:46,613 --> 00:03:49,794
+Com a identidade de um
+funcionário real da Bitget.
+
+68
+00:03:49,844 --> 00:03:51,196
+Essa pessoa não estava lá.
+
+69
+00:03:51,196 --> 00:03:54,495
+A Bitget diz que as credenciais
+foram roubadas pelo zero-day
+
+70
+00:03:54,495 --> 00:03:58,228
+e que descartou, por enquanto,
+qualquer pessoa de dentro.
+
+71
+00:03:58,278 --> 00:04:03,167
+A Mandiant achou um web shell no appliance
+B, e um canal de volta para o atacante.
+
+72
+00:04:03,217 --> 00:04:07,058
+Dali, ele se moveu lateralmente até o
+servidor de tarefas das carteiras em produção.
+
+73
+00:04:07,058 --> 00:04:09,731
+A máquina que monta as
+transações de saque.
+
+74
+00:04:09,731 --> 00:04:12,652
+E instalou pacotes maliciosos nela.
+
+75
+00:04:12,702 --> 00:04:15,088
+Agora ele estava ao lado do dinheiro.
+
+76
+00:04:15,138 --> 00:04:20,060
+Mas todo saque ainda tinha que passar
+por mais uma coisa. O controle de risco.
+
+77
+00:04:22,260 --> 00:04:25,346
+Às 17:49, uma ferramenta foi
+iniciada no host das carteiras.
+
+78
+00:04:25,346 --> 00:04:29,194
+A SlowMist depois a recuperou
+de arquivos apagados.
+
+79
+00:04:29,244 --> 00:04:31,032
+Ela não enfrentava o controle de risco.
+
+80
+00:04:31,032 --> 00:04:32,939
+Falsificava as respostas dele.
+
+81
+00:04:32,989 --> 00:04:34,694
+Depois, criava pedidos de saque
+
+82
+00:04:34,694 --> 00:04:38,152
+e os empurrava para o processo
+normal de saques da Bitget.
+
+83
+00:04:38,202 --> 00:04:39,558
+Segundo uma análise,
+
+84
+00:04:39,558 --> 00:04:43,812
+o sistema simplesmente confiava na palavra do
+solicitante de que as verificações tinham passado.
+
+85
+00:04:43,862 --> 00:04:45,303
+No papel, isso bastava.
+
+86
+00:04:45,303 --> 00:04:49,479
+Só havia um jeito de saber
+se funcionava na prática.
+
+87
+00:04:49,529 --> 00:04:51,108
+Testar.
+
+88
+00:04:53,309 --> 00:04:56,586
+18:31. Duas transferências minúsculas.
+
+89
+00:04:56,586 --> 00:05:00,161
+93 TRX. Depois, 0,84 ether.
+
+90
+00:05:00,211 --> 00:05:06,105
+Testes. A CEO da Bitget diz que ficaram abaixo
+do limite de risco, então nenhum alerta disparou.
+
+91
+00:05:06,155 --> 00:05:08,582
+E havia algo estranho
+nessas transferências.
+
+92
+00:05:08,582 --> 00:05:12,198
+Algo que poderia tê-los
+entregado. Guarde isso.
+
+93
+00:05:12,248 --> 00:05:15,691
+Depois, nada. Por quase meia hora.
+
+94
+00:05:15,741 --> 00:05:21,791
+18:58. 34,75 milhões de USDT
+saem numa única transferência.
+
+95
+00:05:21,841 --> 00:05:23,458
+Ainda sem alarme.
+
+96
+00:05:23,508 --> 00:05:25,689
+Então ele parou de testar.
+
+97
+00:05:26,588 --> 00:05:31,932
+19:01. Sete transferências.
+Cinco blockchains. Quinze segundos.
+
+98
+00:05:31,982 --> 00:05:36,037
+19:03. Mais um pequeno
+teste, de outra carteira.
+
+99
+00:05:36,087 --> 00:05:40,820
+19:05. A conciliação da Bitget
+enfim aponta a diferença.
+
+100
+00:05:40,870 --> 00:05:43,115
+Se você tinha dinheiro na
+Bitget naquele momento,
+
+101
+00:05:43,115 --> 00:05:45,575
+foi isto que você viu: seu saque parou.
+
+102
+00:05:45,575 --> 00:05:49,974
+O controle de risco tinha bloqueado os
+saques de todos os clientes da plataforma.
+
+103
+00:05:50,024 --> 00:05:53,910
+19:14. Emergência de nível máximo.
+
+104
+00:05:54,210 --> 00:05:55,979
+19:16.
+
+105
+00:05:56,029 --> 00:06:00,081
+Cinco transferências.
+Cinco redes. Nove segundos.
+
+106
+00:06:00,131 --> 00:06:03,240
+Cerca de US$ 203 milhões.
+
+107
+00:06:03,290 --> 00:06:06,553
+Os clientes tinham sido
+bloqueados 11 minutos antes.
+
+108
+00:06:06,603 --> 00:06:08,572
+O atacante, não.
+
+109
+00:06:10,672 --> 00:06:13,474
+Bloquear os saques dos
+clientes era o botão errado.
+
+110
+00:06:13,474 --> 00:06:16,717
+Os pedidos falsificados não
+eram saques de clientes.
+
+111
+00:06:16,767 --> 00:06:18,188
+Segundo uma análise,
+
+112
+00:06:18,188 --> 00:06:21,906
+nas carteiras mornas, nada ficava
+entre um pedido e uma assinatura.
+
+113
+00:06:21,906 --> 00:06:22,836
+Sem segunda pessoa.
+
+114
+00:06:22,836 --> 00:06:25,235
+Sem lista de destinos permitidos.
+
+115
+00:06:25,285 --> 00:06:27,481
+Então o serviço de
+assinatura continuou rodando.
+
+116
+00:06:27,481 --> 00:06:31,469
+Por 2 horas e 39 minutos
+após o primeiro alerta.
+
+117
+00:06:32,970 --> 00:06:35,899
+Duas estimativas independentes
+calculam o dinheiro que saiu
+
+118
+00:06:35,899 --> 00:06:38,319
+depois do alarme em
+cerca de US$ 238 milhões.
+
+119
+00:06:38,319 --> 00:06:40,751
+Mais da metade do roubo.
+
+120
+00:06:40,801 --> 00:06:44,394
+Às 20:40, a Bitget começou a mover
+fundos para o armazenamento a frio.
+
+121
+00:06:44,394 --> 00:06:47,703
+Ainda sem saber se chaves
+tinham sido levadas.
+
+122
+00:06:47,753 --> 00:06:51,455
+A última transferência
+rastreada saiu às 21:23.
+
+123
+00:06:51,505 --> 00:06:55,875
+Depois, o atacante tentou reescrever
+registros de saque direto no banco de dados.
+
+124
+00:06:55,875 --> 00:06:57,811
+Apagando rastros, ou indo atrás de mais.
+
+125
+00:06:57,811 --> 00:06:59,028
+Os relatórios não dizem.
+
+126
+00:06:59,028 --> 00:07:01,791
+Duas ordens falsas de Bitcoin deram erro.
+
+127
+00:07:01,841 --> 00:07:07,920
+Às 21:44, a Bitget desligou os serviços
+de saque, inclusive a assinatura.
+
+128
+00:07:07,970 --> 00:07:08,785
+Na manhã seguinte,
+
+129
+00:07:08,785 --> 00:07:12,792
+a Bitget encontrou a causa raiz e
+comunicou o roubo às autoridades.
+
+130
+00:07:12,842 --> 00:07:16,248
+E quando os investigadores voltaram
+àquelas primeiras transferências de teste,
+
+131
+00:07:16,248 --> 00:07:18,924
+o detalhe estranho estava bem ali.
+
+132
+00:07:20,624 --> 00:07:23,838
+Toda transferência no Ethereum define
+um limite de combustível. O gas.
+
+133
+00:07:23,838 --> 00:07:27,875
+Os pagamentos normais da Bitget a
+clientes usavam cerca de 63.000.
+
+134
+00:07:27,925 --> 00:07:33,224
+As transferências do atacante usaram
+exatamente 100.000, ou 200.000.
+
+135
+00:07:33,274 --> 00:07:38,509
+Nos 8 dias anteriores, essas
+carteiras enviaram 35.678 transações.
+
+136
+00:07:38,509 --> 00:07:42,190
+Nenhum pagamento a cliente fez isso.
+
+137
+00:07:42,240 --> 00:07:43,964
+No Zcash, foi ainda mais gritante.
+
+138
+00:07:43,964 --> 00:07:47,770
+Cada transferência roubada juntou cerca
+de 1.000 pequenos pedaços de moeda.
+
+139
+00:07:47,770 --> 00:07:51,909
+A maior transação da carteira
+até então tinha usado 54.
+
+140
+00:07:51,959 --> 00:07:55,243
+Os comandos falsificados eram
+apagados após cada transferência.
+
+141
+00:07:55,293 --> 00:07:56,564
+As impressões digitais, não.
+
+142
+00:07:56,564 --> 00:07:58,988
+Ninguém estava de olho nelas.
+
+143
+00:07:59,038 --> 00:08:01,716
+Agora o ladrão tinha US$ 388 milhões.
+
+144
+00:08:01,716 --> 00:08:05,653
+E um novo problema: como ficar com eles.
+
+145
+00:08:07,353 --> 00:08:11,138
+As stablecoins foram primeiro,
+porque stablecoins podem ser congeladas.
+
+146
+00:08:11,138 --> 00:08:14,925
+Todo o USDT foi trocado
+por ether em 20 minutos.
+
+147
+00:08:14,975 --> 00:08:17,320
+O XRP virou Bitcoin pela THORChain.
+
+148
+00:08:17,320 --> 00:08:22,325
+Parte do Zcash sumiu num pool privado,
+onde não pode ser rastreada.
+
+149
+00:08:22,375 --> 00:08:25,124
+A Bitget pediu à THORChain
+que bloqueasse os endereços.
+
+150
+00:08:25,124 --> 00:08:28,841
+A THORChain recusou, citando
+seu design sem permissão.
+
+151
+00:08:28,891 --> 00:08:33,159
+No fim, menos de 0,3% foi congelado.
+
+152
+00:08:33,209 --> 00:08:36,250
+Em novembro, o Bitcoin voltou a se mover.
+
+153
+00:08:36,250 --> 00:08:40,151
+Cerca de US$ 161 milhões em 11 dias,
+a maior parte pelo CoinJoin,
+
+154
+00:08:40,151 --> 00:08:44,505
+que mistura as moedas de muitas
+pessoas numa só transação.
+
+155
+00:08:44,555 --> 00:08:47,546
+E quem movia o dinheiro
+não se escondia muito bem.
+
+156
+00:08:47,596 --> 00:08:50,672
+ZachXBT diz que os lavadores
+pediram ajuda ao suporte
+
+157
+00:08:50,672 --> 00:08:53,633
+nos chats públicos dos
+serviços que estavam usando.
+
+158
+00:08:53,633 --> 00:08:55,893
+Swaps falhos. Pagamentos sumidos.
+
+159
+00:08:55,943 --> 00:08:58,774
+Ele diz que um deles já tinha
+lidado com dinheiro roubado.
+
+160
+00:08:58,774 --> 00:09:01,680
+Do exploit da Kelp DAO, em abril.
+
+161
+00:09:03,379 --> 00:09:04,954
+Então, quem estava por trás?
+
+162
+00:09:05,004 --> 00:09:08,173
+Na noite do ataque,
+a CEO da Bitget, Gracy Chen,
+
+163
+00:09:08,173 --> 00:09:13,710
+disse que alguns endereços IP batiam com serviços
+de VPN usados por um grupo norte-coreano.
+
+164
+00:09:16,609 --> 00:09:18,917
+Quatro dias depois,
+ela foi mais cautelosa.
+
+165
+00:09:18,917 --> 00:09:22,626
+Aquilo, disse ela, se baseava
+em indícios preliminares.
+
+166
+00:09:22,676 --> 00:09:27,952
+Os analistas da Chainalysis, da Elliptic e
+da TRM Labs pendem todos para o mesmo lado.
+
+167
+00:09:28,002 --> 00:09:32,863
+Então, 5 semanas depois, a Binance
+perdeu mais de US$ 6 bilhões.
+
+168
+00:09:32,913 --> 00:09:35,286
+E a Chainalysis viu o
+dinheiro roubado da Binance
+
+169
+00:09:35,286 --> 00:09:37,813
+se encontrar com o da
+Bitget na blockchain.
+
+170
+00:09:37,863 --> 00:09:42,473
+ZachXBT diz que os dois chegaram,
+pela THORChain, ao mesmo endereço.
+
+171
+00:09:42,523 --> 00:09:44,517
+Dois dias depois do roubo à Binance,
+
+172
+00:09:44,517 --> 00:09:48,690
+o FBI nomeou os ladrões:
+o TraderTraitor, da Coreia do Norte.
+
+173
+00:09:48,740 --> 00:09:51,202
+Sobre a Bitget, nenhum governo
+disse uma palavra sequer.
+
+174
+00:09:51,202 --> 00:09:54,314
+E o relatório da Mandiant não
+nomeia absolutamente ninguém.
+
+175
+00:09:54,364 --> 00:09:56,919
+O que nos leva de volta àquele empréstimo.
+
+176
+00:09:57,119 --> 00:10:03,143
+Em fevereiro de 2025, quando a Bybit foi roubada,
+a Bitget enviou 40.000 ether no mesmo dia.
+
+177
+00:10:03,193 --> 00:10:05,302
+Sem juros. Sem garantia.
+
+178
+00:10:05,352 --> 00:10:08,315
+O FBI atribuiu aquele
+roubo à Coreia do Norte.
+
+179
+00:10:08,365 --> 00:10:11,643
+Dezenove meses depois,
+o dinheiro estava saindo da Bitget.
+
+180
+00:10:11,693 --> 00:10:13,420
+Nenhum governo nomeou ninguém.
+
+181
+00:10:13,420 --> 00:10:16,426
+Mas os analistas apontam
+para o mesmo lado.
+
+182
+00:10:18,126 --> 00:10:20,395
+Se você tinha dinheiro
+na Bitget, não o perdeu.
+
+183
+00:10:20,395 --> 00:10:23,891
+A Bitget diz que cobriu a perda
+com seu próprio fundo de proteção.
+
+184
+00:10:23,941 --> 00:10:27,129
+Até 2 de outubro, todos
+os saques tinham voltado.
+
+185
+00:10:27,179 --> 00:10:30,274
+O fundo foi recomposto para
+pouco mais de US$ 300 milhões.
+
+186
+00:10:30,274 --> 00:10:32,394
+Ainda é menos do que antes.
+
+187
+00:10:32,444 --> 00:10:33,875
+A vulnerabilidade foi corrigida.
+
+188
+00:10:33,875 --> 00:10:37,181
+Operações críticas agora
+exigem mais de uma aprovação.
+
+189
+00:10:37,231 --> 00:10:40,897
+E a Bitget diz que está revendo como
+escolhe seus fornecedores de segurança.
+
+190
+00:10:40,897 --> 00:10:43,841
+O nome do fornecedor
+ainda não foi divulgado.
+
+191
+00:10:44,041 --> 00:10:48,876
+Começou com uma transferência de
+93 TRX, às duas e meia da madrugada.
+
+192
+00:10:48,876 --> 00:10:50,907
+Ninguém olhou para ela.
+
+193
+00:10:50,957 --> 00:10:52,863
+A Bitget comprou ferramentas
+para vigiar a porta.
+
+194
+00:10:52,863 --> 00:10:56,371
+Durante semanas, outra pessoa
+pode ter estado com elas nas mãos.
+
+195
+00:10:56,421 --> 00:11:00,072
+E quando o alarme enfim tocou,
+a corretora bloqueou seus clientes
+
+196
+00:11:00,072 --> 00:11:02,925
+e deixou a máquina de
+assinatura funcionando.
+
+197
+00:11:02,975 --> 00:11:06,386
+Eu sou Thomas Archer.
+Este foi o Siphon Files.
+

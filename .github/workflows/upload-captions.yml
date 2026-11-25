@@ -1,0 +1,24 @@
+name: upload captions to a release
+
+# Uploads every episodes/publish/002-captions-*.srt (English + translations) to an existing Release, replacing older copies.
+on:
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: "Release tag (e.g. ep002-render-15)"
+        required: true
+
+permissions:
+  contents: write
+
+jobs:
+  upload:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v5
+      - run: |
+          cd episodes/publish
+          zip -q ../../002-captions-all.zip 002-captions-*.srt
+          gh release upload "${{ inputs.tag }}" 002-captions-*.srt ../../002-captions-all.zip --repo "$GITHUB_REPOSITORY" --clobber
+        env:
+          GH_TOKEN: ${{ github.token }}

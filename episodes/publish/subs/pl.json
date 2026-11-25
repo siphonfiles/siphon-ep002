@@ -1,0 +1,790 @@
+[
+ {
+  "id": 1,
+  "text": "Wpół do trzeciej w nocy, w Azji."
+ },
+ {
+  "id": 2,
+  "text": "Z giełdy kryptowalut Bitget wychodzi drobny przelew."
+ },
+ {
+  "id": 3,
+  "text": "Nikt na niego nie patrzy."
+ },
+ {
+  "id": 4,
+  "text": "Niecałe trzy godziny później znika około 388 milionów dolarów."
+ },
+ {
+  "id": 5,
+  "text": "A Bitget twierdzi, że nie skradziono ani jednego klucza."
+ },
+ {
+  "id": 6,
+  "text": "O 19:05 włączył się alarm."
+ },
+ {
+  "id": 7,
+  "text": "Bitget zamroził wszystkie wypłaty klientów."
+ },
+ {
+  "id": 8,
+  "text": "A pieniądze wypływały jeszcze przez dwie godziny."
+ },
+ {
+  "id": 9,
+  "text": "A pierwszy ślad, że ktoś był w środku?"
+ },
+ {
+  "id": 10,
+  "text": "Jest w logach. Datowany 24 dni wcześniej."
+ },
+ {
+  "id": 11,
+  "text": "Żeby zrozumieć, czemu to boli, cofnij się o 19 miesięcy. Luty 2025."
+ },
+ {
+  "id": 12,
+  "text": "Giełda Bybit właśnie straciła 1,5 miliarda dolarów."
+ },
+ {
+  "id": 13,
+  "text": "FBI obwinia Koreę Północną."
+ },
+ {
+  "id": 14,
+  "text": "Klienci w pośpiechu wycofują pieniądze."
+ },
+ {
+  "id": 15,
+  "text": "Tego samego dnia konkurent wysyła pomoc."
+ },
+ {
+  "id": 16,
+  "text": "Bitget pożycza Bybitowi 40 000 etherów, by wypłaty działały dalej."
+ },
+ {
+  "id": 17,
+  "text": "Bez odsetek. Bez zabezpieczenia."
+ },
+ {
+  "id": 18,
+  "text": "Zapamiętaj tę pożyczkę."
+ },
+ {
+  "id": 19,
+  "text": "Wróci na końcu."
+ },
+ {
+  "id": 20,
+  "text": "24 września 2026 roku giełda, która przyszła z pomocą, sama została okradziona."
+ },
+ {
+  "id": 21,
+  "text": "Wtedy największa kradzież kryptowalut tego roku."
+ },
+ {
+  "id": 22,
+  "text": "Jestem Thomas Archer, narrator AI z Siphon Files."
+ },
+ {
+  "id": 23,
+  "text": "Każde twierdzenie w tym odcinku ma źródło, a wszystkie są w opisie."
+ },
+ {
+  "id": 24,
+  "text": "A teraz to, co dziwne."
+ },
+ {
+  "id": 25,
+  "text": "Bitget twierdzi, że nie przejęto ani jednego klucza prywatnego."
+ },
+ {
+  "id": 26,
+  "text": "Jak więc ukraść 388 milionów dolarów bez kluczy?"
+ },
+ {
+  "id": 27,
+  "text": "Każesz giełdzie podpisać to za ciebie."
+ },
+ {
+  "id": 28,
+  "text": "Giełda trzyma większość pieniędzy w zimnych portfelach."
+ },
+ {
+  "id": 29,
+  "text": "Offline, powolne, trudno dostępne."
+ },
+ {
+  "id": 30,
+  "text": "Tych nikt nie ruszył."
+ },
+ {
+  "id": 31,
+  "text": "Ciepłe portfele trzymają rezerwę."
+ },
+ {
+  "id": 32,
+  "text": "Gorące portfele realizują twoje wypłaty automatycznie, całą dobę."
+ },
+ {
+  "id": 33,
+  "text": "Gdy klikasz „Wypłać”, żądanie trafia do potoku."
+ },
+ {
+  "id": 34,
+  "text": "Badają je kontrole ryzyka."
+ },
+ {
+  "id": 35,
+  "text": "Potem usługa podpisująca nakłada na nie podpis kryptograficzny i pieniądze płyną."
+ },
+ {
+  "id": 36,
+  "text": "Bez tego podpisu nic nie wychodzi."
+ },
+ {
+  "id": 37,
+  "text": "Z nim wychodzi wszystko."
+ },
+ {
+  "id": 38,
+  "text": "Atakujący nie potrzebował więc nigdy sekretu za podpisem."
+ },
+ {
+  "id": 39,
+  "text": "Musiał dostać się blisko maszyny, która go używa."
+ },
+ {
+  "id": 40,
+  "text": "A do tego potrzebował wejścia, którego nikt by nie obserwował."
+ },
+ {
+  "id": 41,
+  "text": "31 sierpnia. Najwcześniejsza złośliwa aktywność, jaką śledczy znaleźli w logach."
+ },
+ {
+  "id": 42,
+  "text": "Nie w portfelach."
+ },
+ {
+  "id": 43,
+  "text": "W produkcie zabezpieczającym."
+ },
+ {
+  "id": 44,
+  "text": "Jednym z dwóch zewnętrznych narzędzi, którymi Bitget chronił swoje systemy."
+ },
+ {
+  "id": 45,
+  "text": "Śledczy nazywają je produktem A i produktem B."
+ },
+ {
+  "id": 46,
+  "text": "Dostawcy nie ujawniono."
+ },
+ {
+  "id": 47,
+  "text": "W produkcie A luka, której nikt jeszcze nie wykrył,"
+ },
+ {
+  "id": 48,
+  "text": "zero-day, pozwoliła atakującemu uruchomić ukryty skrypt."
+ },
+ {
+  "id": 49,
+  "text": "Skrypt znalazł hasło do bazy danych, zapisane otwartym tekstem."
+ },
+ {
+  "id": 50,
+  "text": "Zapasowy klucz przyklejony pod wycieraczką."
+ },
+ {
+  "id": 51,
+  "text": "Tyle że wycieraczka leżała w biurze ochrony."
+ },
+ {
+  "id": 52,
+  "text": "Od tej chwili wiemy, że ktoś jest w środku. Bitget nie wie."
+ },
+ {
+  "id": 53,
+  "text": "Jedno zastrzeżenie. Mandiant datuje uprzywilejowany dostęp atakującego dopiero na 24 września."
+ },
+ {
+  "id": 54,
+  "text": "Obu raportów nie uzgodniono ze sobą."
+ },
+ {
+  "id": 55,
+  "text": "Ale ukryty skrypt na komputerze strażnika nie przeleje pieniędzy."
+ },
+ {
+  "id": 56,
+  "text": "Żeby zbliżyć się do portfeli, potrzebował czegoś innego."
+ },
+ {
+  "id": 57,
+  "text": "Nazwiska. Prawdziwego."
+ },
+ {
+  "id": 58,
+  "text": "Zatrzymam się tu na chwilę."
+ },
+ {
+  "id": 59,
+  "text": "Firmy kupują produkty zabezpieczające, żeby pilnowały drzwi."
+ },
+ {
+  "id": 60,
+  "text": "Dają im głęboki dostęp, bo właśnie tak widzą wszystko."
+ },
+ {
+  "id": 61,
+  "text": "Czyli ten, kto przejmie strażnika, nie musi wyważać żadnych drzwi."
+ },
+ {
+  "id": 62,
+  "text": "Już stoi w każdym korytarzu."
+ },
+ {
+  "id": 63,
+  "text": "Ten sam skrypt się rozprzestrzenił."
+ },
+ {
+  "id": 64,
+  "text": "Druga maszyna 23 września."
+ },
+ {
+  "id": 65,
+  "text": "Trzecia w noc kradzieży."
+ },
+ {
+  "id": 66,
+  "text": "O 16:07 ktoś zalogował się do platformy zarządzania produktu B."
+ },
+ {
+  "id": 67,
+  "text": "Używając tożsamości prawdziwego pracownika Bitgetu."
+ },
+ {
+  "id": 68,
+  "text": "Tej osoby tam nie było."
+ },
+ {
+  "id": 69,
+  "text": "Bitget twierdzi, że dane logowania skradziono przez lukę zero-day"
+ },
+ {
+  "id": 70,
+  "text": "i że na razie wykluczył udział kogokolwiek z wewnątrz."
+ },
+ {
+  "id": 71,
+  "text": "Mandiant znalazł web shell na urządzeniu B i kanał zwrotny do atakującego."
+ },
+ {
+  "id": 72,
+  "text": "Stamtąd przeszedł w bok, do produkcyjnego serwera zadań portfeli."
+ },
+ {
+  "id": 73,
+  "text": "Maszyny, która tworzy transakcje wypłat."
+ },
+ {
+  "id": 74,
+  "text": "I zainstalował na nim złośliwe pakiety."
+ },
+ {
+  "id": 75,
+  "text": "Teraz stał tuż obok pieniędzy."
+ },
+ {
+  "id": 76,
+  "text": "Ale każda wypłata wciąż musiała przejść przez jedno. Kontrolę ryzyka."
+ },
+ {
+  "id": 77,
+  "text": "O 17:49 na hoście portfeli uruchomiło się narzędzie."
+ },
+ {
+  "id": 78,
+  "text": "SlowMist odzyskał je później z usuniętych plików."
+ },
+ {
+  "id": 79,
+  "text": "Nie walczyło z kontrolą ryzyka."
+ },
+ {
+  "id": 80,
+  "text": "Fałszowało jej odpowiedzi."
+ },
+ {
+  "id": 81,
+  "text": "Potem tworzyło żądania wypłat"
+ },
+ {
+  "id": 82,
+  "text": "i wpychało je do zwykłego procesu wypłat Bitgetu."
+ },
+ {
+  "id": 83,
+  "text": "Według jednej z analiz"
+ },
+ {
+  "id": 84,
+  "text": "system po prostu wierzył zgłaszającemu na słowo, że kontrole przeszły pomyślnie."
+ },
+ {
+  "id": 85,
+  "text": "Na papierze to wystarczało."
+ },
+ {
+  "id": 86,
+  "text": "Był tylko jeden sposób, by sprawdzić, czy działa to w praktyce."
+ },
+ {
+  "id": 87,
+  "text": "Spróbować."
+ },
+ {
+  "id": 88,
+  "text": "18:31. Dwa drobne przelewy."
+ },
+ {
+  "id": 89,
+  "text": "93 TRX. Potem 0,84 ethera."
+ },
+ {
+  "id": 90,
+  "text": "Testy. Według CEO Bitgetu były poniżej progu ryzyka, więc alarm się nie włączył."
+ },
+ {
+  "id": 91,
+  "text": "I było w tych przelewach coś dziwnego."
+ },
+ {
+  "id": 92,
+  "text": "Coś, co mogło ich zdradzić. Zapamiętaj to."
+ },
+ {
+  "id": 93,
+  "text": "Potem nic. Przez prawie pół godziny."
+ },
+ {
+  "id": 94,
+  "text": "18:58. 34,75 miliona USDT wychodzi jednym przelewem."
+ },
+ {
+  "id": 95,
+  "text": "Wciąż bez alarmu."
+ },
+ {
+  "id": 96,
+  "text": "Więc przestał testować."
+ },
+ {
+  "id": 97,
+  "text": "19:01. Siedem przelewów. Pięć blockchainów. Piętnaście sekund."
+ },
+ {
+  "id": 98,
+  "text": "19:03. Jeszcze jeden mały test, z innego portfela."
+ },
+ {
+  "id": 99,
+  "text": "19:05. Uzgadnianie sald Bitgetu w końcu wykrywa rozbieżność."
+ },
+ {
+  "id": 100,
+  "text": "Jeśli trzymałeś wtedy pieniądze na Bitget,"
+ },
+ {
+  "id": 101,
+  "text": "widziałeś to: twoja wypłata została wstrzymana."
+ },
+ {
+  "id": 102,
+  "text": "Kontrola ryzyka zablokowała wypłaty wszystkim klientom platformy."
+ },
+ {
+  "id": 103,
+  "text": "19:14. Sytuacja kryzysowa najwyższego stopnia."
+ },
+ {
+  "id": 104,
+  "text": "19:16."
+ },
+ {
+  "id": 105,
+  "text": "Pięć przelewów. Pięć łańcuchów. Dziewięć sekund."
+ },
+ {
+  "id": 106,
+  "text": "Około 203 milionów dolarów."
+ },
+ {
+  "id": 107,
+  "text": "Klientów odcięto 11 minut wcześniej."
+ },
+ {
+  "id": 108,
+  "text": "Atakującego nie."
+ },
+ {
+  "id": 109,
+  "text": "Blokada wypłat klientów była złym przełącznikiem."
+ },
+ {
+  "id": 110,
+  "text": "Sfałszowane żądania nie były wypłatami klientów."
+ },
+ {
+  "id": 111,
+  "text": "Według jednej z analiz"
+ },
+ {
+  "id": 112,
+  "text": "w ciepłych portfelach nic nie stało między żądaniem a podpisem."
+ },
+ {
+  "id": 113,
+  "text": "Żadnej drugiej osoby."
+ },
+ {
+  "id": 114,
+  "text": "Żadnej listy dozwolonych adresów."
+ },
+ {
+  "id": 115,
+  "text": "Więc usługa podpisująca działała dalej."
+ },
+ {
+  "id": 116,
+  "text": "Przez 2 godziny i 39 minut po pierwszym alercie."
+ },
+ {
+  "id": 117,
+  "text": "Według dwóch niezależnych szacunków po alarmie"
+ },
+ {
+  "id": 118,
+  "text": "wypłynęło około 238 milionów dolarów."
+ },
+ {
+  "id": 119,
+  "text": "Ponad połowa skradzionej kwoty."
+ },
+ {
+  "id": 120,
+  "text": "O 20:40 Bitget zaczął przenosić środki do zimnych portfeli."
+ },
+ {
+  "id": 121,
+  "text": "Wciąż nie wiedząc, czy klucze zostały przejęte."
+ },
+ {
+  "id": 122,
+  "text": "Ostatni namierzony przelew wyszedł o 21:23."
+ },
+ {
+  "id": 123,
+  "text": "Potem atakujący próbował nadpisać zapisy wypłat bezpośrednio w bazie danych."
+ },
+ {
+  "id": 124,
+  "text": "Zacieranie śladów albo próba zdobycia więcej."
+ },
+ {
+  "id": 125,
+  "text": "Raporty tego nie podają."
+ },
+ {
+  "id": 126,
+  "text": "Dwa fałszywe zlecenia na Bitcoina zwróciły błędy."
+ },
+ {
+  "id": 127,
+  "text": "O 21:44 Bitget wyłączył usługi wypłat, łącznie z podpisywaniem."
+ },
+ {
+  "id": 128,
+  "text": "Następnego ranka"
+ },
+ {
+  "id": 129,
+  "text": "Bitget znalazł pierwotną przyczynę i zgłosił kradzież organom ścigania."
+ },
+ {
+  "id": 130,
+  "text": "A gdy śledczy wrócili do tych pierwszych testowych przelewów,"
+ },
+ {
+  "id": 131,
+  "text": "dziwny szczegół był tuż przed nimi."
+ },
+ {
+  "id": 132,
+  "text": "Każdy przelew w Ethereum ustala limit paliwa. Gas."
+ },
+ {
+  "id": 133,
+  "text": "Zwykłe wypłaty Bitgetu dla klientów zużywały około 63 000."
+ },
+ {
+  "id": 134,
+  "text": "Przelewy atakującego zużywały dokładnie 100 000 albo 200 000."
+ },
+ {
+  "id": 135,
+  "text": "W ciągu 8 poprzednich dni te portfele wysłały 35 678 transakcji."
+ },
+ {
+  "id": 136,
+  "text": "Żadna wypłata dla klienta tak nie wyglądała."
+ },
+ {
+  "id": 137,
+  "text": "W Zcash było to jeszcze wyraźniejsze."
+ },
+ {
+  "id": 138,
+  "text": "Każdy skradziony przelew łączył około 1000 drobnych kawałków monet."
+ },
+ {
+  "id": 139,
+  "text": "Największa wcześniejsza transakcja tego portfela użyła 54."
+ },
+ {
+  "id": 140,
+  "text": "Sfałszowane polecenia usuwano po każdym przelewie."
+ },
+ {
+  "id": 141,
+  "text": "Odciski palców zostały."
+ },
+ {
+  "id": 142,
+  "text": "Nikt ich nie wypatrywał."
+ },
+ {
+  "id": 143,
+  "text": "Teraz złodziej miał 388 milionów dolarów."
+ },
+ {
+  "id": 144,
+  "text": "I nowy problem: jak je zatrzymać."
+ },
+ {
+  "id": 145,
+  "text": "Najpierw poszły stablecoiny, bo stablecoiny można zamrozić."
+ },
+ {
+  "id": 146,
+  "text": "Całe USDT w ciągu 20 minut wymieniono na ether."
+ },
+ {
+  "id": 147,
+  "text": "XRP zamieniono na Bitcoina przez THORChain."
+ },
+ {
+  "id": 148,
+  "text": "Część Zcash zniknęła w prywatnej puli, gdzie nie da się jej śledzić."
+ },
+ {
+  "id": 149,
+  "text": "Bitget poprosił THORChain o zablokowanie adresów."
+ },
+ {
+  "id": 150,
+  "text": "THORChain odmówił, powołując się na swoją konstrukcję niewymagającą zezwoleń."
+ },
+ {
+  "id": 151,
+  "text": "Ostatecznie zamrożono mniej niż 0,3%."
+ },
+ {
+  "id": 152,
+  "text": "W listopadzie Bitcoin znów zaczął się przemieszczać."
+ },
+ {
+  "id": 153,
+  "text": "Około 161 milionów dolarów w 11 dni, głównie przez CoinJoin,"
+ },
+ {
+  "id": 154,
+  "text": "który miesza monety wielu osób w jednej transakcji."
+ },
+ {
+  "id": 155,
+  "text": "A ci, którzy przenosili te środki, nie ukrywali się zbyt dobrze."
+ },
+ {
+  "id": 156,
+  "text": "ZachXBT twierdzi, że osoby piorące pieniądze prosiły o pomoc techniczną"
+ },
+ {
+  "id": 157,
+  "text": "na publicznych czatach usług, z których korzystały."
+ },
+ {
+  "id": 158,
+  "text": "Nieudane wymiany. Brakujące wypłaty."
+ },
+ {
+  "id": 159,
+  "text": "Jedna z nich, jak mówi, obracała już kradzionymi pieniędzmi."
+ },
+ {
+  "id": 160,
+  "text": "Z exploita Kelp DAO w kwietniu."
+ },
+ {
+  "id": 161,
+  "text": "Kto więc za tym stał?"
+ },
+ {
+  "id": 162,
+  "text": "W noc ataku CEO Bitgetu, Gracy Chen,"
+ },
+ {
+  "id": 163,
+  "text": "powiedziała, że część adresów IP pasuje do usług VPN używanych przez północnokoreańską grupę."
+ },
+ {
+  "id": 164,
+  "text": "Cztery dni później była ostrożniejsza."
+ },
+ {
+  "id": 165,
+  "text": "To, jak powiedziała, opierało się na wstępnych przesłankach."
+ },
+ {
+  "id": 166,
+  "text": "Analitycy z Chainalysis, Elliptic i TRM Labs skłaniają się w tę samą stronę."
+ },
+ {
+  "id": 167,
+  "text": "Potem, 5 tygodni później, Binance stracił ponad 6 miliardów dolarów."
+ },
+ {
+  "id": 168,
+  "text": "A Chainalysis widziała, jak kradzione środki z Binance"
+ },
+ {
+  "id": 169,
+  "text": "spotykają się w blockchainie ze środkami z Bitgetu."
+ },
+ {
+  "id": 170,
+  "text": "ZachXBT twierdzi, że jedne i drugie trafiły przez THORChain pod ten sam adres."
+ },
+ {
+  "id": 171,
+  "text": "Dwa dni po kradzieży w Binance"
+ },
+ {
+  "id": 172,
+  "text": "FBI wskazało złodziei: TraderTraitor z Korei Północnej."
+ },
+ {
+  "id": 173,
+  "text": "W sprawie Bitgetu żaden rząd nie powiedział ani słowa."
+ },
+ {
+  "id": 174,
+  "text": "A raport Mandiant w ogóle nikogo nie wskazuje."
+ },
+ {
+  "id": 175,
+  "text": "Co prowadzi nas z powrotem do tamtej pożyczki."
+ },
+ {
+  "id": 176,
+  "text": "W lutym 2025, gdy okradziono Bybit, Bitget tego samego dnia wysłał 40 000 etherów."
+ },
+ {
+  "id": 177,
+  "text": "Bez odsetek. Bez zabezpieczenia."
+ },
+ {
+  "id": 178,
+  "text": "FBI przypisało tamtą kradzież Korei Północnej."
+ },
+ {
+  "id": 179,
+  "text": "Dziewiętnaście miesięcy później pieniądze wypływały z Bitgetu."
+ },
+ {
+  "id": 180,
+  "text": "Żaden rząd nikogo nie wskazał."
+ },
+ {
+  "id": 181,
+  "text": "Ale analitycy wskazują ten sam kierunek."
+ },
+ {
+  "id": 182,
+  "text": "Jeśli miałeś środki na Bitget, nie straciłeś ich."
+ },
+ {
+  "id": 183,
+  "text": "Bitget twierdzi, że pokrył stratę z własnego funduszu ochrony."
+ },
+ {
+  "id": 184,
+  "text": "Do 2 października wszystkie wypłaty wróciły."
+ },
+ {
+  "id": 185,
+  "text": "Fundusz odbudowano do nieco ponad 300 milionów dolarów."
+ },
+ {
+  "id": 186,
+  "text": "Wciąż mniej niż wcześniej."
+ },
+ {
+  "id": 187,
+  "text": "Luka została załatana."
+ },
+ {
+  "id": 188,
+  "text": "Krytyczne operacje wymagają teraz więcej niż jednej zgody."
+ },
+ {
+  "id": 189,
+  "text": "A Bitget twierdzi, że analizuje, jak wybiera dostawców zabezpieczeń."
+ },
+ {
+  "id": 190,
+  "text": "Dostawcy wciąż nie ujawniono."
+ },
+ {
+  "id": 191,
+  "text": "Zaczęło się od przelewu 93 TRX, o wpół do trzeciej w nocy."
+ },
+ {
+  "id": 192,
+  "text": "Nikt na niego nie spojrzał."
+ },
+ {
+  "id": 193,
+  "text": "Bitget kupił narzędzia do pilnowania drzwi."
+ },
+ {
+  "id": 194,
+  "text": "Przez całe tygodnie mógł je trzymać w rękach ktoś inny."
+ },
+ {
+  "id": 195,
+  "text": "A gdy alarm w końcu zadzwonił, giełda odcięła swoich klientów"
+ },
+ {
+  "id": 196,
+  "text": "i zostawiła maszynę podpisującą włączoną."
+ },
+ {
+  "id": 197,
+  "text": "Jestem Thomas Archer. To było Siphon Files."
+ }
+]
