@@ -1,0 +1,19 @@
+{
+  "name": "thomas_e2_l_2_720p",
+  "image": "presenter/reference/thomas_ref_ep002_1920x1080.png",
+  "audio": "presenter/clips/inputs/ep002/thomas_e2_l_2.wav",
+  "line": "l1 | l2 | l3",
+  "prompt": "A British man in his early forties with short dark brown hair and light stubble, wearing a plain dark navy cotton shirt with a soft open collar, sits at a wooden desk in a dim investigation office and speaks calmly and clearly to the camera, like a documentary presenter recalling the loan Bitget made to Bybit in 2025. His hands rest still and relaxed on the manila folder on the desk. Subtle natural head movements, steady eye contact with the lens, natural blinking, composed and serious expression. Warm amber desk lamp on the right, out-of-focus evidence board and monitor behind him. Static locked-off camera, soft frontal light, realistic skin texture.",
+  "resolution": "720p",
+  "seed": 42,
+  "vocal_mode": "Clean speech (fast)",
+  "acceleration": "DBCache faster",
+  "note": "ep002 chain l part 2/4: episode 601.319-606.319 s of the voice track (final takes, load_voice), 24 kHz; used 601.319-606.219 s",
+  "continue_from": {
+    "clip": "presenter/clips/ep002/thomas_e2_l_1_720p.mp4",
+    "at": 4.5
+  },
+  "wall_seconds": 318.9,
+  "space": "victor/LongCat-Video-Avatar-1.6",
+  "output": "thomas_e2_l_2_720p.mp4"
+}
