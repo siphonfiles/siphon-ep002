@@ -1,0 +1,62 @@
+At half past two in the morning in Asia, a tiny transfer left the crypto exchange Bitget. Less than three hours later, about $388 million was gone, and Bitget says not a single private key was stolen. At 19:05 UTC the alarm rang and every customer was locked out. The money kept leaving for another two hours.
+
+A crypto heist and cybercrime documentary: how attackers got in through the security products Bitget bought to keep them out, why the signing machine kept running after the alarm, the fingerprints they left on the blockchain, where the money went, and who the analysts think was behind it. Plus the irony at the start of it all: in February 2025, Bitget was the exchange that rushed to rescue Bybit.
+
+STATUS AS OF LATE NOVEMBER 2026: no government has attributed the Bitget hack. Chainalysis, Elliptic and TRM Labs lean towards North Korean hackers; Bitget's CEO cited preliminary indicators. The hacked security vendor has not been named. No one has been charged. Details may have changed after publication.
+
+Narrated by Thomas Archer, the AI narrator of Siphon Files. His face and voice are synthetic. Illustrations are AI-generated; on-screen code, screens and messages are illustrative.
+
+Not financial or security advice.
+
+Episode 1, the Drift hack: https://youtu.be/kOfkyFjkzPY
+
+CHAPTERS
+0:00 Half past two in the morning
+0:41 The rescuer
+1:40 How an exchange pays you
+2:18 24 days earlier
+3:33 A borrowed name
+4:20 The wallet host
+4:51 18:31 UTC
+5:24 Locked out
+6:09 Why didn't it stop?
+7:19 The tell
+8:05 Where did it go?
+9:01 Who?
+9:57 The loan
+10:16 Afterwards
+
+SOURCES (every claim in the video is tagged [S#])
+[S1] Bitget: https://www.bitget.com/support/articles/12560603896024
+[S2] Bitget Academy: https://www.bitget.com/academy/bitget-security-incident-what-happened-timeline-impact-response
+[S3] Mandiant status report: https://img.bgstatic.com/multiLang/events/MFR26-1029_Status_Update_Bitget_0930.pdf
+[S4] SlowMist (via The Hacker News): https://thehackernews.com/2026/10/bitget-confirms-third-party-zero-day.html
+[S5] Bitget: https://www.bitget.com/support/articles/12560603896305
+[S6] Bitquery: https://bitquery.io/investigations/bitget-hack
+[S7] Halborn: https://www.halborn.com/blog/post/bitget-hack-technical-analysis-september-2026
+[S8] DFNS: https://dfns.co/article/the-bitget-hack
+[S9] CNBC: https://www.cnbc.com/2026/10/02/bitget-crypto-stolen-hack-recovery.html
+[S10] Decrypt: https://decrypt.co/380005/chainalysis-ai-87m-bitget-hack-north-korea
+[S11] Elliptic: https://www.elliptic.co/insights/bitget-attack-pushes-suspected-north-korea-crypto-heists-over-1-billion-in-2026/
+[S12] TRM Labs: https://www.trmlabs.com/resources/blog/bitget-loses-usd-3516-million-in-hot-wallet-breach-in-likely-north-korea-attack
+[S13] Cointelegraph: https://cointelegraph.com/news/bitget-388m-hack-third-party-security-vulnerability
+[S14] BleepingComputer: https://bleepingcomputer.com/news/security/bitget-hacked-via-zero-day-in-third-party-security-products
+[S15] ChainCatcher (CEO AMA): https://www.chaincatcher.com/en/article/2292843
+[S16] Bitget progress update: https://www.bitget.com/campaigns/bitget-security-incident-2026
+[S17] BleepingComputer: https://www.bleepingcomputer.com/news/security/fbi-links-63-billion-binance-crypto-heist-to-north-korean-hackers/
+[S18] Tom's Hardware: https://www.tomshardware.com/tech-industry/cryptocurrency/north-korea-named-as-primary-suspect-in-usd387-million-bitget-crypto-hack-investigators-identify-ip-addresses-tied-to-vpn-infrastructure-previously-used-by-north-korean-hacker-groups-thieves-swapped-stablecoins-for-eth-in-minutes-to-dodge-freezes
+[S19] Cointelegraph: https://cointelegraph.com/news/bitget-ceo-suspects-north-korea-behind-352m-hack-citing-ip-clues
+[S20] BeInCrypto: https://beincrypto.com/bitget-hack-ceo-interview-gracy-chen/
+[S21] Arkham: https://arkm.com/research/bitget-hacker-moves-millions-in-btc-to-new-wallets-on-chain-data
+[S22] TokenPost: https://www.tokenpost.com/news/investing/59038
+[S23] BeInCrypto: https://beincrypto.com/bitget-hack-launderers-public-discord-chats/
+[S24] Chainalysis: https://chainalysis.com/blog/binance-exploit-latest-findings-and-response/
+[S25] SCMP: https://scmp.com/news/world/united-states-canada/article/3372858/fbi-blames-north-korea-stolen-billions-binance-biggest-hack-history
+[S26] Coin Edition: https://coinedition.com/chainalysis-flags-never-seen-before-laundering-tactics-in-binance-hack/
+[S27] Cointelegraph: https://cointelegraph.com/news/bybit-repays-bitget-loan-after-hack
+[S28] Bitcoinist: https://bitcoinist.com/bybit-turns-to-bitget-and-binance-for-239-million-eth-loan-amid-withdrawal-spike/
+[S29] Yahoo Finance (Decrypt): https://finance.yahoo.com/markets/crypto/articles/bitget-hack-losses-climb-387m-170857616.html
+[S30] The Crypto Times: https://www.cryptotimes.io/2026/09/28/zachxbt-exposes-5-launderers-moving-387-5m-bitget-hack-funds-for-north-korea/
+[S31] FBI: https://www.ic3.gov/PSA/2025/PSA250226
+
+#Bitget #CryptoHeist #Cybercrime
