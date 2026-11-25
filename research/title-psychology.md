@@ -83,3 +83,31 @@ Tipare:
 - Eden. What makes a good YouTube thumbnail? https://eden.so/blog/what-makes-a-good-youtube-thumbnail/
 - YouTube Help: Thumbnail & title tips (https://support.google.com/youtube/answer/12340300); A/B test titles & thumbnails (https://support.google.com/youtube/answer/16391400)
 - The Conversation (2022): fascinația pentru escroci. https://theconversation.com/were-obsessed-with-shows-about-con-artists-like-inventing-anna-the-fascination-lies-in-how-easily-these-people-can-dupe-us-177535
+
+---
+
+## 6. Actualizare 25 nov 2026 (titlul ep. 002, Bitget)
+
+**Concurența pe „bitget hack” (YouTube, 25 nov):** doar știri și avertismente („BREAKING”, „are your funds safe?”), toate de acum 1–2 luni, cu maximum ~24k vizualizări (The Moon Show), majoritatea sub 2k. **Niciun documentar narativ.** Cine caută „Bitget hack” găsește acum doar știri.
+
+**Ce merge în publicul mai larg (sortat după vizualizări):**
+| Titlu | Canal | Vizualizări |
+|---|---|---|
+| The North Korean Operatives Hiding Inside U.S. Companies | WSJ | 10,5 mil. (3 luni) |
+| The Kids Who Hacked The CIA | fern | 20,4 mil. |
+| the largest hack. ever. | voidzilla | 2,6 mil. (3 săpt.) |
+| How Binance Lost $6,300,000,000 in One Night | Gloam | 2,6 mil. (3 săpt.) |
+| The FBI Found 90 Laptops in Her House. Every One Had a Job. | The Empty Chair | 470k în **5 zile** |
+| Why North Korean Hackers Are So Good | Cybernews | 1,2 mil. |
+
+Tipare noi: (1) **„hiding inside / inside” + o instituție** = tiparul cu cele mai multe vizualizări în publicul de securitate; (2) **două propoziții scurte**: un fapt concret, apoi o răsturnare („…in Her House. Every One Had a Job.”); (3) hack-ul Binance (29 oct) domină căutările din ultima lună, iar Bitget a fost cu 5 săptămâni înainte (legătura on-chain e în video, [S24]).
+
+**Date noi despre formulări:**
+- OverseerOS, 2.309 video-uri (sep 2025 – iun 2026): limbajul de tip clickbait nu aduce avantaj în medie (1,00× față de 1,00×). Cuvintele de **secret/dezvăluire** (hidden, revealed) au mers sub medie (0,87×), iar cele de **șoc/extrem** și **pericol** puțin peste (1,04–1,06×).
+- AIR Media, 18.080 de canale, 11 nișe: cele mai bune titluri au **30–50 de caractere**. Cifrele ajută doar când fac o promisiune concretă (sumă, timp). La conținut găsit prin căutare, **cuvântul-cheie trebuie să fie în primele ~40% din titlu**.
+- Test & Compare: câștigătorul se alege după watch time. **La câteva sute de afișări pe săptămână, testul rulează 2 săptămâni și deseori nu ajunge la un rezultat.** Pentru un canal la început, titlul principal trebuie ales bine de la început, nu lăsat în seama testului.
+- Ep. 001: 60% din vizualizări vin din căutare. Deci „Bitget” trebuie să fie în titlu, la început.
+
+**Ce nu folosim în titlu (sursele nu susțin):** „North Korea” (nicio atribuire oficială pentru Bitget); „24 days inside” ca fapt (e data primei activități găsite în loguri); „no key was stolen” fără să fie clar că e concluzia Bitget (poate apărea pe thumbnail ca afirmație a companiei, nu în titlu ca fapt).
+
+Surse noi: https://www.overseeros.com/blog/do-clickbait-youtube-titles-get-more-views · https://air.io/en/audience-growth/how-to-write-a-youtube-title-that-gets-clicked-research-across-11-niches · https://www.subsub.io/blog/youtube-ab-testing-thumbnails-titles · https://support.google.com/youtube/answer/16391400
